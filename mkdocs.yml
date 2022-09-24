@@ -5,7 +5,7 @@ theme:
   name: material
   logo: img/sos.png
   favicon: img/favicon.ico
-  custom_dir: overrides
+  #custom_dir: overrides
 extra_css:
     - stylesheets/custom.css
 nav:
