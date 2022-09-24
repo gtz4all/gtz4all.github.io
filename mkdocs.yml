@@ -1,5 +1,5 @@
-site_url: https://linkedin.github.io/school-of-sre/
-site_name: School Of SRE
+site_url: https://gtz4all.github.io/
+site_name: Gtz4All
 docs_dir: courses
 theme:
   name: material
