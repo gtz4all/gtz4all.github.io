@@ -1,71 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url>
      <loc>https://gtz4all.github.io/</loc>
-     <lastmod>2022-09-26</lastmod>
+     <lastmod>2022-10-03</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://gtz4all.github.io/welcome/</loc>
-     <lastmod>2022-09-26</lastmod>
+     <lastmod>2022-10-03</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://gtz4all.github.io/cloud/introduction/</loc>
-     <lastmod>2022-09-26</lastmod>
+     <lastmod>2022-10-03</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://gtz4all.github.io/networking/introduction/</loc>
-     <lastmod>2022-09-26</lastmod>
+     <lastmod>2022-10-03</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://gtz4all.github.io/license/</loc>
-     <lastmod>2022-09-26</lastmod>
+     <lastmod>2022-10-03</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://gtz4all.github.io/cloud/introduction/</loc>
-     <lastmod>2022-09-26</lastmod>
+     <lastmod>2022-10-03</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://gtz4all.github.io/cloud/aws/introduction/</loc>
-     <lastmod>2022-09-26</lastmod>
+     <lastmod>2022-10-03</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://gtz4all.github.io/cloud/gcp/introduction/</loc>
-     <lastmod>2022-09-26</lastmod>
+     <lastmod>2022-10-03</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://gtz4all.github.io/cloud/azure/introduction/</loc>
-     <lastmod>2022-09-26</lastmod>
+     <lastmod>2022-10-03</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://gtz4all.github.io/networking/introduction/</loc>
-     <lastmod>2022-09-26</lastmod>
+     <lastmod>2022-10-03</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://gtz4all.github.io/networking/arista/introduction/</loc>
-     <lastmod>2022-09-26</lastmod>
+     <lastmod>2022-10-03</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://gtz4all.github.io/networking/cisco/introduction/</loc>
-     <lastmod>2022-09-26</lastmod>
+     <lastmod>2022-10-03</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://gtz4all.github.io/devops/introduction/</loc>
-     <lastmod>2022-09-26</lastmod>
+     <lastmod>2022-10-03</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://gtz4all.github.io/devops/terraform/introduction/</loc>
-     <lastmod>2022-09-26</lastmod>
+     <lastmod>2022-10-03</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://gtz4all.github.io/devops/ansible/introduction/</loc>
-     <lastmod>2022-09-26</lastmod>
+     <lastmod>2022-10-03</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://gtz4all.github.io/devops/python/introduction/</loc>
-     <lastmod>2022-09-26</lastmod>
+     <lastmod>2022-10-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://gtz4all.github.io/contact-us/contribute/</loc>
+     <lastmod>2022-10-03</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://gtz4all.github.io/contact-us/contact-me/</loc>
-     <lastmod>2022-09-26</lastmod>
+     <lastmod>2022-10-03</lastmod>
      <changefreq>daily</changefreq>
     </url>
 </urlset>
