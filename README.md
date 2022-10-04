@@ -1,5 +1,5 @@
 
-# Gtz4All™ Documentation
+# Gtz4All™ Technical Documentation
 
 ## Overview
 This repository contains all files used to create 
