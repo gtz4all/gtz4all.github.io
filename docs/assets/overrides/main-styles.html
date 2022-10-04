@@ -1,0 +1,246 @@
+{#-
+    This file was automatically generated - do not edit
+    NOTE: At line 9 -> 'background:' has the current color for the botom part of the cover
+    - current | #2a978d (OK w/ mkdocs.yaml -> palette -> /docs/assets/stylesheets)
+    - before  | #2a978d (OK w/ mkdocs.yaml -> palette -> primary: "teal"
+    
+    Blue color variations
+    - darker | #0A192F
+    - lighter | #172A45
+    -#}
+    
+    {% extends "main.html" %}
+    
+    <!-- Render hero under tabs -->
+    {% block tabs %}
+    {{ super() }}
+    
+    <!-- Additional styles for landing page -->
+    <style>
+    
+        img {
+        -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+        filter: grayscale(100%);
+        }
+    
+        .md-header {
+            position: initial
+        }
+    
+        .md-main__inner {
+            margin: 0
+        }
+    
+        .md-footer-copyright {
+            display: none
+        }
+    
+        .md-footer-nav__inner {
+            display: none
+        }
+    
+        .md-content {
+            display: none
+        }
+    
+        .md-footer-meta__inner {
+            align-content: center;
+            display: flex;
+            align-items: center;
+            justify-content: center
+        }
+    
+        /*
+         Table of content font color
+        */
+        a.md-nav__link {
+            color: #303C55;
+            text-decoration: none;
+        }
+    
+        .tx-container {
+            --md-primary-fg-color: #0c2b7a;
+            height: fit-content;
+            padding-top: 0rem;
+            background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1123 258'><path d='M1124,2c0,0 0,256 0,286l-1175,0l9,-48c0,0 15,4 64,5c115,0 196,-91 324,-92c122,0 113,45 253,46c141,0 213,-126 571,-1Z' style='fill: white' /></svg>") no-repeat bottom, linear-gradient(to bottom, var(--md-primary-fg-color), #254faa 99%, rgba(255, 255, 255, 0.267) 99%)
+        }
+    
+        .tx-hero {
+            color: var(--md-primary-bg-color);
+            justify-content: right;
+        }
+    
+        .tx-hero h1 {
+            margin-bottom: 0rem;
+            color: currentColor;
+            font-weight: 700
+        }
+    
+        .tx-hero__content {
+            padding-bottom: 9rem;
+            justify-content: left;
+            padding-right: 3rem;
+        }
+    
+        .tx-hero__content_small {
+            justify-content: left;
+            padding-right: 3rem;
+        }
+    
+        .tx-hero__image {
+            max-width: 100%;
+            max-height: 100%;
+            order: 1;
+            padding-right: 2.5rem;
+            margin-top: -50px;
+        }
+    
+        .tx-hero .md-button {
+            margin-top: .5rem;
+            margin-right: .5rem;
+            color: var(--md-primary-bg-color)
+        }
+    
+        .tx-hero .md-button--primary {
+            background-color: var(--md-primary-bg-color);
+            color: rgb(23, 34, 129);
+            border-color: var(--md-primary-bg-color)
+        }
+    
+        .tx-hero .md-button:focus,
+        .tx-hero .md-button:hover {
+            background-color: var(--md-accent-fg-color);
+            color: var(--md-default-bg-color);
+            border-color: var(--md-accent-fg-color)
+        }
+    
+        .tx-footer {
+            margin: 0px 0rem;
+            background-color: white;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    
+        .tx-hero__content-footer {
+            justify-content: left;
+            color: #ffffff;
+            font-weight: 300;
+            padding: 0 0px;
+            word-break: break-word;
+            float: left;
+        }
+    
+        .tx-footer p {
+            font-size: 12px;
+            line-height: 1.8em;
+            text-rendering: optimizeLegibility;
+            color: black;
+            display: block;
+            font-family: inherit;
+        }
+    
+        /**/
+        /*Adjusting Mobile UI */
+        /**/
+        @media screen and (max-width: 30em) {
+            .tx-hero h1 {
+                font-size: 1.4rem
+            }
+    
+            .tx-hero__content {
+                margin-left: 20px;
+                margin-right: 20px;
+            }
+    
+            .tx-hero__content_small {
+                margin-bottom: 50px;
+                margin-left: 20px;
+                margin-right: 20px;
+                font-size: 1.1rem;
+            }
+    
+            .md-typeset .md-button {
+                font-size: 14px;
+            }
+        }
+    
+        @media screen and (min-width: 60em) {
+            .md-sidebar--secondary {
+                display: none
+            }
+    
+            .tx-hero {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+    
+            .tx-hero__content {
+                max-width: 28rem;
+                margin-top: 3.5rem;
+                margin-bottom: 3.5rem;
+                margin-left: 1.0rem;
+                margin-right: 4.0rem;
+                align-items: center;
+            }
+        }
+    
+        @media screen and (min-width: 76.25em) {
+            .md-sidebar--primary {
+                display: none
+            }
+    
+            .top-hr {
+                width: 100%;
+                display: flex;
+                max-width: 61rem;
+                margin-right: auto;
+                margin-left: auto;
+                padding: 0 .2rem;
+            }
+    
+            .bottom-hr {
+                margin-top: 10px;
+                width: 100%;
+                display: flex;
+                max-width: 61rem;
+                margin-right: auto;
+                margin-left: auto;
+                padding: 0 .2rem;
+            }
+        }
+    
+        .text-center {
+            text-align: center;
+            padding-right: 15px;
+            padding-left: 15px;
+            margin-right: auto;
+            margin-left: auto;
+            margin-top: 15px;
+            font-size: 23px;
+            font-weight: 300;
+            padding-bottom: 10px;
+        }
+    
+        .logos {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-flow: row wrap;
+            margin: 0 auto;
+        }
+    
+        .logos img {
+            flex: 1 1 auto;
+            padding: 25px;
+            max-height: 130px;
+            vertical-align: middle;
+        }
+    </style>
+    
+    {% endblock %}
+    
+    
+    

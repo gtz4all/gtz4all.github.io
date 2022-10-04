@@ -47,7 +47,7 @@ nav:
 # Material Mkdocs Theme + Extras
 theme:
   name: material
-  custom_dir: docs/assets/custom
+  custom_dir: docs/assets/overrides
   icon: # https://www.materialpalette.com/icons
     logo: material/book-open-page-variant
   favicon: material/book-open-page-variant #assets/images/logos/favicon.ico

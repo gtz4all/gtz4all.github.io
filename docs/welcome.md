@@ -1,5 +1,5 @@
 ---
-template: overrides/main.html
+template: main.html
 ---
 
 ![gtz4all-logo](../assets/images/cloud-computing.png "Gtz4All"){: style="width:250px"}
