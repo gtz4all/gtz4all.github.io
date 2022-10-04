@@ -1,60 +1,15 @@
-.md-typeset__table {
-    min-width: 100%;
-}
-
-@media only screen and (min-width: 768px)
-
-{
-	td:nth-child(1){
-		white-space: nowrap;
-	}
-}
-
 /* Header Bar Colors */
 * {
-    --md-primary-fg-color: #0a192f;
-    --md-primary-fg-color--light: #1853d3 ;
-    --md-primary-fg-color--dark:  #303C55;
-    --md-typeset-color:   var(--md-default-fg-color);
-    --md-typeset-a-color: var(--md-primary-fg-color--light);
+    --md-primary-fg-color: #0c2b7a;
+}
+/* change hover colors*/
+.md-nav__link:hover {
+    color: darkorange;
 }
 
-
-/*
-markdown and image alignment
-ALT tag and a CSS selector on the alt tag
-*/
-img[src*='#left'] {
-    float: left;
-}
-img[src*='#right'] {
-    float: right;
-}
-img[src*='#center'] {
-    display: block;
-    margin: auto;
-}
-
-/*
-Tables set to 100% width
-*/
-.md-typeset__table {
-    min-width: 100%;
-}
-
-.md-typeset table:not([class]) {
-    display: table;
-}
-
-/*
-custom code blocks coloring
-*/
-.fsg-timestamp {
-    color: grey;
-}
-.fsg-userinput {
-    color: cornflowerblue;
-}
-.fsg-path, .fsg-prompt {
-    color: #041d53 ;
+/* use image for color theme */
+.md-footer,
+.md-footer-meta,
+.md-footer-nav {
+    background: #0c2b7a;
 }
