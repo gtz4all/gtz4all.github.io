@@ -1,18 +1,53 @@
 # ref link: https://alinex.gitlab.io/env/mkdocs/
-
 # Site Information
 site_name: Gtz4All
-repo_name: "gtz4all/gtz4all.github.io"
-repo_url: 'https://github.com/gtz4all/gtz4all.github.io'
 site_url: https://gtz4all.github.io/
 site_description: Gtz4All Reference Documentation
 #site_author: Gtz4All
 copyright: "Copyright 2022 <a href='https://gtz4all.github.io'>Gtz4All</a>. All Rights Reserved." 
 
+nav:
+  - Home:
+    - Home: "index.md"
+    - Welcome: "welcome.md"
+    - Cloud: "cloud/introduction.md"
+    - Networking: "networking/introduction.md"
+    - License: "license.md"
+
+  - Cloud: 
+    - Introduction: "cloud/introduction.md"
+    - AWS:
+      - Introduction: "cloud/aws/introduction.md"
+    - GCP:
+      - Introduction: "cloud/gcp/introduction.md"
+    - Azure:
+      - Introduction: "cloud/azure/introduction.md"
+
+  - Networking: 
+    - Introduction: "networking/introduction.md"
+    - Arista:
+      - Introduction: "networking/arista/introduction.md"
+    - Cisco:
+      - Introduction: "networking/cisco/introduction.md"
+
+  - DevOps: 
+    - Introduction: "devops/introduction.md"
+    - Terraform:
+      - Introduction: "devops/terraform/introduction.md"
+    - Ansible:
+      - Introduction: "devops/ansible/introduction.md"
+    - Python:
+      - Introduction: "devops/python/introduction.md"
+
+  - Contact Us:
+      - Contribute: "contact-us/contribute.md"
+      - FAQs: "contact-us/faqs.md"
+      - Contact Us: "contact-us/contact-me.md"
+
 # Material Mkdocs Theme + Extras
 theme:
   name: material
-  custom_dir: material
+  custom_dir: docs/assets/custom
   icon: # https://www.materialpalette.com/icons
     logo: material/book-open-page-variant
   favicon: material/book-open-page-variant #assets/images/logos/favicon.ico
@@ -44,7 +79,10 @@ extra:
       link: 'https://gtz4all.github.io/'
     - icon: material/github
       link: 'https://github.com/gtz4all'
- 
+
+extra_css:
+  - assets/extra.css
+
 # Extensions
 markdown_extensions:
   - abbr
@@ -84,49 +122,3 @@ markdown_extensions:
   - pymdownx.tasklist:
       custom_checkbox: true
   - pymdownx.tilde
-
-plugins:
-  - search
-
-extra_css:
-  - assets/stylesheets/extra.css
-  - stylesheets/extra.css
-# Mkdocs Navigation Tree
-nav:
-  - Home:
-    - Home: "index.md"
-    - Welcome: "welcome.md"
-    - Cloud: "cloud/introduction.md"
-    - Networking: "networking/introduction.md"
-    - License: "license.md"
-
-  - Cloud: 
-    - Introduction: "cloud/introduction.md"
-    - AWS:
-      - Introduction: "cloud/aws/introduction.md"
-    - GCP:
-      - Introduction: "cloud/gcp/introduction.md"
-    - Azure:
-      - Introduction: "cloud/azure/introduction.md"
-
-  - Networking: 
-    - Introduction: "networking/introduction.md"
-    - Arista:
-      - Introduction: "networking/arista/introduction.md"
-    - Cisco:
-      - Introduction: "networking/cisco/introduction.md"
-
-  - DevOps: 
-    - Introduction: "devops/introduction.md"
-    - Terraform:
-      - Introduction: "devops/terraform/introduction.md"
-    - Ansible:
-      - Introduction: "devops/ansible/introduction.md"
-    - Python:
-      - Introduction: "devops/python/introduction.md"
-
-  - Contact Us:
-      - Contribute: "contact-us/contribute.md"
-      - FAQs: "contact-us/faqs.md"
-      - Contact Us: "contact-us/contact-me.md"
-
