@@ -1,0 +1,692 @@
+# """
+# CloudFormation:
+# Protected/Unprotected Three-Tier VPC
+# 
+# Author(s):
+# Kervin Gtz
+#
+# Date:
+# 04/26/2021 - v1.0
+# """
+
+AWSTemplateFormatVersion: 2010-09-09
+Description: ISD Networking External Three Tier VPC Template
+Metadata: 
+  AWS::CloudFormation::Interface: 
+    ParameterGroups:
+      - Label: 
+          default: "VPC Configuration"
+        Parameters:
+          - StackNameIAM
+          - VPCName
+          - Environment          
+          - CidrBlock
+          - AvailabilityZone1
+          - AvailabilityZone2
+          - AvailabilityZone3
+          - AvailabilityZone4
+          - VPCType
+          - GWLBVPCeServiceName
+Parameters:
+  StackNameIAM:
+    Description: Stack Name to create IAM Policy
+    Type: String
+  VPCName:
+    Description: VPC Name ( ext-proctected / ext-unprotected )
+    Type: String
+    AllowedValues: 
+    - ext-protected
+    - ext-unprotected
+    Default: ext-protected
+    
+  CidrBlock:
+    AllowedPattern: ^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])(\/(1[6-9]|2[0-8]))$
+    ConstraintDescription: CIDR block parameter must be in the form x.x.x.x/16-28
+    Description: VPC valid IP CIDR range ( ex. 100.66.64.0/23)
+    Default: 100.66.64.0/23
+    Type: String
+  Environment:
+    Description: Choose VPC Type - Development/Test/SharedSvcs = ( 2AZs - /26 Subnets[59 IPs Per Subnet]), Production ( 4 AZs - /27 Subnets[27 IPs Per Subnet])
+    Type: String
+    AllowedValues: 
+    - dev
+    - sharedsvcs
+    - prod
+    Default: dev
+    
+  AvailabilityZone1:
+    Description: Select Availability Zone 1
+    Type: AWS::EC2::AvailabilityZone::Name
+    
+  AvailabilityZone2:
+    Description: Select Availability Zone 2
+    Type: AWS::EC2::AvailabilityZone::Name
+    
+  AvailabilityZone3:
+    Description: Select Availability Zone 1
+    Type: AWS::EC2::AvailabilityZone::Name
+    
+  AvailabilityZone4:
+    Description: Select Availability Zone 2
+    Type: AWS::EC2::AvailabilityZone::Name
+
+  GWLBVPCeServiceName:
+    Description:  Firewall GWLB Service Name
+    Type: String
+    Default: Required if Proctected VPC is True
+    
+  VPCType:
+    Description:  North-South Gateway LB Inspection
+    Type: String
+    AllowedValues: 
+    - protected
+    - unprotected
+    Default: protected
+    
+Conditions: 
+  BuildProd:    !Equals [ !Ref Environment, prod ]
+  BuildVPCE:    !Equals [ !Ref VPCType, protected ]
+  NoVPCE:    !Equals [ !Ref VPCType, unprotected ]
+  IGWRTprod:   !And [ !Condition BuildVPCE, !Condition BuildProd ]
+  
+#######################################################
+Resources:
+  VPC:
+    Type: AWS::EC2::VPC
+    Properties:
+      CidrBlock: {Ref: CidrBlock}
+      EnableDnsHostnames: true
+      EnableDnsSupport: true
+      Tags:
+        - Key: Name
+          Value: !Join ['-', [!Ref VPCName,!Ref Environment, "vpc" ]]
+  DhcpOptions: 
+      Type: AWS::EC2::DHCPOptions
+      Properties: 
+          DomainName: !Join ['-', [!Ref VPCName, "ext.aws.chboston.org" ]]
+          DomainNameServers: 
+            - AmazonProvidedDNS
+          Tags: 
+            - Key: Name
+              Value: !Join ['-', [!Ref VPCName,!Ref Environment, "dopt" ]]
+  VPCDHCPOptionsAssociation:
+    Type: AWS::EC2::VPCDHCPOptionsAssociation
+    Properties:
+      VpcId: {Ref: VPC}
+      DhcpOptionsId: {Ref: DhcpOptions}
+      
+###############################################   
+  InternetGateway:
+    Type: AWS::EC2::InternetGateway
+    DependsOn: VPC
+    Properties:
+      Tags:
+      - Key: Name
+        Value: !Join ['-', [!Ref VPCName,!Ref Environment, "igw" ]]
+  VPCGatewayAttachment:
+    Type: AWS::EC2::VPCGatewayAttachment
+    Properties:
+      VpcId: !Ref VPC
+      InternetGatewayId: !Ref InternetGateway
+            
+###############################################
+####            4 AZ PUBLIC                ####
+###############################################  
+  PublicRouteTableA:
+    Type: AWS::EC2::RouteTable
+    DependsOn: VPCGatewayAttachment
+    Properties:
+      Tags:
+        - Key: Name
+          Value: !Join ['-', [!Ref VPCName, "public", "rt-1" ]]
+      VpcId: !Ref VPC
+  PublicRouteTableB:
+    Type: AWS::EC2::RouteTable
+    DependsOn: VPCGatewayAttachment
+    Properties:
+      Tags:
+        - Key: Name
+          Value: !Join ['-', [!Ref VPCName, "public", "rt-2" ]]
+      VpcId: !Ref VPC  
+###############################################
+  PublicSubnet1:
+    Type: AWS::EC2::Subnet
+    Properties:
+      #MapPublicIpOnLaunch: true
+      AvailabilityZone: !Ref AvailabilityZone1
+      CidrBlock: !Select [ !If [BuildProd, 0, 0], !Cidr [ !Ref CidrBlock, !If [BuildProd, 16, 8], !If [BuildProd, 5, 6]]]
+      MapPublicIpOnLaunch: false
+      Tags:
+        - Key: Name
+          Value: !Join ['-', [!Ref VPCName, "public", "subnet-1" ]]
+      VpcId: !Ref VPC
+  PublicSubnet2:
+    Type: AWS::EC2::Subnet
+    Properties:
+      #MapPublicIpOnLaunch: true
+      AvailabilityZone: !Ref AvailabilityZone2    
+      CidrBlock: !Select [ !If [BuildProd, 8, 4], !Cidr [ !Ref CidrBlock, !If [BuildProd, 16, 8], !If [BuildProd, 5, 6]]]
+      MapPublicIpOnLaunch: false
+      Tags:
+        - Key: Name
+          Value: !Join ['-', [!Ref VPCName, "public", "subnet-2" ]]
+      VpcId: !Ref VPC
+      
+  PublicSubnet3:
+    Type: AWS::EC2::Subnet
+    Condition: BuildProd
+    Properties:
+      #MapPublicIpOnLaunch: true
+      AvailabilityZone: !Ref AvailabilityZone3
+      CidrBlock: !Select [ !If [BuildProd, 4, 0], !Cidr [ !Ref CidrBlock, !If [BuildProd, 16, 8], !If [BuildProd, 5, 6]]]
+      MapPublicIpOnLaunch: false
+      Tags:
+        - Key: Name
+          Value: !Join ['-', [!Ref VPCName, "public", "subnet-3" ]]
+      VpcId: !Ref VPC
+  PublicSubnet4:
+    Type: AWS::EC2::Subnet
+    Condition: BuildProd
+    Properties:
+      #MapPublicIpOnLaunch: true
+      AvailabilityZone: !Ref AvailabilityZone4     
+      CidrBlock: !Select [ !If [BuildProd, 12, 0], !Cidr [ !Ref CidrBlock, !If [BuildProd, 16, 8], !If [BuildProd, 5, 6]]]
+      MapPublicIpOnLaunch: false
+      Tags:
+        - Key: Name
+          Value: !Join ['-', [!Ref VPCName, "public", "subnet-4" ]]
+      VpcId: !Ref VPC
+###############################################
+  PublicSubnetAssoc1:
+    Type: AWS::EC2::SubnetRouteTableAssociation
+    Properties:
+      RouteTableId: !Ref PublicRouteTableA
+      SubnetId: !Ref PublicSubnet1
+  PublicSubnetAssoc2:
+    Type: AWS::EC2::SubnetRouteTableAssociation
+    Properties:
+      RouteTableId: !Ref PublicRouteTableB
+      SubnetId: !Ref PublicSubnet2
+  PublicSubnetAssoc3:
+    Type: AWS::EC2::SubnetRouteTableAssociation
+    Condition: BuildProd
+    Properties:
+      RouteTableId: !Ref PublicRouteTableA
+      SubnetId: !Ref PublicSubnet3
+  PublicSubnetAssoc4:
+    Type: AWS::EC2::SubnetRouteTableAssociation
+    Condition: BuildProd
+    Properties:
+      RouteTableId: !Ref PublicRouteTableB
+      SubnetId: !Ref PublicSubnet4
+
+###############################################
+####   4 AZ APPLICATION (OUTBOUND ONLY)    ####
+###############################################
+  AppRouteTableA:
+    Type: AWS::EC2::RouteTable
+    Properties:
+      Tags:
+        - Key: Name
+          Value: !Join ['-', [!Ref VPCName, "private", "rt-1" ]]
+      VpcId:
+        Ref: VPC
+  AppRouteTableB:
+    Type: AWS::EC2::RouteTable
+    Properties:
+      Tags:
+        - Key: Name
+          Value: !Join ['-', [!Ref VPCName, "private", "rt-2" ]]
+      VpcId:
+        Ref: VPC        
+###############################################
+  AppSubnet1:
+    Type: AWS::EC2::Subnet
+    Properties:
+      #MapPublicIpOnLaunch: true
+      AvailabilityZone: !Ref AvailabilityZone1
+      CidrBlock: !Select [ !If [BuildProd, 1, 1], !Cidr [ !Ref CidrBlock, !If [BuildProd, 16, 8], !If [BuildProd, 5, 6]]]
+      MapPublicIpOnLaunch: false
+      Tags:
+        - Key: Name
+          Value: !Join ['-', [!Ref VPCName, "private", "subnet-1" ]]
+      VpcId: !Ref VPC
+  AppSubnet2:
+    Type: AWS::EC2::Subnet
+    Properties:
+      #MapPublicIpOnLaunch: true
+      AvailabilityZone: !Ref AvailabilityZone2    
+      CidrBlock: !Select [ !If [BuildProd, 9, 5], !Cidr [ !Ref CidrBlock, !If [BuildProd, 16, 8], !If [BuildProd, 5, 6]]]
+      MapPublicIpOnLaunch: false
+      Tags:
+        - Key: Name
+          Value: !Join ['-', [!Ref VPCName, "private", "subnet-2" ]]
+      VpcId: !Ref VPC
+  AppSubnet3:
+    Type: AWS::EC2::Subnet
+    Condition: BuildProd
+    Properties:
+      #MapPublicIpOnLaunch: true
+      AvailabilityZone: !Ref AvailabilityZone3
+      CidrBlock: !Select [ !If [BuildProd, 5, 0], !Cidr [ !Ref CidrBlock, !If [BuildProd, 16, 8], !If [BuildProd, 5, 6]]]
+      MapPublicIpOnLaunch: false
+      Tags:
+        - Key: Name
+          Value: !Join ['-', [!Ref VPCName, "private", "subnet-3" ]]
+      VpcId: !Ref VPC
+  AppSubnet4:
+    Type: AWS::EC2::Subnet
+    Condition: BuildProd
+    Properties:
+      #MapPublicIpOnLaunch: true
+      AvailabilityZone: !Ref AvailabilityZone4     
+      CidrBlock: !Select [ !If [BuildProd, 13, 0], !Cidr [ !Ref CidrBlock, !If [BuildProd, 16, 8], !If [BuildProd, 5, 6]]]
+      MapPublicIpOnLaunch: false
+      Tags:
+        - Key: Name
+          Value: !Join ['-', [!Ref VPCName, "private", "subnet-4" ]]
+      VpcId: !Ref VPC
+###############################################
+  AppSubnetAssoc1:
+    Type: AWS::EC2::SubnetRouteTableAssociation
+    Properties:
+      RouteTableId: !Ref AppRouteTableA
+      SubnetId: !Ref AppSubnet1
+  AppSubnetAssoc2:
+    Type: AWS::EC2::SubnetRouteTableAssociation
+    Properties:
+      RouteTableId: !Ref AppRouteTableB
+      SubnetId: !Ref AppSubnet2
+  AppSubnetAssoc3:
+    Type: AWS::EC2::SubnetRouteTableAssociation
+    Condition: BuildProd
+    Properties:
+      RouteTableId: !Ref AppRouteTableA
+      SubnetId: !Ref AppSubnet3
+  AppSubnetAssoc4:
+    Type: AWS::EC2::SubnetRouteTableAssociation
+    Condition: BuildProd
+    Properties:
+      RouteTableId: !Ref AppRouteTableB
+      SubnetId: !Ref AppSubnet4
+###############################################
+  NatGatewayAEIP:
+    Type: 'AWS::EC2::EIP'
+    DependsOn: VPCGatewayAttachment  
+    Properties:
+      Domain: vpc
+  NatGatewayA:
+    Type: 'AWS::EC2::NatGateway'
+    DependsOn: NatGatewayAEIP  
+    Properties:
+      AllocationId: 
+          Fn::GetAtt:
+          - NatGatewayAEIP
+          - AllocationId
+      SubnetId: !Ref AppSubnet1
+      Tags:
+        - Key: Name
+          Value: !Join ['-', [!Ref VPCName, "natgw", "1" ]]
+###############################################
+  NatGatewayBEIP:
+    Type: 'AWS::EC2::EIP'
+    DependsOn: VPCGatewayAttachment  
+    Properties:
+      Domain: vpc
+  NatGatewayB:
+    Type: 'AWS::EC2::NatGateway'
+    DependsOn: NatGatewayBEIP 
+    Properties:
+      AllocationId:
+          Fn::GetAtt:
+          - NatGatewayBEIP
+          - AllocationId
+      SubnetId: !Ref AppSubnet2
+      Tags:
+        - Key: Name
+          Value: !Join ['-', [!Ref VPCName, "natgw", "2" ]]
+          
+###############################################
+  AppRouteTableARoute: 
+    Type: 'AWS::EC2::Route'
+    DependsOn: VPCGatewayAttachment
+    Properties:
+      RouteTableId: !Ref AppRouteTableA
+      DestinationCidrBlock: '0.0.0.0/0'
+      NatGatewayId: !Ref NatGatewayA
+  AppRouteTableBRoute: 
+    Type: 'AWS::EC2::Route'
+    DependsOn: VPCGatewayAttachment
+    Properties:
+      RouteTableId: !Ref AppRouteTableB
+      DestinationCidrBlock: '0.0.0.0/0'
+      NatGatewayId: !Ref NatGatewayB
+###############################################
+#### 4 AZ DATABASE(INBOUND VIA BASTION-HOST) ##
+###############################################
+  BDRouteTableA:
+    Type: AWS::EC2::RouteTable
+    Properties:
+      Tags:
+        - Key: Name
+          Value: !Join ['-', [!Ref VPCName, "local", "rt-1" ]]
+      VpcId:
+        Ref: VPC
+  BDRouteTableB:
+    Type: AWS::EC2::RouteTable
+    Properties:
+      Tags:
+        - Key: Name
+          Value: !Join ['-', [!Ref VPCName, "local", "rt-2" ]]
+      VpcId:
+        Ref: VPC          
+###############################################
+  BDSubnet1:
+    Type: AWS::EC2::Subnet
+    Properties:
+      #MapPublicIpOnLaunch: true
+      AvailabilityZone: !Ref AvailabilityZone1
+      CidrBlock: !Select [ !If [BuildProd, 2, 2], !Cidr [ !Ref CidrBlock, !If [BuildProd, 16, 8], !If [BuildProd, 5, 6]]]
+      MapPublicIpOnLaunch: false
+      Tags:
+        - Key: Name
+          Value: !Join ['-', [!Ref VPCName, "local", "subnet-1" ]]
+      VpcId: !Ref VPC
+  BDSubnet2:
+    Type: AWS::EC2::Subnet
+    Properties:
+      #MapPublicIpOnLaunch: true
+      AvailabilityZone: !Ref AvailabilityZone2    
+      CidrBlock: !Select [ !If [BuildProd, 10, 6], !Cidr [ !Ref CidrBlock, !If [BuildProd, 16, 8], !If [BuildProd, 5, 6]]]
+      MapPublicIpOnLaunch: false
+      Tags:
+        - Key: Name
+          Value: !Join ['-', [!Ref VPCName, "local", "subnet-2" ]]
+      VpcId: !Ref VPC
+  BDSubnet3:
+    Type: AWS::EC2::Subnet
+    Condition: BuildProd
+    Properties:
+      #MapPublicIpOnLaunch: true
+      AvailabilityZone: !Ref AvailabilityZone3
+      CidrBlock: !Select [ !If [BuildProd, 6, 0], !Cidr [ !Ref CidrBlock, !If [BuildProd, 16, 8], !If [BuildProd, 5, 6]]]
+      MapPublicIpOnLaunch: false
+      Tags:
+        - Key: Name
+          Value: !Join ['-', [!Ref VPCName, "local", "subnet-3" ]]
+      VpcId: !Ref VPC
+  BDSubnet4:
+    Type: AWS::EC2::Subnet
+    Condition: BuildProd
+    Properties:
+      #MapPublicIpOnLaunch: true
+      AvailabilityZone: !Ref AvailabilityZone4     
+      CidrBlock: !Select [ !If [BuildProd, 14, 0], !Cidr [ !Ref CidrBlock, !If [BuildProd, 16, 8], !If [BuildProd, 5, 6]]]
+      MapPublicIpOnLaunch: false
+      Tags:
+        - Key: Name
+          Value: !Join ['-', [!Ref VPCName, "local", "subnet-4" ]]
+      VpcId: !Ref VPC
+###############################################
+  BDSubnetAssoc1:
+    Type: AWS::EC2::SubnetRouteTableAssociation
+    Properties:
+      RouteTableId: !Ref BDRouteTableA
+      SubnetId: !Ref BDSubnet1
+  BDSubnetAssoc2:
+    Type: AWS::EC2::SubnetRouteTableAssociation
+    Properties:
+      RouteTableId: !Ref BDRouteTableB
+      SubnetId: !Ref BDSubnet2
+  BDSubnetAssoc3:
+    Type: AWS::EC2::SubnetRouteTableAssociation
+    Condition: BuildProd
+    Properties:
+      RouteTableId: !Ref BDRouteTableA
+      SubnetId: !Ref BDSubnet3
+  BDSubnetAssoc4:
+    Type: AWS::EC2::SubnetRouteTableAssociation
+    Condition: BuildProd
+    Properties:
+      RouteTableId: !Ref BDRouteTableB
+      SubnetId: !Ref BDSubnet4
+###############################################
+#### VPC EndPoints # Condition: BuildVPCE     #
+###############################################
+  VPCERouteTable:
+    Type: AWS::EC2::RouteTable
+    Condition: BuildVPCE
+    Properties:
+      Tags:
+        - Key: Name
+          Value: !Join ['-', [!Ref VPCName, "vpce", "rt" ]]
+      VpcId:
+        Ref: VPC         
+ ##############################################
+  VPCESubnet1:
+    Type: AWS::EC2::Subnet
+    Condition: BuildVPCE
+    Properties:
+      #MapPublicIpOnLaunch: true
+      AvailabilityZone: !Ref AvailabilityZone1
+      CidrBlock: !Select [ !If [BuildProd, 3, 3], !Cidr [ !Ref CidrBlock, !If [BuildProd, 16, 8], !If [BuildProd, 5, 6]]]
+      MapPublicIpOnLaunch: false
+      Tags:
+        - Key: Name
+          Value: !Join ['-', [!Ref VPCName, "vpce", "subnet-1" ]]
+      VpcId: !Ref VPC
+  VPCESubnet2:
+    Type: AWS::EC2::Subnet
+    Condition: BuildVPCE
+    Properties:
+      #MapPublicIpOnLaunch: true
+      AvailabilityZone: !Ref AvailabilityZone2    
+      CidrBlock: !Select [ !If [BuildProd, 11, 7], !Cidr [ !Ref CidrBlock, !If [BuildProd, 16, 8], !If [BuildProd, 5, 6]]]
+      MapPublicIpOnLaunch: false
+      Tags:
+        - Key: Name
+          Value: !Join ['-', [!Ref VPCName, "vpce", "subnet-2" ]]
+      VpcId: !Ref VPC
+ 
+ ##############################################
+  VPCESubnetAssoc1:
+    Type: AWS::EC2::SubnetRouteTableAssociation
+    Condition: BuildVPCE
+    Properties:
+      RouteTableId: !Ref VPCERouteTable
+      SubnetId: !Ref VPCESubnet1
+  VPCESubnetAssoc2:
+    Type: AWS::EC2::SubnetRouteTableAssociation
+    Condition: BuildVPCE
+    Properties:
+      RouteTableId: !Ref VPCERouteTable
+      SubnetId: !Ref VPCESubnet2
+###############################################
+  VPCERouteTableRoute: 
+    Type: 'AWS::EC2::Route'
+    Condition: BuildVPCE
+    DependsOn: 
+    - InternetGateway
+    - VPCGatewayAttachment
+    Properties:
+      RouteTableId: !Ref VPCERouteTable
+      DestinationCidrBlock: '0.0.0.0/0'
+      GatewayId: !Ref InternetGateway
+
+###############################################
+  VPCEndpoint1:
+    Type: AWS::EC2::VPCEndpoint
+    Condition: BuildVPCE
+    Properties: 
+      VpcEndpointType: GatewayLoadBalancer
+      ServiceName: !Ref GWLBVPCeServiceName
+      SubnetIds: 
+      - !Ref VPCESubnet1
+      VpcId: !Ref VPC
+  VPCEndpoint2:
+    Type: AWS::EC2::VPCEndpoint
+    Condition: BuildVPCE
+    Properties:
+      VpcEndpointType: GatewayLoadBalancer    
+      ServiceName: !Ref GWLBVPCeServiceName
+      SubnetIds: 
+      - !Ref VPCESubnet2
+      VpcId: !Ref VPC
+#############################################
+# Work In Progress ####
+###############################################
+  IGWRouteTable:
+    Type: AWS::EC2::RouteTable
+    Condition: BuildVPCE
+    DependsOn: VPCGatewayAttachment
+    Properties:
+      Tags:
+        - Key: Name
+          Value: !Join ['-', [!Ref VPCName, "igw", "rt" ]]
+      VpcId: !Ref VPC 
+
+  IGWAssoc1:
+    Type: AWS::EC2::GatewayRouteTableAssociation
+    Condition: BuildVPCE
+    Properties:
+      RouteTableId: !Ref IGWRouteTable
+      GatewayId: !Ref InternetGateway
+################################################
+### Need condition or if else or something to apply default route 
+################################################
+  PublicRouteTableRouteVpceA: 
+    Type: 'AWS::EC2::Route'
+    Condition: BuildVPCE
+    Properties:
+      RouteTableId: !Ref PublicRouteTableA
+      DestinationCidrBlock: '0.0.0.0/0'
+      VpcEndpointId : !Ref VPCEndpoint1
+  PublicRouteTableRouteVpceB: 
+    Type: 'AWS::EC2::Route'
+    Condition: BuildVPCE
+    Properties:
+      RouteTableId: !Ref PublicRouteTableB
+      DestinationCidrBlock: '0.0.0.0/0'
+      VpcEndpointId : !Ref VPCEndpoint2
+
+  PublicRouteTableRouteIgwA: 
+    Type: 'AWS::EC2::Route'
+    Condition: NoVPCE
+    Properties:
+      RouteTableId: !Ref PublicRouteTableA
+      DestinationCidrBlock: '0.0.0.0/0'
+      GatewayId: !Ref InternetGateway
+  PublicRouteTableRouteIgwB: 
+    Type: 'AWS::EC2::Route'
+    Condition: NoVPCE
+    Properties:
+      RouteTableId: !Ref PublicRouteTableB
+      DestinationCidrBlock: '0.0.0.0/0'
+      GatewayId: !Ref InternetGateway
+
+##############################################
+  IGWRouteTableRoutePublic1: 
+    Type: 'AWS::EC2::Route'
+    Condition: BuildVPCE
+    DependsOn: IGWAssoc1
+    Properties:
+      RouteTableId: !Ref IGWRouteTable
+      DestinationCidrBlock: !Select [ !If [BuildProd, 0, 0], !Cidr [ !Ref CidrBlock, !If [BuildProd, 16, 8], !If [BuildProd, 5, 6]]]
+      VpcEndpointId : !Ref VPCEndpoint1
+  IGWRouteTableRoutePublic2: 
+    Type: 'AWS::EC2::Route'
+    Condition: BuildVPCE
+    DependsOn: IGWAssoc1
+    Properties:
+      RouteTableId: !Ref IGWRouteTable
+      DestinationCidrBlock: !Select [ !If [BuildProd, 8, 4], !Cidr [ !Ref CidrBlock, !If [BuildProd, 16, 8], !If [BuildProd, 5, 6]]]
+      VpcEndpointId : !Ref VPCEndpoint2
+  IGWRouteTableRoutePublic3: 
+    Type: 'AWS::EC2::Route'
+    Condition: IGWRTprod
+    DependsOn: IGWAssoc1
+    Properties:
+      RouteTableId: !Ref IGWRouteTable
+      DestinationCidrBlock: !Select [ !If [BuildProd, 4, 0], !Cidr [ !Ref CidrBlock, !If [BuildProd, 16, 8], !If [BuildProd, 5, 6]]]
+      VpcEndpointId : !Ref VPCEndpoint1
+  IGWRouteTableRoutePublic4: 
+    Type: 'AWS::EC2::Route'
+    Condition: IGWRTprod
+    DependsOn: IGWAssoc1
+    Properties:
+      RouteTableId: !Ref IGWRouteTable
+      DestinationCidrBlock: !Select [ !If [BuildProd, 12, 0], !Cidr [ !Ref CidrBlock, !If [BuildProd, 16, 8], !If [BuildProd, 5, 6]]]
+      VpcEndpointId : !Ref VPCEndpoint2
+###############################################
+#### IAM Policy ##
+###############################################
+  IAMPolicy:
+    Type: 'AWS::IAM::ManagedPolicy'
+    Condition: BuildVPCE
+    Properties:
+      ManagedPolicyName: externalvpc-restriction-policy
+      PolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          - Effect: Allow
+            Action: ec2:*
+            Resource: "*"
+          - Effect: Deny
+            Action: ec2:RunInstances
+            Resource:
+            - !Sub arn:aws:ec2:*:*:subnet/${VPCESubnet1}
+            - !Sub arn:aws:ec2:*:*:subnet/${VPCESubnet2}
+          - Effect: Deny
+            Action: 
+              - cloudformation:DeleteStack
+              - cloudformation:UpdateTerminationProtection
+              - cloudformation:UpdateStack
+              - cloudformation:CreateChangeSet
+              - cloudformation:DeleteChangeSet
+            Resource:
+            - !Sub arn:aws:cloudformation:us-east-1:*:stack/${StackNameIAM}/*
+      Roles: 
+        - FederatedAdministratorRole
+
+##############################################
+Outputs:
+  PublicSubnet1:
+    Value: !Select [ !If [BuildProd, 0, 0], !Cidr [ !Ref CidrBlock, !If [BuildProd, 16, 8], !If [BuildProd, 5, 6]]]
+  PublicSubnet2:
+    Value: !Select [ !If [BuildProd, 8, 4], !Cidr [ !Ref CidrBlock, !If [BuildProd, 16, 8], !If [BuildProd, 5, 6]]]
+  PublicSubnet3:
+    Condition: BuildProd
+    Value: !Select [ !If [BuildProd, 4, 0], !Cidr [ !Ref CidrBlock, !If [BuildProd, 16, 8], !If [BuildProd, 5, 6]]]
+  PublicSubnet4:
+    Condition: BuildProd    
+    Value: !Select [ !If [BuildProd, 12, 0], !Cidr [ !Ref CidrBlock, !If [BuildProd, 16, 8], !If [BuildProd, 5, 6]]]
+
+  AppSubnet1:
+    Value: !Select [ !If [BuildProd, 1, 1], !Cidr [ !Ref CidrBlock, !If [BuildProd, 16, 8], !If [BuildProd, 5, 6]]]
+  AppSubnet2:
+    Value: !Select [ !If [BuildProd, 9, 5], !Cidr [ !Ref CidrBlock, !If [BuildProd, 16, 8], !If [BuildProd, 5, 6]]]
+  AppSubnet3:
+    Condition: BuildProd
+    Value: !Select [ !If [BuildProd, 5, 0], !Cidr [ !Ref CidrBlock, !If [BuildProd, 16, 8], !If [BuildProd, 5, 6]]]
+  AppSubnet4:
+    Condition: BuildProd
+    Value: !Select [ !If [BuildProd, 13, 0], !Cidr [ !Ref CidrBlock, !If [BuildProd, 16, 8], !If [BuildProd, 5, 6]]]
+
+  BDSubnet1:
+    Value: !Select [ !If [BuildProd, 2, 2], !Cidr [ !Ref CidrBlock, !If [BuildProd, 16, 8], !If [BuildProd, 5, 6]]]
+  BDSubnet2:
+    Value: !Select [ !If [BuildProd, 10, 6], !Cidr [ !Ref CidrBlock, !If [BuildProd, 16, 8], !If [BuildProd, 5, 6]]]
+  BDSubnet3:
+    Condition: BuildProd
+    Value: !Select [ !If [BuildProd, 6, 0], !Cidr [ !Ref CidrBlock, !If [BuildProd, 16, 8], !If [BuildProd, 5, 6]]]
+  BDSubnet4:
+    Condition: BuildProd
+    Value: !Select [ !If [BuildProd, 14, 0], !Cidr [ !Ref CidrBlock, !If [BuildProd, 16, 8], !If [BuildProd, 5, 6]]]
+
+
+  VPCESubnet1:
+    Condition: BuildVPCE
+    Value: !Select [ !If [BuildProd, 3, 3], !Cidr [ !Ref CidrBlock, !If [BuildProd, 16, 8], !If [BuildProd, 5, 6]]]
+  VPCESubnet2:
+    Condition: BuildVPCE
+    Value: !Select [ !If [BuildProd, 11, 7], !Cidr [ !Ref CidrBlock, !If [BuildProd, 16, 8], !If [BuildProd, 5, 6]]]
