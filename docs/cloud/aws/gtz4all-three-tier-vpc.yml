@@ -1,0 +1,432 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: GTZ Three Tier VPC Template
+Metadata: 
+  AWS::CloudFormation::Interface: 
+    ParameterGroups:
+      - Label: 
+          default: "Stack Name - {{ProjectName}}-{{Environment}}-three-tier-vpc-cf (i.e jira-dev-three-tier-vpc-cf)"
+      - Label: 
+          default: "|"
+      - Label: 
+          default: "VPC Configuration"
+        Parameters:
+          - ProjectName
+          - Environment          
+          - CidrBlock
+      - Label: 
+          default: "Subnet 8 = /24(/20 CidrBlock Required), 7 = /25 (/21 CidrBlock Required), 6 = /26 (/22 CidrBlock Required)"
+        Parameters:
+          - SubnetBits
+          
+      - Label: 
+          default: "Availability Zones"
+        Parameters:
+          - NumberOfAZs
+
+Parameters:
+  ProjectName:
+    Description: Project Name ( ex. jira /  sfpt / sec )
+    Type: String
+    
+  CidrBlock:
+    AllowedPattern: ^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])(\/(1[6-9]|2[0-8]))$
+    ConstraintDescription: CIDR block parameter must be in the form x.x.x.x/16-28
+    Description: VPC valid IP CIDR Blocks /20's, /21's and /22's( ex. 10.168.0.0/20)
+    Default: 10.168.0.0/20
+    Type: String
+    
+  SubnetBits:
+    Type: Number
+    AllowedValues: 
+    - 8
+    - 7
+    - 6
+    Default: 8
+    Description:  Subnet Bits 8 = /24(/20 CidrBlock Required), 7 = /25 (/21 CidrBlock Required), 6 = /26 (/22 CidrBlock Required)
+    
+  NumberOfAZs:
+    Type: Number
+    AllowedValues: 
+    - 2
+    - 4
+    Default: 2
+    Description:  Availability Zones - 2 = 2 per Tier, 4 = 4 per Tier
+    
+  Environment:
+    Description: Choose VPC Type 
+    Type: String
+    AllowedValues: 
+    - dev
+    - test
+    - prod
+    
+Conditions: 
+  Build4AZs:         !Equals [ !Ref NumberOfAZs, 4 ] 
+
+###############################################
+### Three Tier VPC                         ####
+###############################################  
+Resources:
+  VPC:
+    Type: AWS::EC2::VPC
+    Properties:
+      CidrBlock: {Ref: CidrBlock}
+      EnableDnsHostnames: true
+      EnableDnsSupport: true
+      Tags:
+        - Key: Name
+          Value: !Join ['-', [!Ref ProjectName,!Ref Environment, "three-tier", "vpc" ]]
+
+  DhcpOptions: 
+      Type: AWS::EC2::DHCPOptions
+      Properties: 
+          DomainName: !Join ['-', [!Ref ProjectName, "three-tier.org" ]]
+          DomainNameServers: 
+            - AmazonProvidedDNS
+          Tags: 
+            - Key: Name
+              Value: !Join ['-', [!Ref ProjectName,!Ref Environment, "three-tier", "dopt" ]]
+
+  VPCDHCPOptionsAssociation:
+    Type: AWS::EC2::VPCDHCPOptionsAssociation
+    Properties:
+      VpcId: {Ref: VPC}
+      DhcpOptionsId: {Ref: DhcpOptions}
+    
+  InternetGateway:
+    Type: AWS::EC2::InternetGateway
+    DependsOn: VPC
+    Properties:
+      Tags:
+      - Key: Name
+        Value: !Join ['-', [!Ref ProjectName,!Ref Environment, "three-tier", "igw" ]]
+  VPCGatewayAttachment:
+    Type: AWS::EC2::VPCGatewayAttachment
+    Properties:
+      VpcId: !Ref VPC
+      InternetGatewayId: !Ref InternetGateway
+
+###############################################
+### Public/ALB Tier (inbound/outbound)     ####
+############################################### 
+  PublicRouteTableA:
+    Type: AWS::EC2::RouteTable
+    DependsOn: VPCGatewayAttachment
+    Properties:
+      Tags:
+        - Key: Name
+          Value: !Join ['-', [!Ref ProjectName, "public", "rt-1a" ]]
+      VpcId: !Ref VPC
+  PublicRouteTableB:
+    Type: AWS::EC2::RouteTable
+    DependsOn: VPCGatewayAttachment
+    Properties:
+      Tags:
+        - Key: Name
+          Value: !Join ['-', [!Ref ProjectName, "public", "rt-1b" ]]
+      VpcId: !Ref VPC       
+###############################################
+  PublicSubnet1:
+    Type: AWS::EC2::Subnet
+    Properties:
+      AvailabilityZone: !Select [0, !GetAZs '']
+      CidrBlock: !Select [ 0, !Cidr [ !Ref CidrBlock, 12,!Ref SubnetBits]]
+      MapPublicIpOnLaunch: false
+      Tags:
+        - Key: Name
+          Value: !Join ['-', [!Ref ProjectName, "public", "subnet-1a" ]]
+      VpcId: !Ref VPC
+  PublicSubnet2:
+    Type: AWS::EC2::Subnet
+    Properties:
+      AvailabilityZone: !Select [1, !GetAZs '']     
+      CidrBlock: !Select [ 1, !Cidr [ !Ref CidrBlock, 12,!Ref SubnetBits]]
+      MapPublicIpOnLaunch: false
+      Tags:
+        - Key: Name
+          Value: !Join ['-', [!Ref ProjectName, "public", "subnet-1b" ]]
+      VpcId: !Ref VPC
+  PublicSubnet3:
+    Type: AWS::EC2::Subnet
+    Condition: Build4AZs
+    Properties:
+      AvailabilityZone: !Select [2, !GetAZs '']
+      CidrBlock: !Select [ 2, !Cidr [ !Ref CidrBlock, 12,!Ref SubnetBits]]
+      MapPublicIpOnLaunch: false
+      Tags:
+        - Key: Name
+          Value: !Join ['-', [!Ref ProjectName, "public", "subnet-1c" ]]
+      VpcId: !Ref VPC
+  PublicSubnet4:
+    Type: AWS::EC2::Subnet
+    Condition: Build4AZs
+    Properties:
+      AvailabilityZone: !Select [3, !GetAZs '']     
+      CidrBlock: !Select [ 3, !Cidr [ !Ref CidrBlock, 12,!Ref SubnetBits]]
+      MapPublicIpOnLaunch: false
+      Tags:
+        - Key: Name
+          Value: !Join ['-', [!Ref ProjectName, "public", "subnet-1d" ]]
+      VpcId: !Ref VPC
+###############################################
+  PublicSubnetAssoc1:
+    Type: AWS::EC2::SubnetRouteTableAssociation
+    Properties:
+      RouteTableId: !Ref PublicRouteTableA
+      SubnetId: !Ref PublicSubnet1
+  PublicSubnetAssoc2:
+    Type: AWS::EC2::SubnetRouteTableAssociation
+    Properties:
+      RouteTableId: !Ref PublicRouteTableB
+      SubnetId: !Ref PublicSubnet2
+  PublicSubnetAssoc3:
+    Type: AWS::EC2::SubnetRouteTableAssociation
+    Condition: Build4AZs
+    Properties:
+      RouteTableId: !Ref PublicRouteTableA
+      SubnetId: !Ref PublicSubnet3
+  PublicSubnetAssoc4:
+    Type: AWS::EC2::SubnetRouteTableAssociation
+    Condition: Build4AZs
+    Properties:
+      RouteTableId: !Ref PublicRouteTableB
+      SubnetId: !Ref PublicSubnet4
+
+###############################################
+### Private/Application Tier (inbound)     ####
+############################################### 
+  AppRouteTableA:
+    Type: AWS::EC2::RouteTable
+    Properties:
+      Tags:
+        - Key: Name
+          Value: !Join ['-', [!Ref ProjectName, "private", "rt-1a" ]]
+      VpcId:
+        Ref: VPC
+  AppRouteTableB:
+    Type: AWS::EC2::RouteTable
+    Properties:
+      Tags:
+        - Key: Name
+          Value: !Join ['-', [!Ref ProjectName, "private", "rt-1b" ]]
+      VpcId:
+        Ref: VPC        
+###############################################
+  AppSubnet1:
+    Type: AWS::EC2::Subnet
+    Properties:
+      AvailabilityZone: !Select [0, !GetAZs '']
+      CidrBlock: !Select [ 4, !Cidr [ !Ref CidrBlock, 12,!Ref SubnetBits]]
+      MapPublicIpOnLaunch: false
+      Tags:
+        - Key: Name
+          Value: !Join ['-', [!Ref ProjectName, "private", "subnet-1a" ]]
+      VpcId: !Ref VPC
+  AppSubnet2:
+    Type: AWS::EC2::Subnet
+    Properties:
+      AvailabilityZone: !Select [1, !GetAZs '']     
+      CidrBlock: !Select [ 5, !Cidr [ !Ref CidrBlock, 12,!Ref SubnetBits]]
+      MapPublicIpOnLaunch: false
+      Tags:
+        - Key: Name
+          Value: !Join ['-', [!Ref ProjectName, "private", "subnet-1b" ]]
+      VpcId: !Ref VPC
+  AppSubnet3:
+    Type: AWS::EC2::Subnet
+    Condition: Build4AZs
+    Properties:
+      AvailabilityZone: !Select [2, !GetAZs '']
+      CidrBlock: !Select [ 6, !Cidr [ !Ref CidrBlock, 12,!Ref SubnetBits]]
+      MapPublicIpOnLaunch: false
+      Tags:
+        - Key: Name
+          Value: !Join ['-', [!Ref ProjectName, "private", "subnet-1c" ]]
+      VpcId: !Ref VPC
+  AppSubnet4:
+    Type: AWS::EC2::Subnet
+    Condition: Build4AZs
+    Properties:
+      AvailabilityZone: !Select [3, !GetAZs '']     
+      CidrBlock: !Select [ 7, !Cidr [ !Ref CidrBlock, 12,!Ref SubnetBits]]
+      MapPublicIpOnLaunch: false
+      Tags:
+        - Key: Name
+          Value: !Join ['-', [!Ref ProjectName, "private", "subnet-1d" ]]
+      VpcId: !Ref VPC
+###############################################
+  AppSubnetAssoc1:
+    Type: AWS::EC2::SubnetRouteTableAssociation
+    Properties:
+      RouteTableId: !Ref AppRouteTableA
+      SubnetId: !Ref AppSubnet1
+  AppSubnetAssoc2:
+    Type: AWS::EC2::SubnetRouteTableAssociation
+    Properties:
+      RouteTableId: !Ref AppRouteTableB
+      SubnetId: !Ref AppSubnet2
+  AppSubnetAssoc3:
+    Type: AWS::EC2::SubnetRouteTableAssociation
+    Condition: Build4AZs
+    Properties:
+      RouteTableId: !Ref AppRouteTableA
+      SubnetId: !Ref AppSubnet3
+  AppSubnetAssoc4:
+    Type: AWS::EC2::SubnetRouteTableAssociation
+    Condition: Build4AZs
+    Properties:
+      RouteTableId: !Ref AppRouteTableB
+      SubnetId: !Ref AppSubnet4
+###############################################
+  NatGatewayAEIP:
+    Type: 'AWS::EC2::EIP'
+    DependsOn: VPCGatewayAttachment  
+    Properties:
+      Domain: vpc
+  NatGatewayA:
+    Type: 'AWS::EC2::NatGateway'
+    DependsOn: NatGatewayAEIP  
+    Properties:
+      AllocationId: 
+          Fn::GetAtt:
+          - NatGatewayAEIP
+          - AllocationId
+      SubnetId: !Ref AppSubnet1
+      Tags:
+        - Key: Name
+          Value: !Join ['-', [!Ref ProjectName, "natgw", "1a" ]]
+###############################################
+  NatGatewayBEIP:
+    Type: 'AWS::EC2::EIP'
+    DependsOn: VPCGatewayAttachment  
+    Properties:
+      Domain: vpc
+  NatGatewayB:
+    Type: 'AWS::EC2::NatGateway'
+    DependsOn: NatGatewayBEIP 
+    Properties:
+      AllocationId:
+          Fn::GetAtt:
+          - NatGatewayBEIP
+          - AllocationId
+      SubnetId: !Ref AppSubnet2
+      Tags:
+        - Key: Name
+          Value: !Join ['-', [!Ref ProjectName, "natgw", "1b" ]]
+###############################################
+  AppRouteTableARoute: 
+    Type: 'AWS::EC2::Route'
+    DependsOn: VPCGatewayAttachment
+    Properties:
+      RouteTableId: !Ref AppRouteTableA
+      DestinationCidrBlock: '0.0.0.0/0'
+      NatGatewayId: !Ref NatGatewayA
+  AppRouteTableBRoute: 
+    Type: 'AWS::EC2::Route'
+    DependsOn: VPCGatewayAttachment
+    Properties:
+      RouteTableId: !Ref AppRouteTableB
+      DestinationCidrBlock: '0.0.0.0/0'
+      NatGatewayId: !Ref NatGatewayB
+      
+###############################################
+### Local/Database Tier (local-access)     ####
+###############################################
+  BDRouteTableA:
+    Type: AWS::EC2::RouteTable
+    Properties:
+      Tags:
+        - Key: Name
+          Value: !Join ['-', [!Ref ProjectName, "local", "rt-1a" ]]
+      VpcId:
+        Ref: VPC
+  BDRouteTableB:
+    Type: AWS::EC2::RouteTable
+    Properties:
+      Tags:
+        - Key: Name
+          Value: !Join ['-', [!Ref ProjectName, "local", "rt-1b" ]]
+      VpcId:
+        Ref: VPC          
+###############################################
+  BDSubnet1:
+    Type: AWS::EC2::Subnet
+    Properties:
+      AvailabilityZone: !Select [0, !GetAZs '']
+      CidrBlock: !Select [ 8, !Cidr [ !Ref CidrBlock, 12,!Ref SubnetBits]]
+      MapPublicIpOnLaunch: false
+      Tags:
+        - Key: Name
+          Value: !Join ['-', [!Ref ProjectName, "local", "subnet-1a" ]]
+      VpcId: !Ref VPC
+  BDSubnet2:
+    Type: AWS::EC2::Subnet
+    Properties:
+      AvailabilityZone: !Select [1, !GetAZs '']     
+      CidrBlock: !Select [ 9, !Cidr [ !Ref CidrBlock, 12,!Ref SubnetBits]]
+      MapPublicIpOnLaunch: false
+      Tags:
+        - Key: Name
+          Value: !Join ['-', [!Ref ProjectName, "local", "subnet-1b" ]]
+      VpcId: !Ref VPC
+  BDSubnet3:
+    Type: AWS::EC2::Subnet
+    Condition: Build4AZs
+    Properties:
+      AvailabilityZone: !Select [2, !GetAZs '']
+      CidrBlock: !Select [ 10, !Cidr [ !Ref CidrBlock, 12,!Ref SubnetBits]]
+      MapPublicIpOnLaunch: false
+      Tags:
+        - Key: Name
+          Value: !Join ['-', [!Ref ProjectName, "local", "subnet-1c" ]]
+      VpcId: !Ref VPC
+  BDSubnet4:
+    Type: AWS::EC2::Subnet
+    Condition: Build4AZs
+    Properties:
+      AvailabilityZone: !Select [3, !GetAZs '']     
+      CidrBlock: !Select [ 11, !Cidr [ !Ref CidrBlock, 12,!Ref SubnetBits]]
+      MapPublicIpOnLaunch: false
+      Tags:
+        - Key: Name
+          Value: !Join ['-', [!Ref ProjectName, "local", "subnet-1d" ]]
+      VpcId: !Ref VPC
+###############################################
+  BDSubnetAssoc1:
+    Type: AWS::EC2::SubnetRouteTableAssociation
+    Properties:
+      RouteTableId: !Ref BDRouteTableA
+      SubnetId: !Ref BDSubnet1
+  BDSubnetAssoc2:
+    Type: AWS::EC2::SubnetRouteTableAssociation
+    Properties:
+      RouteTableId: !Ref BDRouteTableB
+      SubnetId: !Ref BDSubnet2
+  BDSubnetAssoc3:
+    Type: AWS::EC2::SubnetRouteTableAssociation
+    Condition: Build4AZs
+    Properties:
+      RouteTableId: !Ref BDRouteTableA
+      SubnetId: !Ref BDSubnet3
+  BDSubnetAssoc4:
+    Type: AWS::EC2::SubnetRouteTableAssociation
+    Condition: Build4AZs
+    Properties:
+      RouteTableId: !Ref BDRouteTableB
+      SubnetId: !Ref BDSubnet4
+###############################################
+  PublicRouteTableRouteA: 
+    Type: 'AWS::EC2::Route'
+    Properties:
+      RouteTableId: !Ref PublicRouteTableA
+      DestinationCidrBlock: '0.0.0.0/0'
+      GatewayId: !Ref InternetGateway
+  PublicRouteTableRouteB: 
+    Type: 'AWS::EC2::Route'
+    Properties:
+      RouteTableId: !Ref PublicRouteTableB
+      DestinationCidrBlock: '0.0.0.0/0'
+      GatewayId: !Ref InternetGateway
+
+
+

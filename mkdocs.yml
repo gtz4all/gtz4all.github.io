@@ -17,7 +17,9 @@ nav:
   - Cloud: 
     - Introduction: "cloud/introduction.md"
     - AWS:
-      - Introduction: "cloud/aws/introduction.md"
+      - Default VPC Cleanup: "cloud/aws/default-vpc-cleanup.md"
+      - Route53 Dynamic DNS: "cloud/aws/ec2-dynamic-dns.md"
+      - Three Tier VPC Design: "cloud/aws/three-tier-vpc.md"
     - GCP:
       - Introduction: "cloud/gcp/introduction.md"
     - Azure:
@@ -50,14 +52,15 @@ theme:
   custom_dir: docs/assets/overrides
   icon: # https://www.materialpalette.com/icons
     logo: material/book-open-page-variant
-  favicon: material/book-open-page-variant #assets/images/logos/favicon.ico
+  favicon: assets/images/favicon.png
   font:
     text: Roboto
     code: Roboto Mono
   features:
     - navigation.tabs
-    - navigation.instant
-    - header.autohide
+    # - navigation.instant
+    # - header.autohide
+    - navigation.prune 
 
   palette: # https://www.materialpalette.com/colors
     - scheme: default
@@ -74,17 +77,22 @@ theme:
   include_sidebar: true
 
 extra:
+  generator: false
   social:
     - icon: material/home
       link: 'https://gtz4all.github.io/'
     - icon: material/github
       link: 'https://github.com/gtz4all'
+    - icon: material/email
+      link: 'gtz4all@gmail.com'
 
 extra_css:
-  - assets/extra.css
+  - assets/stylesheets/extra.css
 
 # Extensions
 markdown_extensions:
+  - codehilite
+  - tables
   - abbr
   - admonition
   - attr_list
@@ -122,3 +130,4 @@ markdown_extensions:
   - pymdownx.tasklist:
       custom_checkbox: true
   - pymdownx.tilde
+  - pymdownx.snippets

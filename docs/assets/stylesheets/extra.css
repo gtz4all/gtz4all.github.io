@@ -1,15 +1,21 @@
-/* Header Bar Colors */
-* {
-    --md-primary-fg-color: #0c2b7a;
-}
-/* change hover colors*/
-.md-nav__link:hover {
-    color: darkorange;
-}
 
-/* use image for color theme */
-.md-footer,
-.md-footer-meta,
-.md-footer-nav {
-    background: #0c2b7a;
-}
+ /* expand content */
+.md-grid {
+    max-width: 1440px;
+  }
+
+/* theme colors */
+  :root > * {
+    --md-primary-fg-color:        #05194d;
+    --md-primary-fg-color--light: #4d6dd8;
+    --md-primary-fg-color--dark:  #1207a7;
+  }
+  
+  /* wrap code block  */
+  pre {
+    white-space: pre-wrap;       /* css-3 */
+    white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+    white-space: -pre-wrap;      /* Opera 4-6 */
+    white-space: -o-pre-wrap;    /* Opera 7 */
+    word-wrap: break-word;       /* Internet Explorer 5.5+ */
+   }
