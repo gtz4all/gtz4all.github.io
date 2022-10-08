@@ -1,0 +1,5 @@
+nav:
+  - default-vpc-cleanup.md
+  - ec2-dynamic-dns.md
+  - three-tier-vpc.md
+  - ...

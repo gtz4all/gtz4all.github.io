@@ -198,9 +198,9 @@ Count|CidrBlocks|Select
 
 The intrinsic function Fn::GetAZs returns a Availability Zone Name List based for a region. 
 
-{{% notice note %}}
+```
 AZ Name to AZ ID mapping is different per account.
-{{% /notice %}}
+```
 
 * ```!GetAZs ""``` in ```us-east-1``` returns a list of all Availability Zones: ```[ "us-east-1a", "us-east-1b", "us-east-1c", "us-east-1d", "us-east-1e", "us-east-1f" ]``` 
 

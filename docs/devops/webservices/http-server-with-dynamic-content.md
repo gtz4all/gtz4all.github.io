@@ -67,9 +67,7 @@ Options ExecCGI
 ###### Dockerfile
 A Dockerfile is a text document that contains all the commands to assemble an image. The docker build command executes the command-line instructions in the Dockerfile one-by-one, committing the result of each instruction to a new image(if necessary) before finally outputting the new image ID. 
 
-{{% notice note %}}
-If necessary, the image can by modified by editing the Dockerfile and rerunning the docker build command using the same tag provided during the initial built.
-{{% /notice %}}
+> If necessary, the image can by modified by editing the Dockerfile and rerunning the docker build command using the same tag provided during the initial built.
 
 ```Dockerfile
 ###--------------------START-------------------------------------#
@@ -113,9 +111,9 @@ ENTRYPOINT ["/usr/sbin/httpd"]
 
 ###### Building the docker image 
 
-{{% notice note %}}
-Image Tags - you can create multiple tags for the same docker image, they will show up in 'docker images'. Since they are just that, tags, they are not consuming any additional disk space. 
-{{% /notice %}}
+
+> Image Tags - you can create multiple tags for the same docker image, they will show up in 'docker images'. Since they are just that, tags, they are not consuming any additional disk space. 
+
 
 Options|Description
 --|--
@@ -219,9 +217,9 @@ docker exec -it webserver /bin/sh
 #### Mounting webservices folder
 
 This folder contains a sample webform used as a base to provision/build/deploy resources. It makes use of Javascript,Jinja templates, and CGI.
-{{% notice note %}}
-Mounting folder keeps all files changes local [local-folder]:[container-folder] [container-name]
-{{% /notice %}}
+
+> Mounting folder keeps all files changes local [local-folder]:[container-folder] [container-name]
+
 
 ###### map local folder to container's cgi-bin folder
 ```

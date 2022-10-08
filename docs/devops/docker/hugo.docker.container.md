@@ -46,7 +46,7 @@ WORKDIR /usr/share/nginx/html
 
     Local Testing: export BASE_URL=/
     Gitlab Pages: export BASE_URL=https://netgtz.gitlab.io/
-    {{% notice info %}} Since the BASE_URL variable includes "/" using "|" as delimiter instead {{% /notice %}}
+    Since the BASE_URL variable includes "/" using "|" as delimiter instead
     shell command: sed -i "s|BASE_URL|$BASE_URL|g" config.toml 
 
 ```sh

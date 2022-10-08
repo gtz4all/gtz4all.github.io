@@ -5,7 +5,7 @@ draft: false
 description: "Using Kubernetes as Docker container management and orchestration."
 ---
 
-{{< tips "Kubernetes at a Glance" >}}
+
 
 #### Kubernetes at a Glance
 ***What is Kubernetes?***
@@ -77,9 +77,4 @@ r
 ```
 *  ****kube-proxy***: each nodes ( master and workers ) needs its own, handles virtual network communication between nodes by adding firewall routing rules when pods are trying to communicate across nodes.
 
-{{</ tips >}}
-
-{{< tips "Kubernetes Personal Project" >}}
-
-{{</ tips >}}
 

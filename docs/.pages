@@ -1,0 +1,7 @@
+nav:
+    - index.md
+    - ... | welcome.md
+    - Cloud: cloud
+    - DevOps: devops
+    - networking
+    - Tips&Tricks: tips-tricks

@@ -5,7 +5,6 @@ draft: false
 description: "Docker is a set of platform as a service products that use OS-level virtualization to deliver software in packages called containers."
 ---
 
-{{< tips "Hugo config.toml baseURL" >}}
 
 #### Hugo Docker Image
 My netgtz.gitlab.io site has the baseURL as baseURL = "https://netgtz.gitlab.io/". Using this will not render the site correctly...
@@ -14,4 +13,3 @@ My netgtz.gitlab.io site has the baseURL as baseURL = "https://netgtz.gitlab.io/
 ## config.toml 
 baseURL = "/"
 ```
-{{</ tips >}}

@@ -13,5 +13,4 @@ Networking Documentation - Cisco, Arista, Juniper and others
 
 ---
 
-{{% children description="true" %}}
 

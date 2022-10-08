@@ -100,9 +100,9 @@ deployment.apps/nginx-deployment configured
 ```
 * Optionally, we can edit the deployment running-config using ```kubectl edit deployment.v1.apps/nginx-deployment``` use ```i``` to edit and ```[ESC]``` followed by ```:wq!``` to apply changes
 
-{{% notice tip %}}
-we can do it with a single command ```kubectl scale deployments/nginx-deployment --replicas=6```
-{{% /notice %}}
+
+> we can do it with a single command ```kubectl scale deployments/nginx-deployment --replicas=6```
+
 
 ```
 # kubectl edit deployment.v1.apps/nginx-deployment
