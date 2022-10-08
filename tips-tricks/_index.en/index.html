@@ -6,15 +6,16 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Gtz4All Reference Documentation">
+        <meta name="description" content="Ansible is an automation tool written in python">
       
       
+        <meta name="author" content="Kervin Gtz">
       
       
         <link rel="canonical" href="https://gtz4all.github.io/tips-tricks/_index.en/">
       
-      <link rel="shortcut icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.8">
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.0, mkdocs-material-8.5.6">
     
     
       
@@ -22,38 +23,39 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.cb6bc1d0.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.20d9efc8.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.39b8e14a.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
         
       
+      
+
     
     
     
       
+        
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
-        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
-    
     
     
       <link rel="stylesheet" href="../../assets/stylesheets/extra.css">
     
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
-    
-    
 
-  <!-- Determine title -->
+    
+    
+    
   
   
     
   
-
-  <!-- Open Graph Social Preview Card-->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Gtz4All - Tips and Tricks" />
   <meta property="og:description" content="Gtz4All Reference Documentation" />
@@ -74,8 +76,10 @@
     
     
     <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="deep-purple">
-      
   
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -92,27 +96,28 @@
       
     </div>
     
+    
       
 
 <header class="md-header" data-md-component="header">
-  <nav class="md-header-nav md-grid" aria-label="Header">
-    <a href="https://gtz4all.github.io/" title="Gtz4All" class="md-header-nav__button md-logo" aria-label="Gtz4All">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Gtz4All" class="md-header__button md-logo" aria-label="Gtz4All" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 2l-5 4.5v11l5-4.5V2M6.5 5C4.55 5 2.45 5.4 1 6.5v14.66c0 .25.25.5.5.5.1 0 .15-.07.25-.07 1.35-.65 3.3-1.09 4.75-1.09 1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.31 4.75 1.06.1.05.15.03.25.03.25 0 .5-.25.5-.5V6.5c-.6-.45-1.25-.75-2-1V19c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V6.5C10.55 5.4 8.45 5 6.5 5z"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m19 2-5 4.5v11l5-4.5V2M6.5 5C4.55 5 2.45 5.4 1 6.5v14.66c0 .25.25.5.5.5.1 0 .15-.07.25-.07 1.35-.65 3.3-1.09 4.75-1.09 1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.31 4.75 1.06.1.05.15.03.25.03.25 0 .5-.25.5-.5V6.5c-.6-.45-1.25-.75-2-1V19c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V6.5C10.55 5.4 8.45 5 6.5 5Z"/></svg>
 
     </a>
-    <label class="md-header-nav__button md-icon" for="__drawer">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
     </label>
-    <div class="md-header-nav__title" data-md-component="header-title">
-      <div class="md-header-nav__ellipsis">
-        <div class="md-header-nav__topic">
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
           <span class="md-ellipsis">
             Gtz4All
           </span>
         </div>
-        <div class="md-header-nav__topic">
+        <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
               Tips and Tricks
@@ -122,22 +127,49 @@
       </div>
     </div>
     
-      <label class="md-header-nav__button md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="deep-purple"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent="teal"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
       </label>
-      
-<div class="md-search" data-md-component="search" role="dialog">
+      <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
       </label>
-      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
-      </button>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" data-md-scrollfix>
@@ -154,6 +186,7 @@
     
     
   </nav>
+  
 </header>
     
     <div class="md-container" data-md-component="container">
@@ -161,6 +194,7 @@
       
         
           
+            
 <nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
   <div class="md-tabs__inner md-grid">
     <ul class="md-tabs__list">
@@ -170,15 +204,23 @@
   
 
 
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      Gtz4all
+    </a>
+  </li>
+
+      
+        
   
   
-  
-    <li class="md-tabs__item">
-      <a href="../.." class="md-tabs__link">
-        Home
-      </a>
-    </li>
-  
+
+
+  <li class="md-tabs__item">
+    <a href="../../welcome/" class="md-tabs__link">
+      Welcome
+    </a>
+  </li>
 
       
         
@@ -189,27 +231,18 @@
   
   
   
+    
+
+  
+  
+  
     <li class="md-tabs__item">
-      <a href="../../cloud/introduction/" class="md-tabs__link">
+      <a href="../../cloud/aws/default-vpc-cleanup/" class="md-tabs__link">
         Cloud
       </a>
     </li>
   
 
-      
-        
-  
-  
-
-
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../../networking/introduction.md" class="md-tabs__link">
-        Networking
-      </a>
-    </li>
   
 
       
@@ -222,7 +255,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../devops/introduction.md" class="md-tabs__link">
+      <a href="../../devops/_index.en/" class="md-tabs__link">
         DevOps
       </a>
     </li>
@@ -238,8 +271,26 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../contact-us/contribute/" class="md-tabs__link">
-        Contact Us
+      <a href="../../networking/_index.en/" class="md-tabs__link">
+        Networking
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="./" class="md-tabs__link md-tabs__link--active">
+        Tips&Tricks
       </a>
     </li>
   
@@ -248,6 +299,7 @@
     </ul>
   </div>
 </nav>
+          
         
       
       <main class="md-main" data-md-component="main">
@@ -255,22 +307,20 @@
           
             
               
-              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation" >
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
-
-
 
   
 
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="https://gtz4all.github.io/" title="Gtz4All" class="md-nav__button md-logo" aria-label="Gtz4All">
+    <a href="../.." title="Gtz4All" class="md-nav__button md-logo" aria-label="Gtz4All" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 2l-5 4.5v11l5-4.5V2M6.5 5C4.55 5 2.45 5.4 1 6.5v14.66c0 .25.25.5.5.5.1 0 .15-.07.25-.07 1.35-.65 3.3-1.09 4.75-1.09 1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.31 4.75 1.06.1.05.15.03.25.03.25 0 .5-.25.5-.5V6.5c-.6-.45-1.25-.75-2-1V19c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V6.5C10.55 5.4 8.45 5 6.5 5z"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m19 2-5 4.5v11l5-4.5V2M6.5 5C4.55 5 2.45 5.4 1 6.5v14.66c0 .25.25.5.5.5.1 0 .15-.07.25-.07 1.35-.65 3.3-1.09 4.75-1.09 1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.31 4.75 1.06.1.05.15.03.25.03.25 0 .5-.25.5-.5V6.5c-.6-.45-1.25-.75-2-1V19c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V6.5C10.55 5.4 8.45 5 6.5 5Z"/></svg>
 
     </a>
     Gtz4All
@@ -285,37 +335,18 @@
   
   
   
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1" >
-      
-      <label class="md-nav__link" for="nav-1">
-        Home
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-      <nav class="md-nav" aria-label="Home" data-md-level="1">
-        <label class="md-nav__title" for="nav-1">
-          <span class="md-nav__icon md-icon"></span>
-          Home
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-          
-            
-  
-  
-  
     <li class="md-nav__item">
       <a href="../.." class="md-nav__link">
-        Home
+        Gtz4all
       </a>
     </li>
   
 
-          
-            
+    
+      
+      
+      
+
   
   
   
@@ -326,48 +357,6 @@
     </li>
   
 
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../cloud/introduction/" class="md-nav__link">
-        Cloud
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../networking/introduction.md" class="md-nav__link">
-        Networking
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../license/" class="md-nav__link">
-        License
-      </a>
-    </li>
-  
-
-          
-        </ul>
-      </nav>
-    </li>
-  
-
     
       
       
@@ -380,33 +369,25 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
       
-      <label class="md-nav__link" for="nav-2">
-        Cloud
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Cloud
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="Cloud" data-md-level="1">
-        <label class="md-nav__title" for="nav-2">
+        <label class="md-nav__title" for="__nav_3">
           <span class="md-nav__icon md-icon"></span>
           Cloud
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
-          
             
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../cloud/introduction/" class="md-nav__link">
-        Introduction
-      </a>
-    </li>
-  
-
-          
-            
+              
   
   
   
@@ -414,141 +395,99 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-2" type="checkbox" id="nav-2-2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1" type="checkbox" id="__nav_3_1" >
       
-      <label class="md-nav__link" for="nav-2-2">
-        AWS
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-      <nav class="md-nav" aria-label="AWS" data-md-level="2">
-        <label class="md-nav__title" for="nav-2-2">
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_1">
+          Aws
           <span class="md-nav__icon md-icon"></span>
-          AWS
+        </label>
+      
+      <nav class="md-nav" aria-label="Aws" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_1">
+          <span class="md-nav__icon md-icon"></span>
+          Aws
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
-          
             
+              
   
   
   
     <li class="md-nav__item">
       <a href="../../cloud/aws/default-vpc-cleanup/" class="md-nav__link">
-        Default VPC Cleanup
+        Default Vpc Cleanup
       </a>
     </li>
   
 
+            
           
             
+              
   
   
   
     <li class="md-nav__item">
       <a href="../../cloud/aws/ec2-dynamic-dns/" class="md-nav__link">
-        Route53 Dynamic DNS
+        EC2 Cross-Account Dynamic DNS Design
       </a>
     </li>
   
 
+            
           
             
+              
   
   
   
     <li class="md-nav__item">
       <a href="../../cloud/aws/three-tier-vpc/" class="md-nav__link">
-        Three Tier VPC Design
+        Three tier vpc
       </a>
     </li>
   
 
-          
-        </ul>
-      </nav>
-    </li>
-  
-
+            
           
             
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-3" type="checkbox" id="nav-2-3" >
-      
-      <label class="md-nav__link" for="nav-2-3">
-        GCP
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-      <nav class="md-nav" aria-label="GCP" data-md-level="2">
-        <label class="md-nav__title" for="nav-2-3">
-          <span class="md-nav__icon md-icon"></span>
-          GCP
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-          
-            
+              
   
   
   
     <li class="md-nav__item">
-      <a href="../../cloud/gcp/introduction.md" class="md-nav__link">
-        Introduction
+      <a href="../../cloud/aws/lambda-functions/" class="md-nav__link">
+        Lambda Functions
       </a>
     </li>
   
 
-          
-        </ul>
-      </nav>
-    </li>
-  
-
+            
           
             
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-4" type="checkbox" id="nav-2-4" >
-      
-      <label class="md-nav__link" for="nav-2-4">
-        Azure
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-      <nav class="md-nav" aria-label="Azure" data-md-level="2">
-        <label class="md-nav__title" for="nav-2-4">
-          <span class="md-nav__icon md-icon"></span>
-          Azure
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-          
-            
+              
   
   
   
     <li class="md-nav__item">
-      <a href="../../cloud/azure/introduction.md" class="md-nav__link">
-        Introduction
+      <a href="../../cloud/aws/plugin-test/" class="md-nav__link">
+        Plugin test
       </a>
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
         </ul>
       </nav>
@@ -567,156 +506,53 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
       
-      <label class="md-nav__link" for="nav-3">
-        Networking
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-      <nav class="md-nav" aria-label="Networking" data-md-level="1">
-        <label class="md-nav__title" for="nav-3">
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          DevOps
           <span class="md-nav__icon md-icon"></span>
-          Networking
         </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../networking/introduction.md" class="md-nav__link">
-        Introduction
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
       
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-2" type="checkbox" id="nav-3-2" >
-      
-      <label class="md-nav__link" for="nav-3-2">
-        Arista
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-      <nav class="md-nav" aria-label="Arista" data-md-level="2">
-        <label class="md-nav__title" for="nav-3-2">
-          <span class="md-nav__icon md-icon"></span>
-          Arista
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../networking/arista/introduction.md" class="md-nav__link">
-        Introduction
-      </a>
-    </li>
-  
-
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-3" type="checkbox" id="nav-3-3" >
-      
-      <label class="md-nav__link" for="nav-3-3">
-        Cisco
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-      <nav class="md-nav" aria-label="Cisco" data-md-level="2">
-        <label class="md-nav__title" for="nav-3-3">
-          <span class="md-nav__icon md-icon"></span>
-          Cisco
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../networking/cisco/introduction.md" class="md-nav__link">
-        Introduction
-      </a>
-    </li>
-  
-
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" >
-      
-      <label class="md-nav__link" for="nav-4">
-        DevOps
-        <span class="md-nav__icon md-icon"></span>
-      </label>
       <nav class="md-nav" aria-label="DevOps" data-md-level="1">
-        <label class="md-nav__title" for="nav-4">
+        <label class="md-nav__title" for="__nav_4">
           <span class="md-nav__icon md-icon"></span>
           DevOps
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
-          
             
+              
   
   
   
     <li class="md-nav__item">
-      <a href="../../devops/introduction.md" class="md-nav__link">
-        Introduction
+      <a href="../../devops/_index.en/" class="md-nav__link">
+        DevOps
       </a>
     </li>
   
 
+            
           
             
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/python-notes/" class="md-nav__link">
+        Python notes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
   
   
   
@@ -724,79 +560,46 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-2" type="checkbox" id="nav-4-2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3" type="checkbox" id="__nav_4_3" >
       
-      <label class="md-nav__link" for="nav-4-2">
-        Terraform
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-      <nav class="md-nav" aria-label="Terraform" data-md-level="2">
-        <label class="md-nav__title" for="nav-4-2">
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_3">
+          Ansible
           <span class="md-nav__icon md-icon"></span>
-          Terraform
         </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../devops/terraform/introduction.md" class="md-nav__link">
-        Introduction
-      </a>
-    </li>
-  
-
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
       
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-3" type="checkbox" id="nav-4-3" >
-      
-      <label class="md-nav__link" for="nav-4-3">
-        Ansible
-        <span class="md-nav__icon md-icon"></span>
-      </label>
       <nav class="md-nav" aria-label="Ansible" data-md-level="2">
-        <label class="md-nav__title" for="nav-4-3">
+        <label class="md-nav__title" for="__nav_4_3">
           <span class="md-nav__icon md-icon"></span>
           Ansible
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
-          
             
+              
   
   
   
     <li class="md-nav__item">
-      <a href="../../devops/ansible/introduction.md" class="md-nav__link">
-        Introduction
+      <a href="../../devops/ansible/_index.en/" class="md-nav__link">
+        Ansible
       </a>
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -804,37 +607,324 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-4" type="checkbox" id="nav-4-4" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_4" type="checkbox" id="__nav_4_4" >
       
-      <label class="md-nav__link" for="nav-4-4">
-        Python
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-      <nav class="md-nav" aria-label="Python" data-md-level="2">
-        <label class="md-nav__title" for="nav-4-4">
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_4">
+          Databases
           <span class="md-nav__icon md-icon"></span>
-          Python
+        </label>
+      
+      <nav class="md-nav" aria-label="Databases" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_4">
+          <span class="md-nav__icon md-icon"></span>
+          Databases
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
-          
             
+              
   
   
   
     <li class="md-nav__item">
-      <a href="../../devops/python/introduction.md" class="md-nav__link">
-        Introduction
+      <a href="../../devops/databases/MongoDB/" class="md-nav__link">
+        MongoDB
       </a>
     </li>
   
 
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/databases/_index.en/" class="md-nav__link">
+        Databases
+      </a>
+    </li>
+  
+
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_5" type="checkbox" id="__nav_4_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_5">
+          Docker
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Docker" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_5">
+          <span class="md-nav__icon md-icon"></span>
+          Docker
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/docker/_index.en/" class="md-nav__link">
+        Docker
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/docker/hugo.docker.container/" class="md-nav__link">
+        Building a Hugo Docker Containers
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/docker/hugo.docker.troubleshooting/" class="md-nav__link">
+        Working with Hugo Container
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_6" type="checkbox" id="__nav_4_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_6">
+          Kubernetes
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Kubernetes" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_6">
+          <span class="md-nav__icon md-icon"></span>
+          Kubernetes
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/kubernetes/_index.en/" class="md-nav__link">
+        Kubernetes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/kubernetes/kubernetes-cluster/" class="md-nav__link">
+        Kubernetes Cluster
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/kubernetes/kubernetes-deployments/" class="md-nav__link">
+        Kubernetes Deployments
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/kubernetes/kubernetes_services/" class="md-nav__link">
+        Kubernetes Services
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_7" type="checkbox" id="__nav_4_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_7">
+          Webservices
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Webservices" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_7">
+          <span class="md-nav__icon md-icon"></span>
+          Webservices
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/webservices/_index.en/" class="md-nav__link">
+        Webservices
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/webservices/environmentvars/" class="md-nav__link">
+        Apache Environment Variables
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/webservices/http-server-with-dynamic-content/" class="md-nav__link">
+        HTTP Server with Dynamic Content
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/webservices/httpd-server/" class="md-nav__link">
+        Python CGI Script - Forms
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/webservices/webform-basics/" class="md-nav__link">
+        Webform Basics
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
           
         </ul>
       </nav>
@@ -853,55 +943,299 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
       
-      <label class="md-nav__link" for="nav-5">
-        Contact Us
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-      <nav class="md-nav" aria-label="Contact Us" data-md-level="1">
-        <label class="md-nav__title" for="nav-5">
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          Networking
           <span class="md-nav__icon md-icon"></span>
-          Contact Us
+        </label>
+      
+      <nav class="md-nav" aria-label="Networking" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Networking
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
-          
             
+              
   
   
   
     <li class="md-nav__item">
-      <a href="../../contact-us/contribute/" class="md-nav__link">
-        Contribute
+      <a href="../../networking/_index.en/" class="md-nav__link">
+        Networking
       </a>
     </li>
   
 
+            
           
             
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_2" type="checkbox" id="__nav_5_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_2">
+          Cisco
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Cisco" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_2">
+          <span class="md-nav__icon md-icon"></span>
+          Cisco
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
   
   
   
     <li class="md-nav__item">
-      <a href="../../contact-us/faqs.md" class="md-nav__link">
-        FAQs
+      <a href="../../networking/cisco/_index.en/" class="md-nav__link">
+        Cisco
       </a>
     </li>
   
 
+            
           
             
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_2_2" type="checkbox" id="__nav_5_2_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_2_2">
+          Cli
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Cli" data-md-level="3">
+        <label class="md-nav__title" for="__nav_5_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Cli
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
   
   
   
     <li class="md-nav__item">
-      <a href="../../contact-us/contact-me/" class="md-nav__link">
-        Contact Us
+      <a href="../../networking/cisco/cli/_index.en/" class="md-nav__link">
+        Cli
       </a>
     </li>
   
 
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          Tips&Tricks
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Tips&Tricks" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Tips&Tricks
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Tips and Tricks
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Tips and Tricks
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#adding-a-new-chapter-to-a-page" class="md-nav__link">
+    Adding a new chapter to a page
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#git-update" class="md-nav__link">
+    Git Update
+  </a>
+  
+    <nav class="md-nav" aria-label="Git Update">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adding-comments" class="md-nav__link">
+    Adding Comments
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#side-by-side-code-block" class="md-nav__link">
+    Side by Side Code Block
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mermaid-sample-code" class="md-nav__link">
+    Mermaid Sample Code
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#list-all-container-ids" class="md-nav__link">
+    List All Container IDs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stop-all-running-containers" class="md-nav__link">
+    Stop All Running Containers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remove-all-containers" class="md-nav__link">
+    Remove All Containers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remove-all-images" class="md-nav__link">
+    Remove All Images
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#questions" class="md-nav__link">
+    Questions
+  </a>
+  
+    <nav class="md-nav" aria-label="Questions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#connect-to-pod-shell" class="md-nav__link">
+    Connect to Pod Shell
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
           
         </ul>
       </nav>
@@ -917,15 +1251,112 @@
             
             
               
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc" >
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
+
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
-    
   
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#adding-a-new-chapter-to-a-page" class="md-nav__link">
+    Adding a new chapter to a page
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#git-update" class="md-nav__link">
+    Git Update
+  </a>
+  
+    <nav class="md-nav" aria-label="Git Update">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adding-comments" class="md-nav__link">
+    Adding Comments
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#side-by-side-code-block" class="md-nav__link">
+    Side by Side Code Block
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mermaid-sample-code" class="md-nav__link">
+    Mermaid Sample Code
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#list-all-container-ids" class="md-nav__link">
+    List All Container IDs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stop-all-running-containers" class="md-nav__link">
+    Stop All Running Containers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remove-all-containers" class="md-nav__link">
+    Remove All Containers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remove-all-images" class="md-nav__link">
+    Remove All Images
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#questions" class="md-nav__link">
+    Questions
+  </a>
+  
+    <nav class="md-nav" aria-label="Questions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#connect-to-pod-shell" class="md-nav__link">
+    Connect to Pod Shell
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -933,13 +1364,14 @@
               </div>
             
           
-          <div class="md-content">
-            <article class="md-content__inner md-typeset">
-              
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
                 
-                
-                <p>{{&lt; tips "Hugo Static Pages" &gt;}}
-<a href="https://www.ansible.com/">Ansible</a> is an automation tool written in python</p>
+                  
+
+
+<p><a href="https://www.ansible.com/">Ansible</a> is an automation tool written in python</p>
 <h5 id="adding-a-new-chapter-to-a-page">Adding a new chapter to a page<a class="headerlink" href="#adding-a-new-chapter-to-a-page" title="Permanent link">&para;</a></h5>
 <p><div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">hugo</span> <span class="n">new</span> <span class="o">--</span><span class="n">kind</span> <span class="n">chapter</span> <span class="o">&lt;</span><span class="n">name</span><span class="o">&gt;/</span><span class="n">_index</span><span class="o">.</span><span class="n">en</span><span class="o">.</span><span class="n">md</span>
 </code></pre></div>
@@ -948,14 +1380,10 @@ Adding another section to chapter
 </code></pre></div>
 Adding content to chapter
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">hugo</span> <span class="n">new</span> <span class="o">--</span><span class="n">kind</span> <span class="n">chapter</span> <span class="o">&lt;</span><span class="n">name</span><span class="o">&gt;/&lt;</span><span class="n">new</span><span class="o">-</span><span class="n">content</span><span class="o">&gt;.</span><span class="n">en</span><span class="o">.</span><span class="n">md</span>
-</code></pre></div>
-{{&lt;/ tips &gt;}}</p>
-<p>{{&lt; tips "Git" &gt;}}</p>
+</code></pre></div></p>
 <h4 id="git-update">Git Update<a class="headerlink" href="#git-update" title="Permanent link">&para;</a></h4>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="l l-Scalar l-Scalar-Plain">git add -A .; git commit -m &quot;new content&quot;; git push -u origin master</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="l l-Scalar l-Scalar-Plain">git add -A .; git commit -m &quot;new content&quot;; git push -u origin master</span><span class="w"></span>
 </code></pre></div>
-{{&lt;/ tips &gt;}}</p>
-<p>{{&lt; tips "Markdown" &gt;}}</p>
 <h6 id="adding-comments">Adding Comments<a class="headerlink" href="#adding-comments" title="Permanent link">&para;</a></h6>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="o">[</span>comment<span class="o">]</span>: &lt;&gt; <span class="o">(</span>a reference style link.<span class="o">)</span>
 </code></pre></div>
@@ -995,8 +1423,7 @@ Notice that with <strong>empty separating lines</strong> we can use Markdown ins
 </td>
 </tr>
 </table>
-<p>{{&lt;/ tips &gt;}}</p>
-<p>{{&lt; tips "Mermaid Diagram" &gt;}}</p>
+
 <h6 id="mermaid-sample-code">Mermaid Sample Code<a class="headerlink" href="#mermaid-sample-code" title="Permanent link">&para;</a></h6>
 <p>This is just sample code. <strong>due to shortcode "tips", detailed information just as names and description are not showing.
   on a normal .md file, this will be displayed.</strong></p>
@@ -1047,23 +1474,7 @@ end
 </tr>
 </table>
 
-<p>{{&lt;/ tips &gt;}}</p>
-<p>{{&lt; tips "Notice Boxes" &gt;}}</p>
-<p>{{% notice note %}}
-A notice disclaimer
-{{% /notice %}}</p>
-<p>{{% notice info %}}
-A notice disclaimer
-{{% /notice %}}</p>
-<p>{{% notice tip %}}
-A tip disclaimer
-{{% /notice %}}</p>
-<p>{{% notice warning %}}
-A warning disclaimer
-{{% /notice %}}</p>
-<p>{{&lt;/ tips &gt;}}</p>
-<p>{{&lt; tips "Docker Cleanup" &gt;}}
-Remove all Docker containers/images.</p>
+<p>Remove all Docker containers/images.</p>
 <h6 id="list-all-container-ids">List All Container IDs<a class="headerlink" href="#list-all-container-ids" title="Permanent link">&para;</a></h6>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1">## list all containes</span><span class="w"></span>
 <a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="l l-Scalar l-Scalar-Plain">docker ps -a</span><span class="w"></span>
@@ -1081,10 +1492,8 @@ Remove all Docker containers/images.</p>
 <a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="l l-Scalar l-Scalar-Plain">docker rm $(docker ps -aq)</span><span class="w"></span>
 </code></pre></div>
 <h6 id="remove-all-images">Remove All Images<a class="headerlink" href="#remove-all-images" title="Permanent link">&para;</a></h6>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="l l-Scalar l-Scalar-Plain">docker rmi $(docker images -q)</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="l l-Scalar l-Scalar-Plain">docker rmi $(docker images -q)</span><span class="w"></span>
 </code></pre></div>
-{{&lt;/ tips &gt;}}</p>
-<p>{{&lt; tips "Native HTML Dropdown" &gt;}}</p>
 <h1 id="questions">Questions<a class="headerlink" href="#questions" title="Permanent link">&para;</a></h1>
 <details><summary>Which command do you use to create a new swarm?</summary>
 <p>
@@ -1110,100 +1519,96 @@ Remove all Docker containers/images.</p>
 </p>
 </details>
 
-<p>{{&lt;/ tips &gt;}}</p>
-<p>{{&lt; tips "Kubernetes" &gt;}}</p>
 <h4 id="connect-to-pod-shell">Connect to Pod Shell<a class="headerlink" href="#connect-to-pod-shell" title="Permanent link">&para;</a></h4>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>cloud_user# kubectl <span class="nb">exec</span> --stdin --tty nginx-deployment-5cfcccdb74-ck2nj -- /bin/bash
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>cloud_user# kubectl <span class="nb">exec</span> --stdin --tty nginx-deployment-5cfcccdb74-ck2nj -- /bin/bash
 <a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>root@nginx-deployment-5cfcccdb74-ck2nj:/#
 </code></pre></div>
-{{&lt;/ tips &gt;}}</p>
-<p>{{&lt; tips "Hugo Binding" &gt;}}
-hugo server -D --bind=192.168.1.55 --baseURL=<a href="http://192.168.1.55">http://192.168.1.55</a>
-{{&lt;/ tips &gt;}}</p>
-<p>{{&lt; tips "Search and Replace" &gt;}}
+<blockquote>
+<p>hugo server -D --bind=192.168.1.55 --baseURL=<a href="http://192.168.1.55">http://192.168.1.55</a>
 grep -RiIl '25000' | xargs sed -i 's/25000/1000/g'
 grep -rnw 'CUST01/' -e '25000'
-{{&lt;/ tips &gt;}}</p>
-<p>{{&lt; tips "More Comming Soon" &gt;}}
-echo theme = \"ananke\" &gt;&gt; config.toml
-{{&lt;/ tips &gt;}}</p>
-                
-                  
-                
-              
-              
-                
+echo theme = \"ananke\" &gt;&gt; config.toml<script type="text/javascript" src="https://viewer.diagrams.net/js/viewer-static.min.js"></script></p>
+</blockquote>
 
 
-              
-            </article>
-          </div>
+
+
+
+                
+              </article>
+            </div>
+          
+          
         </div>
+        
       </main>
       
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
         
-<footer class="md-footer">
+        <a href="../../networking/cisco/cli/_index.en/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Cli" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Cli
+            </div>
+          </div>
+        </a>
+      
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
-      <div class="md-footer-copyright">
-        
-          <div class="md-footer-copyright__highlight">
-            Copyright 2022 <a href='https://gtz4all.github.io'>Gtz4All</a>. All Rights Reserved.
-          </div>
-        
-        Made with
-        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-          Material for MkDocs
-        </a>
-      </div>
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright 2022 <a href='https://gtz4all.github.io'>Gtz4All</a>. All Rights Reserved.
+    </div>
+  
+  
+</div>
       
-  <div class="md-footer-social">
+        <div class="md-social">
+  
+    
     
       
       
-        
-        
-      
-      <a href="https://gtz4all.github.io/" target="_blank" rel="noopener" title="gtz4all.github.io" class="md-footer-social__link">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8h5z"/></svg>
-      </a>
     
-      
-      
-        
-        
-      
-      <a href="https://github.com/gtz4all" target="_blank" rel="noopener" title="github.com" class="md-footer-social__link">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 002 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0012 2z"/></svg>
-      </a>
+    <a href="https://gtz4all.github.io/" target="_blank" rel="noopener" title="gtz4all.github.io" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8h5Z"/></svg>
+    </a>
+  
     
-      
-      
-      <a href="gtz4all@gmail.com" target="_blank" rel="noopener" title="" class="md-footer-social__link">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 8l-8 5-8-5V6l8 5 8-5m0-2H4c-1.11 0-2 .89-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2z"/></svg>
-      </a>
     
-  </div>
-
+    <a href="" target="_blank" rel="noopener" title="" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2Z"/></svg>
+    </a>
+  
+</div>
+      
     </div>
   </div>
 </footer>
       
     </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
     
-      <script src="../../assets/javascripts/vendor.18f0862e.min.js"></script>
-      <script src="../../assets/javascripts/bundle.994580cf.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
-      
-      <script>
-        app = initialize({
-          base: "../..",
-          features: ['navigation.tabs', 'navigation.prune'],
-          search: Object.assign({
-            worker: "../../assets/javascripts/worker/search.9c0e82ba.min.js"
-          }, typeof search !== "undefined" && search)
-        })
-      </script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.prune"], "search": "../../assets/javascripts/workers/search.5bf1dace.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.078830c0.min.js"></script>
       
     
   </body>
