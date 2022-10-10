@@ -1,51 +1,17 @@
 # ref link: https://alinex.gitlab.io/env/mkdocs/
+
 # Site Information
 site_name: Gtz4All
 site_url: https://gtz4all.github.io/
 site_description: Gtz4All Reference Documentation
 site_author: Kervin Gtz
+site_description: >-
+  Providing easy to deploy, reusable and automated solution for defining, provisioning and managing secure and scalable public and private cloud infrastructure environment. 
 copyright: "Copyright 2022 <a href='https://gtz4all.github.io'>Gtz4All</a>. All Rights Reserved." 
 
-# nav:
-#   - Home:
-#     - Home: "index.md"
-#     - Welcome: "welcome.md"
-#     - Cloud: "cloud/introduction.md"
-#     - Networking: "networking/introduction.md"
-#     - License: "license.md"
-
-#   - Cloud: 
-#     - Introduction: "cloud/introduction.md"
-#     - AWS:
-#       - Default VPC Cleanup: "cloud/aws/default-vpc-cleanup.md"
-#       - Route53 Dynamic DNS: "cloud/aws/ec2-dynamic-dns.md"
-#       - Three Tier VPC Design: "cloud/aws/three-tier-vpc.md"
-#       - External MarkDown: "cloud/aws/plugin-test.md"
-#     - GCP:
-#       - Introduction: "cloud/gcp/introduction.md"
-#     - Azure:
-#       - Introduction: "cloud/azure/introduction.md"
-
-#   - Networking: 
-#     - Introduction: "networking/introduction.md"
-#     - Arista:
-#       - Introduction: "networking/arista/introduction.md"
-#     - Cisco:
-#       - Introduction: "networking/cisco/introduction.md"
-
-#   - DevOps: 
-#     - Introduction: "devops/introduction.md"
-#     - Terraform:
-#       - Introduction: "devops/terraform/introduction.md"
-#     - Ansible:
-#       - Introduction: "devops/ansible/introduction.md"
-#     - Python:
-#       - Introduction: "devops/python/introduction.md"
-
-#   - Contact Us:
-#       - Contribute: "contact-us/contribute.md"
-#       - FAQs: "contact-us/faqs.md"
-#       - Contact Us: "contact-us/contact-me.md"
+# using awesome-pages nav structure
+nav:
+  - ...
 
 # Material Mkdocs Theme + Extras
 theme:
@@ -60,7 +26,7 @@ theme:
   features:
     - navigation.tabs
     # - navigation.instant
-    # - header.autohide
+    - header.autohide
     - navigation.prune 
 
   palette: # https://www.materialpalette.com/colors
@@ -77,15 +43,6 @@ theme:
 
   include_sidebar: true
 
-# pip install mkdocs-awesome-pages-plugin
-# pip install mkdocs-meta-descriptions-plugin
-# pip install mkdocs-embed-external-markdown 
-# pip install mkdocs-git-snippet
-# pip install mkdocs-blogging-plugin
-# pip install mkdocs-table-reader-plugin
-# pip install mkdocs-drawio-file 
-
-# Plugin order matters
 plugins:
   - search
   - awesome-pages
@@ -104,9 +61,9 @@ extra:
     - icon: material/home
       link: 'https://gtz4all.github.io/'
     - icon: material/github
-    #   link: 'https://github.com/gtz4all'
-    # - icon: material/email
-    #   link: 'gtz4all@gmail.com'
+      link: 'https://github.com/gtz4all'
+    - icon: material/email
+      link: 'gtz4all@gmail.com'
 
 extra_css:
   - assets/stylesheets/extra.css

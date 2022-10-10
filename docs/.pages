@@ -3,5 +3,5 @@ nav:
     - ... | welcome.md
     - Cloud: cloud
     - DevOps: devops
-    - networking
+    - Networking: networking
     - Tips&Tricks: tips-tricks
