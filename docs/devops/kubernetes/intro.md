@@ -1,11 +1,12 @@
 ---
-title: "Kubernetes"
+title: "Introduction"
 date: 2021-06-04T15:48:46-04:00
-draft: false
 description: "Using Kubernetes as Docker container management and orchestration."
 ---
 
+![kubernetes](../../assets/images/kubernetes.png "kubernetes"){: style="width:100px"} [Kubernetes Documentation](/devops/kubernetes/intro)
 
+kubernetes is currently the leading devops provider. 
 
 #### Kubernetes at a Glance
 ***What is Kubernetes?***

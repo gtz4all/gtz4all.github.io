@@ -1,7 +1,6 @@
 ---
 title: "Working with Hugo Container"
 date: 2021-06-04T11:29:58-04:00
-draft: false
 description: "Creating Hugo Image with a Single Stage Dockerfile"
 ---
 ## Building The Hugo Docker Image

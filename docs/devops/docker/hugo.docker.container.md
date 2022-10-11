@@ -1,7 +1,6 @@
 ---
 title: "Building a Hugo Docker Containers"
 date: 2021-06-04T11:29:58-04:00
-draft: false
 description: "Building a Hugo Docker Container using Multi-Stage Dockerfile"
 ---
 ## Building a Docker Image

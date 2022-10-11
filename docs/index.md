@@ -1,4 +1,4 @@
 ---
 template: home.html
-title: Gtz4all
+title: Home
 ---

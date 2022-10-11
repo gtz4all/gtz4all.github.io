@@ -1,7 +1,7 @@
 nav:
     - index.md
-    - ... | welcome.md
     - Cloud: cloud
     - DevOps: devops
     - Networking: networking
     - Tips&Tricks: tips-tricks
+    - Contact Us: contact-us

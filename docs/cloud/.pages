@@ -1,2 +1,5 @@
 nav:
- - aws
+ - intro.md
+ - AWS: aws
+ - Azure: azure
+ - GCP: gcp
