@@ -1573,14 +1573,19 @@
 <ul>
 <li>Using the command '/bin/ash' to keep the container running</li>
 <li>Exposing container port 80 on local port 80</li>
-<li>Passing --rm to delete container after stopping it - no need to do 'docker rm [Container ID]'
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>docker run --rm -p <span class="m">80</span>:80 -dit --name hugoapp hugo /bin/ash
-</code></pre></div></li>
-<li>Attaching to running container
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>docker <span class="nb">exec</span> -it hugoapp /bin/ash
-</code></pre></div></li>
-<li>Rerunning hugo command to generate site and get its Output
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>~/lab$ docker <span class="nb">exec</span> -it hugoapp /bin/ash
+<li>
+<p>Passing --rm to delete container after stopping it - no need to do 'docker rm [Container ID]'
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>docker run --rm -p <span class="m">80</span>:80 -dit --name hugoapp hugo /bin/ash
+</code></pre></div></p>
+</li>
+<li>
+<p>Attaching to running container
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>docker <span class="nb">exec</span> -it hugoapp /bin/ash
+</code></pre></div></p>
+</li>
+<li>
+<p>Rerunning hugo command to generate site and get its Output
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>~/lab$ docker <span class="nb">exec</span> -it hugoapp /bin/ash
 <a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>/site <span class="c1"># ls</span>
 <a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>archetypes   assets       config.toml  content      i18n         layouts      public       resources    static       themes
 <a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>/site <span class="c1"># hugo</span>
@@ -1598,23 +1603,30 @@
 <a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a>  Cleaned          <span class="p">|</span>  <span class="m">0</span>
 <a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a>
 <a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a>Total <span class="k">in</span> <span class="m">362</span> ms
-</code></pre></div></li>
-<li>Moving hugo public folder content to nginx working directory
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>mv public/* /usr/share/nginx/html/
-</code></pre></div></li>
-<li>Running the nginx server
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>/usr/sbin/nginx
-</code></pre></div></li>
-<li>Nginx Output
-<code>sh
-/site # /usr/sbin/nginx
-2021/06/04 22:01:54 [notice] 18#18: using the "epoll" event method
-2021/06/04 22:01:54 [notice] 18#18: nginx/1.21.0
-2021/06/04 22:01:54 [notice] 18#18: built by gcc 10.2.1 20201203 (Alpine 10.2.1_pre1)
-2021/06/04 22:01:54 [notice] 18#18: OS: Linux 4.15.0-20-generic
-2021/06/04 22:01:54 [notice] 18#18: getrlimit(RLIMIT_NOFILE): 1048576:1048576
-/site # 2021/06/04 22:01:54 [notice] 19#19: start worker processes
-2021/06/04 22:01:54 [notice] 19#19: start worker process 20</code><script type="text/javascript" src="https://viewer.diagrams.net/js/viewer-static.min.js"></script></li>
+</code></pre></div></p>
+</li>
+<li>
+<p>Moving hugo public folder content to nginx working directory
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>mv public/* /usr/share/nginx/html/
+</code></pre></div></p>
+</li>
+<li>
+<p>Running the nginx server
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>/usr/sbin/nginx
+</code></pre></div></p>
+</li>
+<li>
+<p>Nginx Output
+    <code>sh
+    /site # /usr/sbin/nginx
+    2021/06/04 22:01:54 [notice] 18#18: using the "epoll" event method
+    2021/06/04 22:01:54 [notice] 18#18: nginx/1.21.0
+    2021/06/04 22:01:54 [notice] 18#18: built by gcc 10.2.1 20201203 (Alpine 10.2.1_pre1)
+    2021/06/04 22:01:54 [notice] 18#18: OS: Linux 4.15.0-20-generic
+    2021/06/04 22:01:54 [notice] 18#18: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+    /site # 2021/06/04 22:01:54 [notice] 19#19: start worker processes
+    2021/06/04 22:01:54 [notice] 19#19: start worker process 20</code><script type="text/javascript" src="https://viewer.diagrams.net/js/viewer-static.min.js"></script></p>
+</li>
 </ul>
 
 
