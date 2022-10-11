@@ -107,50 +107,55 @@ nginx        alpine    a6eb2a334a9f   10 days ago          22.6MB
 * Using the command '/bin/ash' to keep the container running
 * Exposing container port 80 on local port 80
 * Passing --rm to delete container after stopping it - no need to do 'docker rm [Container ID]'
-```sh
-docker run --rm -p 80:80 -dit --name hugoapp hugo /bin/ash
-```
+    ```sh
+    docker run --rm -p 80:80 -dit --name hugoapp hugo /bin/ash
+    ```
+    
 * Attaching to running container
-```sh
-docker exec -it hugoapp /bin/ash
-```
+    ```sh
+    docker exec -it hugoapp /bin/ash
+    ```
+    
 * Rerunning hugo command to generate site and get its Output
-```sh
-~/lab$ docker exec -it hugoapp /bin/ash
-/site # ls
-archetypes   assets       config.toml  content      i18n         layouts      public       resources    static       themes
-/site # hugo
-Start building sites …
+    ```sh
+    ~/lab$ docker exec -it hugoapp /bin/ash
+    /site # ls
+    archetypes   assets       config.toml  content      i18n         layouts      public       resources    static       themes
+    /site # hugo
+    Start building sites …
 
-                   | EN
--------------------+-----
-  Pages            | 32
-  Paginator pages  |  0
-  Non-page files   |  0
-  Static files     | 13
-  Processed images |  0
-  Aliases          |  0
-  Sitemaps         |  1
-  Cleaned          |  0
+                       | EN
+    -------------------+-----
+      Pages            | 32
+      Paginator pages  |  0
+      Non-page files   |  0
+      Static files     | 13
+      Processed images |  0
+      Aliases          |  0
+      Sitemaps         |  1
+      Cleaned          |  0
 
-Total in 362 ms
-```
+    Total in 362 ms
+    ```
+
 * Moving hugo public folder content to nginx working directory
-```sh
-mv public/* /usr/share/nginx/html/
-```
+    ```sh
+    mv public/* /usr/share/nginx/html/
+    ```
+    
 * Running the nginx server
-```sh
-/usr/sbin/nginx
-```
+    ```sh
+    /usr/sbin/nginx
+    ```
+
 * Nginx Output
-```sh
-/site # /usr/sbin/nginx
-2021/06/04 22:01:54 [notice] 18#18: using the "epoll" event method
-2021/06/04 22:01:54 [notice] 18#18: nginx/1.21.0
-2021/06/04 22:01:54 [notice] 18#18: built by gcc 10.2.1 20201203 (Alpine 10.2.1_pre1)
-2021/06/04 22:01:54 [notice] 18#18: OS: Linux 4.15.0-20-generic
-2021/06/04 22:01:54 [notice] 18#18: getrlimit(RLIMIT_NOFILE): 1048576:1048576
-/site # 2021/06/04 22:01:54 [notice] 19#19: start worker processes
-2021/06/04 22:01:54 [notice] 19#19: start worker process 20
-```
+    ```sh
+    /site # /usr/sbin/nginx
+    2021/06/04 22:01:54 [notice] 18#18: using the "epoll" event method
+    2021/06/04 22:01:54 [notice] 18#18: nginx/1.21.0
+    2021/06/04 22:01:54 [notice] 18#18: built by gcc 10.2.1 20201203 (Alpine 10.2.1_pre1)
+    2021/06/04 22:01:54 [notice] 18#18: OS: Linux 4.15.0-20-generic
+    2021/06/04 22:01:54 [notice] 18#18: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+    /site # 2021/06/04 22:01:54 [notice] 19#19: start worker processes
+    2021/06/04 22:01:54 [notice] 19#19: start worker process 20
+    ```
