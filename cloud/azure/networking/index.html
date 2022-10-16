@@ -12,7 +12,7 @@
         <meta name="author" content="Kervin Gtz">
       
       
-        <link rel="canonical" href="https://gtz4all.github.io/cloud/azure/virtual-networks/">
+        <link rel="canonical" href="https://gtz4all.github.io/cloud/azure/networking/">
       
       <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.0, mkdocs-material-8.5.6">
@@ -59,7 +59,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Gtz4All - Azure Virtual Networks" />
   <meta property="og:description" content="Providing easy to deploy, reusable and automated solution for defining, provisioning and managing secure and scalable public and private cloud infrastructure environment. " />
-  <meta property="og:url" content="https://gtz4all.github.io/cloud/azure/virtual-networks/" />
+  <meta property="og:url" content="https://gtz4all.github.io/cloud/azure/networking/" />
   <meta property="og:image" content="<url>" />
   <meta property="og:image:type" content="image/png" />
   <meta property="og:image:width" content="1200" />
@@ -87,7 +87,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#features" class="md-skip">
+        <a href="#virtual-networks" class="md-skip">
           Skip to content
         </a>
       
@@ -579,16 +579,49 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#virtual-networks" class="md-nav__link">
+    Virtual networks
+  </a>
+  
+    <nav class="md-nav" aria-label="Virtual networks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#features" class="md-nav__link">
     Features
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#components" class="md-nav__link">
     Components
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#azure-firewalls" class="md-nav__link">
+    Azure Firewalls
+  </a>
+  
+    <nav class="md-nav" aria-label="Azure Firewalls">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#features_1" class="md-nav__link">
+    Features
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1380,16 +1413,49 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#virtual-networks" class="md-nav__link">
+    Virtual networks
+  </a>
+  
+    <nav class="md-nav" aria-label="Virtual networks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#features" class="md-nav__link">
     Features
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#components" class="md-nav__link">
     Components
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#azure-firewalls" class="md-nav__link">
+    Azure Firewalls
+  </a>
+  
+    <nav class="md-nav" aria-label="Azure Firewalls">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#features_1" class="md-nav__link">
+    Features
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1410,7 +1476,8 @@
 
   <h1>Azure Virtual Networks</h1>
 
-<h4 id="features">Features<a class="headerlink" href="#features" title="Permanent link">&para;</a></h4>
+<h4 id="virtual-networks">Virtual networks<a class="headerlink" href="#virtual-networks" title="Permanent link">&para;</a></h4>
+<h6 id="features">Features<a class="headerlink" href="#features" title="Permanent link">&para;</a></h6>
 <ul>
 <li>
 <p>private and secure infrastructure</p>
@@ -1425,7 +1492,7 @@
 <p>VNETs are region and subscription (Account/Project) specific. </p>
 </li>
 </ul>
-<h4 id="components">Components<a class="headerlink" href="#components" title="Permanent link">&para;</a></h4>
+<h6 id="components">Components<a class="headerlink" href="#components" title="Permanent link">&para;</a></h6>
 <ul>
 <li>
 <p>Subnets</p>
@@ -1446,26 +1513,69 @@ either <strong><em>subnets</em></strong> or <strong><em>network interfaces</em><
 <p>Application Security Groups (ASGs)</p>
 <p>ASGs are used to group network interfaces based on purpose/usage. an ASG is similar to a <strong><em>tag</em></strong> on the network interface. a Network Security Group Rule can
 it destination set to an ASG.</p>
-<p>```mermaid
-graph TD
+<pre class="mermaid"><code>graph TD
 subgraph D[Virtual Private Network 10.0.0.0/26]
   subgraph E[Subnet 10.0.1.0/24]
     1[Virtual Machine 1]
-    2[Application Security Group: ASG1] &rarr; 1 
+    2[Application Security Group: ASG1] --&gt; 1 
   end
   subgraph F[Subnet 10.0.2.0/24]
     3[Virtual Machine 3]
-    4[Application Security Group: ASG1] &rarr; 3 
+    4[Application Security Group: ASG1] --&gt; 3 
   end
-  5[Network Security Group: NSG1<br>Direction: Inbound<br>Source: Internet<br>Destination: ASG1<br>Service: HTTPS<br>Action: Allow]
-end</p>
-<p>style 4 fill:#F0FFFF
+  5[Network Security Group: NSG1&lt;br&gt;Direction: Inbound&lt;br&gt;Source: Internet&lt;br&gt;Destination: ASG1&lt;br&gt;Service: HTTPS&lt;br&gt;Action: Allow]
+end
+
+style 4 fill:#F0FFFF
 style 2 fill:#F0FFFF
 style D fill:#FFFFFF
 style 5 fill:#F0FFFF
 style E fill:#F0F8FF
-style F fill:#F0F8FF
-```<script type="text/javascript" src="https://viewer.diagrams.net/js/viewer-static.min.js"></script></p>
+style F fill:#F0F8FF</code></pre>
+<h4 id="azure-firewalls">Azure Firewalls<a class="headerlink" href="#azure-firewalls" title="Permanent link">&para;</a></h4>
+<h6 id="features_1">Features<a class="headerlink" href="#features_1" title="Permanent link">&para;</a></h6>
+<ul>
+<li>Azure Firewall as a Service is used to provide monitor and protection based on rules between virtual network egress/ingress traffic</li>
+<li>provides defense in depth</li>
+<li>Azure firewall is deployed between VNET 1 and VNET2 and the Internet. incomming traffic from the internet will be inspected by the Azure firewall before allowing or denying access to VNET1/VNET2</li>
+</ul>
+<pre class="mermaid"><code>graph TD
+subgraph D[Azure]
+  subgraph A[Virtual Network1]
+  subgraph AA[Subnet]
+    AAA[VM]
+  end
+  end
+
+  subgraph B[Virtual Network1]
+  subgraph BB[Subnet]
+    BBB[VM]
+  end
+  end
+
+  subgraph C[Virtual Network1]
+  subgraph CC[Subnet]
+    CCC[Azure Firewall]
+  end
+  end
+
+end
+  F[Internet]
+
+style D fill:#FFFFFF
+
+style A fill:#F0FFFF
+style B fill:#F0FFFF
+style C fill:#F0FFFF
+
+style AA fill:#FFFFFF
+style BB fill:#FFFFFF
+style CC fill:#FFFFFF
+
+style AAA fill:#F0FFFF
+style BBB fill:#F0FFFF
+style CCC fill:#F0FFFF</code></pre>
+<p><script type="text/javascript" src="https://viewer.diagrams.net/js/viewer-static.min.js"></script></p>
 </li>
 </ul>
 
