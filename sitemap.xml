@@ -51,6 +51,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://gtz4all.github.io/cloud/azure/mgmt-groups/</loc>
+         <lastmod>2022-10-16</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://gtz4all.github.io/cloud/azure/networking/</loc>
          <lastmod>2022-10-16</lastmod>
          <changefreq>daily</changefreq>
