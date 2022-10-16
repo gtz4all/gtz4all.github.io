@@ -1422,7 +1422,7 @@
 </li>
 <li>
 <p>Per Subscription / Region</p>
-<p>VNETs are region and subscription (Account/Project) specific</p>
+<p>VNETs are region and subscription (Account/Project) specific. </p>
 </li>
 </ul>
 <h4 id="components">Components<a class="headerlink" href="#components" title="Permanent link">&para;</a></h4>
@@ -1439,7 +1439,33 @@ services require dedicated subnets such as network gateways, Bastion, and SQL Ma
 <li>
 <p>Network Security Groups (NSGs)</p>
 <p>Security groups filter inbound/outbound source/destination IP address/Port traffic based on a priority list of rules. they can be associated to 
-either <strong><em>subnets</em></strong> or <strong><em>network interfaces</em></strong>.<script type="text/javascript" src="https://viewer.diagrams.net/js/viewer-static.min.js"></script></p>
+either <strong><em>subnets</em></strong> or <strong><em>network interfaces</em></strong>.</p>
+<p>NSGs are region specific ( just like VMs )</p>
+</li>
+<li>
+<p>Application Security Groups (ASGs)</p>
+<p>ASGs are used to group network interfaces based on purpose/usage. an ASG is similar to a <strong><em>tag</em></strong> on the network interface. a Network Security Group Rule can
+it destination set to an ASG.</p>
+<p>```mermaid
+graph TD
+subgraph D[Virtual Private Network 10.0.0.0/26]
+  subgraph E[Subnet 10.0.1.0/24]
+    1[Virtual Machine 1]
+    2[Application Security Group: ASG1] &rarr; 1 
+  end
+  subgraph F[Subnet 10.0.2.0/24]
+    3[Virtual Machine 3]
+    4[Application Security Group: ASG1] &rarr; 3 
+  end
+  5[Network Security Group: NSG1<br>Direction: Inbound<br>Source: Internet<br>Destination: ASG1<br>Service: HTTPS<br>Action: Allow]
+end</p>
+<p>style 4 fill:#F0FFFF
+style 2 fill:#F0FFFF
+style D fill:#FFFFFF
+style 5 fill:#F0FFFF
+style E fill:#F0F8FF
+style F fill:#F0F8FF
+```<script type="text/javascript" src="https://viewer.diagrams.net/js/viewer-static.min.js"></script></p>
 </li>
 </ul>
 
