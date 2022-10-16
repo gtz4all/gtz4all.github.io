@@ -1495,19 +1495,58 @@
 </ul>
 <h4 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">&para;</a></h4>
 <p><a href="https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ready/landing-zone/design-area/resource-org-management-groups">Management Groups - Landing Zone</a></p>
-<p><img alt="image" src="https://user-images.githubusercontent.com/40032360/196042025-5d57b22e-6ea2-4474-9ba0-8ce83fcf33de.png" />
-Management group|Description
-----------------|-----------
-Intermediate Root Management Group|This management group is located directly under the tenant root group. Created with a prefix provided by the organization, which purposely avoids the usage of the root group so that organizations can move existing Azure subscriptions into the hierarchy. It also enables future scenarios. This management group is a parent to all the other management groups created by the Azure landing zone accelerator.
-Platform|This management group contains all the platform child management groups, like management, connectivity, and identity.
-Management|This management group contains a dedicated subscription for management, monitoring, and security. This subscription will host an Azure Log Analytics workspace, including associated solutions, and an Azure Automation account.
-Connectivity|This management group contains a dedicated subscription for connectivity. This subscription will host the Azure networking resources required for the platform, like Azure Virtual WAN, Azure Firewall, and Azure DNS private zones.
-Identity|This management group contains a dedicated subscription for identity. This subscription is a placeholder for Windows Server Active Directory Domain Services (AD DS) virtual machines (VMs) or Azure Active Directory Domain Services. The subscription also enables AuthN or AuthZ for workloads within the landing zones. Specific Azure policies are assigned to harden and manage the resources in the identity subscription.
-Landing Zones|The parent management group for all the landing zone child management groups. It will have workload agnostic Azure policies assigned to ensure workloads are secure and compliant.
-Online|The dedicated management group for online landing zones. This group is for workloads that might require direct internet inbound/outbound connectivity or for workloads that might not require a virtual network.
-Corp|The dedicated management group for corporate landing zones. This group is for workloads that require connectivity or hybrid connectivity with the corporate network via the hub in the connectivity subscription.
-Sandboxes|The dedicated management group for subscriptions that will only be used for testing and exploration by an organization. These subscriptions will be securely disconnected from the corporate and online landing zones. Sandboxes also have a less restrictive set of policies assigned to enable testing, exploration, and configuration of Azure services.
-Decommissioned|The dedicated management group for landing zones that are being canceled. Canceled landing zones will be moved to this management group before deletion by Azure after 30-60 days.<script type="text/javascript" src="https://viewer.diagrams.net/js/viewer-static.min.js"></script></p>
+<p><img alt="image" src="https://user-images.githubusercontent.com/40032360/196042025-5d57b22e-6ea2-4474-9ba0-8ce83fcf33de.png" /></p>
+<table>
+<thead>
+<tr>
+<th>Management group</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Intermediate Root Management Group</td>
+<td>This management group is located directly under the tenant root group. Created with a prefix provided by the organization, which purposely avoids the usage of the root group so that organizations can move existing Azure subscriptions into the hierarchy. It also enables future scenarios. This management group is a parent to all the other management groups created by the Azure landing zone accelerator.</td>
+</tr>
+<tr>
+<td>Platform</td>
+<td>This management group contains all the platform child management groups, like management, connectivity, and identity.</td>
+</tr>
+<tr>
+<td>Management</td>
+<td>This management group contains a dedicated subscription for management, monitoring, and security. This subscription will host an Azure Log Analytics workspace, including associated solutions, and an Azure Automation account.</td>
+</tr>
+<tr>
+<td>Connectivity</td>
+<td>This management group contains a dedicated subscription for connectivity. This subscription will host the Azure networking resources required for the platform, like Azure Virtual WAN, Azure Firewall, and Azure DNS private zones.</td>
+</tr>
+<tr>
+<td>Identity</td>
+<td>This management group contains a dedicated subscription for identity. This subscription is a placeholder for Windows Server Active Directory Domain Services (AD DS) virtual machines (VMs) or Azure Active Directory Domain Services. The subscription also enables AuthN or AuthZ for workloads within the landing zones. Specific Azure policies are assigned to harden and manage the resources in the identity subscription.</td>
+</tr>
+<tr>
+<td>Landing Zones</td>
+<td>The parent management group for all the landing zone child management groups. It will have workload agnostic Azure policies assigned to ensure workloads are secure and compliant.</td>
+</tr>
+<tr>
+<td>Online</td>
+<td>The dedicated management group for online landing zones. This group is for workloads that might require direct internet inbound/outbound connectivity or for workloads that might not require a virtual network.</td>
+</tr>
+<tr>
+<td>Corp</td>
+<td>The dedicated management group for corporate landing zones. This group is for workloads that require connectivity or hybrid connectivity with the corporate network via the hub in the connectivity subscription.</td>
+</tr>
+<tr>
+<td>Sandboxes</td>
+<td>The dedicated management group for subscriptions that will only be used for testing and exploration by an organization. These subscriptions will be securely disconnected from the corporate and online landing zones. Sandboxes also have a less restrictive set of policies assigned to enable testing, exploration, and configuration of Azure services.</td>
+</tr>
+<tr>
+<td>Decommissioned</td>
+<td>The dedicated management group for landing zones that are being canceled. Canceled landing zones will be moved to this management group before deletion by Azure after 30-60 days.</td>
+</tr>
+</tbody>
+</table>
+<p>!!! Note - The above should be use a reference or best practive. Each landing zone should be designed based on the organization needs. The <strong><em>Landing Zones</em></strong> can be described as deparments or teams. <script type="text/javascript" src="https://viewer.diagrams.net/js/viewer-static.min.js"></script></p>
 
 
 
