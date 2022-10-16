@@ -3,7 +3,8 @@ title: "Azure Virtual Networks"
 description: "Cloud Computing Documentation"
 ---
 
-#### Features
+#### Virtual networks
+###### Features
 - private and secure infrastructure
 
     VM residing inside a virtual network are able to privately communicate with each other access other azure resources
@@ -16,7 +17,7 @@ description: "Cloud Computing Documentation"
 
     VNETs are region and subscription (Account/Project) specific. 
 
-#### Components
+###### Components
 - Subnets
 
     Subnets devides a virtual network into smaller segments. This segments can have unique security policies from each other. Some 
@@ -59,4 +60,49 @@ description: "Cloud Computing Documentation"
     style E fill:#F0F8FF
     style F fill:#F0F8FF
     ```
+#### Azure Firewalls
+###### Features
+- Azure Firewall as a Service is used to provide monitor and protection based on rules between virtual network egress/ingress traffic
+- provides defense in depth
+- Azure firewall is deployed between VNET 1 and VNET2 and the Internet. incomming traffic from the internet will be inspected by the Azure firewall before allowing or denying access to VNET1/VNET2
 
+    ```mermaid
+    graph TD
+    subgraph D[Azure]
+      subgraph A[Virtual Network1]
+      subgraph AA[Subnet]
+        AAA[VM]
+      end
+      end
+
+      subgraph B[Virtual Network1]
+      subgraph BB[Subnet]
+        BBB[VM]
+      end
+      end
+
+      subgraph C[Virtual Network1]
+      subgraph CC[Subnet]
+        CCC[Azure Firewall]
+      end
+      end
+
+    end
+      F[Internet]
+
+    style D fill:#FFFFFF
+
+    style A fill:#F0FFFF
+    style B fill:#F0FFFF
+    style C fill:#F0FFFF
+
+    style AA fill:#FFFFFF
+    style BB fill:#FFFFFF
+    style CC fill:#FFFFFF
+
+    style AAA fill:#F0FFFF
+    style BBB fill:#F0FFFF
+    style CCC fill:#F0FFFF
+    ```
+    
+    
