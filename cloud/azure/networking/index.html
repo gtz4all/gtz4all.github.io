@@ -19,7 +19,7 @@
     
     
       
-        <title>Azure Virtual Networks - Gtz4All</title>
+        <title>Azure Networking - Gtz4All</title>
       
     
     
@@ -57,7 +57,7 @@
     
   
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Gtz4All - Azure Virtual Networks" />
+  <meta property="og:title" content="Gtz4All - Azure Networking" />
   <meta property="og:description" content="Providing easy to deploy, reusable and automated solution for defining, provisioning and managing secure and scalable public and private cloud infrastructure environment. " />
   <meta property="og:url" content="https://gtz4all.github.io/cloud/azure/networking/" />
   <meta property="og:image" content="<url>" />
@@ -120,7 +120,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Azure Virtual Networks
+              Azure Networking
             
           </span>
         </div>
@@ -585,12 +585,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Azure Virtual Networks
+          Azure Networking
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Azure Virtual Networks
+        Azure Networking
       </a>
       
         
@@ -644,6 +644,33 @@
           <li class="md-nav__item">
   <a href="#features_1" class="md-nav__link">
     Features
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#endpoint-services" class="md-nav__link">
+    Endpoint Services
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#private-links" class="md-nav__link">
+    Private Links
+  </a>
+  
+    <nav class="md-nav" aria-label="Private Links">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#private-endpoint" class="md-nav__link">
+    Private Endpoint
   </a>
   
 </li>
@@ -1487,6 +1514,33 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#endpoint-services" class="md-nav__link">
+    Endpoint Services
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#private-links" class="md-nav__link">
+    Private Links
+  </a>
+  
+    <nav class="md-nav" aria-label="Private Links">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#private-endpoint" class="md-nav__link">
+    Private Endpoint
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1502,7 +1556,7 @@
                   
 
 
-  <h1>Azure Virtual Networks</h1>
+  <h1>Azure Networking</h1>
 
 <h4 id="virtual-networks">Virtual networks<a class="headerlink" href="#virtual-networks" title="Permanent link">&para;</a></h4>
 <h6 id="features">Features<a class="headerlink" href="#features" title="Permanent link">&para;</a></h6>
@@ -1513,18 +1567,18 @@
 </li>
 <li>
 <p>Network Segmentation</p>
-<p>Virtual Networks are isolated from each outer</p>
+<p>Virtual Networks are isolated from each other</p>
 </li>
 <li>
 <p>Per Subscription / Region</p>
-<p>VNETs are region and subscription (Account/Project) specific. </p>
+<p>VNETs are region and subscription specific. </p>
 </li>
 </ul>
 <h6 id="components">Components<a class="headerlink" href="#components" title="Permanent link">&para;</a></h6>
 <ul>
 <li>
 <p>Subnets</p>
-<p>Subnets devides a virtual network into smaller segments. This segments can have unique security policies from each other. Some 
+<p>Subnets devide a virtual network into smaller segments. These segments can have unique security policies from each other. Some 
 services require dedicated subnets such as network gateways, Bastion, and SQL Managed Instances</p>
 </li>
 <li>
@@ -1603,9 +1657,66 @@ style CC fill:#FFFFFF
 style AAA fill:#F0FFFF
 style BBB fill:#F0FFFF
 style CCC fill:#F0FFFF</code></pre>
-<p><script type="text/javascript" src="https://viewer.diagrams.net/js/viewer-static.min.js"></script></p>
 </li>
 </ul>
+<h4 id="endpoint-services">Endpoint Services<a class="headerlink" href="#endpoint-services" title="Permanent link">&para;</a></h4>
+<ul>
+<li>A service endpoints provide private connectivity between Virtual Networks and a range of Azure services, including Azure Storage, SQL Databases, and Key Vault.</li>
+<li>
+<p>communication travels across Azure backbone</p>
+<pre class="mermaid"><code>graph TD
+subgraph D[Azure]
+  subgraph A[fa:fa-bucket Azure Storage]
+  end
+  subgraph C[fa:fa-network-wired Virtual Network]
+  subgraph CC[Subnet]
+    CCC[Azure Firewall]
+  end
+  end
+
+end
+  F[Internet]
+style D fill:#FFFFFF
+style A fill:#F0FFFF
+style C fill:#F0FFFF
+style CC fill:#FFFFFF
+style CCC fill:#F0FFFF</code></pre>
+</li>
+</ul>
+<h4 id="private-links">Private Links<a class="headerlink" href="#private-links" title="Permanent link">&para;</a></h4>
+<ul>
+<li>provide private connectivity to Azure PaaS services.</li>
+<li>accessible on connected virtual networks and globally peered networks.</li>
+<li>DNS Integration supported</li>
+</ul>
+<h6 id="private-endpoint">Private Endpoint<a class="headerlink" href="#private-endpoint" title="Permanent link">&para;</a></h6>
+<ul>
+<li>a managed network interface used to provide connectivity to a private link</li>
+</ul>
+<div class="grid cards">
+<ul>
+<li>
+<p><strong>Service Endpoints</strong></p>
+<hr />
+<ul>
+<li>Provides connectivity from a subnet to an entire Azure service</li>
+<li>cannot be used by on-premises networks</li>
+<li>uses routes to direct traffic</li>
+</ul>
+</li>
+<li>
+<p><strong>Private Endpoints</strong></p>
+<hr />
+<ul>
+<li>Provides connectivity to single instance of an entire Azure service</li>
+<li>supports connected routes ( transitive routing )</li>
+<li>integrates with DNS</li>
+<li>data transfer fees(inbound/outbound)</li>
+</ul>
+</li>
+</ul>
+</div>
+<script type="text/javascript" src="https://viewer.diagrams.net/js/viewer-static.min.js"></script>
 
 
 
