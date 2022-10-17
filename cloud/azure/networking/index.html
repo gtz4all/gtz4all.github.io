@@ -687,6 +687,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#virtual-network-peering" class="md-nav__link">
+    Virtual Network Peering
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#default-routes" class="md-nav__link">
+    Default Routes
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1555,6 +1569,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#virtual-network-peering" class="md-nav__link">
+    Virtual Network Peering
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#default-routes" class="md-nav__link">
+    Default Routes
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1730,8 +1758,46 @@ style CCC fill:#F0FFFF</code></pre>
 <ul>
 <li>provides a managed secure remote management portal</li>
 <li>supports RDP and SSH</li>
-<li>supports Network Security Groups (NSGs)<script type="text/javascript" src="https://viewer.diagrams.net/js/viewer-static.min.js"></script></li>
+<li>supports Network Security Groups (NSGs)</li>
 </ul>
+<h4 id="virtual-network-peering">Virtual Network Peering<a class="headerlink" href="#virtual-network-peering" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Peering connections must be created in both directions</li>
+<li>Non-transitive</li>
+<li>CIDR must not overlap</li>
+</ul>
+<h4 id="default-routes">Default Routes<a class="headerlink" href="#default-routes" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Address Prefix</th>
+<th>Next Hop</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Virtual network address range</td>
+<td>Virtual Network</td>
+<td>routes traffic within the virtual network</td>
+</tr>
+<tr>
+<td>0.0.0.0/0</td>
+<td>Internet</td>
+<td>Default route to the internet</td>
+</tr>
+<tr>
+<td>10.0.0.0/8 <br> 172.16.0.0/12 <br> 192.168.0.0/16</td>
+<td>None</td>
+<td>Drops private Ip address ranges that are not part of the virtual network</td>
+</tr>
+<tr>
+<td>100.64.0.0/10</td>
+<td>None</td>
+<td>Drops shared address space traffic<script type="text/javascript" src="https://viewer.diagrams.net/js/viewer-static.min.js"></script></td>
+</tr>
+</tbody>
+</table>
 
 
 
