@@ -29,8 +29,8 @@ description: "Cloud Computing Documentation"
 - A directory has a single top-level root management group call ***Tentant root group***
 - Root management group cannot be moved or deleted
 
-#### Reference
-[Management Groups - Landing Zone](https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ready/landing-zone/design-area/resource-org-management-groups)
+#### Landing Zones
+Reference: [Management Groups - Landing Zone](https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ready/landing-zone/design-area/resource-org-management-groups)
 
 ![image](https://user-images.githubusercontent.com/40032360/196042025-5d57b22e-6ea2-4474-9ba0-8ce83fcf33de.png)
 
@@ -47,4 +47,7 @@ Corp|The dedicated management group for corporate landing zones. This group is f
 Sandboxes|The dedicated management group for subscriptions that will only be used for testing and exploration by an organization. These subscriptions will be securely disconnected from the corporate and online landing zones. Sandboxes also have a less restrictive set of policies assigned to enable testing, exploration, and configuration of Azure services.
 Decommissioned|The dedicated management group for landing zones that are being canceled. Canceled landing zones will be moved to this management group before deletion by Azure after 30-60 days.
 
-!!! Note - The above should be use a reference or best practive. Each landing zone should be designed based on the organization needs. The ***Landing Zones*** can be described as deparments or teams. 
+!!! Note
+    The above is just a proposal. Some organizations may consider making changes to this hierarchy in order to make relevant to their requirements and environment.
+    
+ 
