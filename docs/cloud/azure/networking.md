@@ -148,3 +148,9 @@ description: "Cloud Computing Documentation"
     - supports connected routes ( transitive routing )
     - integrates with DNS
     - data transfer fees(inbound/outbound)
+
+#### Azure Bastion
+
+- provides a managed secure remote management portal
+- supports RDP and SSH
+- supports Network Security Groups (NSGs)
