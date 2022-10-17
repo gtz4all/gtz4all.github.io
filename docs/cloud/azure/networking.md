@@ -154,3 +154,18 @@ description: "Cloud Computing Documentation"
 - provides a managed secure remote management portal
 - supports RDP and SSH
 - supports Network Security Groups (NSGs)
+
+#### Virtual Network Peering
+- Peering connections must be created in both directions
+- Non-transitive
+- CIDR must not overlap
+
+#### Default Routes
+
+Address Prefix | Next Hop | Description
+---------------|----------|------------
+Virtual network address range | Virtual Network | routes traffic within the virtual network
+0.0.0.0/0 | Internet | Default route to the internet
+10.0.0.0/8 <br> 172.16.0.0/12 <br> 192.168.0.0/16 | None | Drops private Ip address ranges that are not part of the virtual network
+100.64.0.0/10 | None | Drops shared address space traffic
+
