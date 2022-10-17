@@ -1,6 +1,6 @@
 ---
-title: Landing Zones
-description: Azure Landing Zones Explained
+title: "Landing Zones"
+description: "Azure Landing Zones Explained" 
 ---
 
 ##### Azure Landing Zones Explained
