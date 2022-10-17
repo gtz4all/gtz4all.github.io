@@ -6,20 +6,20 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Cloud Computing Documentation">
+        <meta name="description" content="Azure Landing Zones Explained">
       
       
         <meta name="author" content="Kervin Gtz">
       
       
-        <link rel="canonical" href="https://gtz4all.github.io/cloud/azure/mgmt-groups/">
+        <link rel="canonical" href="https://gtz4all.github.io/cloud/azure/landing-zones/">
       
       <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.0, mkdocs-material-8.5.6">
     
     
       
-        <title>Azure Management Groups - Gtz4All</title>
+        <title>Landing Zones - Gtz4All</title>
       
     
     
@@ -57,9 +57,9 @@
     
   
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Gtz4All - Azure Management Groups" />
+  <meta property="og:title" content="Gtz4All - Landing Zones" />
   <meta property="og:description" content="Providing easy to deploy, reusable and automated solution for defining, provisioning and managing secure and scalable public and private cloud infrastructure environment. " />
-  <meta property="og:url" content="https://gtz4all.github.io/cloud/azure/mgmt-groups/" />
+  <meta property="og:url" content="https://gtz4all.github.io/cloud/azure/landing-zones/" />
   <meta property="og:image" content="<url>" />
   <meta property="og:image:type" content="image/png" />
   <meta property="og:image:width" content="1200" />
@@ -87,7 +87,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#management-groups" class="md-skip">
+        <a href="#azure-landing-zones-explained" class="md-skip">
           Skip to content
         </a>
       
@@ -120,7 +120,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Azure Management Groups
+              Landing Zones
             
           </span>
         </div>
@@ -547,20 +547,6 @@
               
   
   
-  
-    <li class="md-nav__item">
-      <a href="../landing-zones/" class="md-nav__link">
-        Landing Zones
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
     
   
   
@@ -571,12 +557,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Azure Management Groups
+          Landing Zones
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Azure Management Groups
+        Landing Zones
       </a>
       
         
@@ -593,36 +579,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#management-groups" class="md-nav__link">
-    Management groups
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#management-group-and-subscription-hierarchy" class="md-nav__link">
-    Management Group and Subscription Hierarchy
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#management-groups-facts" class="md-nav__link">
-    Management Groups Facts
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#root-management-group-facts" class="md-nav__link">
-    Root Management Group Facts
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#landing-zones" class="md-nav__link">
-    Landing Zones
+  <a href="#azure-landing-zones-explained" class="md-nav__link">
+    Azure Landing Zones Explained
   </a>
   
 </li>
@@ -631,6 +589,20 @@
   
 </nav>
       
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mgmt-groups/" class="md-nav__link">
+        Azure Management Groups
+      </a>
     </li>
   
 
@@ -1429,36 +1401,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#management-groups" class="md-nav__link">
-    Management groups
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#management-group-and-subscription-hierarchy" class="md-nav__link">
-    Management Group and Subscription Hierarchy
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#management-groups-facts" class="md-nav__link">
-    Management Groups Facts
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#root-management-group-facts" class="md-nav__link">
-    Root Management Group Facts
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#landing-zones" class="md-nav__link">
-    Landing Zones
+  <a href="#azure-landing-zones-explained" class="md-nav__link">
+    Azure Landing Zones Explained
   </a>
   
 </li>
@@ -1478,92 +1422,10 @@
                   
 
 
-  <h1>Azure Management Groups</h1>
+  <h1>Landing Zones</h1>
 
-<h4 id="management-groups">Management groups<a class="headerlink" href="#management-groups" title="Permanent link">&para;</a></h4>
-<ul>
-<li>used to efficiently manage access, policies, and compliance in a multi-subscription environment. </li>
-<li>simplify management and security of subscriptions, resource groups, and resources.</li>
-<li>all associated subscriptions inherit governance conditions.
-    A policy applied to management group that restrict resource creation to only authorized regions would be applied to all nested management groups,
-    subscriptions and resources</li>
-</ul>
-<p><img alt="image" src="https://user-images.githubusercontent.com/40032360/196037187-4fccd9ac-1e13-4a01-9f21-50fa311ff7cd.png" /></p>
-<h4 id="management-group-and-subscription-hierarchy">Management Group and Subscription Hierarchy<a class="headerlink" href="#management-group-and-subscription-hierarchy" title="Permanent link">&para;</a></h4>
-<ul>
-<li>Management groups can be nested to provide governance based on usage, role, or environment. This simplifies security policy management.</li>
-<li>A subscription cam be moved from one management group to another inheriting any security policy associated with the new management group.</li>
-</ul>
-<p><img alt="image" src="https://user-images.githubusercontent.com/40032360/196039582-c9026de9-9220-4155-aee1-1a9235869910.png" /></p>
-<h4 id="management-groups-facts">Management Groups Facts<a class="headerlink" href="#management-groups-facts" title="Permanent link">&para;</a></h4>
-<ul>
-<li>10,000 Management Groups per directory</li>
-<li>6 levels of depth per management group not including the Root or Subscription level</li>
-<li>Management Groups or Subscription can only belong to a single parents.</li>
-<li>A management group can have multiple children - sub management groups and multiple subscriptions</li>
-</ul>
-<h4 id="root-management-group-facts">Root Management Group Facts<a class="headerlink" href="#root-management-group-facts" title="Permanent link">&para;</a></h4>
-<ul>
-<li>A directory has a single top-level root management group call <strong><em>Tentant root group</em></strong></li>
-<li>Root management group cannot be moved or deleted</li>
-</ul>
-<h4 id="landing-zones">Landing Zones<a class="headerlink" href="#landing-zones" title="Permanent link">&para;</a></h4>
-<p>Reference: <a href="https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ready/landing-zone/design-area/resource-org-management-groups">Management Groups - Landing Zone</a></p>
-<p><img alt="image" src="https://user-images.githubusercontent.com/40032360/196042025-5d57b22e-6ea2-4474-9ba0-8ce83fcf33de.png" /></p>
-<table>
-<thead>
-<tr>
-<th>Management group</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Intermediate Root Management Group</td>
-<td>This management group is located directly under the tenant root group. Created with a prefix provided by the organization, which purposely avoids the usage of the root group so that organizations can move existing Azure subscriptions into the hierarchy. It also enables future scenarios. This management group is a parent to all the other management groups created by the Azure landing zone accelerator.</td>
-</tr>
-<tr>
-<td>Platform</td>
-<td>This management group contains all the platform child management groups, like management, connectivity, and identity.</td>
-</tr>
-<tr>
-<td>Management</td>
-<td>This management group contains a dedicated subscription for management, monitoring, and security. This subscription will host an Azure Log Analytics workspace, including associated solutions, and an Azure Automation account.</td>
-</tr>
-<tr>
-<td>Connectivity</td>
-<td>This management group contains a dedicated subscription for connectivity. This subscription will host the Azure networking resources required for the platform, like Azure Virtual WAN, Azure Firewall, and Azure DNS private zones.</td>
-</tr>
-<tr>
-<td>Identity</td>
-<td>This management group contains a dedicated subscription for identity. This subscription is a placeholder for Windows Server Active Directory Domain Services (AD DS) virtual machines (VMs) or Azure Active Directory Domain Services. The subscription also enables AuthN or AuthZ for workloads within the landing zones. Specific Azure policies are assigned to harden and manage the resources in the identity subscription.</td>
-</tr>
-<tr>
-<td>Landing Zones</td>
-<td>The parent management group for all the landing zone child management groups. It will have workload agnostic Azure policies assigned to ensure workloads are secure and compliant.</td>
-</tr>
-<tr>
-<td>Online</td>
-<td>The dedicated management group for online landing zones. This group is for workloads that might require direct internet inbound/outbound connectivity or for workloads that might not require a virtual network.</td>
-</tr>
-<tr>
-<td>Corp</td>
-<td>The dedicated management group for corporate landing zones. This group is for workloads that require connectivity or hybrid connectivity with the corporate network via the hub in the connectivity subscription.</td>
-</tr>
-<tr>
-<td>Sandboxes</td>
-<td>The dedicated management group for subscriptions that will only be used for testing and exploration by an organization. These subscriptions will be securely disconnected from the corporate and online landing zones. Sandboxes also have a less restrictive set of policies assigned to enable testing, exploration, and configuration of Azure services.</td>
-</tr>
-<tr>
-<td>Decommissioned</td>
-<td>The dedicated management group for landing zones that are being canceled. Canceled landing zones will be moved to this management group before deletion by Azure after 30-60 days.</td>
-</tr>
-</tbody>
-</table>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The above is just a proposal. Some organizations may consider making changes to this hierarchy in order to make relevant to their requirements and environment.</p>
-</div>
+<h5 id="azure-landing-zones-explained">Azure Landing Zones Explained<a class="headerlink" href="#azure-landing-zones-explained" title="Permanent link">&para;</a></h5>
+<div class="mxgraph" style="max-width:100%;border:1px solid transparent;" data-mxgraph="{&quot;highlight&quot;:&quot;#0000ff&quot;,&quot;nav&quot;:true,&quot;resize&quot;:true,&quot;toolbar&quot;:&quot;zoom layers tags lightbox&quot;,&quot;edit&quot;:&quot;_blank&quot;,&quot;xml&quot;:&quot;&lt;mxfile host=\&quot;app.diagrams.net\&quot; modified=\&quot;2022-10-17T19:22:59.545Z\&quot; agent=\&quot;5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36\&quot; etag=\&quot;Kh-y2RNzcPPnm4ej5CRd\&quot; version=\&quot;20.4.1\&quot; type=\&quot;github\&quot;&gt;&lt;diagram id=\&quot;FfINFIaC6GgeIE6CcGzY\&quot; name=\&quot;Page-1\&quot;&gt;&lt;mxGraphModel dx=\&quot;1422\&quot; dy=\&quot;954\&quot; grid=\&quot;1\&quot; gridSize=\&quot;10\&quot; guides=\&quot;1\&quot; tooltips=\&quot;1\&quot; connect=\&quot;1\&quot; arrows=\&quot;1\&quot; fold=\&quot;1\&quot; page=\&quot;1\&quot; pageScale=\&quot;1\&quot; pageWidth=\&quot;3600\&quot; pageHeight=\&quot;2400\&quot; math=\&quot;0\&quot; shadow=\&quot;0\&quot;&gt;&lt;root&gt;&lt;mxCell id=\&quot;0\&quot; /&gt;&lt;mxCell id=\&quot;1\&quot; parent=\&quot;0\&quot; /&gt;&lt;mxCell id=\&quot;VH4T3LfD6t6ZyNMmkm9G-38\&quot; value=\&quot;\&quot; style=\&quot;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;\&quot; vertex=\&quot;1\&quot; parent=\&quot;1\&quot;&gt;&lt;mxGeometry x=\&quot;390\&quot; y=\&quot;460\&quot; width=\&quot;320\&quot; height=\&quot;240\&quot; as=\&quot;geometry\&quot; /&gt;&lt;/mxCell&gt;&lt;mxCell id=\&quot;VH4T3LfD6t6ZyNMmkm9G-31\&quot; value=\&quot;\&quot; style=\&quot;rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;\&quot; vertex=\&quot;1\&quot; parent=\&quot;1\&quot;&gt;&lt;mxGeometry x=\&quot;118\&quot; y=\&quot;460\&quot; width=\&quot;260.5\&quot; height=\&quot;240\&quot; as=\&quot;geometry\&quot; /&gt;&lt;/mxCell&gt;&lt;mxCell id=\&quot;VH4T3LfD6t6ZyNMmkm9G-12\&quot; style=\&quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;\&quot; edge=\&quot;1\&quot; parent=\&quot;1\&quot; source=\&quot;VH4T3LfD6t6ZyNMmkm9G-1\&quot; target=\&quot;VH4T3LfD6t6ZyNMmkm9G-4\&quot;&gt;&lt;mxGeometry relative=\&quot;1\&quot; as=\&quot;geometry\&quot; /&gt;&lt;/mxCell&gt;&lt;mxCell id=\&quot;VH4T3LfD6t6ZyNMmkm9G-1\&quot; value=\&quot;\&quot; style=\&quot;aspect=fixed;html=1;points=[];align=center;image;fontSize=12;image=img/lib/azure2/general/Management_Groups.svg;\&quot; vertex=\&quot;1\&quot; parent=\&quot;1\&quot;&gt;&lt;mxGeometry x=\&quot;570\&quot; y=\&quot;40\&quot; width=\&quot;66\&quot; height=\&quot;64\&quot; as=\&quot;geometry\&quot; /&gt;&lt;/mxCell&gt;&lt;mxCell id=\&quot;VH4T3LfD6t6ZyNMmkm9G-3\&quot; value=\&quot;\&quot; style=\&quot;aspect=fixed;html=1;points=[];align=center;image;fontSize=12;image=img/lib/azure2/general/Subscriptions.svg;\&quot; vertex=\&quot;1\&quot; parent=\&quot;1\&quot;&gt;&lt;mxGeometry x=\&quot;141\&quot; y=\&quot;600\&quot; width=\&quot;44\&quot; height=\&quot;71\&quot; as=\&quot;geometry\&quot; /&gt;&lt;/mxCell&gt;&lt;mxCell id=\&quot;VH4T3LfD6t6ZyNMmkm9G-13\&quot; style=\&quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;\&quot; edge=\&quot;1\&quot; parent=\&quot;1\&quot; source=\&quot;VH4T3LfD6t6ZyNMmkm9G-4\&quot; target=\&quot;VH4T3LfD6t6ZyNMmkm9G-5\&quot;&gt;&lt;mxGeometry relative=\&quot;1\&quot; as=\&quot;geometry\&quot; /&gt;&lt;/mxCell&gt;&lt;mxCell id=\&quot;VH4T3LfD6t6ZyNMmkm9G-14\&quot; style=\&quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;\&quot; edge=\&quot;1\&quot; parent=\&quot;1\&quot; source=\&quot;VH4T3LfD6t6ZyNMmkm9G-4\&quot; target=\&quot;VH4T3LfD6t6ZyNMmkm9G-6\&quot;&gt;&lt;mxGeometry relative=\&quot;1\&quot; as=\&quot;geometry\&quot; /&gt;&lt;/mxCell&gt;&lt;mxCell id=\&quot;VH4T3LfD6t6ZyNMmkm9G-15\&quot; style=\&quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;\&quot; edge=\&quot;1\&quot; parent=\&quot;1\&quot; source=\&quot;VH4T3LfD6t6ZyNMmkm9G-4\&quot; target=\&quot;VH4T3LfD6t6ZyNMmkm9G-7\&quot;&gt;&lt;mxGeometry relative=\&quot;1\&quot; as=\&quot;geometry\&quot; /&gt;&lt;/mxCell&gt;&lt;mxCell id=\&quot;VH4T3LfD6t6ZyNMmkm9G-16\&quot; style=\&quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;\&quot; edge=\&quot;1\&quot; parent=\&quot;1\&quot; source=\&quot;VH4T3LfD6t6ZyNMmkm9G-4\&quot; target=\&quot;VH4T3LfD6t6ZyNMmkm9G-8\&quot;&gt;&lt;mxGeometry relative=\&quot;1\&quot; as=\&quot;geometry\&quot; /&gt;&lt;/mxCell&gt;&lt;mxCell id=\&quot;VH4T3LfD6t6ZyNMmkm9G-4\&quot; value=\&quot;\&quot; style=\&quot;aspect=fixed;html=1;points=[];align=center;image;fontSize=12;image=img/lib/azure2/general/Management_Groups.svg;\&quot; vertex=\&quot;1\&quot; parent=\&quot;1\&quot;&gt;&lt;mxGeometry x=\&quot;570\&quot; y=\&quot;220\&quot; width=\&quot;66\&quot; height=\&quot;64\&quot; as=\&quot;geometry\&quot; /&gt;&lt;/mxCell&gt;&lt;mxCell id=\&quot;VH4T3LfD6t6ZyNMmkm9G-32\&quot; style=\&quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;\&quot; edge=\&quot;1\&quot; parent=\&quot;1\&quot; source=\&quot;VH4T3LfD6t6ZyNMmkm9G-5\&quot; target=\&quot;VH4T3LfD6t6ZyNMmkm9G-9\&quot;&gt;&lt;mxGeometry relative=\&quot;1\&quot; as=\&quot;geometry\&quot; /&gt;&lt;/mxCell&gt;&lt;mxCell id=\&quot;VH4T3LfD6t6ZyNMmkm9G-33\&quot; style=\&quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;\&quot; edge=\&quot;1\&quot; parent=\&quot;1\&quot; source=\&quot;VH4T3LfD6t6ZyNMmkm9G-5\&quot; target=\&quot;VH4T3LfD6t6ZyNMmkm9G-10\&quot;&gt;&lt;mxGeometry relative=\&quot;1\&quot; as=\&quot;geometry\&quot; /&gt;&lt;/mxCell&gt;&lt;mxCell id=\&quot;VH4T3LfD6t6ZyNMmkm9G-34\&quot; style=\&quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;\&quot; edge=\&quot;1\&quot; parent=\&quot;1\&quot; source=\&quot;VH4T3LfD6t6ZyNMmkm9G-5\&quot; target=\&quot;VH4T3LfD6t6ZyNMmkm9G-11\&quot;&gt;&lt;mxGeometry relative=\&quot;1\&quot; as=\&quot;geometry\&quot; /&gt;&lt;/mxCell&gt;&lt;mxCell id=\&quot;VH4T3LfD6t6ZyNMmkm9G-5\&quot; value=\&quot;\&quot; style=\&quot;aspect=fixed;html=1;points=[];align=center;image;fontSize=12;image=img/lib/azure2/general/Management_Groups.svg;\&quot; vertex=\&quot;1\&quot; parent=\&quot;1\&quot;&gt;&lt;mxGeometry x=\&quot;210\&quot; y=\&quot;380\&quot; width=\&quot;66\&quot; height=\&quot;64\&quot; as=\&quot;geometry\&quot; /&gt;&lt;/mxCell&gt;&lt;mxCell id=\&quot;VH4T3LfD6t6ZyNMmkm9G-35\&quot; style=\&quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;\&quot; edge=\&quot;1\&quot; parent=\&quot;1\&quot; source=\&quot;VH4T3LfD6t6ZyNMmkm9G-6\&quot; target=\&quot;VH4T3LfD6t6ZyNMmkm9G-23\&quot;&gt;&lt;mxGeometry relative=\&quot;1\&quot; as=\&quot;geometry\&quot; /&gt;&lt;/mxCell&gt;&lt;mxCell id=\&quot;VH4T3LfD6t6ZyNMmkm9G-36\&quot; style=\&quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;\&quot; edge=\&quot;1\&quot; parent=\&quot;1\&quot; source=\&quot;VH4T3LfD6t6ZyNMmkm9G-6\&quot; target=\&quot;VH4T3LfD6t6ZyNMmkm9G-25\&quot;&gt;&lt;mxGeometry relative=\&quot;1\&quot; as=\&quot;geometry\&quot; /&gt;&lt;/mxCell&gt;&lt;mxCell id=\&quot;VH4T3LfD6t6ZyNMmkm9G-37\&quot; style=\&quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;\&quot; edge=\&quot;1\&quot; parent=\&quot;1\&quot; source=\&quot;VH4T3LfD6t6ZyNMmkm9G-6\&quot; target=\&quot;VH4T3LfD6t6ZyNMmkm9G-24\&quot;&gt;&lt;mxGeometry relative=\&quot;1\&quot; as=\&quot;geometry\&quot; /&gt;&lt;/mxCell&gt;&lt;mxCell id=\&quot;VH4T3LfD6t6ZyNMmkm9G-6\&quot; value=\&quot;\&quot; style=\&quot;aspect=fixed;html=1;points=[];align=center;image;fontSize=12;image=img/lib/azure2/general/Management_Groups.svg;\&quot; vertex=\&quot;1\&quot; parent=\&quot;1\&quot;&gt;&lt;mxGeometry x=\&quot;502\&quot; y=\&quot;380\&quot; width=\&quot;66\&quot; height=\&quot;64\&quot; as=\&quot;geometry\&quot; /&gt;&lt;/mxCell&gt;&lt;mxCell id=\&quot;VH4T3LfD6t6ZyNMmkm9G-7\&quot; value=\&quot;\&quot; style=\&quot;aspect=fixed;html=1;points=[];align=center;image;fontSize=12;image=img/lib/azure2/general/Management_Groups.svg;\&quot; vertex=\&quot;1\&quot; parent=\&quot;1\&quot;&gt;&lt;mxGeometry x=\&quot;742\&quot; y=\&quot;380\&quot; width=\&quot;66\&quot; height=\&quot;64\&quot; as=\&quot;geometry\&quot; /&gt;&lt;/mxCell&gt;&lt;mxCell id=\&quot;VH4T3LfD6t6ZyNMmkm9G-8\&quot; value=\&quot;\&quot; style=\&quot;aspect=fixed;html=1;points=[];align=center;image;fontSize=12;image=img/lib/azure2/general/Management_Groups.svg;\&quot; vertex=\&quot;1\&quot; parent=\&quot;1\&quot;&gt;&lt;mxGeometry x=\&quot;982\&quot; y=\&quot;380\&quot; width=\&quot;66\&quot; height=\&quot;64\&quot; as=\&quot;geometry\&quot; /&gt;&lt;/mxCell&gt;&lt;mxCell id=\&quot;VH4T3LfD6t6ZyNMmkm9G-9\&quot; value=\&quot;\&quot; style=\&quot;aspect=fixed;html=1;points=[];align=center;image;fontSize=12;image=img/lib/azure2/general/Management_Groups.svg;\&quot; vertex=\&quot;1\&quot; parent=\&quot;1\&quot;&gt;&lt;mxGeometry x=\&quot;130\&quot; y=\&quot;500\&quot; width=\&quot;66\&quot; height=\&quot;64\&quot; as=\&quot;geometry\&quot; /&gt;&lt;/mxCell&gt;&lt;mxCell id=\&quot;VH4T3LfD6t6ZyNMmkm9G-10\&quot; value=\&quot;\&quot; style=\&quot;aspect=fixed;html=1;points=[];align=center;image;fontSize=12;image=img/lib/azure2/general/Management_Groups.svg;\&quot; vertex=\&quot;1\&quot; parent=\&quot;1\&quot;&gt;&lt;mxGeometry x=\&quot;210\&quot; y=\&quot;500\&quot; width=\&quot;66\&quot; height=\&quot;64\&quot; as=\&quot;geometry\&quot; /&gt;&lt;/mxCell&gt;&lt;mxCell id=\&quot;VH4T3LfD6t6ZyNMmkm9G-11\&quot; value=\&quot;\&quot; style=\&quot;aspect=fixed;html=1;points=[];align=center;image;fontSize=12;image=img/lib/azure2/general/Management_Groups.svg;\&quot; vertex=\&quot;1\&quot; parent=\&quot;1\&quot;&gt;&lt;mxGeometry x=\&quot;290\&quot; y=\&quot;500\&quot; width=\&quot;66\&quot; height=\&quot;64\&quot; as=\&quot;geometry\&quot; /&gt;&lt;/mxCell&gt;&lt;mxCell id=\&quot;VH4T3LfD6t6ZyNMmkm9G-17\&quot; value=\&quot;Management\&quot; style=\&quot;text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1\&quot; vertex=\&quot;1\&quot; parent=\&quot;1\&quot;&gt;&lt;mxGeometry x=\&quot;118\&quot; y=\&quot;564\&quot; width=\&quot;90\&quot; height=\&quot;30\&quot; as=\&quot;geometry\&quot; /&gt;&lt;/mxCell&gt;&lt;mxCell id=\&quot;VH4T3LfD6t6ZyNMmkm9G-18\&quot; value=\&quot;Connectivity\&quot; style=\&quot;text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1\&quot; vertex=\&quot;1\&quot; parent=\&quot;1\&quot;&gt;&lt;mxGeometry x=\&quot;197\&quot; y=\&quot;564\&quot; width=\&quot;90\&quot; height=\&quot;30\&quot; as=\&quot;geometry\&quot; /&gt;&lt;/mxCell&gt;&lt;mxCell id=\&quot;VH4T3LfD6t6ZyNMmkm9G-19\&quot; value=\&quot;Security\&quot; style=\&quot;text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1\&quot; vertex=\&quot;1\&quot; parent=\&quot;1\&quot;&gt;&lt;mxGeometry x=\&quot;276\&quot; y=\&quot;564\&quot; width=\&quot;90\&quot; height=\&quot;30\&quot; as=\&quot;geometry\&quot; /&gt;&lt;/mxCell&gt;&lt;mxCell id=\&quot;VH4T3LfD6t6ZyNMmkm9G-20\&quot; value=\&quot;\&quot; style=\&quot;aspect=fixed;html=1;points=[];align=center;image;fontSize=12;image=img/lib/azure2/general/Subscriptions.svg;\&quot; vertex=\&quot;1\&quot; parent=\&quot;1\&quot;&gt;&lt;mxGeometry x=\&quot;221\&quot; y=\&quot;600\&quot; width=\&quot;44\&quot; height=\&quot;71\&quot; as=\&quot;geometry\&quot; /&gt;&lt;/mxCell&gt;&lt;mxCell id=\&quot;VH4T3LfD6t6ZyNMmkm9G-21\&quot; value=\&quot;\&quot; style=\&quot;aspect=fixed;html=1;points=[];align=center;image;fontSize=12;image=img/lib/azure2/general/Subscriptions.svg;\&quot; vertex=\&quot;1\&quot; parent=\&quot;1\&quot;&gt;&lt;mxGeometry x=\&quot;299\&quot; y=\&quot;600\&quot; width=\&quot;44\&quot; height=\&quot;71\&quot; as=\&quot;geometry\&quot; /&gt;&lt;/mxCell&gt;&lt;mxCell id=\&quot;VH4T3LfD6t6ZyNMmkm9G-23\&quot; value=\&quot;\&quot; style=\&quot;aspect=fixed;html=1;points=[];align=center;image;fontSize=12;image=img/lib/azure2/general/Management_Groups.svg;\&quot; vertex=\&quot;1\&quot; parent=\&quot;1\&quot;&gt;&lt;mxGeometry x=\&quot;422\&quot; y=\&quot;500\&quot; width=\&quot;66\&quot; height=\&quot;64\&quot; as=\&quot;geometry\&quot; /&gt;&lt;/mxCell&gt;&lt;mxCell id=\&quot;VH4T3LfD6t6ZyNMmkm9G-24\&quot; value=\&quot;\&quot; style=\&quot;aspect=fixed;html=1;points=[];align=center;image;fontSize=12;image=img/lib/azure2/general/Management_Groups.svg;\&quot; vertex=\&quot;1\&quot; parent=\&quot;1\&quot;&gt;&lt;mxGeometry x=\&quot;502\&quot; y=\&quot;500\&quot; width=\&quot;66\&quot; height=\&quot;64\&quot; as=\&quot;geometry\&quot; /&gt;&lt;/mxCell&gt;&lt;mxCell id=\&quot;VH4T3LfD6t6ZyNMmkm9G-25\&quot; value=\&quot;\&quot; style=\&quot;aspect=fixed;html=1;points=[];align=center;image;fontSize=12;image=img/lib/azure2/general/Management_Groups.svg;\&quot; vertex=\&quot;1\&quot; parent=\&quot;1\&quot;&gt;&lt;mxGeometry x=\&quot;582\&quot; y=\&quot;500\&quot; width=\&quot;66\&quot; height=\&quot;64\&quot; as=\&quot;geometry\&quot; /&gt;&lt;/mxCell&gt;&lt;mxCell id=\&quot;VH4T3LfD6t6ZyNMmkm9G-26\&quot; value=\&quot;Corp\&quot; style=\&quot;text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1\&quot; vertex=\&quot;1\&quot; parent=\&quot;1\&quot;&gt;&lt;mxGeometry x=\&quot;410\&quot; y=\&quot;564\&quot; width=\&quot;90\&quot; height=\&quot;30\&quot; as=\&quot;geometry\&quot; /&gt;&lt;/mxCell&gt;&lt;mxCell id=\&quot;VH4T3LfD6t6ZyNMmkm9G-27\&quot; value=\&quot;DMZ\&quot; style=\&quot;text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1\&quot; vertex=\&quot;1\&quot; parent=\&quot;1\&quot;&gt;&lt;mxGeometry x=\&quot;489\&quot; y=\&quot;564\&quot; width=\&quot;90\&quot; height=\&quot;30\&quot; as=\&quot;geometry\&quot; /&gt;&lt;/mxCell&gt;&lt;mxCell id=\&quot;VH4T3LfD6t6ZyNMmkm9G-28\&quot; value=\&quot;External\&quot; style=\&quot;text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1\&quot; vertex=\&quot;1\&quot; parent=\&quot;1\&quot;&gt;&lt;mxGeometry x=\&quot;568\&quot; y=\&quot;564\&quot; width=\&quot;90\&quot; height=\&quot;30\&quot; as=\&quot;geometry\&quot; /&gt;&lt;/mxCell&gt;&lt;mxCell id=\&quot;VH4T3LfD6t6ZyNMmkm9G-39\&quot; value=\&quot;\&quot; style=\&quot;aspect=fixed;html=1;points=[];align=center;image;fontSize=12;image=img/lib/azure2/general/Subscriptions.svg;\&quot; vertex=\&quot;1\&quot; parent=\&quot;1\&quot;&gt;&lt;mxGeometry x=\&quot;742\&quot; y=\&quot;460\&quot; width=\&quot;44\&quot; height=\&quot;71\&quot; as=\&quot;geometry\&quot; /&gt;&lt;/mxCell&gt;&lt;mxCell id=\&quot;VH4T3LfD6t6ZyNMmkm9G-40\&quot; value=\&quot;\&quot; style=\&quot;aspect=fixed;html=1;points=[];align=center;image;fontSize=12;image=img/lib/azure2/general/Subscriptions.svg;\&quot; vertex=\&quot;1\&quot; parent=\&quot;1\&quot;&gt;&lt;mxGeometry x=\&quot;764\&quot; y=\&quot;480\&quot; width=\&quot;44\&quot; height=\&quot;71\&quot; as=\&quot;geometry\&quot; /&gt;&lt;/mxCell&gt;&lt;mxCell id=\&quot;VH4T3LfD6t6ZyNMmkm9G-41\&quot; value=\&quot;\&quot; style=\&quot;aspect=fixed;html=1;points=[];align=center;image;fontSize=12;image=img/lib/azure2/general/Subscriptions.svg;\&quot; vertex=\&quot;1\&quot; parent=\&quot;1\&quot;&gt;&lt;mxGeometry x=\&quot;786\&quot; y=\&quot;500\&quot; width=\&quot;44\&quot; height=\&quot;71\&quot; as=\&quot;geometry\&quot; /&gt;&lt;/mxCell&gt;&lt;mxCell id=\&quot;VH4T3LfD6t6ZyNMmkm9G-45\&quot; value=\&quot;Platform\&quot; style=\&quot;text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1\&quot; vertex=\&quot;1\&quot; parent=\&quot;1\&quot;&gt;&lt;mxGeometry x=\&quot;118\&quot; y=\&quot;380\&quot; width=\&quot;90\&quot; height=\&quot;30\&quot; as=\&quot;geometry\&quot; /&gt;&lt;/mxCell&gt;&lt;mxCell id=\&quot;VH4T3LfD6t6ZyNMmkm9G-46\&quot; value=\&quot;Landing Zones\&quot; style=\&quot;text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1\&quot; vertex=\&quot;1\&quot; parent=\&quot;1\&quot;&gt;&lt;mxGeometry x=\&quot;412\&quot; y=\&quot;380\&quot; width=\&quot;90\&quot; height=\&quot;30\&quot; as=\&quot;geometry\&quot; /&gt;&lt;/mxCell&gt;&lt;mxCell id=\&quot;VH4T3LfD6t6ZyNMmkm9G-47\&quot; value=\&quot;Decommissioned\&quot; style=\&quot;text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1\&quot; vertex=\&quot;1\&quot; parent=\&quot;1\&quot;&gt;&lt;mxGeometry x=\&quot;645\&quot; y=\&quot;380\&quot; width=\&quot;90\&quot; height=\&quot;30\&quot; as=\&quot;geometry\&quot; /&gt;&lt;/mxCell&gt;&lt;mxCell id=\&quot;VH4T3LfD6t6ZyNMmkm9G-48\&quot; value=\&quot;Sandbox\&quot; style=\&quot;text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1\&quot; vertex=\&quot;1\&quot; parent=\&quot;1\&quot;&gt;&lt;mxGeometry x=\&quot;892\&quot; y=\&quot;380\&quot; width=\&quot;90\&quot; height=\&quot;30\&quot; as=\&quot;geometry\&quot; /&gt;&lt;/mxCell&gt;&lt;mxCell id=\&quot;VH4T3LfD6t6ZyNMmkm9G-49\&quot; value=\&quot;Gtz4All\&quot; style=\&quot;text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1\&quot; vertex=\&quot;1\&quot; parent=\&quot;1\&quot;&gt;&lt;mxGeometry x=\&quot;630\&quot; y=\&quot;220\&quot; width=\&quot;90\&quot; height=\&quot;30\&quot; as=\&quot;geometry\&quot; /&gt;&lt;/mxCell&gt;&lt;mxCell id=\&quot;VH4T3LfD6t6ZyNMmkm9G-50\&quot; value=\&quot;Tenant Root Management Group\&quot; style=\&quot;text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1\&quot; vertex=\&quot;1\&quot; parent=\&quot;1\&quot;&gt;&lt;mxGeometry x=\&quot;636\&quot; y=\&quot;57\&quot; width=\&quot;124\&quot; height=\&quot;30\&quot; as=\&quot;geometry\&quot; /&gt;&lt;/mxCell&gt;&lt;mxCell id=\&quot;VH4T3LfD6t6ZyNMmkm9G-51\&quot; value=\&quot;Prod\&quot; style=\&quot;text;html=1;strokeColor=#d6b656;fillColor=#fff2cc;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=0;dashed=1;dashPattern=1 1;\&quot; vertex=\&quot;1\&quot; parent=\&quot;1\&quot;&gt;&lt;mxGeometry x=\&quot;413\&quot; y=\&quot;588\&quot; width=\&quot;90\&quot; height=\&quot;30\&quot; as=\&quot;geometry\&quot; /&gt;&lt;/mxCell&gt;&lt;mxCell id=\&quot;VH4T3LfD6t6ZyNMmkm9G-52\&quot; value=\&quot;\&quot; style=\&quot;aspect=fixed;html=1;points=[];align=center;image;fontSize=12;image=img/lib/azure2/identity/Groups.svg;\&quot; vertex=\&quot;1\&quot; parent=\&quot;1\&quot;&gt;&lt;mxGeometry x=\&quot;473\&quot; y=\&quot;591.76\&quot; width=\&quot;30\&quot; height=\&quot;24.71\&quot; as=\&quot;geometry\&quot; /&gt;&lt;/mxCell&gt;&lt;mxCell id=\&quot;VH4T3LfD6t6ZyNMmkm9G-22\&quot; value=\&quot;\&quot; style=\&quot;aspect=fixed;html=1;points=[];align=center;image;fontSize=12;image=img/lib/azure2/general/Subscriptions.svg;\&quot; vertex=\&quot;1\&quot; parent=\&quot;1\&quot;&gt;&lt;mxGeometry x=\&quot;396\&quot; y=\&quot;588\&quot; width=\&quot;44\&quot; height=\&quot;71\&quot; as=\&quot;geometry\&quot; /&gt;&lt;/mxCell&gt;&lt;mxCell id=\&quot;VH4T3LfD6t6ZyNMmkm9G-57\&quot; value=\&quot;Test\&quot; style=\&quot;text;html=1;strokeColor=#d6b656;fillColor=#fff2cc;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=0;dashed=1;dashPattern=1 1;\&quot; vertex=\&quot;1\&quot; parent=\&quot;1\&quot;&gt;&lt;mxGeometry x=\&quot;435\&quot; y=\&quot;620\&quot; width=\&quot;90\&quot; height=\&quot;30\&quot; as=\&quot;geometry\&quot; /&gt;&lt;/mxCell&gt;&lt;mxCell id=\&quot;VH4T3LfD6t6ZyNMmkm9G-58\&quot; value=\&quot;\&quot; style=\&quot;aspect=fixed;html=1;points=[];align=center;image;fontSize=12;image=img/lib/azure2/identity/Groups.svg;\&quot; vertex=\&quot;1\&quot; parent=\&quot;1\&quot;&gt;&lt;mxGeometry x=\&quot;495\&quot; y=\&quot;623.76\&quot; width=\&quot;30\&quot; height=\&quot;24.71\&quot; as=\&quot;geometry\&quot; /&gt;&lt;/mxCell&gt;&lt;mxCell id=\&quot;VH4T3LfD6t6ZyNMmkm9G-59\&quot; value=\&quot;\&quot; style=\&quot;aspect=fixed;html=1;points=[];align=center;image;fontSize=12;image=img/lib/azure2/general/Subscriptions.svg;\&quot; vertex=\&quot;1\&quot; parent=\&quot;1\&quot;&gt;&lt;mxGeometry x=\&quot;418\&quot; y=\&quot;620\&quot; width=\&quot;44\&quot; height=\&quot;71\&quot; as=\&quot;geometry\&quot; /&gt;&lt;/mxCell&gt;&lt;mxCell id=\&quot;VH4T3LfD6t6ZyNMmkm9G-63\&quot; value=\&quot;Prod\&quot; style=\&quot;text;html=1;strokeColor=#d6b656;fillColor=#fff2cc;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=0;dashed=1;dashPattern=1 1;\&quot; vertex=\&quot;1\&quot; parent=\&quot;1\&quot;&gt;&lt;mxGeometry x=\&quot;587\&quot; y=\&quot;588\&quot; width=\&quot;90\&quot; height=\&quot;30\&quot; as=\&quot;geometry\&quot; /&gt;&lt;/mxCell&gt;&lt;mxCell id=\&quot;VH4T3LfD6t6ZyNMmkm9G-64\&quot; value=\&quot;\&quot; style=\&quot;aspect=fixed;html=1;points=[];align=center;image;fontSize=12;image=img/lib/azure2/identity/Groups.svg;\&quot; vertex=\&quot;1\&quot; parent=\&quot;1\&quot;&gt;&lt;mxGeometry x=\&quot;647\&quot; y=\&quot;591.76\&quot; width=\&quot;30\&quot; height=\&quot;24.71\&quot; as=\&quot;geometry\&quot; /&gt;&lt;/mxCell&gt;&lt;mxCell id=\&quot;VH4T3LfD6t6ZyNMmkm9G-65\&quot; value=\&quot;\&quot; style=\&quot;aspect=fixed;html=1;points=[];align=center;image;fontSize=12;image=img/lib/azure2/general/Subscriptions.svg;\&quot; vertex=\&quot;1\&quot; parent=\&quot;1\&quot;&gt;&lt;mxGeometry x=\&quot;570\&quot; y=\&quot;588\&quot; width=\&quot;44\&quot; height=\&quot;71\&quot; as=\&quot;geometry\&quot; /&gt;&lt;/mxCell&gt;&lt;mxCell id=\&quot;VH4T3LfD6t6ZyNMmkm9G-66\&quot; value=\&quot;Test\&quot; style=\&quot;text;html=1;strokeColor=#d6b656;fillColor=#fff2cc;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=0;dashed=1;dashPattern=1 1;\&quot; vertex=\&quot;1\&quot; parent=\&quot;1\&quot;&gt;&lt;mxGeometry x=\&quot;609\&quot; y=\&quot;620\&quot; width=\&quot;90\&quot; height=\&quot;30\&quot; as=\&quot;geometry\&quot; /&gt;&lt;/mxCell&gt;&lt;mxCell id=\&quot;VH4T3LfD6t6ZyNMmkm9G-67\&quot; value=\&quot;\&quot; style=\&quot;aspect=fixed;html=1;points=[];align=center;image;fontSize=12;image=img/lib/azure2/identity/Groups.svg;\&quot; vertex=\&quot;1\&quot; parent=\&quot;1\&quot;&gt;&lt;mxGeometry x=\&quot;669\&quot; y=\&quot;623.76\&quot; width=\&quot;30\&quot; height=\&quot;24.71\&quot; as=\&quot;geometry\&quot; /&gt;&lt;/mxCell&gt;&lt;mxCell id=\&quot;VH4T3LfD6t6ZyNMmkm9G-68\&quot; value=\&quot;\&quot; style=\&quot;aspect=fixed;html=1;points=[];align=center;image;fontSize=12;image=img/lib/azure2/general/Subscriptions.svg;\&quot; vertex=\&quot;1\&quot; parent=\&quot;1\&quot;&gt;&lt;mxGeometry x=\&quot;592\&quot; y=\&quot;620\&quot; width=\&quot;44\&quot; height=\&quot;71\&quot; as=\&quot;geometry\&quot; /&gt;&lt;/mxCell&gt;&lt;mxCell id=\&quot;VH4T3LfD6t6ZyNMmkm9G-69\&quot; value=\&quot;Dev&amp;amp;nbsp;\&quot; style=\&quot;text;html=1;strokeColor=#d6b656;fillColor=#fff2cc;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=0;dashed=1;dashPattern=1 1;\&quot; vertex=\&quot;1\&quot; parent=\&quot;1\&quot;&gt;&lt;mxGeometry x=\&quot;957\&quot; y=\&quot;450\&quot; width=\&quot;90\&quot; height=\&quot;30\&quot; as=\&quot;geometry\&quot; /&gt;&lt;/mxCell&gt;&lt;mxCell id=\&quot;VH4T3LfD6t6ZyNMmkm9G-70\&quot; value=\&quot;\&quot; style=\&quot;aspect=fixed;html=1;points=[];align=center;image;fontSize=12;image=img/lib/azure2/identity/Groups.svg;\&quot; vertex=\&quot;1\&quot; parent=\&quot;1\&quot;&gt;&lt;mxGeometry x=\&quot;1017\&quot; y=\&quot;453.76\&quot; width=\&quot;30\&quot; height=\&quot;24.71\&quot; as=\&quot;geometry\&quot; /&gt;&lt;/mxCell&gt;&lt;mxCell id=\&quot;VH4T3LfD6t6ZyNMmkm9G-71\&quot; value=\&quot;\&quot; style=\&quot;aspect=fixed;html=1;points=[];align=center;image;fontSize=12;image=img/lib/azure2/general/Subscriptions.svg;\&quot; vertex=\&quot;1\&quot; parent=\&quot;1\&quot;&gt;&lt;mxGeometry x=\&quot;940\&quot; y=\&quot;450\&quot; width=\&quot;44\&quot; height=\&quot;71\&quot; as=\&quot;geometry\&quot; /&gt;&lt;/mxCell&gt;&lt;mxCell id=\&quot;VH4T3LfD6t6ZyNMmkm9G-72\&quot; value=\&quot;Sbox\&quot; style=\&quot;text;html=1;strokeColor=#d6b656;fillColor=#fff2cc;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=0;dashed=1;dashPattern=1 1;\&quot; vertex=\&quot;1\&quot; parent=\&quot;1\&quot;&gt;&lt;mxGeometry x=\&quot;979\&quot; y=\&quot;482\&quot; width=\&quot;90\&quot; height=\&quot;30\&quot; as=\&quot;geometry\&quot; /&gt;&lt;/mxCell&gt;&lt;mxCell id=\&quot;VH4T3LfD6t6ZyNMmkm9G-73\&quot; value=\&quot;\&quot; style=\&quot;aspect=fixed;html=1;points=[];align=center;image;fontSize=12;image=img/lib/azure2/identity/Groups.svg;\&quot; vertex=\&quot;1\&quot; parent=\&quot;1\&quot;&gt;&lt;mxGeometry x=\&quot;1039\&quot; y=\&quot;485.76\&quot; width=\&quot;30\&quot; height=\&quot;24.71\&quot; as=\&quot;geometry\&quot; /&gt;&lt;/mxCell&gt;&lt;mxCell id=\&quot;VH4T3LfD6t6ZyNMmkm9G-74\&quot; value=\&quot;\&quot; style=\&quot;aspect=fixed;html=1;points=[];align=center;image;fontSize=12;image=img/lib/azure2/general/Subscriptions.svg;\&quot; vertex=\&quot;1\&quot; parent=\&quot;1\&quot;&gt;&lt;mxGeometry x=\&quot;962\&quot; y=\&quot;482\&quot; width=\&quot;44\&quot; height=\&quot;71\&quot; as=\&quot;geometry\&quot; /&gt;&lt;/mxCell&gt;&lt;/root&gt;&lt;/mxGraphModel&gt;&lt;/diagram&gt;&lt;/mxfile&gt;&quot;}"></div>
 <script type="text/javascript" src="https://viewer.diagrams.net/js/viewer-static.min.js"></script>
 
 
@@ -1585,7 +1447,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer" >
       
         
-        <a href="../landing-zones/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Landing Zones" rel="prev">
+        <a href="../intro/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Introduction" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -1594,20 +1456,20 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              Landing Zones
+              Introduction
             </div>
           </div>
         </a>
       
       
         
-        <a href="../networking/" class="md-footer__link md-footer__link--next" aria-label="Next: Azure Virtual Networks" rel="next">
+        <a href="../mgmt-groups/" class="md-footer__link md-footer__link--next" aria-label="Next: Azure Management Groups" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Azure Virtual Networks
+              Azure Management Groups
             </div>
           </div>
           <div class="md-footer__button md-icon">
