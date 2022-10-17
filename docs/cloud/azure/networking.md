@@ -138,22 +138,13 @@ description: "Cloud Computing Documentation"
 ###### Private Endpoint
 - a managed network interface used to provide connectivity to a private link
 
-<div class="grid cards" markdown>
+=== "Service Endpoints"
+    - Provides connectivity from a subnet to an entire Azure service
+    - cannot be used by on-premises networks
+    - uses routes to direct traffic
 
--   __Service Endpoints__
-
-    ---
-- Provides connectivity from a subnet to an entire Azure service
-- cannot be used by on-premises networks
-- uses routes to direct traffic
-
-
--   __Private Endpoints__
-
-    ---
-- Provides connectivity to single instance of an entire Azure service
-- supports connected routes ( transitive routing )
-- integrates with DNS
-- data transfer fees(inbound/outbound)
-
-</div>
+=== "Private Endpoints"
+    - Provides connectivity to single instance of an entire Azure service
+    - supports connected routes ( transitive routing )
+    - integrates with DNS
+    - data transfer fees(inbound/outbound)
