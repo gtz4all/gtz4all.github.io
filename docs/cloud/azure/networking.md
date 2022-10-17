@@ -1,5 +1,5 @@
 ---
-title: "Azure Virtual Networks"
+title: "Azure Networking"
 description: "Cloud Computing Documentation"
 ---
 
@@ -11,16 +11,16 @@ description: "Cloud Computing Documentation"
 
 - Network Segmentation
 
-    Virtual Networks are isolated from each outer
+    Virtual Networks are isolated from each other
       
 - Per Subscription / Region
 
-    VNETs are region and subscription (Account/Project) specific. 
+    VNETs are region and subscription specific. 
 
 ###### Components
 - Subnets
 
-    Subnets devides a virtual network into smaller segments. This segments can have unique security policies from each other. Some 
+    Subnets devide a virtual network into smaller segments. These segments can have unique security policies from each other. Some 
     services require dedicated subnets such as network gateways, Bastion, and SQL Managed Instances
     
 - Network Interfaces
@@ -105,4 +105,55 @@ description: "Cloud Computing Documentation"
     style CCC fill:#F0FFFF
     ```
     
+#### Endpoint Services
+
+- A service endpoints provide private connectivity between Virtual Networks and a range of Azure services, including Azure Storage, SQL Databases, and Key Vault.
+- communication travels across Azure backbone
+
+    ```mermaid
+    graph TD
+    subgraph D[Azure]
+      subgraph A[fa:fa-bucket Azure Storage]
+      end
+      subgraph C[fa:fa-network-wired Virtual Network]
+      subgraph CC[Subnet]
+        CCC[Azure Firewall]
+      end
+      end
+
+    end
+      F[Internet]
+    style D fill:#FFFFFF
+    style A fill:#F0FFFF
+    style C fill:#F0FFFF
+    style CC fill:#FFFFFF
+    style CCC fill:#F0FFFF
+    ```
     
+#### Private Links
+- provide private connectivity to Azure PaaS services.
+- accessible on connected virtual networks and globally peered networks.
+- DNS Integration supported
+
+###### Private Endpoint
+- a managed network interface used to provide connectivity to a private link
+
+<div class="grid cards" markdown>
+
+-   __Service Endpoints__
+
+    ---
+- Provides connectivity from a subnet to an entire Azure service
+- cannot be used by on-premises networks
+- uses routes to direct traffic
+
+
+-   __Private Endpoints__
+
+    ---
+- Provides connectivity to single instance of an entire Azure service
+- supports connected routes ( transitive routing )
+- integrates with DNS
+- data transfer fees(inbound/outbound)
+
+</div>
