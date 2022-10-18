@@ -156,16 +156,70 @@ description: "Cloud Computing Documentation"
 - supports Network Security Groups (NSGs)
 
 #### Virtual Network Peering
+Virtual Network Peerings provide connectivity between virtual networks within regions, across regions and subscriptions
 - Peering connections must be created in both directions
 - Non-transitive
 - CIDR must not overlap
+- Default Routes - The default route list has grown and is Azure managed. Azure is using the "more specific" approach - if there is no more specific drop all traffic.
 
-#### Default Routes
+    Address Prefix | Next Hop | Description
+    ---------------|----------|------------
+    Virtual network address range | Virtual Network | routes traffic within the virtual network
+    0.0.0.0/0 | Internet | Default route to the internet
+    10.0.0.0/8 <br> 172.16.0.0/12 <br> 192.168.0.0/16 | None | Drops private Ip address ranges that are not part of the virtual network
+    100.64.0.0/10 | None | Drops shared address space traffic
 
-Address Prefix | Next Hop | Description
----------------|----------|------------
-Virtual network address range | Virtual Network | routes traffic within the virtual network
-0.0.0.0/0 | Internet | Default route to the internet
-10.0.0.0/8 <br> 172.16.0.0/12 <br> 192.168.0.0/16 | None | Drops private Ip address ranges that are not part of the virtual network
-100.64.0.0/10 | None | Drops shared address space traffic
+- Custom Routes are user-defined or learned via BGP
+
+#### Route Tables
+- can be associated to subnets in different VPCs. ( what would be a use-case for this?)
+
+#### Gateways
+
+- Virtual Network Gateway
+    - provides either VPN or ExpressRoute connectivity to Azure. 
+    - requires a special gateway subnet with a minimun of a /27 CIDR block  
+    - Similar to an AWS VGW - its VPC specific
+
+- VPN Gateway
+    - provides external connectivity - on-premises networks, cloud providers, or remote devices 
+    - supports site to site, multiple sites, and point to site connections
+    - route-based VPN and policy-based connections
+
+- ExpressRoute
+    - direct, private connection between on-premises network and Azure
+    - connectivity to Azure VNets using private peering or Azure services using microsoft services
+    - connection types:
+        - IPVPN - integrates with MPLS (VPLS)
+        - Point-to-Point Ethernet (Ethernet Private Links - EPLs)
+        - CloudExchange to connect from co-locations
+
+<table><tr>
+<th>VPN Gateway</th>
+<th>Express Route</th>
+</tr>
+<tr><td>
+
+    - connects on-premises networks and other clouds
+    - connects only to virtual networks
+    - connects via the internet
+
+</td><td>
+
+    - connects on-premises networks
+    - connects to virtual networks and microsoft services
+    - connects via dedicated, private connections
+
+</td></tr></table>
+
+![image](https://user-images.githubusercontent.com/40032360/196560564-d0d24907-e959-4c3e-9bfb-62e9a814572d.png)
+
+#### Virtual WAN
+
+Virtual WANs are used to manage communication between multiple virtual networks, on-premises networks, and remote sites. It also improves performance by using azure backbone.
+
+- managed hub-and-spoke provides connecitivity between virtual networks, on-premises networks and remote workers
+- one hub per region
+- regional hubs are dynamically connected to each other
+- similar to an AWS Transit Gateway
 
