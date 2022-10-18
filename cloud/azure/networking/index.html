@@ -695,8 +695,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#default-routes" class="md-nav__link">
-    Default Routes
+  <a href="#route-tables" class="md-nav__link">
+    Route Tables
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gateways" class="md-nav__link">
+    Gateways
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#virtual-wan" class="md-nav__link">
+    Virtual WAN
   </a>
   
 </li>
@@ -1577,8 +1591,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#default-routes" class="md-nav__link">
-    Default Routes
+  <a href="#route-tables" class="md-nav__link">
+    Route Tables
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gateways" class="md-nav__link">
+    Gateways
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#virtual-wan" class="md-nav__link">
+    Virtual WAN
   </a>
   
 </li>
@@ -1761,43 +1789,85 @@ style CCC fill:#F0FFFF</code></pre>
 <li>supports Network Security Groups (NSGs)</li>
 </ul>
 <h4 id="virtual-network-peering">Virtual Network Peering<a class="headerlink" href="#virtual-network-peering" title="Permanent link">&para;</a></h4>
+<p>Virtual Network Peerings provide connectivity between virtual networks within regions, across regions and subscriptions
+- Peering connections must be created in both directions
+- Non-transitive
+- CIDR must not overlap
+- Default Routes - The default route list has grown and is Azure managed. Azure is using the "more specific" approach - if there is no more specific drop all traffic.</p>
+<div class="codehilite"><pre><span></span><code>Address Prefix | Next Hop | Description
+---------------|----------|------------
+Virtual network address range | Virtual Network | routes traffic within the virtual network
+0.0.0.0/0 | Internet | Default route to the internet
+10.0.0.0/8 &lt;br&gt; 172.16.0.0/12 &lt;br&gt; 192.168.0.0/16 | None | Drops private Ip address ranges that are not part of the virtual network
+100.64.0.0/10 | None | Drops shared address space traffic
+</code></pre></div>
+
 <ul>
-<li>Peering connections must be created in both directions</li>
-<li>Non-transitive</li>
-<li>CIDR must not overlap</li>
+<li>Custom Routes are user-defined or learned via BGP</li>
 </ul>
-<h4 id="default-routes">Default Routes<a class="headerlink" href="#default-routes" title="Permanent link">&para;</a></h4>
-<table>
-<thead>
-<tr>
-<th>Address Prefix</th>
-<th>Next Hop</th>
-<th>Description</th>
+<h4 id="route-tables">Route Tables<a class="headerlink" href="#route-tables" title="Permanent link">&para;</a></h4>
+<ul>
+<li>can be associated to subnets in different VPCs. ( what would be a use-case for this?)</li>
+</ul>
+<h4 id="gateways">Gateways<a class="headerlink" href="#gateways" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p>Virtual Network Gateway</p>
+<ul>
+<li>provides either VPN or ExpressRoute connectivity to Azure. </li>
+<li>requires a special gateway subnet with a minimun of a /27 CIDR block  </li>
+<li>Similar to an AWS VGW - its VPC specific</li>
+</ul>
+</li>
+<li>
+<p>VPN Gateway</p>
+<ul>
+<li>provides external connectivity - on-premises networks, cloud providers, or remote devices </li>
+<li>supports site to site, multiple sites, and point to site connections</li>
+<li>route-based VPN and policy-based connections</li>
+</ul>
+</li>
+<li>
+<p>ExpressRoute</p>
+<ul>
+<li>direct, private connection between on-premises network and Azure</li>
+<li>connectivity to Azure VNets using private peering or Azure services using microsoft services</li>
+<li>connection types:<ul>
+<li>IPVPN - integrates with MPLS (VPLS)</li>
+<li>Point-to-Point Ethernet (Ethernet Private Links - EPLs)</li>
+<li>CloudExchange to connect from co-locations</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<table><tr>
+<th>VPN Gateway</th>
+<th>Express Route</th>
 </tr>
-</thead>
-<tbody>
-<tr>
-<td>Virtual network address range</td>
-<td>Virtual Network</td>
-<td>routes traffic within the virtual network</td>
-</tr>
-<tr>
-<td>0.0.0.0/0</td>
-<td>Internet</td>
-<td>Default route to the internet</td>
-</tr>
-<tr>
-<td>10.0.0.0/8 <br> 172.16.0.0/12 <br> 192.168.0.0/16</td>
-<td>None</td>
-<td>Drops private Ip address ranges that are not part of the virtual network</td>
-</tr>
-<tr>
-<td>100.64.0.0/10</td>
-<td>None</td>
-<td>Drops shared address space traffic<script type="text/javascript" src="https://viewer.diagrams.net/js/viewer-static.min.js"></script></td>
-</tr>
-</tbody>
-</table>
+<tr><td>
+
+    - connects on-premises networks and other clouds
+    - connects only to virtual networks
+    - connects via the internet
+
+</td><td>
+
+    - connects on-premises networks
+    - connects to virtual networks and microsoft services
+    - connects via dedicated, private connections
+
+</td></tr></table>
+
+<p><img alt="image" src="https://user-images.githubusercontent.com/40032360/196560564-d0d24907-e959-4c3e-9bfb-62e9a814572d.png" /></p>
+<h4 id="virtual-wan">Virtual WAN<a class="headerlink" href="#virtual-wan" title="Permanent link">&para;</a></h4>
+<p>Virtual WANs are used to manage communication between multiple virtual networks, on-premises networks, and remote sites. It also improves performance by using azure backbone.</p>
+<ul>
+<li>managed hub-and-spoke provides connecitivity between virtual networks, on-premises networks and remote workers</li>
+<li>one hub per region</li>
+<li>regional hubs are dynamically connected to each other</li>
+<li>similar to an AWS Transit Gateway<script type="text/javascript" src="https://viewer.diagrams.net/js/viewer-static.min.js"></script></li>
+</ul>
 
 
 
