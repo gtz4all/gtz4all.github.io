@@ -162,12 +162,12 @@ Virtual Network Peerings provide connectivity between virtual networks within re
 - CIDR must not overlap
 - Default Routes - The default route list has grown and is Azure managed. Azure is using the "more specific" approach - if there is no more specific drop all traffic.
 
-    Address Prefix | Next Hop | Description
-    ---------------|----------|------------
-    Virtual network address range | Virtual Network | routes traffic within the virtual network
-    0.0.0.0/0 | Internet | Default route to the internet
-    10.0.0.0/8 <br> 172.16.0.0/12 <br> 192.168.0.0/16 | None | Drops private Ip address ranges that are not part of the virtual network
-    100.64.0.0/10 | None | Drops shared address space traffic
+Address Prefix | Next Hop | Description
+---------------|----------|------------
+Virtual network address range | Virtual Network | routes traffic within the virtual network
+0.0.0.0/0 | Internet | Default route to the internet
+10.0.0.0/8 <br> 172.16.0.0/12 <br> 192.168.0.0/16 | None | Drops private Ip address ranges that are not part of the virtual network
+100.64.0.0/10 | None | Drops shared address space traffic
 
 - Custom Routes are user-defined or learned via BGP
 
@@ -200,15 +200,15 @@ Virtual Network Peerings provide connectivity between virtual networks within re
 </tr>
 <tr><td>
 
-    - connects on-premises networks and other clouds
-    - connects only to virtual networks
-    - connects via the internet
+- connects on-premises networks and other clouds
+- connects only to virtual networks
+- connects via the internet
 
 </td><td>
 
-    - connects on-premises networks
-    - connects to virtual networks and microsoft services
-    - connects via dedicated, private connections
+- connects on-premises networks
+- connects to virtual networks and microsoft services
+- connects via dedicated, private connections
 
 </td></tr></table>
 
