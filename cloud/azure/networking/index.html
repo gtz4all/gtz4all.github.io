@@ -715,6 +715,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#load-balancing" class="md-nav__link">
+    Load balancing
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1611,6 +1618,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#load-balancing" class="md-nav__link">
+    Load balancing
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1789,11 +1803,13 @@ style CCC fill:#F0FFFF</code></pre>
 <li>supports Network Security Groups (NSGs)</li>
 </ul>
 <h4 id="virtual-network-peering">Virtual Network Peering<a class="headerlink" href="#virtual-network-peering" title="Permanent link">&para;</a></h4>
-<p>Virtual Network Peerings provide connectivity between virtual networks within regions, across regions and subscriptions
-- Peering connections must be created in both directions
-- Non-transitive
-- CIDR must not overlap
-- Default Routes - The default route list has grown and is Azure managed. Azure is using the "more specific" approach - if there is no more specific drop all traffic.</p>
+<p>Virtual Network Peerings provide connectivity between virtual networks within regions, across regions and subscriptions</p>
+<ul>
+<li>Peering connections must be created in both directions</li>
+<li>Non-transitive</li>
+<li>CIDR must not overlap</li>
+<li>Default Routes - The default route list has grown and is Azure managed. Azure is using the "more specific" approach - if there is no more specific drop all traffic.</li>
+</ul>
 <table>
 <thead>
 <tr>
@@ -1870,15 +1886,15 @@ style CCC fill:#F0FFFF</code></pre>
 </tr>
 <tr><td>
 
-- connects on-premises networks and other clouds
-- connects only to virtual networks
-- connects via the internet
+- connects on-premises networks and other clouds<br>
+- connects only to virtual networks<br>
+- connects via the internet<br>
 
 </td><td>
 
-- connects on-premises networks
-- connects to virtual networks and microsoft services
-- connects via dedicated, private connections
+- connects on-premises networks<br>
+- connects to virtual networks and microsoft services<br>
+- connects via dedicated, private connections<br>
 
 </td></tr></table>
 
@@ -1889,8 +1905,28 @@ style CCC fill:#F0FFFF</code></pre>
 <li>managed hub-and-spoke provides connecitivity between virtual networks, on-premises networks and remote workers</li>
 <li>one hub per region</li>
 <li>regional hubs are dynamically connected to each other</li>
-<li>similar to an AWS Transit Gateway<script type="text/javascript" src="https://viewer.diagrams.net/js/viewer-static.min.js"></script></li>
+<li>similar to an AWS Transit Gateway</li>
 </ul>
+<p><img alt="Gtz4All WAN Hubs" src="../../../assets/azure.drawio#1" /></p>
+<h4 id="load-balancing">Load balancing<a class="headerlink" href="#load-balancing" title="Permanent link">&para;</a></h4>
+<table><tr>
+<th>Load Balancer</th>
+<th>Application Gateway</th>
+</tr>
+<tr><td>
+
+- Layer 4 / TCP/IP Applications
+- load balancing based on source/destination
+- low latency
+
+</td><td>
+
+- Layer 7 - HTTP/HTTPs based application
+- load balancing based on source/destination/hostname/path
+- Web Application Firewall is supported
+
+</td></tr></table>
+<script type="text/javascript" src="https://viewer.diagrams.net/js/viewer-static.min.js"></script>
 
 
 
