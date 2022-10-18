@@ -157,6 +157,7 @@ description: "Cloud Computing Documentation"
 
 #### Virtual Network Peering
 Virtual Network Peerings provide connectivity between virtual networks within regions, across regions and subscriptions
+
 - Peering connections must be created in both directions
 - Non-transitive
 - CIDR must not overlap
@@ -200,15 +201,15 @@ Virtual network address range | Virtual Network | routes traffic within the virt
 </tr>
 <tr><td>
 
-- connects on-premises networks and other clouds
-- connects only to virtual networks
-- connects via the internet
+- connects on-premises networks and other clouds<br>
+- connects only to virtual networks<br>
+- connects via the internet<br>
 
 </td><td>
 
-- connects on-premises networks
-- connects to virtual networks and microsoft services
-- connects via dedicated, private connections
+- connects on-premises networks<br>
+- connects to virtual networks and microsoft services<br>
+- connects via dedicated, private connections<br>
 
 </td></tr></table>
 
@@ -222,4 +223,27 @@ Virtual WANs are used to manage communication between multiple virtual networks,
 - one hub per region
 - regional hubs are dynamically connected to each other
 - similar to an AWS Transit Gateway
+
+![Gtz4All WAN Hubs](../../assets/azure.drawio#1)
+
+#### Load balancing
+
+<table><tr>
+<th>Load Balancer</th>
+<th>Application Gateway</th>
+</tr>
+<tr><td>
+
+- Layer 4 / TCP/IP Applications
+- load balancing based on source/destination
+- low latency
+
+</td><td>
+
+- Layer 7 - HTTP/HTTPs based application
+- load balancing based on source/destination/hostname/path
+- Web Application Firewall is supported
+
+</td></tr></table>
+
 
