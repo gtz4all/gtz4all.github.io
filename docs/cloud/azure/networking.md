@@ -224,7 +224,9 @@ Virtual WANs are used to manage communication between multiple virtual networks,
 - regional hubs are dynamically connected to each other
 - similar to an AWS Transit Gateway
 
-![Gtz4All WAN Hubs](../../assets/azure.drawio#1)
+![Gtz4All WAN Hubs](../../assets/azure.drawio#0)
+
+![Gtz4All Azure Landing Zone](../../assets/azure-landing-zone-hierarchy.drawio)
 
 #### Load balancing
 
@@ -234,15 +236,15 @@ Virtual WANs are used to manage communication between multiple virtual networks,
 </tr>
 <tr><td>
 
-- Layer 4 / TCP/IP Applications
-- load balancing based on source/destination
-- low latency
+- Layer 4 / TCP/IP Applications<br>
+- load balancing based on source/destination<br>
+- low latency<br>
 
 </td><td>
 
-- Layer 7 - HTTP/HTTPs based application
-- load balancing based on source/destination/hostname/path
-- Web Application Firewall is supported
+- Layer 7 - HTTP/HTTPs based application<br>
+- load balancing based on source/destination/hostname/path<br>
+- Web Application Firewall is supported<br>
 
 </td></tr></table>
 
