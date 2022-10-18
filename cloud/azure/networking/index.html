@@ -1794,14 +1794,37 @@ style CCC fill:#F0FFFF</code></pre>
 - Non-transitive
 - CIDR must not overlap
 - Default Routes - The default route list has grown and is Azure managed. Azure is using the "more specific" approach - if there is no more specific drop all traffic.</p>
-<div class="codehilite"><pre><span></span><code>Address Prefix | Next Hop | Description
----------------|----------|------------
-Virtual network address range | Virtual Network | routes traffic within the virtual network
-0.0.0.0/0 | Internet | Default route to the internet
-10.0.0.0/8 &lt;br&gt; 172.16.0.0/12 &lt;br&gt; 192.168.0.0/16 | None | Drops private Ip address ranges that are not part of the virtual network
-100.64.0.0/10 | None | Drops shared address space traffic
-</code></pre></div>
-
+<table>
+<thead>
+<tr>
+<th>Address Prefix</th>
+<th>Next Hop</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Virtual network address range</td>
+<td>Virtual Network</td>
+<td>routes traffic within the virtual network</td>
+</tr>
+<tr>
+<td>0.0.0.0/0</td>
+<td>Internet</td>
+<td>Default route to the internet</td>
+</tr>
+<tr>
+<td>10.0.0.0/8 <br> 172.16.0.0/12 <br> 192.168.0.0/16</td>
+<td>None</td>
+<td>Drops private Ip address ranges that are not part of the virtual network</td>
+</tr>
+<tr>
+<td>100.64.0.0/10</td>
+<td>None</td>
+<td>Drops shared address space traffic</td>
+</tr>
+</tbody>
+</table>
 <ul>
 <li>Custom Routes are user-defined or learned via BGP</li>
 </ul>
@@ -1847,15 +1870,15 @@ Virtual network address range | Virtual Network | routes traffic within the virt
 </tr>
 <tr><td>
 
-    - connects on-premises networks and other clouds
-    - connects only to virtual networks
-    - connects via the internet
+- connects on-premises networks and other clouds
+- connects only to virtual networks
+- connects via the internet
 
 </td><td>
 
-    - connects on-premises networks
-    - connects to virtual networks and microsoft services
-    - connects via dedicated, private connections
+- connects on-premises networks
+- connects to virtual networks and microsoft services
+- connects via dedicated, private connections
 
 </td></tr></table>
 
