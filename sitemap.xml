@@ -66,6 +66,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://gtz4all.github.io/cloud/azure/tshoo/</loc>
+         <lastmod>2022-10-19</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://gtz4all.github.io/cloud/gcp/gcloud/</loc>
          <lastmod>2022-10-19</lastmod>
          <changefreq>daily</changefreq>
