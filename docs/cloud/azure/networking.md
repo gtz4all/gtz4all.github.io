@@ -224,9 +224,8 @@ Virtual WANs are used to manage communication between multiple virtual networks,
 - regional hubs are dynamically connected to each other
 - similar to an AWS Transit Gateway
 
-![Gtz4All WAN Hubs](../../assets/azure.drawio#0)
+![Gtz4All WAN Hubs](../../assets/azure.drawio)
 
-![Gtz4All Azure Landing Zone](../../assets/azure-landing-zone-hierarchy.drawio)
 
 #### Load balancing
 
