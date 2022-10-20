@@ -1930,7 +1930,15 @@ style CCC fill:#F0FFFF</code></pre>
 <h4 id="virtual-wan">Virtual WAN<a class="headerlink" href="#virtual-wan" title="Permanent link">&para;</a></h4>
 <p>Virtual WANs are used to manage communication between multiple virtual networks, on-premises networks, and remote sites. It also improves performance by using azure backbone.</p>
 <ul>
-<li>managed hub-and-spoke provides connecitivity between virtual networks, on-premises networks and remote workers</li>
+<li>
+<p>While the concept of Virtual WAN is global, the actual Virtual WAN resource is Resource Manager-based and deployed regionally. If the virtual WAN region itself were to have an issue, all hubs in that virtual WAN will continue to function as is, but the user won't be able to create new hubs until the virtual WAN region is available.</p>
+</li>
+<li>
+<p>Virtual WAN is assigned a region. However, Virtual WAN resources such as Hubs and Gateways can be in any region.</p>
+</li>
+<li>
+<p>managed hub-and-spoke provides connecitivity between virtual networks, on-premises networks and remote workers</p>
+</li>
 <li>one hub per region</li>
 <li>regional hubs are dynamically connected to each other</li>
 <li>similar to an AWS Transit Gateway</li>
