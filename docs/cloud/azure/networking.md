@@ -219,6 +219,10 @@ Virtual network address range | Virtual Network | routes traffic within the virt
 
 Virtual WANs are used to manage communication between multiple virtual networks, on-premises networks, and remote sites. It also improves performance by using azure backbone.
 
+- While the concept of Virtual WAN is global, the actual Virtual WAN resource is Resource Manager-based and deployed regionally. If the virtual WAN region itself were to have an issue, all hubs in that virtual WAN will continue to function as is, but the user won't be able to create new hubs until the virtual WAN region is available.
+
+- Virtual WAN is assigned a region. However, Virtual WAN resources such as Hubs and Gateways can be in any region.
+
 - managed hub-and-spoke provides connecitivity between virtual networks, on-premises networks and remote workers
 - one hub per region
 - regional hubs are dynamically connected to each other
