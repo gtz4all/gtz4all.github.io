@@ -45,7 +45,7 @@ description: "vWAN"
       }
       ```
 
-### ASNs (Autonomous System Numbers)
+###### ASNs (Autonomous System Numbers)
 
 Reference: https://github.com/MicrosoftDocs/azure-docs/blob/main/includes/vpn-gateway-faq-bgp-include.md
 
@@ -59,3 +59,9 @@ The following ASNs are reserved by Azure or IANA:
 * ASNs [reserved by IANA](http://www.iana.org/assignments/iana-as-numbers-special-registry/iana-as-numbers-special-registry.xhtml):
 
   * 23456, 64496-64511, 65535-65551 and 429496729
+
+###### Gateway Limitation
+
+Reference: https://github.com/MicrosoftDocs/azure-docs/blob/main/articles/expressroute/expressroute-howto-coexist-resource-manager.md
+
+If you want to use transit routing between ExpressRoute and VPN, **the ASN of Azure VPN Gateway must be set to 65515** and Azure Route Server should be used. Azure VPN Gateway supports the BGP routing protocol. For ExpressRoute and Azure VPN to work together, you must keep the Autonomous System Number of your Azure VPN gateway at its default value, 65515. If you previously selected an ASN other than 65515 and you change the setting to 65515, you must reset the VPN gateway for the setting to take effect.
