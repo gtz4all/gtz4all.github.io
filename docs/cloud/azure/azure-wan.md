@@ -3,6 +3,8 @@ title: "Azure Virtual WAN Components"
 description: "vWAN"
 ---
 
+![Gtz4All Azure Connectivity](../../assets/azureconnecitivity.drawio)
+
 #### Virtual Hub Deployment
 
 - IP Addressing
