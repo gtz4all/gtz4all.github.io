@@ -52,7 +52,8 @@ plugins:
   - table-reader
   - blogging
   - drawio_file
-  - drawio-exporter
+  # drawio-exporter - test locally
+  #- drawio-exporter
   - macros
 
 
