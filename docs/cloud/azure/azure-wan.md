@@ -3,7 +3,7 @@ title: "Azure Virtual WAN Components"
 description: "vWAN"
 ---
 
-![Gtz4All Azure Connectivity](../../assets/azureconnectivity.drawio)
+![Gtz4All Azure Connectivity](../../assets/azureconnectivity.drawio){: style="height:150px;width:150px"}
 
 #### Virtual Hub Deployment
 
