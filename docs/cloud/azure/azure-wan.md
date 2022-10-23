@@ -32,18 +32,18 @@ description: "vWAN"
   ```
     - Error
 
-      ```json
-      {
-        "code": "DeploymentFailed",
-        "message": "At least one resource deployment operation failed. Please list deployment operations for details. Please see https://aka.ms/DeployOperations for usage details.",
-        "details": [
-          {
-            "code": "CustomAsnNotEnabledForVirtualHub",
-            "message": "Virtual hub is not enabled to allow Router ASN modification. Please set ASN to 65515 or contact Support for enabling virtual hub to allow modification."
-          }
-        ]
-      }
-      ```
+    ```json
+    {
+      "code": "DeploymentFailed",
+      "message": "At least one resource deployment operation failed. Please list deployment operations for details. Please see https://aka.ms/DeployOperations for usage details.",
+      "details": [
+        {
+          "code": "CustomAsnNotEnabledForVirtualHub",
+          "message": "Virtual hub is not enabled to allow Router ASN modification. Please set ASN to 65515 or contact Support for enabling virtual hub to allow modification."
+        }
+      ]
+    }
+    ```
 
 ###### ASNs (Autonomous System Numbers)
 
