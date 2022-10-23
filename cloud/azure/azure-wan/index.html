@@ -1468,35 +1468,40 @@
 
 <h4 id="virtual-hub-deployment">Virtual Hub Deployment<a class="headerlink" href="#virtual-hub-deployment" title="Permanent link">&para;</a></h4>
 <ul>
-<li>Error</li>
+<li>IP Addressing</li>
 </ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">{</span><span class="w"></span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nt">&quot;code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DeploymentFailed&quot;</span><span class="p">,</span><span class="w"></span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;At least one resource deployment operation failed. Please list deployment operations for details. Please see https://aka.ms/DeployOperations for usage details.&quot;</span><span class="p">,</span><span class="w"></span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="nt">&quot;details&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="p">{</span><span class="w"></span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">      </span><span class="nt">&quot;code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CustomAsnNotEnabledForVirtualHub&quot;</span><span class="p">,</span><span class="w"></span>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">      </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Virtual hub is not enabled to allow Router ASN modification. Please set ASN to 65515 or contact Support for enabling virtual hub to allow modification.&quot;</span><span class="w"></span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">    </span><span class="p">}</span><span class="w"></span>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">  </span><span class="p">]</span><span class="w"></span>
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="p">}</span><span class="w"></span>
-</code></pre></div>
+<p><a href="https://docs.microsoft.com/en-us/azure/virtual-wan/virtual-wan-faq#what-is-the-recommended-hub-address-space-during-hub-creation">https://docs.microsoft.com/en-us/azure/virtual-wan/virtual-wan-faq#what-is-the-recommended-hub-address-space-during-hub-creation</a>
+  The recommended Virtual WAN hub address space is /23. Virtual WAN hub assigns subnets to various gateways (ExpressRoute, Site-to-site VPN, Point-to-site VPN, Azure Firewall, Virtual hub Router). For scenarios where NVAs are deployed inside a virtual hub, a /28 is typically carved out for the NVA instances. However, if the user were to provision multiple NVAs, a /27 subnet may be assigned. Therefore, keeping a future architecture in mind, while Virtual WAN hubs are deployed with a minimum size of /24, the recommended hub address space at creation time for user to input is /23.</p>
 <ul>
-<li>Review</li>
+<li>BGP Configuration</li>
 </ul>
-<p>```yml
-Basics
-  Region: South Central US
-  Name: vhub2
-  Hub private address space: 10.0.0.0/24
-  Virtual hub capacity: 2 Routing Infrastructure Units, 3 Gbps Router, Supports 2000 VMs
-  Hub routing preference: ExpressRoute
-  Router ASN: 65515 ##&lt;--- This ASN cannot be changed</p>
-<p>Site to site
-  Site to site (VPN gateway): Enabled
-  AS Number: 64525 ##&lt;--- This ASN can be changed during build. It cannot be modified later.
-  Gateway scale units: 1 scale unit - 500 Mbps x 2
-```<script type="text/javascript" src="https://viewer.diagrams.net/js/viewer-static.min.js"></script></p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Basics
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>  Region: South Central US
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>  Name: vhub2
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>  Hub private address space: 10.0.0.0/24
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>  Virtual hub capacity: 2 Routing Infrastructure Units, 3 Gbps Router, Supports 2000 VMs
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>  Hub routing preference: ExpressRoute
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>  Router ASN: 65515 ##&lt;--- This ASN cannot be changed
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>Site to site
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>  Site to site (VPN gateway): Enabled
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>  AS Number: 64525 ##&lt;--- This ASN can be changed during build. It cannot be modified later.
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>  Gateway scale units: 1 scale unit - 500 Mbps x 2
+</code></pre></div>
+    - Error</p>
+<div class="codehilite"><pre><span></span><code>  ```json
+  {
+    &quot;code&quot;: &quot;DeploymentFailed&quot;,
+    &quot;message&quot;: &quot;At least one resource deployment operation failed. Please list deployment operations for details. Please see https://aka.ms/DeployOperations for usage details.&quot;,
+    &quot;details&quot;: [
+      {
+        &quot;code&quot;: &quot;CustomAsnNotEnabledForVirtualHub&quot;,
+        &quot;message&quot;: &quot;Virtual hub is not enabled to allow Router ASN modification. Please set ASN to 65515 or contact Support for enabling virtual hub to allow modification.&quot;
+      }
+    ]
+  }
+  ```<span class="nt">&lt;script</span> <span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span> <span class="na">src=</span><span class="s">&quot;https://viewer.diagrams.net/js/viewer-static.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+</code></pre></div>
 
 
 
