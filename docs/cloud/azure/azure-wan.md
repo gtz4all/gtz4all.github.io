@@ -44,3 +44,18 @@ description: "vWAN"
         ]
       }
       ```
+
+### ASNs (Autonomous System Numbers)
+
+Reference: https://github.com/MicrosoftDocs/azure-docs/blob/main/includes/vpn-gateway-faq-bgp-include.md
+
+You can use your own public ASNs or private ASNs for both your on-premises networks and Azure virtual networks. You can't use the ranges reserved by Azure or IANA.
+
+The following ASNs are reserved by Azure or IANA:
+* ASNs reserved by Azure:
+
+  * Public ASNs: 8074, 8075, 12076
+  * Private ASNs: 65515, 65517, 65518, 65519, 65520
+* ASNs [reserved by IANA](http://www.iana.org/assignments/iana-as-numbers-special-registry/iana-as-numbers-special-registry.xhtml):
+
+  * 23456, 64496-64511, 65535-65551 and 429496729
