@@ -2,192 +2,197 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://gtz4all.github.io/</loc>
-         <lastmod>2022-10-23</lastmod>
+         <lastmod>2022-10-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://gtz4all.github.io/welcome/</loc>
-         <lastmod>2022-10-23</lastmod>
+         <lastmod>2022-10-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://gtz4all.github.io/cloud/intro/</loc>
-         <lastmod>2022-10-23</lastmod>
+         <lastmod>2022-10-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://gtz4all.github.io/cloud/aws/default-vpc-cleanup/</loc>
-         <lastmod>2022-10-23</lastmod>
+         <lastmod>2022-10-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://gtz4all.github.io/cloud/aws/ec2-dynamic-dns/</loc>
-         <lastmod>2022-10-23</lastmod>
+         <lastmod>2022-10-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://gtz4all.github.io/cloud/aws/intro/</loc>
-         <lastmod>2022-10-23</lastmod>
+         <lastmod>2022-10-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://gtz4all.github.io/cloud/aws/lambda-functions/</loc>
-         <lastmod>2022-10-23</lastmod>
+         <lastmod>2022-10-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://gtz4all.github.io/cloud/aws/plugin-test/</loc>
-         <lastmod>2022-10-23</lastmod>
+         <lastmod>2022-10-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://gtz4all.github.io/cloud/aws/three-tier-vpc/</loc>
-         <lastmod>2022-10-23</lastmod>
+         <lastmod>2022-10-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://gtz4all.github.io/cloud/azure/azure-wan/</loc>
-         <lastmod>2022-10-23</lastmod>
+         <lastmod>2022-10-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://gtz4all.github.io/cloud/azure/intro/</loc>
-         <lastmod>2022-10-23</lastmod>
+         <lastmod>2022-10-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://gtz4all.github.io/cloud/azure/landing-zones/</loc>
-         <lastmod>2022-10-23</lastmod>
+         <lastmod>2022-10-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://gtz4all.github.io/cloud/azure/mgmt-groups/</loc>
-         <lastmod>2022-10-23</lastmod>
+         <lastmod>2022-10-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://gtz4all.github.io/cloud/azure/networking/</loc>
-         <lastmod>2022-10-23</lastmod>
+         <lastmod>2022-10-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://gtz4all.github.io/cloud/azure/tshoo/</loc>
-         <lastmod>2022-10-23</lastmod>
+         <lastmod>2022-10-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://gtz4all.github.io/cloud/gcp/gcloud/</loc>
-         <lastmod>2022-10-23</lastmod>
+         <lastmod>2022-10-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://gtz4all.github.io/cloud/gcp/intro/</loc>
-         <lastmod>2022-10-23</lastmod>
+         <lastmod>2022-10-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://gtz4all.github.io/contact-us/aboutme/</loc>
-         <lastmod>2022-10-23</lastmod>
+         <lastmod>2022-10-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://gtz4all.github.io/contact-us/intro/</loc>
-         <lastmod>2022-10-23</lastmod>
+         <lastmod>2022-10-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://gtz4all.github.io/devops/intro/</loc>
-         <lastmod>2022-10-23</lastmod>
+         <lastmod>2022-10-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://gtz4all.github.io/devops/ansible/intro/</loc>
-         <lastmod>2022-10-23</lastmod>
+         <lastmod>2022-10-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://gtz4all.github.io/devops/databases/intro/</loc>
-         <lastmod>2022-10-23</lastmod>
+         <lastmod>2022-10-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://gtz4all.github.io/devops/databases/mongodb/</loc>
-         <lastmod>2022-10-23</lastmod>
+         <lastmod>2022-10-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://gtz4all.github.io/devops/docker/hugo.docker.container/</loc>
-         <lastmod>2022-10-23</lastmod>
+         <lastmod>2022-10-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://gtz4all.github.io/devops/docker/hugo.docker.troubleshooting/</loc>
-         <lastmod>2022-10-23</lastmod>
+         <lastmod>2022-10-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://gtz4all.github.io/devops/docker/intro/</loc>
-         <lastmod>2022-10-23</lastmod>
+         <lastmod>2022-10-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://gtz4all.github.io/devops/kubernetes/intro/</loc>
-         <lastmod>2022-10-23</lastmod>
+         <lastmod>2022-10-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://gtz4all.github.io/devops/kubernetes/kubernetes-cluster/</loc>
-         <lastmod>2022-10-23</lastmod>
+         <lastmod>2022-10-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://gtz4all.github.io/devops/kubernetes/kubernetes-deployments/</loc>
-         <lastmod>2022-10-23</lastmod>
+         <lastmod>2022-10-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://gtz4all.github.io/devops/kubernetes/kubernetes_services/</loc>
-         <lastmod>2022-10-23</lastmod>
+         <lastmod>2022-10-25</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://gtz4all.github.io/devops/terraform/google-secret-manager/</loc>
+         <lastmod>2022-10-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://gtz4all.github.io/devops/terraform/intro/</loc>
-         <lastmod>2022-10-23</lastmod>
+         <lastmod>2022-10-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://gtz4all.github.io/devops/webservices/environmentvars/</loc>
-         <lastmod>2022-10-23</lastmod>
+         <lastmod>2022-10-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://gtz4all.github.io/devops/webservices/http-server-with-dynamic-content/</loc>
-         <lastmod>2022-10-23</lastmod>
+         <lastmod>2022-10-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://gtz4all.github.io/devops/webservices/intro/</loc>
-         <lastmod>2022-10-23</lastmod>
+         <lastmod>2022-10-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://gtz4all.github.io/networking/intro/</loc>
-         <lastmod>2022-10-23</lastmod>
+         <lastmod>2022-10-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://gtz4all.github.io/networking/arista/intro/</loc>
-         <lastmod>2022-10-23</lastmod>
+         <lastmod>2022-10-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://gtz4all.github.io/networking/cisco/intro/</loc>
-         <lastmod>2022-10-23</lastmod>
+         <lastmod>2022-10-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://gtz4all.github.io/tips-tricks/intro/</loc>
-         <lastmod>2022-10-23</lastmod>
+         <lastmod>2022-10-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
