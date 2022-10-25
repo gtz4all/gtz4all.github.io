@@ -251,4 +251,12 @@ Virtual WANs are used to manage communication between multiple virtual networks,
 
 </td></tr></table>
 
+#### IP Addressing
 
+- Static Public IP Security	
+
+    Secure by default model and be closed to inbound traffic when used as a frontend. Allow traffic with network security group (NSG) is required (for example, on the NIC of a virtual machine with a Standard SKU Public IP attached).	
+
+- Dynamic IP Security	
+
+    Open by default. Network security groups are recommended but optional for restricting inbound or outbound traffic.
