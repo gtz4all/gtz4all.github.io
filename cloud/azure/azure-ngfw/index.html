@@ -6,20 +6,20 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Ansible Documentation">
+        <meta name="description" content="Providing easy to deploy, reusable and automated solution for defining, provisioning and managing secure and scalable public and private cloud infrastructure environment. ">
       
       
         <meta name="author" content="Kervin Gtz">
       
       
-        <link rel="canonical" href="https://gtz4all.github.io/devops/ansible/intro/">
+        <link rel="canonical" href="https://gtz4all.github.io/cloud/azure/azure-ngfw/">
       
       <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.0, mkdocs-material-8.5.6">
     
     
       
-        <title>Introduction - Gtz4All</title>
+        <title>Azure Firewall Notes - Gtz4All</title>
       
     
     
@@ -57,9 +57,9 @@
     
   
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Gtz4All - Introduction" />
+  <meta property="og:title" content="Gtz4All - Azure Firewall Notes" />
   <meta property="og:description" content="Providing easy to deploy, reusable and automated solution for defining, provisioning and managing secure and scalable public and private cloud infrastructure environment. " />
-  <meta property="og:url" content="https://gtz4all.github.io/devops/ansible/intro/" />
+  <meta property="og:url" content="https://gtz4all.github.io/cloud/azure/azure-ngfw/" />
   <meta property="og:image" content="<url>" />
   <meta property="og:image:type" content="image/png" />
   <meta property="og:image:width" content="1200" />
@@ -85,6 +85,11 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
+      
+        
+        <a href="#azure-firewall-forced-tunneling" class="md-skip">
+          Skip to content
+        </a>
       
     </div>
     <div data-md-component="announce">
@@ -115,7 +120,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Introduction
+              Azure Firewall Notes
             
           </span>
         </div>
@@ -209,22 +214,6 @@
         
   
   
-
-
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../../../cloud/intro/" class="md-tabs__link">
-        Cloud
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
     
   
 
@@ -234,6 +223,22 @@
   
     <li class="md-tabs__item">
       <a href="../../intro/" class="md-tabs__link md-tabs__link--active">
+        Cloud
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../devops/intro/" class="md-tabs__link">
         DevOps
       </a>
     </li>
@@ -341,12 +346,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
       
       
       
@@ -369,7 +376,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../cloud/intro/" class="md-nav__link">
+      <a href="../../intro/" class="md-nav__link">
         Introduction
       </a>
     </li>
@@ -409,7 +416,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../cloud/aws/intro/" class="md-nav__link">
+      <a href="../../aws/intro/" class="md-nav__link">
         Introduction
       </a>
     </li>
@@ -423,7 +430,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../cloud/aws/default-vpc-cleanup/" class="md-nav__link">
+      <a href="../../aws/default-vpc-cleanup/" class="md-nav__link">
         Default Vpc Cleanup
       </a>
     </li>
@@ -437,7 +444,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../cloud/aws/ec2-dynamic-dns/" class="md-nav__link">
+      <a href="../../aws/ec2-dynamic-dns/" class="md-nav__link">
         EC2 Cross-Account Dynamic DNS Design
       </a>
     </li>
@@ -451,7 +458,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../cloud/aws/lambda-functions/" class="md-nav__link">
+      <a href="../../aws/lambda-functions/" class="md-nav__link">
         Lambda Functions
       </a>
     </li>
@@ -465,7 +472,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../cloud/aws/plugin-test/" class="md-nav__link">
+      <a href="../../aws/plugin-test/" class="md-nav__link">
         Plugin test
       </a>
     </li>
@@ -479,7 +486,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../cloud/aws/three-tier-vpc/" class="md-nav__link">
+      <a href="../../aws/three-tier-vpc/" class="md-nav__link">
         Three tier vpc
       </a>
     </li>
@@ -498,12 +505,14 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" checked>
       
       
       
@@ -526,7 +535,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../cloud/azure/intro/" class="md-nav__link">
+      <a href="../intro/" class="md-nav__link">
         Introduction
       </a>
     </li>
@@ -538,11 +547,48 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../../cloud/azure/azure-ngfw/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Azure Firewall Notes
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Azure Firewall Notes
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#azure-firewall-forced-tunneling" class="md-nav__link">
+    Azure Firewall forced tunneling
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -554,7 +600,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../cloud/azure/azure-wan/" class="md-nav__link">
+      <a href="../azure-wan/" class="md-nav__link">
         Azure Virtual WAN Components
       </a>
     </li>
@@ -568,7 +614,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../cloud/azure/landing-zones/" class="md-nav__link">
+      <a href="../landing-zones/" class="md-nav__link">
         Landing Zones
       </a>
     </li>
@@ -582,7 +628,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../cloud/azure/mgmt-groups/" class="md-nav__link">
+      <a href="../mgmt-groups/" class="md-nav__link">
         Azure Management Groups
       </a>
     </li>
@@ -596,7 +642,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../cloud/azure/networking/" class="md-nav__link">
+      <a href="../networking/" class="md-nav__link">
         Azure Networking
       </a>
     </li>
@@ -610,7 +656,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../cloud/azure/tshoo/" class="md-nav__link">
+      <a href="../tshoo/" class="md-nav__link">
         Azure Troubleshooting Notes
       </a>
     </li>
@@ -657,7 +703,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../cloud/gcp/intro/" class="md-nav__link">
+      <a href="../../gcp/intro/" class="md-nav__link">
         Introduction
       </a>
     </li>
@@ -671,7 +717,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../cloud/gcp/gcloud/" class="md-nav__link">
+      <a href="../../gcp/gcloud/" class="md-nav__link">
         Gcloud Command Overview
       </a>
     </li>
@@ -698,14 +744,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
       
       
       
@@ -728,7 +772,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../intro/" class="md-nav__link">
+      <a href="../../../devops/intro/" class="md-nav__link">
         Introduction
       </a>
     </li>
@@ -768,7 +812,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../terraform/intro/" class="md-nav__link">
+      <a href="../../../devops/terraform/intro/" class="md-nav__link">
         Introduction
       </a>
     </li>
@@ -782,7 +826,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../terraform/google-secret-manager/" class="md-nav__link">
+      <a href="../../../devops/terraform/google-secret-manager/" class="md-nav__link">
          Google Secret Manager
       </a>
     </li>
@@ -801,14 +845,12 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3" type="checkbox" id="__nav_3_3" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3" type="checkbox" id="__nav_3_3" >
       
       
       
@@ -829,19 +871,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../devops/ansible/intro/" class="md-nav__link">
         Introduction
       </a>
-      
     </li>
   
 
@@ -886,7 +920,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../docker/intro/" class="md-nav__link">
+      <a href="../../../devops/docker/intro/" class="md-nav__link">
         Introduction
       </a>
     </li>
@@ -900,7 +934,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../docker/hugo.docker.container/" class="md-nav__link">
+      <a href="../../../devops/docker/hugo.docker.container/" class="md-nav__link">
         Building a Hugo Docker Containers
       </a>
     </li>
@@ -914,7 +948,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../docker/hugo.docker.troubleshooting/" class="md-nav__link">
+      <a href="../../../devops/docker/hugo.docker.troubleshooting/" class="md-nav__link">
         Working with Hugo Container
       </a>
     </li>
@@ -961,7 +995,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../kubernetes/intro/" class="md-nav__link">
+      <a href="../../../devops/kubernetes/intro/" class="md-nav__link">
         Introduction
       </a>
     </li>
@@ -975,7 +1009,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../kubernetes/kubernetes-cluster/" class="md-nav__link">
+      <a href="../../../devops/kubernetes/kubernetes-cluster/" class="md-nav__link">
         Kubernetes Cluster
       </a>
     </li>
@@ -989,7 +1023,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../kubernetes/kubernetes-deployments/" class="md-nav__link">
+      <a href="../../../devops/kubernetes/kubernetes-deployments/" class="md-nav__link">
         Kubernetes Deployments
       </a>
     </li>
@@ -1003,7 +1037,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../kubernetes/kubernetes_services/" class="md-nav__link">
+      <a href="../../../devops/kubernetes/kubernetes_services/" class="md-nav__link">
         Kubernetes Services
       </a>
     </li>
@@ -1050,7 +1084,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../databases/intro/" class="md-nav__link">
+      <a href="../../../devops/databases/intro/" class="md-nav__link">
         Introduction
       </a>
     </li>
@@ -1064,7 +1098,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../databases/mongodb/" class="md-nav__link">
+      <a href="../../../devops/databases/mongodb/" class="md-nav__link">
         MongoDB
       </a>
     </li>
@@ -1111,7 +1145,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../webservices/intro/" class="md-nav__link">
+      <a href="../../../devops/webservices/intro/" class="md-nav__link">
         Introduction
       </a>
     </li>
@@ -1125,7 +1159,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../webservices/environmentvars/" class="md-nav__link">
+      <a href="../../../devops/webservices/environmentvars/" class="md-nav__link">
         Apache Environment Variables
       </a>
     </li>
@@ -1139,7 +1173,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../webservices/http-server-with-dynamic-content/" class="md-nav__link">
+      <a href="../../../devops/webservices/http-server-with-dynamic-content/" class="md-nav__link">
         HTTP Server with Dynamic Content
       </a>
     </li>
@@ -1430,6 +1464,21 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#azure-firewall-forced-tunneling" class="md-nav__link">
+    Azure Firewall forced tunneling
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1443,10 +1492,23 @@
                   
 
 
-  <h1>Introduction</h1>
+  <h1>Azure Firewall Notes</h1>
 
-<p><img alt="ansible" src="../../../assets/images/ansible.png" style="width:100px" title="ansible" /> <a href="/devops/ansible/intro">Ansible Documentation</a></p>
-<p>ansible is currently the leading devops provider. <script type="text/javascript" src="https://viewer.diagrams.net/js/viewer-static.min.js"></script></p>
+<h4 id="azure-firewall-forced-tunneling">Azure Firewall forced tunneling<a class="headerlink" href="#azure-firewall-forced-tunneling" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p>When you configure a new Azure Firewall, you can route all Internet-bound traffic to a designated next hop instead of going directly to the Internet.</p>
+</li>
+<li>
+<p>Forced tunneling lets you <code>redirect</code> all internet bound traffic from Azure Firewall to your <code>on-premises firewall</code> or to chain it to a nearby network virtual appliance (NVA)for additional inspection. You enable a firewall for forced tunneling when you create a new firewall. As of today, it is not possible to migrate an existing firewall deployment to a forced tunneling mode.</p>
+</li>
+<li>
+<p>To support forced tunneling, service management traffic is separated from customer traffic. <code>An additional</code> dedicated subnet named <code>AzureFirewallManagementSubnet</code> is required with its own associated public IP address. The only route allowed on this subnet is a default route to the internet, and Border Gateway Protocol (BGP) route propagation must be disabled.</p>
+</li>
+<li>
+<p>Within this configuration, the <code>AzureFirewallSubnet</code> can now include routes to any on-premises firewall or NVA to process traffic before it's passed to the internet. You can also publish these routes via BGP to AzureFirewallSubnet if BGP route propagation is enabled on this subnet.<script type="text/javascript" src="https://viewer.diagrams.net/js/viewer-static.min.js"></script></p>
+</li>
+</ul>
 
 
 
@@ -1467,7 +1529,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer" >
       
         
-        <a href="../../terraform/google-secret-manager/" class="md-footer__link md-footer__link--prev" aria-label="Previous:  Google Secret Manager" rel="prev">
+        <a href="../intro/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Introduction" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -1476,20 +1538,20 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-               Google Secret Manager
+              Introduction
             </div>
           </div>
         </a>
       
       
         
-        <a href="../../docker/intro/" class="md-footer__link md-footer__link--next" aria-label="Next: Introduction" rel="next">
+        <a href="../azure-wan/" class="md-footer__link md-footer__link--next" aria-label="Next: Azure Virtual WAN Components" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Introduction
+              Azure Virtual WAN Components
             </div>
           </div>
           <div class="md-footer__button md-icon">
