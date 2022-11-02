@@ -858,35 +858,7 @@
     Terraform State/Workspace Refactoring
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#backend-gcs" class="md-nav__link">
-    backend "gcs" {
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#bucket" class="md-nav__link">
-    bucket = "***"
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#prefix-terraformstate" class="md-nav__link">
-    prefix = "terraform/state//"
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    }
-  </a>
-  
-    <nav class="md-nav" aria-label="}">
+    <nav class="md-nav" aria-label="Terraform State/Workspace Refactoring">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -896,15 +868,15 @@
   
 </li>
         
-          <li class="md-nav__item">
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#terraform-resource-state-migration" class="md-nav__link">
     Terraform Resource State Migration
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1565,35 +1537,7 @@
     Terraform State/Workspace Refactoring
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#backend-gcs" class="md-nav__link">
-    backend "gcs" {
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#bucket" class="md-nav__link">
-    bucket = "***"
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#prefix-terraformstate" class="md-nav__link">
-    prefix = "terraform/state//"
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    }
-  </a>
-  
-    <nav class="md-nav" aria-label="}">
+    <nav class="md-nav" aria-label="Terraform State/Workspace Refactoring">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1603,15 +1547,15 @@
   
 </li>
         
-          <li class="md-nav__item">
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#terraform-resource-state-migration" class="md-nav__link">
     Terraform Resource State Migration
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1629,6 +1573,8 @@
                 
                   
 
+
+  <h1>Terraform State Refactoring</h1>
 
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -1666,8 +1612,8 @@
 <p>delete old terraform workspace</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-</div>
 <p>default workspace cannot be deleted.</p>
+</div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>terraform workspace delete -force &lt;old-workspace-name&gt;
 </code></pre></div>
 </li>
@@ -1698,14 +1644,15 @@
     
 5. comment out/edit the backend block in backend.tf if exists. 
   This will force a terraform init which will switch to a new remote or local backend </p>
-<h1 id="backend-gcs">backend "gcs" {<a class="headerlink" href="#backend-gcs" title="Permanent link">&para;</a></h1>
-<h1 id="bucket">bucket = "***"<a class="headerlink" href="#bucket" title="Permanent link">&para;</a></h1>
-<h1 id="prefix-terraformstate">prefix = "terraform/state/<strong><em>/</em></strong>"<a class="headerlink" href="#prefix-terraformstate" title="Permanent link">&para;</a></h1>
-<h1 id="_1">}<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a># backend &quot;gcs&quot; {
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>#   bucket = &quot;***&quot;
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>#   prefix = &quot;terraform/state/***/***&quot;
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a># }  
+</code></pre></div>
 </li>
 <li>
 <p>switch to new backend - this will copy any current workspaces from all </p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>terraform init -migrate-state
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>terraform init -migrate-state
 </code></pre></div>
 </li>
 </ol>
@@ -1714,17 +1661,17 @@
 <ol>
 <li>
 <p>create new workspace and copy <new-workspace-name>.tfstate</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>terraform workspace new -state=&lt;new-workspace-name&gt;.tfstate &lt;new-workspace-name&gt; 
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>terraform workspace new -state=&lt;new-workspace-name&gt;.tfstate &lt;new-workspace-name&gt; 
 </code></pre></div>
 </li>
 <li>
 <p>validate terraform state</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>terraform plan
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>terraform plan
 </code></pre></div>
 </li>
 <li>
 <p>validate terraform workspace</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>terraform workspace list
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>terraform workspace list
 </code></pre></div>
 </li>
 </ol>
@@ -1733,36 +1680,36 @@
 <ol>
 <li>create a local terraform state backup</li>
 </ol>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a> terraform state pull &gt; &lt;workspace-name&gt;.tfstate 
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a> terraform state pull &gt; &lt;workspace-name&gt;.tfstate 
 </code></pre></div>
 <ol>
 <li>
 <p>list all terraform resources in state file</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>terraform state list
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>terraform state list
 </code></pre></div>
 <ul>
 <li>output</li>
 </ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>gtz4all@admin:~/terraform$ terraform state list
-<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>module.new-vpcs[&quot;gtz4all-core-vnet01&quot;].module.subnet.google_compute_subnetwork.subnetwork[&quot;us-east1/gtz4all-use1-prd-snet01&quot;]
-<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>module.new-vpcs[&quot;gtz4all-core-net01&quot;].module.subnet.google_compute_subnetwork.subnetwork[&quot;us-east1/gtz4all-use1-npr-snet01&quot;]
-<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>module.new-vpcs[&quot;gtz4all-core-net01&quot;].module.subnet.google_compute_subnetwork.subnetwork[&quot;us-east1/gtz4all-use1-dev-snet01&quot;]
-<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>module.new-vpcs[&quot;gtz4all-core-net01&quot;].module.subnet.google_compute_subnetwork.subnetwork[&quot;us-east1/gtz4all-use1-shd-snet01&quot;]
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>gtz4all@admin:~/terraform$ terraform state list
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>module.new-vpcs[&quot;gtz4all-core-vnet01&quot;].module.subnet.google_compute_subnetwork.subnetwork[&quot;us-east1/gtz4all-use1-prd-snet01&quot;]
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>module.new-vpcs[&quot;gtz4all-core-net01&quot;].module.subnet.google_compute_subnetwork.subnetwork[&quot;us-east1/gtz4all-use1-npr-snet01&quot;]
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>module.new-vpcs[&quot;gtz4all-core-net01&quot;].module.subnet.google_compute_subnetwork.subnetwork[&quot;us-east1/gtz4all-use1-dev-snet01&quot;]
+<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>module.new-vpcs[&quot;gtz4all-core-net01&quot;].module.subnet.google_compute_subnetwork.subnetwork[&quot;us-east1/gtz4all-use1-shd-snet01&quot;]
 </code></pre></div>
 </li>
 <li>
 <p>move a resource from current workspace state file into a local state file</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>terraform state mv -state-out=&lt;new-state-name&gt;.tfstate \
-<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>&#39;module.xxx[&quot;xxx&quot;]&#39; \     #&lt;--- resource name from state list - wrap resource inside single quotes
-<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a> &#39;module.xxx[&quot;xxx&quot;]&#39;       #&lt;--- new resource name - use same name as state list - wrap resource inside single quotes
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>terraform state mv -state-out=&lt;new-state-name&gt;.tfstate \
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>&#39;module.xxx[&quot;xxx&quot;]&#39; \     #&lt;--- resource name from state list - wrap resource inside single quotes
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a> &#39;module.xxx[&quot;xxx&quot;]&#39;       #&lt;--- new resource name - use same name as state list - wrap resource inside single quotes
 </code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>since resource value is using double quotes, single quotes are being used outside resource.</p>
 </div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>gtz4all@admin:~/terraform$  terraform state mv -state-out=prd.tfstate \
-<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>&gt; &#39;module.new-vpcs[&quot;gtz4all-core-vnet01&quot;].module.subnet.google_compute_subnetwork.subnetwork[&quot;us-east1/gtz4all-use1-prd-snet01&quot;]&#39; \
-<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>&gt; &#39;module.new-vpcs[&quot;gtz4all-core-vnet01&quot;].module.subnet.google_compute_subnetwork.subnetwork[&quot;us-east1/gtz4all-use1-prd-snet01&quot;]&#39;
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>gtz4all@admin:~/terraform$  terraform state mv -state-out=prd.tfstate \
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>&gt; &#39;module.new-vpcs[&quot;gtz4all-core-vnet01&quot;].module.subnet.google_compute_subnetwork.subnetwork[&quot;us-east1/gtz4all-use1-prd-snet01&quot;]&#39; \
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>&gt; &#39;module.new-vpcs[&quot;gtz4all-core-vnet01&quot;].module.subnet.google_compute_subnetwork.subnetwork[&quot;us-east1/gtz4all-use1-prd-snet01&quot;]&#39;
 </code></pre></div>
 </li>
 <li>
@@ -1781,7 +1728,7 @@
 <p>create new workspace and copy local <new-state-name>.tfstate</p>
 </li>
 </ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>terraform workspace new -state=&lt;new-state-name&gt;.tfstate &lt;new-workspace-name&gt; 
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>terraform workspace new -state=&lt;new-state-name&gt;.tfstate &lt;new-workspace-name&gt; 
 </code></pre></div>
 </li>
 <li>
