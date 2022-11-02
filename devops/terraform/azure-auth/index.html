@@ -839,6 +839,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#terrafom-example" class="md-nav__link">
+    Terrafom Example
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1519,6 +1526,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#terrafom-example" class="md-nav__link">
+    Terrafom Example
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1581,7 +1595,10 @@ It is used to grant the minimum permissions level needed to perform specific tas
 <p>Add <strong>Client Secrete</strong></p>
 <p><img alt="image" src="https://user-images.githubusercontent.com/40032360/199319856-72f5893c-8a10-4afa-85c7-45e3b3dccf14.png" />
   <img alt="image" src="https://user-images.githubusercontent.com/40032360/199320032-f8b796c2-00cd-493e-988d-299c602a246c.png" /></p>
-<p>note the <strong>Value</strong> Id. This is the required value for the environment variable: <code>ARM_CLIENT_SECRET</code>.  this value is only displayed once.</p>
+<p>!!! note </p>
+<div class="codehilite"><pre><span></span><code><span class="w">  </span><span class="n">the</span><span class="w"> </span><span class="o">**</span><span class="k">Value</span><span class="o">**</span><span class="w"> </span><span class="n">Id</span><span class="p">.</span><span class="w"> </span><span class="n">This</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">required</span><span class="w"> </span><span class="k">value</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">environment</span><span class="w"> </span><span class="n">variable</span><span class="o">:</span><span class="w"> </span><span class="n n-Quoted">`</span><span class="n n-Quoted n-Quoted-Escape">``</span><span class="n n-Quoted">ARM_CLIENT_SECRET</span><span class="n n-Quoted n-Quoted-Escape">``</span><span class="n n-Quoted">`</span><span class="p">.</span><span class="w">  </span><span class="n">this</span><span class="w"> </span><span class="k">value</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="k">only</span><span class="w"> </span><span class="n">displayed</span><span class="w"> </span><span class="n">once</span><span class="p">.</span><span class="w"></span>
+</code></pre></div>
+
 <p><img alt="image" src="https://user-images.githubusercontent.com/40032360/199321282-7b096ee6-822e-42c1-8514-ad02f6357fe0.png" /></p>
 </li>
 <li>
@@ -1599,10 +1616,116 @@ It is used to grant the minimum permissions level needed to perform specific tas
 <li>
 <p><img alt="image" src="https://user-images.githubusercontent.com/40032360/199324438-94134dbb-290f-42d3-a8c4-0291f7851139.png" /></p>
 </li>
+<li>
+<p>Specify a Role which grants the appropriate permissions needed for the Service Principal(for example, Network Contributor will grant Read/Write on all network resources in the Subscription).</p>
+<ul>
+<li>
+<p><strong>Role</strong>: </p>
+<p>A role definition is a collection of permissions. You can use the built-in roles or you can create your own custom roles.</p>
+<p>[<code>Network Contributor</code>]</p>
+</li>
+<li>
+<p><strong>Members</strong>: </p>
+<p><strong>Selected role</strong>: Network Contributor</p>
+<p><strong>Assign access to</strong>: User, group, or service principal</p>
+<p><strong>Members</strong>: [+]Select member (search for the newly created service principal)</p>
+</li>
+<li>
+<p>[Review + Assign]</p>
+</li>
 </ul>
 </li>
+<li>
+<p><img alt="image" src="https://user-images.githubusercontent.com/40032360/199544783-221613fc-d493-48fc-824d-e3c1827ad87b.png" /></p>
+</li>
+</ul>
+</li>
+<li>
+<p>Export Terraform Variables</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">export</span> <span class="nv">ARM_CLIENT_ID</span><span class="o">=</span><span class="s2">&quot;00000000-0000-0000-0000-000000000000&quot;</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nb">export</span> <span class="nv">ARM_CLIENT_SECRET</span><span class="o">=</span><span class="s2">&quot;00000000-0000-0000-0000-000000000000&quot;</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="nb">export</span> <span class="nv">ARM_SUBSCRIPTION_ID</span><span class="o">=</span><span class="s2">&quot;00000000-0000-0000-0000-000000000000&quot;</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="nb">export</span> <span class="nv">ARM_TENANT_ID</span><span class="o">=</span><span class="s2">&quot;00000000-0000-0000-0000-000000000000&quot;</span>
+</code></pre></div>
+</li>
+<li>
+<p>Validate credentials using <strong>AZ CLI</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>az login --service-principal -u <span class="nv">$ARM_CLIENT_ID</span> -p <span class="nv">$ARM_CLIENT_SECRET</span> --tenant <span class="nv">$ARM_TENANT_ID</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="o">[</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>  <span class="o">{</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    <span class="s2">&quot;cloudName&quot;</span>: <span class="s2">&quot;AzureCloud&quot;</span>,
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    <span class="s2">&quot;id&quot;</span>: <span class="s2">&quot;97bd4d2e-0b8b-4cab-88d6-445e32c5f2b8&quot;</span>,
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>    <span class="s2">&quot;isDefault&quot;</span>: true,
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>    <span class="s2">&quot;name&quot;</span>: <span class="s2">&quot;sandbox-services&quot;</span>,
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>    <span class="s2">&quot;state&quot;</span>: <span class="s2">&quot;Enabled&quot;</span>,
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>    <span class="s2">&quot;tenantId&quot;</span>: <span class="s2">&quot;90b97141-b1c4-453e-8f76-10db96d5d950&quot;</span>,
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>    <span class="s2">&quot;user&quot;</span>: <span class="o">{</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>      <span class="s2">&quot;name&quot;</span>: <span class="s2">&quot;9bc261bc-84bf-4c41-af58-c4da7acabd86&quot;</span>,
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>      <span class="s2">&quot;type&quot;</span>: <span class="s2">&quot;servicePrincipal&quot;</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>    <span class="o">}</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>  <span class="o">}</span>
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="o">]</span>
+</code></pre></div>
+</li>
 </ol>
-<script type="text/javascript" src="https://viewer.diagrams.net/js/viewer-static.min.js"></script>
+<h4 id="terrafom-example">Terrafom Example<a class="headerlink" href="#terrafom-example" title="Permanent link">&para;</a></h4>
+<ol>
+<li>
+<p>Terraform main.tf content</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>## terraform provider
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>terraform {
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>  required_version = &quot;&gt;= 0.12.29, &lt; 2.0&quot;
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>  required_providers {
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>    azurerm = {
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>      source  = &quot;hashicorp/azurerm&quot;
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>      version = &quot;~&gt; 3.7&quot;
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>    }
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>  }
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>}
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>## Azure Provider configuration
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>provider &quot;azurerm&quot; {
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>   features {}
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>   skip_provider_registration = true
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>}
+<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>
+<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>## Variables
+<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>locals {
+<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>  resource_group_name = &quot;sandbox-rg1&quot;
+<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a>  location = &quot;East US&quot;
+<a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a>  name = &quot;lab1&quot;
+<a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a>  address_space = &quot;10.100.0.0/16&quot;
+<a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a>}
+<a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a>
+<a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a>## Virtual Network
+<a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a>resource &quot;azurerm_virtual_network&quot; &quot;sandbox&quot; {
+<a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a>  name                = &quot;vnet${local.name}&quot;
+<a id="__codelineno-3-29" name="__codelineno-3-29" href="#__codelineno-3-29"></a>  location            = local.location
+<a id="__codelineno-3-30" name="__codelineno-3-30" href="#__codelineno-3-30"></a>  resource_group_name = local.resource_group_name
+<a id="__codelineno-3-31" name="__codelineno-3-31" href="#__codelineno-3-31"></a>  address_space       = [local.address_space]
+<a id="__codelineno-3-32" name="__codelineno-3-32" href="#__codelineno-3-32"></a>  subnet {
+<a id="__codelineno-3-33" name="__codelineno-3-33" href="#__codelineno-3-33"></a>    name           = &quot;vnet${local.name}-snet1&quot;
+<a id="__codelineno-3-34" name="__codelineno-3-34" href="#__codelineno-3-34"></a>    address_prefix = cidrsubnets(local.address_space, 8,8)[0]
+<a id="__codelineno-3-35" name="__codelineno-3-35" href="#__codelineno-3-35"></a>  }
+<a id="__codelineno-3-36" name="__codelineno-3-36" href="#__codelineno-3-36"></a>  subnet {
+<a id="__codelineno-3-37" name="__codelineno-3-37" href="#__codelineno-3-37"></a>    name           = &quot;vnet${local.name}-snet2&quot;
+<a id="__codelineno-3-38" name="__codelineno-3-38" href="#__codelineno-3-38"></a>    address_prefix = cidrsubnets(local.address_space, 8,8)[1]
+<a id="__codelineno-3-39" name="__codelineno-3-39" href="#__codelineno-3-39"></a>  }
+<a id="__codelineno-3-40" name="__codelineno-3-40" href="#__codelineno-3-40"></a>
+<a id="__codelineno-3-41" name="__codelineno-3-41" href="#__codelineno-3-41"></a>  tags = {
+<a id="__codelineno-3-42" name="__codelineno-3-42" href="#__codelineno-3-42"></a>    environment = &quot;sandbox&quot;
+<a id="__codelineno-3-43" name="__codelineno-3-43" href="#__codelineno-3-43"></a>  }
+<a id="__codelineno-3-44" name="__codelineno-3-44" href="#__codelineno-3-44"></a>}
+</code></pre></div>
+</li>
+<li>
+<p>terraform init</p>
+</li>
+<li>terraform plan</li>
+<li>terraform apply</li>
+<li>terraform destroy<script type="text/javascript" src="https://viewer.diagrams.net/js/viewer-static.min.js"></script></li>
+</ol>
 
 
 
