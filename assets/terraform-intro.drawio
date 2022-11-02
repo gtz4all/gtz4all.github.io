@@ -1,1 +1,178 @@
-<mxfile host="app.diagrams.net" modified="2022-11-02T17:42:37.960Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36" version="20.5.1" etag="jd-sbD_sLahM5T_1YoRc" type="github"><diagram id="j8NRaP6ptjCyK-sQSBvK">UzV2zq1wL0osyPDNT0nNUTV2VTV2LsrPL4GwciucU3NyVI0MMlNUjV1UjYwMgFjVyA2HrCFY1qAgsSg1rwSLBiADYTaQg2Y1AA==</diagram></mxfile>
+<mxfile host="app.diagrams.net" modified="2022-11-02T17:45:22.067Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36" etag="PVmg9WHgOSiX5CzmyzDN" version="20.5.1" type="github">
+  <diagram id="j8NRaP6ptjCyK-sQSBvK" name="Page-1">
+    <mxGraphModel dx="1422" dy="924" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="3600" pageHeight="2400" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="7g3uo586e-RqVpvbVngg-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=block;endFill=1;strokeWidth=9;strokeColor=#E6E6E6;" edge="1" parent="1" source="7g3uo586e-RqVpvbVngg-2" target="7g3uo586e-RqVpvbVngg-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7g3uo586e-RqVpvbVngg-2" value="Init" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="348.08" y="60" width="110" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="7g3uo586e-RqVpvbVngg-3" value="Plan" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="539.6199999999999" y="60" width="110" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="7g3uo586e-RqVpvbVngg-4" value="Apply" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="731.6199999999999" y="60" width="110" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="7g3uo586e-RqVpvbVngg-5" value="Destroy" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="924.6199999999999" y="60" width="110" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="7g3uo586e-RqVpvbVngg-6" value="terraform init" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="346.54" y="90" width="111.54" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="7g3uo586e-RqVpvbVngg-7" value="terraform plan" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="538.0799999999999" y="90" width="111.54" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="7g3uo586e-RqVpvbVngg-8" value="terraform apply" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="730.0799999999999" y="90" width="111.54" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="7g3uo586e-RqVpvbVngg-9" value="terraform destroy" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="924.6199999999999" y="90" width="111.54" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="7g3uo586e-RqVpvbVngg-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=block;endFill=1;strokeWidth=9;strokeColor=#E6E6E6;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="649.6199999999999" y="89.30999999999995" as="sourcePoint" />
+            <mxPoint x="731.1599999999999" y="89.30999999999995" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="7g3uo586e-RqVpvbVngg-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=block;endFill=1;strokeWidth=9;strokeColor=#E6E6E6;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="842.31" y="89.30999999999995" as="sourcePoint" />
+            <mxPoint x="923.8499999999999" y="89.30999999999995" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="7g3uo586e-RqVpvbVngg-12" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;strokeColor=#000000;strokeWidth=1;fontSize=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="7g3uo586e-RqVpvbVngg-14" target="7g3uo586e-RqVpvbVngg-15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7g3uo586e-RqVpvbVngg-13" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontSize=1;endArrow=none;endFill=0;strokeColor=#000000;strokeWidth=1;" edge="1" parent="1" source="7g3uo586e-RqVpvbVngg-14" target="7g3uo586e-RqVpvbVngg-16">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7g3uo586e-RqVpvbVngg-14" value="terraform init" style="text;html=1;strokeColor=#d6b656;fillColor=#fff2cc;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="180" y="243" width="111.54" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="7g3uo586e-RqVpvbVngg-15" value="Plugin Installation" style="text;html=1;strokeColor=#d6b656;fillColor=#fff2cc;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="343.08" y="193" width="130" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="7g3uo586e-RqVpvbVngg-16" value="Module Installation" style="text;html=1;strokeColor=#d6b656;fillColor=#fff2cc;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="343.08" y="243" width="130" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="7g3uo586e-RqVpvbVngg-17" value="&lt;span style=&quot;color: rgb(52 , 53 , 54) ; letter-spacing: 0.17008px&quot;&gt;&lt;font style=&quot;font-size: 14px&quot;&gt;downloads and installs the necessary provider plugins based on information in &lt;b&gt;versions.tf&lt;/b&gt; files located in the local working directory and the module working directory&lt;/font&gt;&lt;/span&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="479.08" y="193" width="714" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="7g3uo586e-RqVpvbVngg-18" value="&lt;span style=&quot;color: rgb(52 , 53 , 54) ; letter-spacing: 0.17008px&quot;&gt;&lt;font style=&quot;font-size: 14px&quot;&gt;downloads module source code from the location provided in the source section of the resources in the main.tf&lt;/font&gt;&lt;/span&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="479.08" y="243" width="695" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="7g3uo586e-RqVpvbVngg-19" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=1;endArrow=none;endFill=0;strokeColor=#000000;strokeWidth=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="7g3uo586e-RqVpvbVngg-20" target="7g3uo586e-RqVpvbVngg-14">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="293.08" y="263" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="7g3uo586e-RqVpvbVngg-20" value="Backend Initialization" style="text;html=1;strokeColor=#d6b656;fillColor=#fff2cc;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="346.53999999999996" y="293" width="126.54" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="7g3uo586e-RqVpvbVngg-21" value="&lt;span style=&quot;color: rgb(52 , 53 , 54) ; letter-spacing: 0.17008px&quot;&gt;&lt;font style=&quot;font-size: 14px&quot;&gt;remote backend configuration in the &lt;b&gt;versions.tf &lt;/b&gt;is loaded including any workspaces already created.&amp;nbsp;&lt;/font&gt;&lt;/span&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="479.08" y="293" width="689" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="7g3uo586e-RqVpvbVngg-22" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontSize=1;endArrow=none;endFill=0;strokeColor=#000000;strokeWidth=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="7g3uo586e-RqVpvbVngg-23" target="7g3uo586e-RqVpvbVngg-24">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7g3uo586e-RqVpvbVngg-23" value="terraform apply" style="text;html=1;strokeColor=#6c8ebf;fillColor=#dae8fc;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="182.54000000000005" y="734" width="111.54" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="7g3uo586e-RqVpvbVngg-24" value="Reads" style="text;html=1;strokeColor=#6c8ebf;fillColor=#dae8fc;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="349.08" y="684" width="130" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="7g3uo586e-RqVpvbVngg-25" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;fontSize=1;endArrow=none;endFill=0;strokeColor=#000000;strokeWidth=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="7g3uo586e-RqVpvbVngg-26" target="7g3uo586e-RqVpvbVngg-23">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="350.62" y="799" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="7g3uo586e-RqVpvbVngg-26" value="&lt;span style=&quot;text-align: left&quot;&gt;&lt;font style=&quot;font-size: 12px&quot;&gt;Prompts&lt;/font&gt;&lt;/span&gt;" style="text;html=1;strokeColor=#666666;fillColor=#f5f5f5;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="352.53999999999996" y="784" width="126.54" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="7g3uo586e-RqVpvbVngg-27" value="&lt;span style=&quot;color: rgb(52 , 53 , 54) ; letter-spacing: 0.17008px&quot;&gt;&lt;font style=&quot;font-size: 14px&quot;&gt;creates execution plan and loads current configuration prior to reading the current state of any managed resources&lt;/font&gt;&lt;/span&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="484.62" y="683" width="756" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="7g3uo586e-RqVpvbVngg-28" value="Prompts to approve the destruction of all managed resources" style="text;whiteSpace=wrap;html=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="484.62" y="784" width="660" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="7g3uo586e-RqVpvbVngg-29" value="terraform destroy" style="text;html=1;strokeColor=#666666;fillColor=#f5f5f5;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="182.58000000000004" y="734" width="111.54" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="7g3uo586e-RqVpvbVngg-30" value="Reads" style="text;html=1;strokeColor=#666666;fillColor=#f5f5f5;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="349.12" y="684" width="130" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="7g3uo586e-RqVpvbVngg-31" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontSize=1;endArrow=none;endFill=0;strokeColor=#000000;strokeWidth=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="7g3uo586e-RqVpvbVngg-32" target="7g3uo586e-RqVpvbVngg-33">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7g3uo586e-RqVpvbVngg-32" value="terraform plan" style="text;html=1;strokeColor=#6c8ebf;fillColor=#dae8fc;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="180.00000000000006" y="413" width="111.54" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="7g3uo586e-RqVpvbVngg-33" value="Reads" style="text;html=1;strokeColor=#6c8ebf;fillColor=#dae8fc;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="346.53999999999996" y="363" width="130" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="7g3uo586e-RqVpvbVngg-34" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;fontSize=1;endArrow=none;endFill=0;strokeColor=#000000;strokeWidth=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="7g3uo586e-RqVpvbVngg-35" target="7g3uo586e-RqVpvbVngg-32">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="298.08" y="428.05555555555543" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="7g3uo586e-RqVpvbVngg-35" value="Compares" style="text;html=1;strokeColor=#6c8ebf;fillColor=#dae8fc;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="346.53999999999996" y="413" width="130" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="7g3uo586e-RqVpvbVngg-36" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;fontSize=1;endArrow=none;endFill=0;strokeColor=#000000;strokeWidth=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="7g3uo586e-RqVpvbVngg-37" target="7g3uo586e-RqVpvbVngg-32">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="348.08" y="478" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="7g3uo586e-RqVpvbVngg-37" value="Proposes" style="text;html=1;strokeColor=#6c8ebf;fillColor=#dae8fc;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="349.99999999999994" y="463" width="126.54" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="7g3uo586e-RqVpvbVngg-38" value="&lt;span style=&quot;color: rgb(52 , 53 , 54) ; letter-spacing: 0.17008px&quot;&gt;&lt;font style=&quot;font-size: 14px&quot;&gt;loads current configuration from the &lt;b&gt;main.tf. &lt;/b&gt;this is where variables are passed to resource modules to create&amp;nbsp;&lt;/font&gt;&lt;/span&gt;&lt;span style=&quot;color: rgb(52 , 53 , 54) ; font-size: 14px ; letter-spacing: 0.17008px&quot;&gt;an execution plan&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;color: rgb(52 , 53 , 54) ; letter-spacing: 0.17008px&quot;&gt;&lt;font style=&quot;font-size: 14px&quot;&gt;prior to reading the current state of any managed resources&lt;/font&gt;&lt;/span&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="482.08" y="352" width="756" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="7g3uo586e-RqVpvbVngg-39" value="&lt;font style=&quot;font-size: 14px&quot;&gt;Compares loaded configuration to the current state.&lt;/font&gt;" style="text;whiteSpace=wrap;html=1;fontSize=1;strokeWidth=8;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="482.08" y="418" width="600" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="7g3uo586e-RqVpvbVngg-40" value="Proposes a set of change actions to make the resources match the configuration. no changes can be made with terraform plan" style="text;whiteSpace=wrap;html=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="482.08" y="454.5" width="556" height="47" as="geometry" />
+        </mxCell>
+        <mxCell id="7g3uo586e-RqVpvbVngg-41" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontSize=1;endArrow=none;endFill=0;strokeColor=#000000;strokeWidth=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="7g3uo586e-RqVpvbVngg-42" target="7g3uo586e-RqVpvbVngg-43">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7g3uo586e-RqVpvbVngg-42" value="terraform apply" style="text;html=1;strokeColor=#82b366;fillColor=#d5e8d4;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="182.54000000000005" y="571" width="111.54" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="7g3uo586e-RqVpvbVngg-43" value="Reads" style="text;html=1;strokeColor=#82b366;fillColor=#d5e8d4;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="349.08" y="521" width="130" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="7g3uo586e-RqVpvbVngg-44" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;fontSize=1;endArrow=none;endFill=0;strokeColor=#000000;strokeWidth=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="7g3uo586e-RqVpvbVngg-45" target="7g3uo586e-RqVpvbVngg-42">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="300.62" y="586.0555555555554" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="7g3uo586e-RqVpvbVngg-45" value="Compares" style="text;html=1;strokeColor=#82b366;fillColor=#d5e8d4;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="349.08" y="571" width="130" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="7g3uo586e-RqVpvbVngg-46" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;fontSize=1;endArrow=none;endFill=0;strokeColor=#000000;strokeWidth=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="7g3uo586e-RqVpvbVngg-47" target="7g3uo586e-RqVpvbVngg-42">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="350.62" y="636" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="7g3uo586e-RqVpvbVngg-47" value="Proposes" style="text;html=1;strokeColor=#82b366;fillColor=#d5e8d4;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="352.53999999999996" y="621" width="126.54" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="7g3uo586e-RqVpvbVngg-48" value="&lt;span style=&quot;color: rgb(52 , 53 , 54) ; letter-spacing: 0.17008px&quot;&gt;&lt;font style=&quot;font-size: 14px&quot;&gt;loads current configuration from the &lt;b&gt;main.tf. &lt;/b&gt;this is where variables are passed to resource modules to create&amp;nbsp;&lt;/font&gt;&lt;/span&gt;&lt;span style=&quot;color: rgb(52 , 53 , 54) ; font-size: 14px ; letter-spacing: 0.17008px&quot;&gt;an execution plan&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;color: rgb(52 , 53 , 54) ; letter-spacing: 0.17008px&quot;&gt;&lt;font style=&quot;font-size: 14px&quot;&gt;prior to reading the current state of any managed resources&lt;/font&gt;&lt;/span&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="484.62" y="510" width="756" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="7g3uo586e-RqVpvbVngg-49" value="&lt;font style=&quot;font-size: 14px&quot;&gt;Compares loaded configuration to the current state.&lt;/font&gt;" style="text;whiteSpace=wrap;html=1;fontSize=1;strokeWidth=8;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="484.62" y="576" width="600" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="7g3uo586e-RqVpvbVngg-50" value="Prompts to approve a set of change actions to make the resources match the configuration. terraform apply is used to approve and make changes" style="text;whiteSpace=wrap;html=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="484.62" y="612.5" width="556" height="47" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
