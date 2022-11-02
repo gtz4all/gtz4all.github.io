@@ -1549,39 +1549,57 @@ However this is good for running terraform locally. To run terraform in a CI/CD 
 <p>An Azure service principal is a user identity used by user-created apps, services, and automation tools to access specific Azure resources. 
 It is used to grant the minimum permissions level needed to perform specific tasks. It can contain either a password or certificate used for authentication.</p>
 <ol>
-<li>Go to <a href="https://portal.azure.com/#view/Microsoft_AAD_RegisteredApps/ApplicationsListBlade">Azure App Register</a> &gt; New Registration</li>
-<li><strong>Name</strong>: terraform</li>
-<li><strong>Supported Account Types</strong>: Accounts in this organizational directory only (Default Directory only - Single tenant)</li>
-<li><strong>Redirect URI</strong>: web</li>
-<li>Leave Redirect URI <code>web</code> Value Blank
-  <img alt="image" src="https://user-images.githubusercontent.com/40032360/199315117-6e3ad267-f8ad-43d5-89a2-d302b2a96677.png" /></li>
 <li>
-<p>Proceed with <strong>[ Register ]</strong></p>
+<p>Go to <a href="https://portal.azure.com/#view/Microsoft_AAD_RegisteredApps/ApplicationsListBlade">Azure App Register</a> &gt; New Registration</p>
+<ul>
+<li>
+<p><strong>Name</strong>: terraform</p>
 </li>
 <li>
-<p>The newly created App Registration <code>terraform</code> should be visible on-screen
-  <img alt="image" src="https://user-images.githubusercontent.com/40032360/199318610-bf58a5b7-4777-4502-82a2-6963aaf80c60.png" /></p>
+<p><strong>Supported Account Types</strong>: Accounts in this organizational directory only (Default Directory only - Single tenant)</p>
 </li>
-</ol>
+<li>
+<p><strong>Redirect URI</strong>: web</p>
+</li>
+<li>
+<p>Leave Redirect URI <code>web</code> Value Blank</p>
+</li>
+</ul>
+<p><img alt="image" src="https://user-images.githubusercontent.com/40032360/199315117-6e3ad267-f8ad-43d5-89a2-d302b2a96677.png" /></p>
+<ul>
+<li>Proceed with <strong>[ Register ]</strong></li>
+</ul>
+</li>
+<li>
+<p>The newly created App Registration <code>terraform</code> should be visible on-screen</p>
+<p><img alt="image" src="https://user-images.githubusercontent.com/40032360/199318610-bf58a5b7-4777-4502-82a2-6963aaf80c60.png" /></p>
 <p>At the top of this page, note the "Application (client) ID" and the "Directory (tenant) ID".</p>
-<ol>
-<li>Generate a Client Secret
-  <img alt="image" src="https://user-images.githubusercontent.com/40032360/199319697-accf2dfc-e12e-4b03-b4ce-e950d103069e.png" /></li>
-</ol>
+</li>
+<li>
+<p>Generate a Client Secret</p>
+<p><img alt="image" src="https://user-images.githubusercontent.com/40032360/199319697-accf2dfc-e12e-4b03-b4ce-e950d103069e.png" /></p>
 <p>Add <strong>Client Secrete</strong></p>
 <p><img alt="image" src="https://user-images.githubusercontent.com/40032360/199319856-72f5893c-8a10-4afa-85c7-45e3b3dccf14.png" />
   <img alt="image" src="https://user-images.githubusercontent.com/40032360/199320032-f8b796c2-00cd-493e-988d-299c602a246c.png" /></p>
 <p>note the <strong>Value</strong> Id. This is the required value for the environment variable: <code>ARM_CLIENT_SECRET</code>.  this value is only displayed once.
    <img alt="image" src="https://user-images.githubusercontent.com/40032360/199321282-7b096ee6-822e-42c1-8514-ad02f6357fe0.png" /></p>
-<ol>
-<li>Granting the Application access to manage resources in a Subscription</li>
-<li><a href="https://portal.azure.com/#blade/Microsoft_Azure_Billing/SubscriptionsBlade">navigate to the Subscriptions blade within the Azure Portal</a></li>
-<li>select the Subscription you wish to use</li>
+</li>
+<li>
+<p>Granting the Application access to manage resources in a Subscription</p>
+<ul>
+<li>
+<p><a href="https://portal.azure.com/#blade/Microsoft_Azure_Billing/SubscriptionsBlade">navigate to the Subscriptions blade within the Azure Portal</a></p>
+</li>
+<li>
+<p>select the Subscription you wish to use</p>
+</li>
 <li>
 <p>click Access Control (IAM),  [+] Add &gt; Add role assignment.</p>
 </li>
 <li>
 <p><img alt="image" src="https://user-images.githubusercontent.com/40032360/199324438-94134dbb-290f-42d3-a8c4-0291f7851139.png" /></p>
+</li>
+</ul>
 </li>
 </ol>
 <script type="text/javascript" src="https://viewer.diagrams.net/js/viewer-static.min.js"></script>
