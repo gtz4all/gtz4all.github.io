@@ -43,8 +43,7 @@ title: Terraform State Refactoring
 
     !!! note
 
-      default workspace cannot be deleted.
-  
+        default workspace cannot be deleted.
   
     ```hlc
     terraform workspace delete -force <old-workspace-name>
@@ -81,12 +80,14 @@ title: Terraform State Refactoring
     
 5. comment out/edit the backend block in backend.tf if exists. 
   This will force a terraform init which will switch to a new remote or local backend 
-
+    
+    ```
     # backend "gcs" {
     #   bucket = "***"
     #   prefix = "terraform/state/***/***"
     # }  
-
+    ```
+    
 6. switch to new backend - this will copy any current workspaces from all 
 
     ```hlc
