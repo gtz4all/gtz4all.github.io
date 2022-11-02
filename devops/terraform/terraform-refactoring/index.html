@@ -12,14 +12,14 @@
         <meta name="author" content="Kervin Gtz">
       
       
-        <link rel="canonical" href="https://gtz4all.github.io/devops/databases/intro/">
+        <link rel="canonical" href="https://gtz4all.github.io/devops/terraform/terraform-refactoring/">
       
       <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.0, mkdocs-material-8.5.6">
     
     
       
-        <title>Introduction - Gtz4All</title>
+        <title>Terraform State Refactoring - Gtz4All</title>
       
     
     
@@ -57,9 +57,9 @@
     
   
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Gtz4All - Introduction" />
+  <meta property="og:title" content="Gtz4All - Terraform State Refactoring" />
   <meta property="og:description" content="Providing easy to deploy, reusable and automated solution for defining, provisioning and managing secure and scalable public and private cloud infrastructure environment. " />
-  <meta property="og:url" content="https://gtz4all.github.io/devops/databases/intro/" />
+  <meta property="og:url" content="https://gtz4all.github.io/devops/terraform/terraform-refactoring/" />
   <meta property="og:image" content="<url>" />
   <meta property="og:image:type" content="image/png" />
   <meta property="og:image:width" content="1200" />
@@ -87,7 +87,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#databases" class="md-skip">
+        <a href="#terraform-stateworkspace-renaming" class="md-skip">
           Skip to content
         </a>
       
@@ -120,7 +120,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Introduction
+              Terraform State Refactoring
             
           </span>
         </div>
@@ -745,12 +745,14 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2" type="checkbox" id="__nav_3_2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2" type="checkbox" id="__nav_3_2" checked>
       
       
       
@@ -773,7 +775,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../terraform/intro/" class="md-nav__link">
+      <a href="../intro/" class="md-nav__link">
         Introduction
       </a>
     </li>
@@ -787,7 +789,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../terraform/azure-auth/" class="md-nav__link">
+      <a href="../azure-auth/" class="md-nav__link">
         Terraform Azure Authentication
       </a>
     </li>
@@ -801,7 +803,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../terraform/google-secret-manager/" class="md-nav__link">
+      <a href="../google-secret-manager/" class="md-nav__link">
          Google Secret Manager
       </a>
     </li>
@@ -813,11 +815,103 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../terraform/terraform-refactoring/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Terraform State Refactoring
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Terraform State Refactoring
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#terraform-stateworkspace-renaming" class="md-nav__link">
+    Terraform State/Workspace Renaming
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#terraform-stateworkspace-refactoring" class="md-nav__link">
+    Terraform State/Workspace Refactoring
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backend-gcs" class="md-nav__link">
+    backend "gcs" {
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bucket" class="md-nav__link">
+    bucket = "***"
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prefix-terraformstate" class="md-nav__link">
+    prefix = "terraform/state//"
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    }
+  </a>
+  
+    <nav class="md-nav" aria-label="}">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#optional-steps" class="md-nav__link">
+    Optional Steps
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#terraform-resource-state-migration" class="md-nav__link">
+    Terraform Resource State Migration
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1045,14 +1139,12 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_6" type="checkbox" id="__nav_3_6" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_6" type="checkbox" id="__nav_3_6" >
       
       
       
@@ -1073,48 +1165,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Introduction
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../databases/intro/" class="md-nav__link">
         Introduction
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#databases" class="md-nav__link">
-    Databases
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1126,7 +1181,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../mongodb/" class="md-nav__link">
+      <a href="../../databases/mongodb/" class="md-nav__link">
         MongoDB
       </a>
     </li>
@@ -1499,9 +1554,64 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#databases" class="md-nav__link">
-    Databases
+  <a href="#terraform-stateworkspace-renaming" class="md-nav__link">
+    Terraform State/Workspace Renaming
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#terraform-stateworkspace-refactoring" class="md-nav__link">
+    Terraform State/Workspace Refactoring
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backend-gcs" class="md-nav__link">
+    backend "gcs" {
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bucket" class="md-nav__link">
+    bucket = "***"
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prefix-terraformstate" class="md-nav__link">
+    prefix = "terraform/state//"
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    }
+  </a>
+  
+    <nav class="md-nav" aria-label="}">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#optional-steps" class="md-nav__link">
+    Optional Steps
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#terraform-resource-state-migration" class="md-nav__link">
+    Terraform Resource State Migration
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1520,9 +1630,164 @@
                   
 
 
-  <h1>Introduction</h1>
-
-<h4 id="databases">Databases<script type="text/javascript" src="https://viewer.diagrams.net/js/viewer-static.min.js"></script><a class="headerlink" href="#databases" title="Permanent link">&para;</a></h4>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Always create a local backup of your state file before making any changes to it. If using a Cloud Bucket as your backend, enable versioning.</p>
+</div>
+<h4 id="terraform-stateworkspace-renaming">Terraform State/Workspace Renaming<a class="headerlink" href="#terraform-stateworkspace-renaming" title="Permanent link">&para;</a></h4>
+<ol>
+<li>
+<p>list current terraform workspaces</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>terraform init
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>terraform workspace list
+</code></pre></div>
+</li>
+<li>
+<p>select terraform workspace</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a> terraform workspace select &lt;workspace-name&gt;
+</code></pre></div>
+</li>
+<li>
+<p>create a local terraform state backup</p>
+<p><code>hlc
+ terraform state pull &gt; &lt;new-workspace-name&gt;.tfstate</code></p>
+</li>
+<li>
+<p>create new workspace and copy local <new-workspace-name>.tfstate</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>terraform workspace new -state=&lt;new-workspace-name&gt;.tfstate &lt;new-workspace-name&gt; 
+</code></pre></div>
+</li>
+<li>
+<p>validate terraform state in new workspace</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>terraform plan
+</code></pre></div>
+</li>
+<li>
+<p>delete old terraform workspace</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+</div>
+<p>default workspace cannot be deleted.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>terraform workspace delete -force &lt;old-workspace-name&gt;
+</code></pre></div>
+</li>
+</ol>
+<h4 id="terraform-stateworkspace-refactoring">Terraform State/Workspace Refactoring<a class="headerlink" href="#terraform-stateworkspace-refactoring" title="Permanent link">&para;</a></h4>
+<p>This can be used to move state between buckets and workspaces. Note: This moves all resources within a state file.</p>
+<ol>
+<li>
+<p>list current terraform workspaces</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>terraform init
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>terraform workspace list
+</code></pre></div>
+</li>
+<li>
+<p>switch to current terraform workspace </p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>terraform workspace select &lt;current-workspace-name&gt;
+</code></pre></div>
+</li>
+<li>
+<p>validate current terraform state</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>terraform plan
+</code></pre></div>
+</li>
+<li>
+<p>create a local terraform state backup</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>terraform state pull &gt; &lt;new-workspace-name&gt;.tfstate 
+</code></pre></div>
+    
+5. comment out/edit the backend block in backend.tf if exists. 
+  This will force a terraform init which will switch to a new remote or local backend </p>
+<h1 id="backend-gcs">backend "gcs" {<a class="headerlink" href="#backend-gcs" title="Permanent link">&para;</a></h1>
+<h1 id="bucket">bucket = "***"<a class="headerlink" href="#bucket" title="Permanent link">&para;</a></h1>
+<h1 id="prefix-terraformstate">prefix = "terraform/state/<strong><em>/</em></strong>"<a class="headerlink" href="#prefix-terraformstate" title="Permanent link">&para;</a></h1>
+<h1 id="_1">}<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+</li>
+<li>
+<p>switch to new backend - this will copy any current workspaces from all </p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>terraform init -migrate-state
+</code></pre></div>
+</li>
+</ol>
+<h6 id="optional-steps">Optional Steps<a class="headerlink" href="#optional-steps" title="Permanent link">&para;</a></h6>
+<p>This used to copy local state file into a newly created workspace.</p>
+<ol>
+<li>
+<p>create new workspace and copy <new-workspace-name>.tfstate</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>terraform workspace new -state=&lt;new-workspace-name&gt;.tfstate &lt;new-workspace-name&gt; 
+</code></pre></div>
+</li>
+<li>
+<p>validate terraform state</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>terraform plan
+</code></pre></div>
+</li>
+<li>
+<p>validate terraform workspace</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>terraform workspace list
+</code></pre></div>
+</li>
+</ol>
+<h4 id="terraform-resource-state-migration">Terraform Resource State Migration<a class="headerlink" href="#terraform-resource-state-migration" title="Permanent link">&para;</a></h4>
+<p>This can be used to move specific resources from one state file to another.</p>
+<ol>
+<li>create a local terraform state backup</li>
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a> terraform state pull &gt; &lt;workspace-name&gt;.tfstate 
+</code></pre></div>
+<ol>
+<li>
+<p>list all terraform resources in state file</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>terraform state list
+</code></pre></div>
+<ul>
+<li>output</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>gtz4all@admin:~/terraform$ terraform state list
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>module.new-vpcs[&quot;gtz4all-core-vnet01&quot;].module.subnet.google_compute_subnetwork.subnetwork[&quot;us-east1/gtz4all-use1-prd-snet01&quot;]
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>module.new-vpcs[&quot;gtz4all-core-net01&quot;].module.subnet.google_compute_subnetwork.subnetwork[&quot;us-east1/gtz4all-use1-npr-snet01&quot;]
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>module.new-vpcs[&quot;gtz4all-core-net01&quot;].module.subnet.google_compute_subnetwork.subnetwork[&quot;us-east1/gtz4all-use1-dev-snet01&quot;]
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>module.new-vpcs[&quot;gtz4all-core-net01&quot;].module.subnet.google_compute_subnetwork.subnetwork[&quot;us-east1/gtz4all-use1-shd-snet01&quot;]
+</code></pre></div>
+</li>
+<li>
+<p>move a resource from current workspace state file into a local state file</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>terraform state mv -state-out=&lt;new-state-name&gt;.tfstate \
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>&#39;module.xxx[&quot;xxx&quot;]&#39; \     #&lt;--- resource name from state list - wrap resource inside single quotes
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a> &#39;module.xxx[&quot;xxx&quot;]&#39;       #&lt;--- new resource name - use same name as state list - wrap resource inside single quotes
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>since resource value is using double quotes, single quotes are being used outside resource.</p>
+</div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>gtz4all@admin:~/terraform$  terraform state mv -state-out=prd.tfstate \
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>&gt; &#39;module.new-vpcs[&quot;gtz4all-core-vnet01&quot;].module.subnet.google_compute_subnetwork.subnetwork[&quot;us-east1/gtz4all-use1-prd-snet01&quot;]&#39; \
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>&gt; &#39;module.new-vpcs[&quot;gtz4all-core-vnet01&quot;].module.subnet.google_compute_subnetwork.subnetwork[&quot;us-east1/gtz4all-use1-prd-snet01&quot;]&#39;
+</code></pre></div>
+</li>
+<li>
+<p>edit variables file and remove any resources that have been move out of state file.</p>
+</li>
+<li>
+<p>validate changes by running <code>terraform plan/apply</code> - expected msg: <code>No changes. Your infrastructure matches the configuration.</code></p>
+</li>
+<li>
+<p>migrate moved resources to another workspace</p>
+<ul>
+<li>
+<p>create variables files with the resources that were moved</p>
+</li>
+<li>
+<p>create new workspace and copy local <new-state-name>.tfstate</p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>terraform workspace new -state=&lt;new-state-name&gt;.tfstate &lt;new-workspace-name&gt; 
+</code></pre></div>
+</li>
+<li>
+<p>validate by running <code>terraform plan/apply</code> - expected msg: <code>No changes. Your infrastructure matches the configuration.</code><script type="text/javascript" src="https://viewer.diagrams.net/js/viewer-static.min.js"></script></p>
+</li>
+</ol>
 
 
 
@@ -1543,7 +1808,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer" >
       
         
-        <a href="../../kubernetes/kubernetes_services/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Kubernetes Services" rel="prev">
+        <a href="../google-secret-manager/" class="md-footer__link md-footer__link--prev" aria-label="Previous:  Google Secret Manager" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -1552,20 +1817,20 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              Kubernetes Services
+               Google Secret Manager
             </div>
           </div>
         </a>
       
       
         
-        <a href="../mongodb/" class="md-footer__link md-footer__link--next" aria-label="Next: MongoDB" rel="next">
+        <a href="../../ansible/intro/" class="md-footer__link md-footer__link--next" aria-label="Next: Introduction" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              MongoDB
+              Introduction
             </div>
           </div>
           <div class="md-footer__button md-icon">

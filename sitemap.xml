@@ -171,6 +171,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://gtz4all.github.io/devops/terraform/terraform-refactoring/</loc>
+         <lastmod>2022-11-02</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://gtz4all.github.io/devops/webservices/environmentvars/</loc>
          <lastmod>2022-11-02</lastmod>
          <changefreq>daily</changefreq>
