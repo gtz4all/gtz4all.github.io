@@ -47,9 +47,10 @@ It is used to grant the minimum permissions level needed to perform specific tas
 
       ![image](https://user-images.githubusercontent.com/40032360/199319856-72f5893c-8a10-4afa-85c7-45e3b3dccf14.png)
       ![image](https://user-images.githubusercontent.com/40032360/199320032-f8b796c2-00cd-493e-988d-299c602a246c.png)
+      
+      note the **Value** Id. This is the required value for the environment variable: ```ARM_CLIENT_SECRET```.  this value is only displayed once.
 
-       note the **Value** Id. This is the required value for the environment variable: ```ARM_CLIENT_SECRET```.  this value is only displayed once.
-       ![image](https://user-images.githubusercontent.com/40032360/199321282-7b096ee6-822e-42c1-8514-ad02f6357fe0.png)
+      ![image](https://user-images.githubusercontent.com/40032360/199321282-7b096ee6-822e-42c1-8514-ad02f6357fe0.png)
 
 4. Granting the Application access to manage resources in a Subscription
 
