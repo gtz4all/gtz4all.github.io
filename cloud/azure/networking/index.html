@@ -1957,8 +1957,13 @@ style CCC fill:#F0FFFF</code></pre>
 <li>Custom Routes are user-defined or learned via BGP</li>
 </ul>
 <h4 id="route-tables">Route Tables<a class="headerlink" href="#route-tables" title="Permanent link">&para;</a></h4>
+<p>There are two types of routes:
+- System routes are dynamically created.
+    - Dynamically Created - These routes cannot be deleted or modify, but some can be overwritten but custom or BGP learned routes such as 0.0.0.0/0
+    - Default routes - subnet routes, vnet prefix routes, public internet, reserved addresses blackhole (Next Hop - none )
+    - Services Routes - vnet peering, virtual network gateway, service endpoints</p>
 <ul>
-<li>can be associated to subnets in different VPCs. ( what would be a use-case for this?)</li>
+<li>User-defined routes are self managed custom routes that can be used to overwrite some of the system routes.</li>
 </ul>
 <h4 id="gateways">Gateways<a class="headerlink" href="#gateways" title="Permanent link">&para;</a></h4>
 <ul>
