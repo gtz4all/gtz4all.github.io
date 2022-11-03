@@ -173,7 +173,15 @@ Virtual network address range | Virtual Network | routes traffic within the virt
 - Custom Routes are user-defined or learned via BGP
 
 #### Route Tables
-- can be associated to subnets in different VPCs. ( what would be a use-case for this?)
+
+There are two types of routes:
+- System routes are dynamically created.
+    - Dynamically Created - These routes cannot be deleted or modify, but some can be overwritten but custom or BGP learned routes such as 0.0.0.0/0
+    - Default routes - subnet routes, vnet prefix routes, public internet, reserved addresses blackhole (Next Hop - none )
+    - Services Routes - vnet peering, virtual network gateway, service endpoints
+
+- User-defined routes are self managed custom routes that can be used to overwrite some of the system routes.
+
 
 #### Gateways
 
