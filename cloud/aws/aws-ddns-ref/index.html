@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="```">
+        <meta name="description" content="[[TOC]]">
       
       
         <meta name="author" content="Kervin Gtz">
@@ -19,7 +19,7 @@
     
     
       
-        <title>Aws ddns ref - Gtz4All</title>
+        <title>AWS Tag Based Dynamic DNS - Gtz4All</title>
       
     
     
@@ -57,7 +57,7 @@
     
   
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Gtz4All - Aws ddns ref" />
+  <meta property="og:title" content="Gtz4All - AWS Tag Based Dynamic DNS" />
   <meta property="og:description" content="Providing easy to deploy, reusable and automated solution for defining, provisioning and managing secure and scalable public and private cloud infrastructure environment. " />
   <meta property="og:url" content="https://gtz4all.github.io/cloud/aws/aws-ddns-ref/" />
   <meta property="og:image" content="<url>" />
@@ -85,6 +85,11 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
+      
+        
+        <a href="#vpc-dns" class="md-skip">
+          Skip to content
+        </a>
       
     </div>
     <div data-md-component="announce">
@@ -115,7 +120,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Aws ddns ref
+              AWS Tag Based Dynamic DNS
             
           </span>
         </div>
@@ -434,9 +439,236 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          AWS Tag Based Dynamic DNS
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
-        Aws ddns ref
+        AWS Tag Based Dynamic DNS
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#vpc-dns" class="md-nav__link">
+    VPC DNS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#route53" class="md-nav__link">
+    Route53
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#private-hosted-zone-requirements" class="md-nav__link">
+    Private Hosted Zone Requirements
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#private-hosted-zone-records" class="md-nav__link">
+    Private Hosted Zone Records
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reverse-lookup-zone-records" class="md-nav__link">
+    Reverse Lookup Zone Records
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ec2-ddns-lambda" class="md-nav__link">
+    EC2 DDNS Lambda
+  </a>
+  
+    <nav class="md-nav" aria-label="EC2 DDNS Lambda">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ec2-ddns-lambda-flow" class="md-nav__link">
+    EC2 DDNS Lambda Flow
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#infrastructure-as-code" class="md-nav__link">
+    Infrastructure as code
+  </a>
+  
+    <nav class="md-nav" aria-label="Infrastructure as code">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#terraform" class="md-nav__link">
+    Terraform
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#terraform-modules" class="md-nav__link">
+    Terraform Modules
+  </a>
+  
+    <nav class="md-nav" aria-label="Terraform Modules">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#terraform-module-structure" class="md-nav__link">
+    Terraform Module Structure
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vpc-module" class="md-nav__link">
+    VPC Module
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tgw-module" class="md-nav__link">
+    TGW Module
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#networking-module" class="md-nav__link">
+    Networking Module
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iam-module" class="md-nav__link">
+    IAM Module
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lambda-module" class="md-nav__link">
+    Lambda Module
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ec2-module" class="md-nav__link">
+    EC2 Module
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ec2-tag-ddns-test-drive" class="md-nav__link">
+    EC2 Tag DDNS Test Drive
+  </a>
+  
+    <nav class="md-nav" aria-label="EC2 Tag DDNS Test Drive">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#requirements" class="md-nav__link">
+    Requirements
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#building-infrastructure" class="md-nav__link">
+    Building Infrastructure
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clean-up" class="md-nav__link">
+    Clean up
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cross-account-ec2-dynamic-dns" class="md-nav__link">
+    Cross-Account EC2 Dynamic DNS
+  </a>
+  
+    <nav class="md-nav" aria-label="Cross-Account EC2 Dynamic DNS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ec2-ddns-lambda-flow_1" class="md-nav__link">
+    EC2 DDNS Lambda Flow
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1458,6 +1690,219 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#vpc-dns" class="md-nav__link">
+    VPC DNS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#route53" class="md-nav__link">
+    Route53
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#private-hosted-zone-requirements" class="md-nav__link">
+    Private Hosted Zone Requirements
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#private-hosted-zone-records" class="md-nav__link">
+    Private Hosted Zone Records
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reverse-lookup-zone-records" class="md-nav__link">
+    Reverse Lookup Zone Records
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ec2-ddns-lambda" class="md-nav__link">
+    EC2 DDNS Lambda
+  </a>
+  
+    <nav class="md-nav" aria-label="EC2 DDNS Lambda">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ec2-ddns-lambda-flow" class="md-nav__link">
+    EC2 DDNS Lambda Flow
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#infrastructure-as-code" class="md-nav__link">
+    Infrastructure as code
+  </a>
+  
+    <nav class="md-nav" aria-label="Infrastructure as code">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#terraform" class="md-nav__link">
+    Terraform
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#terraform-modules" class="md-nav__link">
+    Terraform Modules
+  </a>
+  
+    <nav class="md-nav" aria-label="Terraform Modules">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#terraform-module-structure" class="md-nav__link">
+    Terraform Module Structure
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vpc-module" class="md-nav__link">
+    VPC Module
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tgw-module" class="md-nav__link">
+    TGW Module
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#networking-module" class="md-nav__link">
+    Networking Module
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iam-module" class="md-nav__link">
+    IAM Module
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lambda-module" class="md-nav__link">
+    Lambda Module
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ec2-module" class="md-nav__link">
+    EC2 Module
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ec2-tag-ddns-test-drive" class="md-nav__link">
+    EC2 Tag DDNS Test Drive
+  </a>
+  
+    <nav class="md-nav" aria-label="EC2 Tag DDNS Test Drive">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#requirements" class="md-nav__link">
+    Requirements
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#building-infrastructure" class="md-nav__link">
+    Building Infrastructure
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clean-up" class="md-nav__link">
+    Clean up
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cross-account-ec2-dynamic-dns" class="md-nav__link">
+    Cross-Account EC2 Dynamic DNS
+  </a>
+  
+    <nav class="md-nav" aria-label="Cross-Account EC2 Dynamic DNS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ec2-ddns-lambda-flow_1" class="md-nav__link">
+    EC2 DDNS Lambda Flow
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1471,17 +1916,440 @@
                   
 
 
-  <h1>Aws ddns ref</h1>
+  <h1>AWS Tag Based Dynamic DNS</h1>
 
-<p>```</p>
+<p>[[<em>TOC</em>]]</p>
+<h4 id="vpc-dns">VPC DNS<a class="headerlink" href="#vpc-dns" title="Permanent link">&para;</a></h4>
 <p>DNS provides a friendly name to refer to an EC2's IP Address. AWS already provides <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-dns.html">DNS support for their VPC</a>. However, they have some limitations:</p>
 <ul>
 <li>AWS-provided private DNS hostnames are static domain names that take the form <code>ip-private-ipv4-address.ec2.internal</code> for the <code>us-east-1</code> Region and , and <code>ip-private-ipv4-address.region.compute.internal</code> for other Regions. </li>
-<li>These private DNS hostnames are only accessible between instances in the same VPC. In a multi-VPC environment, instances can't resolve the DNS hostname outside the VPC that they are in.
- 
-<script type="text/javascript" src="https://viewer.diagrams.net/js/viewer-static.min.js"></script>
+<li>These private DNS hostnames are only accessible between instances in the same VPC. In a multi-VPC environment, instances can't resolve the DNS hostname outside the VPC that they are in.</li>
+</ul>
+<h4 id="route53">Route53<a class="headerlink" href="#route53" title="Permanent link">&para;</a></h4>
+<p>Route53 can be used to create custom private hosted zones. <code>A private hosted zone is a container for one or more VPC Domain records.</code> By creating a private hosted zone for a domain (such as gtz4all.com), and then creating records, instances can query Route 53 to find out how traffic should be routed for that domain within their VPC and among others.</p>
+<h4 id="private-hosted-zone-requirements">Private Hosted Zone Requirements<a class="headerlink" href="#private-hosted-zone-requirements" title="Permanent link">&para;</a></h4>
+<p>For a private hosted zone to be accessible, there are multiple requirements.
+for additional details, please refer to these links [Creating a private hosted zone]
+* A VPC must be associated with the Private Hosted Zone
+* The following VPC settings must be set to <code>true</code>
+    * <code>enableDnsHostnames</code>
+    * <code>enableDnsSupport</code>
+* DHCP options sets
+    * Valid <code>domain name`` (such as gtz4all.com)
+    * domain-name-servers value:</code>AmazonProvidedDNS```</p>
+<p>for additional details, please refer to these links 
+* <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/hosted-zone-private-creating.html">Creating a private hosted zone</a>
+* <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html">DHCP options sets for your VPC</a></p>
+<h4 id="private-hosted-zone-records">Private Hosted Zone Records<a class="headerlink" href="#private-hosted-zone-records" title="Permanent link">&para;</a></h4>
+<p>*
+* A(Address)record <code>A record</code> maps a hostname and a domain name to IP addresses. The value inside an A record can only be an <code>IP Address</code></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Domain</th>
+<th>A Record</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ec2lab</td>
+<td>gtz4all.com</td>
+<td>ec2lab.gtz4all.com</td>
+<td>10.168.0.10</td>
+</tr>
+</tbody>
+</table>
+<h4 id="reverse-lookup-zone-records">Reverse Lookup Zone Records<a class="headerlink" href="#reverse-lookup-zone-records" title="Permanent link">&para;</a></h4>
+<ul>
+<li>A reverse lookup zone is used primarily to resolve IP addresses to Address records. Reverse lookup Zones use a special root domain called in-and.</li>
+<li>An IP address CIDR block reverse octet order is used to create a subdomain within the in-and.ARPA domain.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>VPC CIDR Block</th>
+<th>Reverse Lookup Domain</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>10.168.0.0/16</td>
+<td>168.10.in-addr.arpa.</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>A DNS pointer record (PTR) provides the mapping of an IP address to a domain name. A DNS PTR record is the opposite of the 'A' record, which provides the IP address associated with a domain name.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>IP Address</th>
+<th>Reverse Lookup Zone</th>
+<th>PTR Record</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>10.168.0.10</td>
+<td>168.10.in-addr.arpa.</td>
+<td>10.0.168.10.in-addr.arpa.</td>
+<td>ec2lab.gtz4all.com</td>
+</tr>
+</tbody>
+</table>
+<h2 id="ec2-ddns-lambda">EC2 DDNS Lambda<a class="headerlink" href="#ec2-ddns-lambda" title="Permanent link">&para;</a></h2>
+<p><img alt="EC2 DDNS Lambda" src="img/single_account_dynamic_dns.jpg" /></p>
+<p>This solution uses tagging as a way to interact with the users. </p>
+<h6 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h6>
+<pre class="mermaid"><code>graph TD
+    A[ddns_lambda&lt;br&gt;core_ddns_lambda] --&gt;|assume role| B(sts_ddns_lambda)
+    B --&gt; C{EC2}
+    C --&gt;|Get Tag Value| D[DNSName]
+    C --&gt;|Get VPC| E[SharedVPC]
+    C --&gt;|Route53| F[A/PTR Records]
+    C --&gt;|Update Tag| G[DDNS]</code></pre>
+<ol>
+<li>
+<p>the users create a tag key <code>DNSName</code> with the <code>value</code> of their requested DNS name.</p>
+<ul>
+<li>DNSName: ec2lab</li>
+<li>VPC, Private IP, State</li>
+</ul>
+</li>
+<li>
+<p>Lambda will pull resource DNSName Value to validate DNS Naming Standards</p>
+<ul>
+<li>valid DNS name Characters</li>
+<li>Lambda will update the tag <code>DDNS</code> to notify users if they provided invalid characters</li>
+</ul>
+</li>
+<li>
+<p>Lambda will get the VPC attributes where the resource resides to validate if it is properly configured to support Route53.</p>
+<ul>
+<li><code>enableDnsHostnames</code>, <code>enableDnsSupport</code><ul>
+<li>set to <code>true</code> if it isn't already</li>
+</ul>
+</li>
+<li><code>domain-name</code>  and <code>AmazonProvidedDNS</code><ul>
+<li><code>`domain name</code> is later used to create Private Hosted Zone if it doesn't already exist</li>
+</ul>
+</li>
+<li>VPC CIDR Block<ul>
+<li><code>VPC_CIDR_Block</code> is used to generate Reverse Zone Lookup and create if required.</li>
+</ul>
 </li>
 </ul>
+</li>
+<li>
+<p>Lambda will then go into multiple phases to find out if <code>` DNSName</code> value already exists or if it's unique</p>
+<ul>
+<li>Lambda will update tag <code>DDNS</code> to notify users if the provided <code>DNSName</code> value already exist </li>
+<li>if the provided <code>DNSName</code> value is unique, <ul>
+<li>A Record is created in the VPC's <code>domain name</code></li>
+<li>PTR Record based on the resource <code>private ip</code> is created in the <code>VPC CIDR Block Reverse Lookup Zone</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>DynamoDB DDNS</p>
+</li>
+<li>used to keep track of instance attributes and DNSName Changes</li>
+<li>used to retrieve instance interface attributes when the instance has been terminated.</li>
+</ol>
+<h6 id="ec2-ddns-lambda-flow">EC2 DDNS Lambda Flow<a class="headerlink" href="#ec2-ddns-lambda-flow" title="Permanent link">&para;</a></h6>
+<ul>
+<li><img alt="EC2 DDNS Lambda Flow" src="/img/ddns_lambda_flow.jpg" /></li>
+</ul>
+<h2 id="infrastructure-as-code">Infrastructure as code<a class="headerlink" href="#infrastructure-as-code" title="Permanent link">&para;</a></h2>
+<p>Infrastructure as code ( <code>IaC</code>) solves several problems with manual and static infrastructure management. IaC provides the ability to create and destroy an environment multiple times. This provides a way to version control and create an environment lifecycle where environmental changes can transition from development, testing, and production.</p>
+<h4 id="terraform">Terraform<a class="headerlink" href="#terraform" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Terraform is an IaC (Infrastructure as Code) tool used to build and modify infrastructure safely and efficiently. It keeps track of its environment state so rerunning the tool against a code with no changes will not generate any changes. </li>
+</ul>
+<h4 id="terraform-modules">Terraform Modules<a class="headerlink" href="#terraform-modules" title="Permanent link">&para;</a></h4>
+<ul>
+<li><a href="https://www.terraform.io/docs/language/modules/index.html">Terraform modules</a> can be used to create reusable code using terraform loop-like features such as <a href="https://www.terraform.io/docs/language/meta-arguments/count.html">count</a>.</li>
+</ul>
+<h6 id="terraform-module-structure">Terraform Module Structure<a class="headerlink" href="#terraform-module-structure" title="Permanent link">&para;</a></h6>
+<div align="center">
+![Terraform Design](/img/tf_structure.jpg)
+</div>
+
+<h4 id="vpc-module">VPC Module<a class="headerlink" href="#vpc-module" title="Permanent link">&para;</a></h4>
+<ul>
+<li>The VPC Module is used to build multiple Three Tier VPCs</li>
+</ul>
+<pre class="mermaid"><code>graph TD
+subgraph A[Three Tier VPC1]
+  subgraph B[Availability Zone 1]
+    1[Public Subnet]
+    2[Private Subnet]
+    3[Local Subnet]
+  end
+  subgraph C[Availability Zone 2]
+    4[Local Subnet]
+    5[Private Subnet]
+    6[Public Subnet]
+  end
+end
+style 1 fill:#f5d5d5
+style 2 fill:#e0ebff
+style 3 fill:#d8e6d8
+style 6 fill:#f5d5d5
+style 5 fill:#e0ebff
+style 4 fill:#d8e6d8
+style A fill:#f5f5f5</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">module</span> <span class="s2">&quot;vpc_build&quot;</span> <span class="p">{</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>  <span class="n">count</span>     <span class="o">=</span> <span class="n">var</span><span class="o">.</span><span class="n">vpc_count</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>  <span class="n">source</span>    <span class="o">=</span> <span class="s2">&quot;./modules/vpc&quot;</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>  <span class="n">vpc_cidr</span>  <span class="o">=</span> <span class="n">var</span><span class="o">.</span><span class="n">vpc_cidrs</span><span class="p">[</span><span class="n">count</span><span class="o">.</span><span class="n">index</span><span class="p">]</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>  <span class="n">vpc_name</span>  <span class="o">=</span> <span class="n">var</span><span class="o">.</span><span class="n">vpc_names</span><span class="p">[</span><span class="n">count</span><span class="o">.</span><span class="n">index</span><span class="p">]</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>  <span class="n">vpc_domain</span>  <span class="o">=</span> <span class="s2">&quot;$</span><span class="si">{var.vpc_names[count.index]}</span><span class="s2">.gtz4all.com&quot;</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="p">}</span>
+</code></pre></div>
+<h4 id="tgw-module">TGW Module<a class="headerlink" href="#tgw-module" title="Permanent link">&para;</a></h4>
+<ul>
+<li>This module builds the Transit Gateway and One route table 
+<pre class="mermaid"><code>graph TD
+subgraph D[Transit Gateway]
+  subgraph E[Multi-VPC Route Table]
+    7[Attachments] 
+  end
+end
+
+style 7 fill:#e0ebff
+style D fill:#f5f5f5</code></pre></li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">module</span> <span class="s2">&quot;tgw&quot;</span> <span class="p">{</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>  <span class="n">source</span>         <span class="o">=</span> <span class="s2">&quot;./modules/tgw&quot;</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>  <span class="n">tgw_name</span>       <span class="o">=</span> <span class="s2">&quot;multi_vpc&quot;</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="p">}</span>
+</code></pre></div>
+<h4 id="networking-module">Networking Module<a class="headerlink" href="#networking-module" title="Permanent link">&para;</a></h4>
+<ul>
+<li>This module is used to create VPC to TGW Connectivity which results in all VPCs being able to communicate with each other.</li>
+</ul>
+<p><pre class="mermaid"><code>graph TD
+
+subgraph A[Three Tier VPC1]
+  1[Availability Zone 1]
+  2[Availability Zone 2]
+end
+subgraph B[Three Tier VPC2]
+  3[Availability Zone 1]
+  4[Availability Zone 2]
+end
+subgraph C[Three Tier VPC3]
+  5[Availability Zone 1]
+  6[Availability Zone 2]
+end
+
+subgraph D[Transit Gateway]
+  subgraph E[Multi-VPC Route Table]
+    7[VPC1 Attachment] --&gt; 1
+    7[VPC1 Attachment] --&gt; 2
+    8[VPC2 Attachment] --&gt; 3
+    8[VPC2 Attachment] --&gt; 4
+    9[VPC3 Attachment] --&gt; 5
+    9[VPC4 Attachment] --&gt; 6
+  end
+end
+
+style A fill:#f5f5f5
+style B fill:#f5f5f5
+style C fill:#f5f5f5
+style D fill:#f5f5f5
+style 1 fill:#d8e6d8
+style 2 fill:#d8e6d8
+style 3 fill:#d8e6d8
+style 4 fill:#d8e6d8
+style 5 fill:#d8e6d8
+style 6 fill:#d8e6d8</code></pre>
+* variables are being pass from the vpc and tgw to the root module which in turn passes those values to the networking module
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">module</span> <span class="s2">&quot;vpc_networking&quot;</span> <span class="p">{</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>  <span class="n">count</span>     <span class="o">=</span> <span class="n">var</span><span class="o">.</span><span class="n">vpc_count</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>  <span class="n">source</span>          <span class="o">=</span> <span class="s2">&quot;./modules/networking&quot;</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>  <span class="n">dest_cidr_block</span> <span class="o">=</span> <span class="n">var</span><span class="o">.</span><span class="n">vpc_to_tgw_dest_cidr</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>  <span class="n">tgw_id</span>          <span class="o">=</span> <span class="n">module</span><span class="o">.</span><span class="n">tgw</span><span class="o">.</span><span class="n">tgw_id</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>  <span class="n">tgw_rt_id</span>       <span class="o">=</span> <span class="n">module</span><span class="o">.</span><span class="n">tgw</span><span class="o">.</span><span class="n">tgw_rt_id</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>  <span class="n">vpc_id</span>          <span class="o">=</span> <span class="n">module</span><span class="o">.</span><span class="n">vpc_build</span><span class="p">[</span><span class="n">count</span><span class="o">.</span><span class="n">index</span><span class="p">]</span><span class="o">.</span><span class="n">vpc_id</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>  <span class="n">vpc_name</span>        <span class="o">=</span> <span class="n">var</span><span class="o">.</span><span class="n">vpc_names</span><span class="p">[</span><span class="n">count</span><span class="o">.</span><span class="n">index</span><span class="p">]</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>  <span class="n">vpc_subnet0_id</span>  <span class="o">=</span> <span class="n">module</span><span class="o">.</span><span class="n">vpc_build</span><span class="p">[</span><span class="n">count</span><span class="o">.</span><span class="n">index</span><span class="p">]</span><span class="o">.</span><span class="n">local_subnet0_id</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>  <span class="n">vpc_subnet1_id</span>  <span class="o">=</span> <span class="n">module</span><span class="o">.</span><span class="n">vpc_build</span><span class="p">[</span><span class="n">count</span><span class="o">.</span><span class="n">index</span><span class="p">]</span><span class="o">.</span><span class="n">local_subnet1_id</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>  <span class="n">public_subnet_rt_id</span>  <span class="o">=</span> <span class="n">module</span><span class="o">.</span><span class="n">vpc_build</span><span class="p">[</span><span class="n">count</span><span class="o">.</span><span class="n">index</span><span class="p">]</span><span class="o">.</span><span class="n">public_rt_id</span>
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>  <span class="n">private_subnet_rt_id</span> <span class="o">=</span> <span class="n">module</span><span class="o">.</span><span class="n">vpc_build</span><span class="p">[</span><span class="n">count</span><span class="o">.</span><span class="n">index</span><span class="p">]</span><span class="o">.</span><span class="n">private_rt_id</span>
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>  <span class="n">local_subnet_rt_id</span>   <span class="o">=</span> <span class="n">module</span><span class="o">.</span><span class="n">vpc_build</span><span class="p">[</span><span class="n">count</span><span class="o">.</span><span class="n">index</span><span class="p">]</span><span class="o">.</span><span class="n">local_rt_id</span>
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="p">}</span>
+</code></pre></div></p>
+<h4 id="iam-module">IAM Module<a class="headerlink" href="#iam-module" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p>This module first creates the core_ddns_lambda role and policy. It then uses the core_ddns_lambda ARN to generate the sts_ddns_lambda policy which is associated with its corresponding role</p>
+</li>
+<li>
+<p>it also creates a <a href="/iam/ec2-tag-restriction-policy.json">ec2_tag_restriction</a> policy</p>
+</li>
+<li>to maintain a healthy Route53 environment and be able to track Route53 Records correctly. Once the DNSName is created, it must remain for the lifetime of its resource. If the tag gets deleted, Lambda would not be able to perform route 53 clean up like deleted A and PTR records.</li>
+<li>DDNS tag is used by lambda to update users on their DNS Name request. So users shouldn't be allowed to create or modify this tag.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="nt">&quot;Statement&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">      </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">          </span><span class="nt">&quot;Action&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">              </span><span class="s2">&quot;ec2:DeleteTags&quot;</span><span class="w"></span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">          </span><span class="p">],</span><span class="w"></span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">          </span><span class="nt">&quot;Condition&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">              </span><span class="nt">&quot;ForAllValues:StringEquals&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">                  </span><span class="nt">&quot;aws:TagKeys&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">                      </span><span class="s2">&quot;DNSName&quot;</span><span class="w"></span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">                  </span><span class="p">]</span><span class="w"></span>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">              </span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="w">          </span><span class="p">},</span><span class="w"></span>
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="w">          </span><span class="nt">&quot;Effect&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Deny&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="w">          </span><span class="nt">&quot;Resource&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;*&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="w">          </span><span class="nt">&quot;Sid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DenyDNSNameTagDeletion&quot;</span><span class="w"></span>
+<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="w">      </span><span class="p">},</span><span class="w"></span>
+<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="w">      </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a><span class="w">          </span><span class="nt">&quot;Action&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a><span class="w">              </span><span class="s2">&quot;ec2:DeleteTags&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a><span class="w">              </span><span class="s2">&quot;ec2:CreateTags&quot;</span><span class="w"></span>
+<a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a><span class="w">          </span><span class="p">],</span><span class="w"></span>
+<a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a><span class="w">          </span><span class="nt">&quot;Condition&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a><span class="w">              </span><span class="nt">&quot;ForAllValues:StringEquals&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a><span class="w">                  </span><span class="nt">&quot;aws:TagKeys&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a><span class="w">                      </span><span class="s2">&quot;DDNS&quot;</span><span class="w"></span>
+<a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a><span class="w">                  </span><span class="p">]</span><span class="w"></span>
+<a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a><span class="w">              </span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-3-29" name="__codelineno-3-29" href="#__codelineno-3-29"></a><span class="w">          </span><span class="p">},</span><span class="w"></span>
+<a id="__codelineno-3-30" name="__codelineno-3-30" href="#__codelineno-3-30"></a><span class="w">          </span><span class="nt">&quot;Effect&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Deny&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-3-31" name="__codelineno-3-31" href="#__codelineno-3-31"></a><span class="w">          </span><span class="nt">&quot;Resource&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;*&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-3-32" name="__codelineno-3-32" href="#__codelineno-3-32"></a><span class="w">          </span><span class="nt">&quot;Sid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DenyDDNSTagChanges&quot;</span><span class="w"></span>
+<a id="__codelineno-3-33" name="__codelineno-3-33" href="#__codelineno-3-33"></a><span class="w">      </span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-3-34" name="__codelineno-3-34" href="#__codelineno-3-34"></a><span class="w">  </span><span class="p">],</span><span class="w"></span>
+<a id="__codelineno-3-35" name="__codelineno-3-35" href="#__codelineno-3-35"></a><span class="w">  </span><span class="nt">&quot;Version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2012-10-17&quot;</span><span class="w"></span>
+<a id="__codelineno-3-36" name="__codelineno-3-36" href="#__codelineno-3-36"></a><span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">module</span> <span class="s2">&quot;iam_roles&quot;</span> <span class="p">{</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>  <span class="n">source</span>         <span class="o">=</span> <span class="s2">&quot;./modules/iam&quot;</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="p">}</span>
+</code></pre></div></li>
+</ul>
+<h4 id="lambda-module">Lambda Module<a class="headerlink" href="#lambda-module" title="Permanent link">&para;</a></h4>
+<ul>
+<li>This module builds a zip file which later is used to create the lambda function and its triggers.</li>
+<li>Events are used to trigger the creation/deletion of Route53 resources<ul>
+<li><code>aws.ec2</code> trigger is used to notify lambda about the creation or termination of an EC2. </li>
+<li><code>aws.tag</code> trigger is used to notify lambda about the creation or modification of the "DNSName" tag. </li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">module</span> <span class="s2">&quot;ddns_lambda&quot;</span> <span class="p">{</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>  <span class="n">source</span>         <span class="o">=</span> <span class="s2">&quot;./modules/lambda&quot;</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>  <span class="n">ec2_tag_ddns_role_arn</span> <span class="o">=</span> <span class="n">module</span><span class="o">.</span><span class="n">iam_roles</span><span class="o">.</span><span class="n">core_ddns_role_arn</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="p">}</span>
+</code></pre></div>
+<h4 id="ec2-module">EC2 Module<a class="headerlink" href="#ec2-module" title="Permanent link">&para;</a></h4>
+<ul>
+<li>This module is just to validate ec2_tag_ddns lambda environment</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">module</span> <span class="s2">&quot;ec2_ddns_lab&quot;</span> <span class="p">{</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>  <span class="n">count</span>             <span class="o">=</span> <span class="n">var</span><span class="o">.</span><span class="n">vpc_count</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>  <span class="n">source</span>            <span class="o">=</span> <span class="s2">&quot;./modules/ec2&quot;</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>  <span class="n">vpc_id</span>            <span class="o">=</span> <span class="n">module</span><span class="o">.</span><span class="n">vpc_build</span><span class="p">[</span><span class="n">count</span><span class="o">.</span><span class="n">index</span><span class="p">]</span><span class="o">.</span><span class="n">vpc_id</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>  <span class="n">public_subnet_id</span>  <span class="o">=</span> <span class="n">module</span><span class="o">.</span><span class="n">vpc_build</span><span class="p">[</span><span class="n">count</span><span class="o">.</span><span class="n">index</span><span class="p">]</span><span class="o">.</span><span class="n">public_subnet0_id</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>  <span class="n">ec2_name</span>          <span class="o">=</span> <span class="s2">&quot;$</span><span class="si">{var.vpc_names[count.index]}</span><span class="s2">-ddns-lab&quot;</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="p">}</span>
+</code></pre></div>
+<h2 id="ec2-tag-ddns-test-drive">EC2 Tag DDNS Test Drive<a class="headerlink" href="#ec2-tag-ddns-test-drive" title="Permanent link">&para;</a></h2>
+<h4 id="requirements">Requirements<a class="headerlink" href="#requirements" title="Permanent link">&para;</a></h4>
+<ol>
+<li><a href="https://learn.hashicorp.com/tutorials/terraform/install-cli">Install Terraform</a></li>
+<li>Verify Terraform Installation<ul>
+<li><code>terraform -help</code></li>
+</ul>
+</li>
+<li><a href="https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2-linux.html">Install AWS CLI</a></li>
+<li><a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html">Configuring the AWS CLI</a></li>
+<li>Verify AWS CLI Access<ul>
+<li><code>aws ec2 describe-vpcs</code></li>
+</ul>
+</li>
+</ol>
+<h4 id="building-infrastructure">Building Infrastructure<a class="headerlink" href="#building-infrastructure" title="Permanent link">&para;</a></h4>
+<ol>
+<li>terraform init</li>
+<li>terraform plan</li>
+<li>terraform apply
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">Do</span> <span class="n">you</span> <span class="n">want</span> <span class="n">to</span> <span class="n">perform</span> <span class="n">these</span> <span class="n">actions</span><span class="err">?</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>  <span class="n">Terraform</span> <span class="n">will</span> <span class="n">perform</span> <span class="n">the</span> <span class="n">actions</span> <span class="n">described</span> <span class="n">above</span><span class="o">.</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>  <span class="n">Only</span> <span class="s1">&#39;yes&#39;</span> <span class="n">will</span> <span class="n">be</span> <span class="n">accepted</span> <span class="n">to</span> <span class="n">approve</span><span class="o">.</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>  <span class="n">Enter</span> <span class="n">a</span> <span class="n">value</span><span class="p">:</span> <span class="n">yes</span>
+</code></pre></div></li>
+<li>Review the following Services<ul>
+<li>VPC</li>
+<li>EC2</li>
+<li>Route53</li>
+<li>DynamoDB</li>
+<li>Lambda</li>
+<li>IAM</li>
+</ul>
+</li>
+<li>Update EC2 DNSName Value<ul>
+<li>review DDNS Tag Value</li>
+</ul>
+</li>
+<li>Terminate Instance<ul>
+<li>Review DDNS Table and Route53 Private Hosted Zone and Reverse Zone Lookup</li>
+</ul>
+</li>
+</ol>
+<h4 id="clean-up">Clean up<a class="headerlink" href="#clean-up" title="Permanent link">&para;</a></h4>
+<ol>
+<li>
+<p>terraform destroy
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="n">Do</span> <span class="n">you</span> <span class="n">really</span> <span class="n">want</span> <span class="n">to</span> <span class="n">destroy</span> <span class="nb">all</span> <span class="n">resources</span><span class="err">?</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>  <span class="n">Terraform</span> <span class="n">will</span> <span class="n">destroy</span> <span class="nb">all</span> <span class="n">your</span> <span class="n">managed</span> <span class="n">infrastructure</span><span class="p">,</span> <span class="k">as</span> <span class="n">shown</span> <span class="n">above</span><span class="o">.</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>  <span class="n">There</span> <span class="ow">is</span> <span class="n">no</span> <span class="n">undo</span><span class="o">.</span> <span class="n">Only</span> <span class="s1">&#39;yes&#39;</span> <span class="n">will</span> <span class="n">be</span> <span class="n">accepted</span> <span class="n">to</span> <span class="n">confirm</span><span class="o">.</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>  <span class="n">Enter</span> <span class="n">a</span> <span class="n">value</span><span class="p">:</span> <span class="n">yes</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Resources built by EC2_TAG_DDNS_Lambda are not destroyed, they will need to be deleted <code>manually</code></p>
+<ul>
+<li>DynamoDB - DDNS</li>
+<li>Private Hosted Zones</li>
+<li>Reverse Lookup Zones</li>
+</ul>
+</li>
+</ol>
+<h2 id="cross-account-ec2-dynamic-dns">Cross-Account EC2 Dynamic DNS<a class="headerlink" href="#cross-account-ec2-dynamic-dns" title="Permanent link">&para;</a></h2>
+<ul>
+<li>This design can be used across multiple accounts using the follow AWS Features:</li>
+<li><a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-sharing.html">Shared VPCs</a></li>
+<li><a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEvents-CrossAccountEventDelivery.html">EventBridge Bus</a></li>
+<li><a href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a></li>
+</ul>
+<h6 id="ec2-ddns-lambda-flow_1">EC2 DDNS Lambda Flow<a class="headerlink" href="#ec2-ddns-lambda-flow_1" title="Permanent link">&para;</a></h6>
+<h2 id="_1"><img alt="Cross Account EC2 DDNS Lambda Flow" src="/img/cross_account_dynamic_dns.jpg" /><a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p><strong>NOTE</strong>
+Currently working on a Module to take care of the steps below.</p>
+<hr />
+<ol>
+<li>Share Subnets to a child account in your organization using [Resource Access Manager] (<a href="https://aws.amazon.com/blogs/networking-and-content-delivery/vpc-sharing-a-new-approach-to-multiple-accounts-and-vpc-management/">https://aws.amazon.com/blogs/networking-and-content-delivery/vpc-sharing-a-new-approach-to-multiple-accounts-and-vpc-management/</a>) </li>
+<li>Create AssumeRole (sts)... see <a href="/modules/iam">IAM Module STS Role</a></li>
+<li>Enable EventBus on <code>Network Account</code></li>
+<li>Create aws.ec2 and aws.tag <a href="/modules/lambda/ec2_tag_event_trigger.tf">EventBridge Triggers</a> towards <code>Network Account</code> EventBus on <code>Child Account</code></li>
+<li>Create Instance on child account with DNSName Tag</li>
+</ol>
+<script type="text/javascript" src="https://viewer.diagrams.net/js/viewer-static.min.js"></script>
 
 
 
