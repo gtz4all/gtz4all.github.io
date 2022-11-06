@@ -9,9 +9,5 @@ This repository contains all files used to create
 - `master`   --> contains the source code
 - `gh-pages` --> deployable (builded) version
 
-
-### TODO
-- Several sections needs completion or update. 
-
 ## About Diagrams
 using diagrams.net
