@@ -268,3 +268,16 @@ Virtual WANs are used to manage communication between multiple virtual networks,
 - Dynamic IP Security	
 
     Open by default. Network security groups are recommended but optional for restricting inbound or outbound traffic.
+
+#### Subnet Naming Restrictions
+
+- Dedicated Subnet Name: 'RouteServerSubnet'
+    - to associate a virtual network with a Router Server, it must contain a subnet with the name ```RouteServerSubnet``` with prefix of at least ```/27```.
+
+#### Force Tunneling
+
+- Enabling forced tunneling through a VPN connection
+
+    PowerShell is the only method available that can complete the process of setting a default site for tunneling.PowerShell command: ```Set-AzVirtualNetworkGatewayDefaultSite -GatewayDefaultSite $LocalGateway -VirtualNetworkGateway $VirtualGateway```
+    
+    
