@@ -757,6 +757,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#subnet-naming-restrictions" class="md-nav__link">
+    Subnet Naming Restrictions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#force-tunneling" class="md-nav__link">
+    Force Tunneling
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1723,6 +1737,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#subnet-naming-restrictions" class="md-nav__link">
+    Subnet Naming Restrictions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#force-tunneling" class="md-nav__link">
+    Force Tunneling
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2047,7 +2075,22 @@ style CCC fill:#F0FFFF</code></pre>
 </li>
 <li>
 <p>Dynamic IP Security   </p>
-<p>Open by default. Network security groups are recommended but optional for restricting inbound or outbound traffic.<script type="text/javascript" src="https://viewer.diagrams.net/js/viewer-static.min.js"></script></p>
+<p>Open by default. Network security groups are recommended but optional for restricting inbound or outbound traffic.</p>
+</li>
+</ul>
+<h4 id="subnet-naming-restrictions">Subnet Naming Restrictions<a class="headerlink" href="#subnet-naming-restrictions" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Dedicated Subnet Name: 'RouteServerSubnet'<ul>
+<li>to associate a virtual network with a Router Server, it must contain a subnet with the name <code>RouteServerSubnet</code> with prefix of at least <code>/27</code>.</li>
+</ul>
+</li>
+</ul>
+<h4 id="force-tunneling">Force Tunneling<a class="headerlink" href="#force-tunneling" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p>Enabling forced tunneling through a VPN connection</p>
+<p>PowerShell is the only method available that can complete the process of setting a default site for tunneling.PowerShell command: <code>Set-AzVirtualNetworkGatewayDefaultSite -GatewayDefaultSite $LocalGateway -VirtualNetworkGateway $VirtualGateway</code></p>
+<p><script type="text/javascript" src="https://viewer.diagrams.net/js/viewer-static.min.js"></script></p>
 </li>
 </ul>
 
