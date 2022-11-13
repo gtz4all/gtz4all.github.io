@@ -41,6 +41,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://gtz4all.github.io/cloud/azure/azure-cli/</loc>
+         <lastmod>2022-11-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://gtz4all.github.io/cloud/azure/azure-ngfw/</loc>
          <lastmod>2022-11-13</lastmod>
          <changefreq>daily</changefreq>

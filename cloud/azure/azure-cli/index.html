@@ -6,20 +6,37 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Providing easy to deploy, reusable and automated solution for defining, provisioning and managing secure and scalable public and private cloud infrastructure environment. ">
+        <meta name="description" content="Get Subscription Details
+  az account list
+
+## Output
+[
+  {
+    &quot;cloudName&quot;: &quot;AzureCloud&quot;,
+    &quot;id&quot;: &quot;4cedc5dd-e3ad-468d-bf66-32e31bdb9148&quot;,
+    &quot;isDefault&quot;: true,
+    &quot;name&quot;: &quot;P1-Real Hands-On Labs&quot;,
+    &quot;state&quot;: &quot;Enabled&quot;,
+    &quot;tenantId&quot;: &quot;3617ef9b-98b4-40d9-ba43-e1ed6709cf0d&quot;,
+    &quot;user&quot;: {
+      &quot;name&quot;: &quot;cloud_user_p_27fd299f@azurelabs.linuxacademy.com&quot;,
+      &quot;type&quot;: &quot;user&quot;
+    }
+  }
+]">
       
       
         <meta name="author" content="Kervin Gtz">
       
       
-        <link rel="canonical" href="https://gtz4all.github.io/cloud/azure/azure-ngfw/">
+        <link rel="canonical" href="https://gtz4all.github.io/cloud/azure/azure-cli/">
       
       <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.0, mkdocs-material-8.5.6">
     
     
       
-        <title>Azure Firewall Notes - Gtz4All</title>
+        <title>Azure CLI Useful Commands - Gtz4All</title>
       
     
     
@@ -57,9 +74,9 @@
     
   
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Gtz4All - Azure Firewall Notes" />
+  <meta property="og:title" content="Gtz4All - Azure CLI Useful Commands" />
   <meta property="og:description" content="Providing easy to deploy, reusable and automated solution for defining, provisioning and managing secure and scalable public and private cloud infrastructure environment. " />
-  <meta property="og:url" content="https://gtz4all.github.io/cloud/azure/azure-ngfw/" />
+  <meta property="og:url" content="https://gtz4all.github.io/cloud/azure/azure-cli/" />
   <meta property="og:image" content="<url>" />
   <meta property="og:image:type" content="image/png" />
   <meta property="og:image:width" content="1200" />
@@ -85,11 +102,6 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
-      
-        
-        <a href="#azure-firewall-forced-tunneling" class="md-skip">
-          Skip to content
-        </a>
       
     </div>
     <div data-md-component="announce">
@@ -120,7 +132,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Azure Firewall Notes
+              Azure CLI Useful Commands
             
           </span>
         </div>
@@ -547,20 +559,6 @@
               
   
   
-  
-    <li class="md-nav__item">
-      <a href="../azure-cli/" class="md-nav__link">
-        Azure CLI Useful Commands
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
     
   
   
@@ -570,39 +568,24 @@
       
       
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Azure Firewall Notes
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
       <a href="./" class="md-nav__link md-nav__link--active">
-        Azure Firewall Notes
+        Azure CLI Useful Commands
       </a>
       
-        
+    </li>
+  
 
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+            
+          
+            
+              
   
   
   
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#azure-firewall-forced-tunneling" class="md-nav__link">
-    Azure Firewall forced tunneling
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
+    <li class="md-nav__item">
+      <a href="../azure-ngfw/" class="md-nav__link">
+        Azure Firewall Notes
+      </a>
     </li>
   
 
@@ -1492,21 +1475,6 @@
   
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#azure-firewall-forced-tunneling" class="md-nav__link">
-    Azure Firewall forced tunneling
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -1520,21 +1488,43 @@
                   
 
 
-  <h1>Azure Firewall Notes</h1>
+  <h1>Azure CLI Useful Commands</h1>
 
-<h4 id="azure-firewall-forced-tunneling">Azure Firewall forced tunneling<a class="headerlink" href="#azure-firewall-forced-tunneling" title="Permanent link">&para;</a></h4>
 <ul>
 <li>
-<p>When you configure a new Azure Firewall, you can route all Internet-bound traffic to a designated next hop instead of going directly to the Internet.</p>
+<p>Get Subscription Details
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>az account list
+</code></pre></div>
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>## Output
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>[
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>  {
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>    &quot;cloudName&quot;: &quot;AzureCloud&quot;,
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>    &quot;id&quot;: &quot;4cedc5dd-e3ad-468d-bf66-32e31bdb9148&quot;,
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>    &quot;isDefault&quot;: true,
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>    &quot;name&quot;: &quot;P1-Real Hands-On Labs&quot;,
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>    &quot;state&quot;: &quot;Enabled&quot;,
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>    &quot;tenantId&quot;: &quot;3617ef9b-98b4-40d9-ba43-e1ed6709cf0d&quot;,
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>    &quot;user&quot;: {
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>      &quot;name&quot;: &quot;cloud_user_p_27fd299f@azurelabs.linuxacademy.com&quot;,
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>      &quot;type&quot;: &quot;user&quot;
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>    }
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>  }
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>]
+</code></pre></div></p>
 </li>
 <li>
-<p>Forced tunneling lets you <code>redirect</code> all internet bound traffic from Azure Firewall to your <code>on-premises firewall</code> or to chain it to a nearby network virtual appliance (NVA)for additional inspection. You enable a firewall for forced tunneling when you create a new firewall. As of today, it is not possible to migrate an existing firewall deployment to a forced tunneling mode.</p>
+<p>Get Subscription Id
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>az account list --query &#39;[].id&#39; -o tsv
+</code></pre></div></p>
 </li>
 <li>
-<p>To support forced tunneling, service management traffic is separated from customer traffic. <code>An additional</code> dedicated subnet named <code>AzureFirewallManagementSubnet</code> is required with its own associated public IP address. The only route allowed on this subnet is a default route to the internet, and Border Gateway Protocol (BGP) route propagation must be disabled.</p>
+<p>Get resource group Name
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>az group list --query &#39;[].name&#39; -o tsv
+</code></pre></div></p>
 </li>
 <li>
-<p>Within this configuration, the <code>AzureFirewallSubnet</code> can now include routes to any on-premises firewall or NVA to process traffic before it's passed to the internet. You can also publish these routes via BGP to AzureFirewallSubnet if BGP route propagation is enabled on this subnet.<script type="text/javascript" src="https://viewer.diagrams.net/js/viewer-static.min.js"></script></p>
+<p>Get resource group location
+  <code>az group list --query '[].location' -o tsv</code><script type="text/javascript" src="https://viewer.diagrams.net/js/viewer-static.min.js"></script></p>
 </li>
 </ul>
 
@@ -1557,7 +1547,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer" >
       
         
-        <a href="../azure-cli/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Azure CLI Useful Commands" rel="prev">
+        <a href="../intro/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Introduction" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -1566,20 +1556,20 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              Azure CLI Useful Commands
+              Introduction
             </div>
           </div>
         </a>
       
       
         
-        <a href="../azure-wan/" class="md-footer__link md-footer__link--next" aria-label="Next: Azure Virtual WAN Components" rel="next">
+        <a href="../azure-ngfw/" class="md-footer__link md-footer__link--next" aria-label="Next: Azure Firewall Notes" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Azure Virtual WAN Components
+              Azure Firewall Notes
             </div>
           </div>
           <div class="md-footer__button md-icon">
