@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2022-10-23T14:23:47.453Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36" etag="CZyWKysvXfYsudm6Nqs3" version="20.5.1" type="github">
+<mxfile host="app.diagrams.net" modified="2022-11-18T15:08:47.936Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36" etag="BTR-EBp7Icn6swft0LzI" version="20.5.1" type="github">
   <diagram id="HmYkqwLpmuTKebb72D1v" name="Page-1">
-    <mxGraphModel dx="1185" dy="723" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="3600" pageHeight="2400" math="0" shadow="0">
+    <mxGraphModel dx="1185" dy="770" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="3600" pageHeight="2400" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -27,7 +27,7 @@
         <mxCell id="bEqPmZrcNUUvBmmKXze_-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.75;entryY=1;entryDx=0;entryDy=0;dashed=1;fontColor=#990000;endArrow=none;endFill=0;" parent="1" source="Puc4vcn8dm9qU9cr8G19-13" target="bEqPmZrcNUUvBmmKXze_-4" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="Puc4vcn8dm9qU9cr8G19-13" value="VPN Gateway" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;dashPattern=1 1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+        <mxCell id="Puc4vcn8dm9qU9cr8G19-13" value="VPN Gateway&lt;br&gt;65515" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;dashPattern=1 1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
           <mxGeometry x="1510" y="900" width="120" height="57" as="geometry" />
         </mxCell>
         <mxCell id="Puc4vcn8dm9qU9cr8G19-14" value="" style="aspect=fixed;html=1;points=[];align=center;image;fontSize=12;image=img/lib/azure2/networking/Virtual_Network_Gateways.svg;dashed=1;dashPattern=1 1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
@@ -116,11 +116,11 @@
         <mxCell id="7EZMF6Ofp1-uIwZRk67G-29" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;startArrow=none;startFill=0;endArrow=none;endFill=0;" parent="1" source="Puc4vcn8dm9qU9cr8G19-18" target="7EZMF6Ofp1-uIwZRk67G-30" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="bEqPmZrcNUUvBmmKXze_-4" value="&lt;b&gt;&lt;font color=&quot;#990000&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&lt;span style=&quot;&quot;&gt; &lt;/span&gt;Azure Firewall Policy&lt;br&gt;&lt;span style=&quot;&quot;&gt; &lt;/span&gt;&lt;span style=&quot;&quot;&gt; &lt;/span&gt;&lt;span style=&quot;&quot;&gt; &lt;span style=&quot;&quot;&gt; &lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt; &lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt; &lt;/span&gt;- Name: vnet-to-vnet&lt;span style=&quot;&quot;&gt; &lt;span style=&quot;white-space: pre;&quot;&gt; &lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;&quot;&gt; &lt;/span&gt;- Name: vnet-to-inet&lt;br&gt;&lt;span style=&quot;&quot;&gt; &lt;/span&gt;&lt;span style=&quot;&quot;&gt; &lt;/span&gt;&lt;span style=&quot;&quot;&gt; &lt;/span&gt;&lt;span style=&quot;&quot;&gt; &lt;/span&gt;&lt;span style=&quot;&quot;&gt; &lt;/span&gt;&lt;span style=&quot;&quot;&gt; &lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt; &lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt; &lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt; &lt;/span&gt;- allow: 22,80,443&lt;/font&gt;&lt;/b&gt;&lt;b&gt;&lt;font color=&quot;#990000&quot;&gt;&lt;span style=&quot;&quot;&gt; &lt;span style=&quot;white-space: pre;&quot;&gt; &lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt; &lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;&quot;&gt; &lt;/span&gt;&lt;span style=&quot;&quot;&gt; &lt;/span&gt;- allow: 22,80,443&lt;/font&gt;&lt;/b&gt;&lt;b&gt;&lt;font color=&quot;#990000&quot;&gt;&lt;br&gt;&lt;br&gt;&lt;/font&gt;&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;strokeColor=#660000;verticalAlign=top;align=left;" parent="1" vertex="1">
-          <mxGeometry x="1281" y="754" width="349" height="56" as="geometry" />
+        <mxCell id="bEqPmZrcNUUvBmmKXze_-4" value="&lt;b&gt;&lt;font color=&quot;#990000&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;strokeColor=#660000;verticalAlign=top;align=right;" parent="1" vertex="1">
+          <mxGeometry x="1270" y="754" width="310" height="96" as="geometry" />
         </mxCell>
         <mxCell id="bEqPmZrcNUUvBmmKXze_-3" value="" style="aspect=fixed;html=1;points=[];align=center;image;fontSize=12;image=img/lib/azure2/networking/Azure_Firewall_Manager.svg;dashed=1;strokeColor=#808080;" parent="1" vertex="1">
-          <mxGeometry x="1281" y="753" width="40" height="34.29" as="geometry" />
+          <mxGeometry x="1270" y="750" width="40" height="34.29" as="geometry" />
         </mxCell>
         <mxCell id="bEqPmZrcNUUvBmmKXze_-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=0;exitDx=0;exitDy=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;dashed=1;fontColor=#990000;endArrow=none;endFill=0;" parent="1" source="Puc4vcn8dm9qU9cr8G19-12" target="bEqPmZrcNUUvBmmKXze_-4" edge="1">
           <mxGeometry relative="1" as="geometry">
@@ -130,34 +130,22 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="bEqPmZrcNUUvBmmKXze_-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;dashed=1;fontColor=#990000;endArrow=none;endFill=0;" parent="1" source="bEqPmZrcNUUvBmmKXze_-4" target="Puc4vcn8dm9qU9cr8G19-12" edge="1">
+        <mxCell id="bEqPmZrcNUUvBmmKXze_-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.567;exitY=0.008;exitDx=0;exitDy=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;dashed=1;fontColor=#990000;endArrow=none;endFill=0;exitPerimeter=0;" parent="1" source="bEqPmZrcNUUvBmmKXze_-4" target="Puc4vcn8dm9qU9cr8G19-12" edge="1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
               <mxPoint x="1446" y="710" />
-              <mxPoint x="1528" y="710" />
+              <mxPoint x="1527" y="710" />
             </Array>
           </mxGeometry>
-        </mxCell>
-        <mxCell id="bEqPmZrcNUUvBmmKXze_-22" value="&lt;font style=&quot;&quot; color=&quot;#990000&quot;&gt;&lt;span style=&quot;font-weight: bold; white-space: pre;&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;	&lt;span style=&quot;white-space: pre;&quot;&gt;	&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;	&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;b&gt;Azure Firewall Manager&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-weight: bold; white-space: pre;&quot;&gt; &lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&lt;b&gt; &lt;/b&gt;&lt;span style=&quot;font-weight: bold; white-space: pre;&quot;&gt; &lt;span style=&quot;white-space: pre;&quot;&gt;	&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;	&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;	&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;Policies are associated with vhub resources&lt;br&gt;&lt;span style=&quot;white-space: pre;&quot;&gt; &lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt; &lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt; &lt;span style=&quot;white-space: pre;&quot;&gt;	&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;	&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;	&lt;/span&gt;&lt;/span&gt;- vnet connections&lt;br&gt;&lt;span style=&quot;white-space: pre;&quot;&gt; &lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt; &lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt; &lt;span style=&quot;white-space: pre;&quot;&gt;	&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;	&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;	&lt;/span&gt;&lt;/span&gt;- vpn gateways&lt;br&gt;&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;strokeColor=#660000;verticalAlign=top;align=left;" parent="1" vertex="1">
-          <mxGeometry x="803" y="840" width="370" height="100" as="geometry" />
-        </mxCell>
-        <mxCell id="bEqPmZrcNUUvBmmKXze_-19" value="" style="aspect=fixed;html=1;points=[];align=center;image;fontSize=12;image=img/lib/azure2/networking/Azure_Firewall_Manager.svg;dashed=1;strokeColor=#660000;fontColor=#990000;" parent="1" vertex="1">
-          <mxGeometry x="803" y="840" width="70" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="bEqPmZrcNUUvBmmKXze_-23" value="&lt;font color=&quot;#000066&quot;&gt;&lt;span style=&quot;font-weight: bold; white-space: pre;&quot;&gt; &lt;/span&gt;&lt;span style=&quot;font-weight: bold; white-space: pre;&quot;&gt; &lt;/span&gt;&lt;span style=&quot;font-weight: bold; white-space: pre;&quot;&gt; &lt;/span&gt;&lt;b style=&quot;&quot;&gt;Virtual WAN&lt;/b&gt;&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;strokeColor=#000066;verticalAlign=top;align=left;" parent="1" vertex="1">
-          <mxGeometry x="803" y="720" width="370" height="100" as="geometry" />
-        </mxCell>
-        <mxCell id="bEqPmZrcNUUvBmmKXze_-1" value="&lt;div&gt;&lt;b&gt;Virtual Hub&lt;/b&gt; &lt;br&gt;/24 minimum Private Address Space&amp;nbsp;&lt;span style=&quot;background-color: initial;&quot;&gt;used for&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;gateways/services:&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;VPN gateways, ExpressRoute G&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;ateways, User VPN Gateways, Firewall, etc.&lt;/span&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;dashed=1;" parent="1" vertex="1">
-          <mxGeometry x="883" y="754" width="290" height="56" as="geometry" />
-        </mxCell>
-        <mxCell id="bEqPmZrcNUUvBmmKXze_-21" value="" style="aspect=fixed;html=1;points=[];align=center;image;fontSize=12;image=img/lib/azure2/networking/Virtual_WANs.svg;dashed=1;dashPattern=1 1;fillColor=#FFD4D2;" parent="1" vertex="1">
-          <mxGeometry x="803" y="720" width="65" height="64" as="geometry" />
         </mxCell>
         <mxCell id="bEqPmZrcNUUvBmmKXze_-24" value="&lt;span style=&quot;font-size: 10px;&quot;&gt;&lt;font color=&quot;#990000&quot; style=&quot;font-size: 10px;&quot;&gt;Internet Traffic&lt;br style=&quot;font-size: 10px;&quot;&gt;&lt;/font&gt;Send Via Azure Firewall&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#E6E6E6;verticalAlign=middle;align=center;fontSize=10;fillColor=default;" parent="1" vertex="1">
           <mxGeometry x="1236" y="907.27" width="120" height="27.27" as="geometry" />
         </mxCell>
         <mxCell id="bEqPmZrcNUUvBmmKXze_-26" value="&lt;span style=&quot;font-size: 10px;&quot;&gt;&lt;font color=&quot;#990000&quot; style=&quot;font-size: 10px;&quot;&gt;Private Traffic&lt;/font&gt;&lt;span style=&quot;color: rgb(153, 0, 0); font-size: 10px;&quot;&gt; &lt;/span&gt;&lt;br style=&quot;font-size: 10px;&quot;&gt;&lt;/span&gt;&lt;span style=&quot;font-size: 10px;&quot;&gt;Send Via Azure Firewall&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#E6E6E6;verticalAlign=middle;align=center;fontSize=10;fillColor=default;" parent="1" vertex="1">
           <mxGeometry x="1360" y="907.27" width="120" height="27.27" as="geometry" />
+        </mxCell>
+        <mxCell id="JewSbVbx7ZH5dj-_vbIj-1" value="&lt;font style=&quot;&quot; color=&quot;#990000&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp;Azure Firewall Policy&lt;br&gt;Rules: &lt;br&gt;- allow-any-vnet-to-inet&lt;br&gt;- allow-any-onprem-to-vnet&amp;nbsp; &lt;br&gt;- allow-rdp-ssh-vnet-to-inet&lt;br&gt;- deny-any-inet-to-vnet&lt;br&gt;&lt;/font&gt;&lt;b style=&quot;&quot;&gt;&lt;font color=&quot;#990000&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;/b&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1340" y="768" width="220" height="72" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
