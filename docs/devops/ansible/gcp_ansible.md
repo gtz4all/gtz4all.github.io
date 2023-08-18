@@ -34,14 +34,14 @@ Create a list of all Compute Resources that contain IPv4 IP address and related 
     tasks:
       - name: get gcp firewall rules
         gcp_compute_firewall_info:
-          project: '{{ project }}'
+          project: '(( project ))'
           auth_kind: application
         register: gcp_fw
 
       - name: save gcp fw rules to file
         copy:
-          content: '{{ gcp_fw.resources | to_yaml }}'
-          dest: '{{ project }}-gcp_fw_rules.yml'
+          content: '(( gcp_fw.resources | to_yaml ))'
+          dest: '(( project ))-gcp_fw_rules.yml'
   ```
   
   - the above register output can be used to remove or modify firewall rules
@@ -49,11 +49,11 @@ Create a list of all Compute Resources that contain IPv4 IP address and related 
   ```yaml
       - name: delete firewall
         google.cloud.gcp_compute_firewall:
-          name: "{{ item.name }}"
+          name: "(( item.name ))"
           project: repd-e-adm-01
           auth_kind: application
           state: absent
-        with_items: '{{ gcp_fw.resources }}'
+        with_items: '(( gcp_fw.resources ))'
   ```
 
 #### Challenges
@@ -69,20 +69,20 @@ Getting a list of all created subnets becomes a challenge when using this ansibl
 
        - name: get info on a subnetwork
         gcp_compute_subnetwork_info:
-          region: "{{ item.name }}"
-          project: '{{ project }}'
+          region: "(( item.name ))"
+          project: '(( project ))'
           auth_kind: application
         register: gcp_subnetworks
-        with_items: "{{ gcp_regions.stdout | from_json  }}"
+        with_items: "(( gcp_regions.stdout | from_json  ))"
   ```
 - instead of using a gcloud command to assist the ansible module, it can be used to just get all subnets without the need to for a region.
   ```yaml
       - name: Network Subnet List
         command: |
-          gcloud compute networks subnets list --project "{{ project }}" --format="json"
+          gcloud compute networks subnets list --project "(( project ))" --format="json"
         register: gcp_subnets
 
       - name: debug
         debug:
-          msg: "{{(gcp_subnets.stdout | from_json)}}"
+          msg: "(((gcp_subnets.stdout | from_json)))"
   ```
