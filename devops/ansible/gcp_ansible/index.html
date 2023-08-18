@@ -1683,23 +1683,23 @@ It&#x27;s similar to GCloud with some limitations.">
 <p>The Google Cloud Platform Ansible Collection provides a series of Ansible modules and plugins for interacting with the Google Cloud Platform. 
 It's similar to GCloud with some limitations. </p>
 <h2 id="use-case-1">Use Case: 1<a class="headerlink" href="#use-case-1" title="Permanent link">&para;</a></h2>
-<p>Create a list of all Compute Resources that contain IPv4 IP address and related resources such as Firewall Rules and Routes.</p>
+<p>Create a list of all Compute Resources that contain IPv4 IP addresses and related resources such as Firewall Rules and Routes.</p>
 <h4 id="gcp-authentication">GCP Authentication<a class="headerlink" href="#gcp-authentication" title="Permanent link">&para;</a></h4>
 <ul>
 <li><code>auth_kind</code> string / required</li>
 </ul>
 <p>Choices:
-  - "application"
-      <code>user credentials - gcloud login</code>
-  - "machineaccount"
-      <code>A GCP VM with Access Role</code>
-  - "serviceaccount"
-      <code>A GCP Service Account</code></p>
-<p>###### Basics</p>
+- "application"
+    <code>user credentials - gcloud login</code>
+- "machineaccount"
+    <code>A GCP VM with Access Role</code>
+- "serviceaccount"
+    <code>A GCP Service Account</code></p>
+<p>#### Basics</p>
 <ul>
-<li>
-<p>Get a list of all firewall rules and save them to a file
-  <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>---
+<li>Get a list of all firewall rules and save them to a file</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>---
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>- name: Data Collection
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>  hosts: localhost
 <a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>  connection: local
@@ -1717,50 +1717,52 @@ It's similar to GCloud with some limitations. </p>
 <a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>      copy:
 <a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>        content: &#39;(( gcp_fw.resources | to_yaml ))&#39;
 <a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>        dest: &#39;(( project ))-gcp_fw_rules.yml&#39;
-</code></pre></div></p>
-</li>
+</code></pre></div>
+<ul>
 <li>
 <p>the above register output can be used to remove or modify firewall rules</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">delete firewall</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nt">google.cloud.gcp_compute_firewall</span><span class="p">:</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;((</span><span class="nv"> </span><span class="s">item.name</span><span class="nv"> </span><span class="s">))&quot;</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="nt">project</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">repd-e-adm-01</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span><span class="nt">auth_kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">application</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">    </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">absent</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">  </span><span class="nt">with_items</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;((</span><span class="nv"> </span><span class="s">gcp_fw.resources</span><span class="nv"> </span><span class="s">))&#39;</span>
+</code></pre></div>
 </li>
 </ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">delete firewall</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">      </span><span class="nt">google.cloud.gcp_compute_firewall</span><span class="p">:</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;((</span><span class="nv"> </span><span class="s">item.name</span><span class="nv"> </span><span class="s">))&quot;</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">        </span><span class="nt">project</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">repd-e-adm-01</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">        </span><span class="nt">auth_kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">application</span>
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">        </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">absent</span>
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">      </span><span class="nt">with_items</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;((</span><span class="nv"> </span><span class="s">gcp_fw.resources</span><span class="nv"> </span><span class="s">))&#39;</span>
-</code></pre></div>
 <h4 id="challenges">Challenges<a class="headerlink" href="#challenges" title="Permanent link">&para;</a></h4>
 <p>Getting a list of all created subnets becomes a challenge when using this ansible module collections. the module requires a region, but there is no ansible module to get a region list to iterate through. </p>
 <ul>
 <li>gcloud command is used to get a region list.</li>
 </ul>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Network Subnet List</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">      </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">        </span><span class="no">gcloud compute regions list --format=&quot;json&quot;</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">      </span><span class="nt">register</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gcp_regions</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Network Subnet List</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="no">gcloud compute regions list --format=&quot;json&quot;</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">  </span><span class="nt">register</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gcp_regions</span>
 <a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">    </span><span class="w w-Error"> </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">get info on a subnetwork</span>
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">     </span><span class="w w-Error"> </span><span class="nt">gcp_compute_subnetwork_info</span><span class="p">:</span>
-<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">        </span><span class="nt">region</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;((</span><span class="nv"> </span><span class="s">item.name</span><span class="nv"> </span><span class="s">))&quot;</span>
-<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">        </span><span class="nt">project</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;((</span><span class="nv"> </span><span class="s">project</span><span class="nv"> </span><span class="s">))&#39;</span>
-<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">        </span><span class="nt">auth_kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">application</span>
-<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">      </span><span class="nt">register</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gcp_subnetworks</span>
-<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">      </span><span class="nt">with_items</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;((</span><span class="nv"> </span><span class="s">gcp_regions.stdout</span><span class="nv"> </span><span class="s">|</span><span class="nv"> </span><span class="s">from_json</span><span class="nv">  </span><span class="s">))&quot;</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w w-Error"> </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">get info on a subnetwork</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w"> </span><span class="w w-Error"> </span><span class="nt">gcp_compute_subnetwork_info</span><span class="p">:</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">    </span><span class="nt">region</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;((</span><span class="nv"> </span><span class="s">item.name</span><span class="nv"> </span><span class="s">))&quot;</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">    </span><span class="nt">project</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;((</span><span class="nv"> </span><span class="s">project</span><span class="nv"> </span><span class="s">))&#39;</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">    </span><span class="nt">auth_kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">application</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">  </span><span class="nt">register</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gcp_subnetworks</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">  </span><span class="nt">with_items</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;((</span><span class="nv"> </span><span class="s">gcp_regions.stdout</span><span class="nv"> </span><span class="s">|</span><span class="nv"> </span><span class="s">from_json</span><span class="nv">  </span><span class="s">))&quot;</span>
 </code></pre></div>
-- instead of using a gcloud command to assist the ansible module, it can be used to just get all subnets without the need to for a region.
-  ```yaml
-      - name: Network Subnet List
-        command: |
-          gcloud compute networks subnets list --project "(( project ))" --format="json"
-        register: gcp_subnets</p>
-<div class="codehilite"><pre><span></span><code>  <span class="k">-</span> name: debug
+<ul>
+<li>instead of using a gcloud command to assist the ansible module, it can be used to just get all subnets without the need to for a region.</li>
+</ul>
+<p>```yaml
+  - name: Network Subnet List
+    command: |
+      gcloud compute networks subnets list --project "(( project ))" --format="json"
+    register: gcp_subnets</p>
+<ul>
+<li>name: debug
     debug:
-      msg: &quot;(((gcp_subnets.stdout | from_json)))&quot;
-</code></pre></div>
-
-<p>```<script type="text/javascript" src="https://viewer.diagrams.net/js/viewer-static.min.js"></script></p>
+      msg: "(((gcp_subnets.stdout | from_json)))"
+  ```<script type="text/javascript" src="https://viewer.diagrams.net/js/viewer-static.min.js"></script></li>
+</ul>
 
 
 
