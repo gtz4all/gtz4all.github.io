@@ -1591,7 +1591,50 @@
   <h1>Introduction</h1>
 
 <p><img alt="ansible" src="../../../assets/images/ansible.png" style="width:100px" title="ansible" /> <a href="/devops/ansible/intro">Ansible Documentation</a></p>
-<p>ansible is currently the leading devops provider. <script type="text/javascript" src="https://viewer.diagrams.net/js/viewer-static.min.js"></script></p>
+<p>Ansible is an open-source automation tool that is used for automating various IT tasks, including configuration management, application deployment, provisioning of infrastructure, and more. It was developed by Michael DeHaan and later acquired by Red Hat. Ansible uses a simple, human-readable language called YAML (Yet Another Markup Language) to define automation tasks and workflows.</p>
+<p>Key features and concepts of Ansible include:</p>
+<ol>
+<li>
+<p><strong>Agentless</strong>: Ansible operates in an agentless manner, which means it doesn't require any software to be installed on the target systems. It uses SSH (Secure Shell) and other remote communication protocols to manage and configure remote hosts.</p>
+</li>
+<li>
+<p><strong>Playbooks</strong>: Playbooks are YAML files that describe a set of automation tasks and the desired state of the system. Playbooks define a series of steps, such as installing software, configuring settings, copying files, and more.</p>
+</li>
+<li>
+<p><strong>Modules</strong>: Ansible uses modules to execute specific tasks on remote hosts. Modules can be used to perform actions like installing packages, managing files, creating users, and interacting with cloud providers.</p>
+</li>
+<li>
+<p><strong>Inventory</strong>: Ansible's inventory is a file or collection of files that list the hosts and groups of hosts that Ansible can manage. This inventory helps Ansible know which systems to target with automation tasks.</p>
+</li>
+<li>
+<p><strong>Ad-Hoc Commands</strong>: Ansible allows for the execution of ad-hoc commands on remote hosts without the need to write complex playbooks. Ad-hoc commands are useful for performing quick tasks or gathering information.</p>
+</li>
+<li>
+<p><strong>Idempotence</strong>: Ansible is designed to be idempotent, meaning that running the same playbook multiple times should result in the same desired state, regardless of the current state of the system. This ensures that applying automation is predictable and safe.</p>
+</li>
+</ol>
+<p>Uses of Ansible:</p>
+<ol>
+<li>
+<p><strong>Configuration Management</strong>: Ansible is commonly used for managing and enforcing consistent configurations across a fleet of servers. It can automate tasks such as installing software, configuring network settings, and maintaining system states.</p>
+</li>
+<li>
+<p><strong>Application Deployment</strong>: Ansible can automate the deployment of applications and services on multiple servers. It ensures that the application's required components and dependencies are correctly installed and configured.</p>
+</li>
+<li>
+<p><strong>Infrastructure Provisioning</strong>: Ansible can be used to provision virtual machines, containers, and cloud resources on platforms like AWS, Azure, and Google Cloud.</p>
+</li>
+<li>
+<p><strong>Continuous Delivery</strong>: Ansible can be integrated into the continuous integration and continuous deployment (CI/CD) pipelines to automate the deployment of code changes to production environments.</p>
+</li>
+<li>
+<p><strong>Security and Compliance</strong>: Ansible can help enforce security policies and compliance standards by automating the configuration of security settings, firewall rules, and access controls.</p>
+</li>
+<li>
+<p><strong>Orchestration</strong>: Ansible can orchestrate complex workflows involving multiple systems, such as coordinating the deployment of a multi-tier application stack.</p>
+</li>
+</ol>
+<p>Overall, Ansible simplifies and accelerates IT operations by providing a consistent and repeatable way to automate tasks and manage infrastructure, making it a valuable tool for both system administrators and developers.<script type="text/javascript" src="https://viewer.diagrams.net/js/viewer-static.min.js"></script></p>
 
 
 
