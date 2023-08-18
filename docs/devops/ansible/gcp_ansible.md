@@ -8,6 +8,8 @@ It's similar to GCloud with some limitations.
 ## Use Case: 1
 Create a list of all Compute Resources that contain IPv4 IP address and related resources such as Firewall Rules and Routes.
 
+| :exclamation:  mkdocs is trying to decode to_yaml and to_json. removing them for now   |
+|-----------------------------------------|
 
 #### GCP Authentication
 - `auth_kind` string / required
@@ -73,7 +75,7 @@ Getting a list of all created subnets becomes a challenge when using this ansibl
     project: '{{ project }}'
     auth_kind: application
   register: gcp_subnetworks
-  with_items: "{{ gcp_regions.stdout | from_json  }}"
+  with_items: "{{ gcp_regions.stdout  }}" # requires | `from_json`
 ```
 - instead of using a gcloud command to assist the ansible module, it can be used to just get all subnets without the need to for a region.
 ```yml
@@ -84,5 +86,5 @@ Getting a list of all created subnets becomes a challenge when using this ansibl
 
 - name: debug
   debug:
-    msg: "{{(gcp_subnets.stdout | from_json)}}"
+    msg: "{{(gcp_subnets.stdout   }}" # requires | `from_json`
 ```
