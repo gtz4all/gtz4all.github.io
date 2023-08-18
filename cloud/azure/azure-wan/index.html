@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://gtz4all.github.io/cloud/azure/azure-wan/">
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.4.0, mkdocs-material-8.5.6">
+      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-8.5.6">
     
     
       
@@ -444,6 +444,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../aws/aws-landingzone/" class="md-nav__link">
+        AWS Landing Zones
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../aws/default-vpc-cleanup/" class="md-nav__link">
         Default Vpc Cleanup
       </a>
@@ -751,6 +765,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../gcp/cloud-identity/" class="md-nav__link">
+        Cloud identity
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../gcp/gcloud/" class="md-nav__link">
         Gcloud Command Overview
       </a>
@@ -888,6 +916,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../devops/terraform/multi-gcp-auth/" class="md-nav__link">
+        GCP Multi Account Authentication
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../devops/terraform/terraform-refactoring/" class="md-nav__link">
         Terraform State Refactoring
       </a>
@@ -937,6 +979,20 @@
     <li class="md-nav__item">
       <a href="../../../devops/ansible/intro/" class="md-nav__link">
         Introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../devops/ansible/gcp_ansible/" class="md-nav__link">
+        Google Cloud Platform Ansible Collection
       </a>
     </li>
   
@@ -1237,6 +1293,67 @@
     <li class="md-nav__item">
       <a href="../../../devops/webservices/http-server-with-dynamic-content/" class="md-nav__link">
         HTTP Server with Dynamic Content
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_8" type="checkbox" id="__nav_3_8" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_8">
+          Git
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Git" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_8">
+          <span class="md-nav__icon md-icon"></span>
+          Git
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../devops/git/intro/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../devops/git/multi_ssh_keys/" class="md-nav__link">
+        Managing Multiple Github Accounts
       </a>
     </li>
   
@@ -1587,18 +1704,18 @@
 <a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>  Gateway scale units: 1 scale unit - 500 Mbps x 2
 </code></pre></div>
     - Error</p>
-<div class="codehilite"><pre><span></span><code>```<span class="nv">json</span><span class="w"></span>
-{<span class="w"></span>
-<span class="w">  </span><span class="s2">&quot;code&quot;</span>:<span class="w"> </span><span class="s2">&quot;DeploymentFailed&quot;</span>,<span class="w"></span>
-<span class="w">  </span><span class="s2">&quot;message&quot;</span>:<span class="w"> </span><span class="s2">&quot;At least one resource deployment operation failed. Please list deployment operations for details. Please see https://aka.ms/DeployOperations for usage details.&quot;</span>,<span class="w"></span>
-<span class="w">  </span><span class="s2">&quot;details&quot;</span>:<span class="w"> </span>[<span class="w"></span>
-<span class="w">    </span>{<span class="w"></span>
-<span class="w">      </span><span class="s2">&quot;code&quot;</span>:<span class="w"> </span><span class="s2">&quot;CustomAsnNotEnabledForVirtualHub&quot;</span>,<span class="w"></span>
-<span class="w">      </span><span class="s2">&quot;message&quot;</span>:<span class="w"> </span><span class="s2">&quot;Virtual hub is not enabled to allow Router ASN modification. Please set ASN to 65515 or contact Support for enabling virtual hub to allow modification.&quot;</span><span class="w"></span>
-<span class="w">    </span>}<span class="w"></span>
-<span class="w">  </span>]<span class="w"></span>
-}<span class="w"></span>
-```<span class="w"></span>
+<div class="codehilite"><pre><span></span><code>```<span class="nv">json</span>
+{
+<span class="w">  </span><span class="s2">&quot;code&quot;</span>:<span class="w"> </span><span class="s2">&quot;DeploymentFailed&quot;</span>,
+<span class="w">  </span><span class="s2">&quot;message&quot;</span>:<span class="w"> </span><span class="s2">&quot;At least one resource deployment operation failed. Please list deployment operations for details. Please see https://aka.ms/DeployOperations for usage details.&quot;</span>,
+<span class="w">  </span><span class="s2">&quot;details&quot;</span>:<span class="w"> </span>[
+<span class="w">    </span>{
+<span class="w">      </span><span class="s2">&quot;code&quot;</span>:<span class="w"> </span><span class="s2">&quot;CustomAsnNotEnabledForVirtualHub&quot;</span>,
+<span class="w">      </span><span class="s2">&quot;message&quot;</span>:<span class="w"> </span><span class="s2">&quot;Virtual hub is not enabled to allow Router ASN modification. Please set ASN to 65515 or contact Support for enabling virtual hub to allow modification.&quot;</span>
+<span class="w">    </span>}
+<span class="w">  </span>]
+}
+```
 </code></pre></div>
 
 <h6 id="asns-autonomous-system-numbers">ASNs (Autonomous System Numbers)<a class="headerlink" href="#asns-autonomous-system-numbers" title="Permanent link">&para;</a></h6>

@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://gtz4all.github.io/cloud/gcp/gcloud/">
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.4.0, mkdocs-material-8.5.6">
+      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-8.5.6">
     
     
       
@@ -444,6 +444,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../aws/aws-landingzone/" class="md-nav__link">
+        AWS Landing Zones
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../aws/default-vpc-cleanup/" class="md-nav__link">
         Default Vpc Cleanup
       </a>
@@ -692,6 +706,20 @@
               
   
   
+  
+    <li class="md-nav__item">
+      <a href="../cloud-identity/" class="md-nav__link">
+        Cloud identity
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
     
   
   
@@ -726,6 +754,40 @@
         <li class="md-nav__item">
   <a href="#review-current-configuration" class="md-nav__link">
     Review current configuration
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gcp-authentication-types" class="md-nav__link">
+    GCP Authentication Types
+  </a>
+  
+    <nav class="md-nav" aria-label="GCP Authentication Types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gcloud-cli-authentication" class="md-nav__link">
+    GCLOUD CLI Authentication
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gcp-sdk-authentication-optional" class="md-nav__link">
+    GCP SDK Authentication (optional)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#switching-between-gcp-configurations" class="md-nav__link">
+    Switching Between GCP Configurations
   </a>
   
 </li>
@@ -868,6 +930,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../devops/terraform/multi-gcp-auth/" class="md-nav__link">
+        GCP Multi Account Authentication
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../devops/terraform/terraform-refactoring/" class="md-nav__link">
         Terraform State Refactoring
       </a>
@@ -917,6 +993,20 @@
     <li class="md-nav__item">
       <a href="../../../devops/ansible/intro/" class="md-nav__link">
         Introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../devops/ansible/gcp_ansible/" class="md-nav__link">
+        Google Cloud Platform Ansible Collection
       </a>
     </li>
   
@@ -1230,6 +1320,67 @@
 
             
           
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_8" type="checkbox" id="__nav_3_8" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_8">
+          Git
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Git" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_8">
+          <span class="md-nav__icon md-icon"></span>
+          Git
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../devops/git/intro/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../devops/git/multi_ssh_keys/" class="md-nav__link">
+        Managing Multiple Github Accounts
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -1505,6 +1656,40 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#gcp-authentication-types" class="md-nav__link">
+    GCP Authentication Types
+  </a>
+  
+    <nav class="md-nav" aria-label="GCP Authentication Types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gcloud-cli-authentication" class="md-nav__link">
+    GCLOUD CLI Authentication
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gcp-sdk-authentication-optional" class="md-nav__link">
+    GCP SDK Authentication (optional)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#switching-between-gcp-configurations" class="md-nav__link">
+    Switching Between GCP Configurations
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1526,29 +1711,112 @@
 <ul>
 <li>Current configuration</li>
 </ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>$ gcloud config configurations list
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>NAME     IS_ACTIVE  ACCOUNT               PROJECT              COMPUTE_DEFAULT_ZONE  COMPUTE_DEFAULT_REGION
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>default  True       kg48037@mykronos.com  shd-cus-host01-7f07
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>$<span class="w"> </span>gcloud<span class="w"> </span>config<span class="w"> </span>configurations<span class="w"> </span>list
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>NAME<span class="w">     </span>IS_ACTIVE<span class="w">  </span>ACCOUNT<span class="w">               </span>PROJECT<span class="w">              </span>COMPUTE_DEFAULT_ZONE<span class="w">  </span>COMPUTE_DEFAULT_REGION
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>default<span class="w">  </span>True<span class="w">       </span>gtz007@cloudgtz.com<span class="w">  </span>gtz-cld-dev-shd01
 </code></pre></div>
 <ul>
 <li>update account</li>
 </ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>$ gcloud config <span class="nb">set</span> account kg48037@mykronos.com
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>Updated property <span class="o">[</span>core/account<span class="o">]</span>.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>$<span class="w"> </span>gcloud<span class="w"> </span>config<span class="w"> </span><span class="nb">set</span><span class="w"> </span>account<span class="w"> </span>gtz007@cloudgtz.com
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>Updated<span class="w"> </span>property<span class="w"> </span><span class="o">[</span>core/account<span class="o">]</span>.
 </code></pre></div>
 <ul>
 <li>update project</li>
 </ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>$ gcloud config <span class="nb">set</span> project rdy-dev-cld-usa-dev01
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>Updated property <span class="o">[</span>core/project<span class="o">]</span>.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>$<span class="w"> </span>gcloud<span class="w"> </span>config<span class="w"> </span><span class="nb">set</span><span class="w"> </span>project<span class="w"> </span>gtz-cld-dev01
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>Updated<span class="w"> </span>property<span class="w"> </span><span class="o">[</span>core/project<span class="o">]</span>.
 </code></pre></div>
 <ul>
 <li>New configuration</li>
 </ul>
-<p><code>shell
-  $ gcloud config configurations list
-  NAME     IS_ACTIVE  ACCOUNT               PROJECT                COMPUTE_DEFAULT_ZONE  COMPUTE_DEFAULT_REGION
-  default  True       kg48037@mykronos.com  rdy-dev-cld-usa-dev01</code><script type="text/javascript" src="https://viewer.diagrams.net/js/viewer-static.min.js"></script></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>$<span class="w"> </span>gcloud<span class="w"> </span>config<span class="w"> </span>configurations<span class="w"> </span>list
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>NAME<span class="w">     </span>IS_ACTIVE<span class="w">  </span>ACCOUNT<span class="w">               </span>PROJECT<span class="w">                </span>COMPUTE_DEFAULT_ZONE<span class="w">  </span>COMPUTE_DEFAULT_REGION
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>default<span class="w">  </span>True<span class="w">       </span>gtz007@cloudgtz.com<span class="w">  </span>gtz-cld-dev01
+</code></pre></div>
+<h2 id="gcp-authentication-types">GCP Authentication Types<a class="headerlink" href="#gcp-authentication-types" title="Permanent link">&para;</a></h2>
+<p>There are two ways to authenticate in GCP depending on the use case. The following CLI Commands will store credentials in the current configuration. If no configuration exists, it will create a configuration named default.</p>
+<h4 id="gcloud-cli-authentication">GCLOUD CLI Authentication<a class="headerlink" href="#gcloud-cli-authentication" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p><code>gcloud auth login --no-launch-browser --update-adc</code></p>
+</li>
+<li>
+<p>This obtains access credentials for the user account and store them in ~/.config/gcloud/ via a web-based authorization flow.</p>
+</li>
+<li><code>--no-launch-browser</code> flag will print a URL that can be copied to any browser.</li>
+<li><code>--update-adc</code> writes the obtained credentials to the well-known location for Application Default Credentials (ADC)</li>
+<li>This command can be used to authenticate both GCloud CLI commands and SDK </li>
+</ul>
+<h4 id="gcp-sdk-authentication-optional">GCP SDK Authentication (optional)<a class="headerlink" href="#gcp-sdk-authentication-optional" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p><code>gcloud auth application-default login --no-launch-browser</code></p>
+</li>
+<li>
+<p>This obtains access credentials via a web-based authorization flow for the user account and store them in the 'well-known location for Application Default Credentials' file named <code>application_default_credentials.json</code> in <code>~/.config/gcloud/</code> </p>
+</li>
+<li><code>--no-launch-browser</code> flag will print a URL that can be copied to any browser.</li>
+</ul>
+<h2 id="switching-between-gcp-configurations">Switching Between GCP Configurations<a class="headerlink" href="#switching-between-gcp-configurations" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Review current configuration</li>
+<li>
+<p><code>$ gcloud config list
+    [core]
+    account = gtz007@cloudgtz.com
+    disable_usage_reporting = True
+    project = gtz-cld-dev01
+    Your active configuration is: [default]</code></p>
+</li>
+<li>
+<p><code>$ gcloud config configurations list
+    NAME     IS_ACTIVE  ACCOUNT               PROJECT                COMPUTE_DEFAULT_ZONE  COMPUTE_DEFAULT_REGION
+    default  True       gtz007@cloudgtz.com  gtz-cld-dev01
+    sbox     False
+    $ gcloud config configurations activate sbox
+    Activated [sbox].</code></p>
+</li>
+<li>
+<p>```
+    $ gcloud config list
+    [core]
+    disable_usage_reporting = True</p>
+<p>Your active configuration is: [sbox]
+```
+- Provide user credentials to new gcloud configuration - sbox</p>
+</li>
+<li>
+<p>```
+    $ gcloud auth login --no-launch-browser --update-adc
+    Go to the following link in your browser:</p>
+<div class="codehilite"><pre><span></span><code><span class="nx">https</span><span class="p">:</span><span class="c1">//accounts.google.com/o/oauth2/auth?response_type=code</span>
+</code></pre></div>
+
+<p>Enter authorization code: 4/0AbUR2VNmI2-EonA-P57ik6-Y6B842zi9l0piWRm7KNlqFgQtM1G6f-HToDYBHbJwuEeTTw</p>
+<p>Application default credentials (ADC) were updated.</p>
+<p>You are now logged in as [<a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#99;&#108;&#111;&#117;&#100;&#95;&#117;&#115;&#101;&#114;&#95;&#112;&#95;&#52;&#53;&#57;&#49;&#98;&#51;&#55;&#53;&#64;&#108;&#105;&#110;&#117;&#120;&#97;&#99;&#97;&#100;&#101;&#109;&#121;&#103;&#99;&#108;&#97;&#98;&#115;&#46;&#99;&#111;&#109;">&#99;&#108;&#111;&#117;&#100;&#95;&#117;&#115;&#101;&#114;&#95;&#112;&#95;&#52;&#53;&#57;&#49;&#98;&#51;&#55;&#53;&#64;&#108;&#105;&#110;&#117;&#120;&#97;&#99;&#97;&#100;&#101;&#109;&#121;&#103;&#99;&#108;&#97;&#98;&#115;&#46;&#99;&#111;&#109;</a>].
+Your current project is [None].  You can change this setting by running:
+  $ gcloud config set project PROJECT_ID</p>
+<p>$ gcloud config set project playground-s-11-899e0a9b
+Updated property [core/project].
+```</p>
+</li>
+<li>
+<p>validate gcloud configuration credentials</p>
+</li>
+<li>
+<p><code>$ gcloud compute networks list
+    NAME     SUBNET_MODE  BGP_ROUTING_MODE  IPV4_RANGE  GATEWAY_IPV4
+    default  AUTO         REGIONAL
+    switch back to the default gcloud configuration and validate credentials</code></p>
+</li>
+<li><code>$ gcloud config configurations activate default
+    Activated [default].</code></li>
+<li><code>$ gcloud compute networks list
+    NAME                    SUBNET_MODE  BGP_ROUTING_MODE  IPV4_RANGE  GATEWAY_IPV4
+    gtz-cld-shdvpc01       CUSTOM       GLOBAL</code><script type="text/javascript" src="https://viewer.diagrams.net/js/viewer-static.min.js"></script></li>
+</ul>
 
 
 
@@ -1569,7 +1837,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer" >
       
         
-        <a href="../intro/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Introduction" rel="prev">
+        <a href="../cloud-identity/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Cloud identity" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -1578,7 +1846,7 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              Introduction
+              Cloud identity
             </div>
           </div>
         </a>

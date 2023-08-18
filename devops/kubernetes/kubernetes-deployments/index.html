@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://gtz4all.github.io/devops/kubernetes/kubernetes-deployments/">
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.4.0, mkdocs-material-8.5.6">
+      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-8.5.6">
     
     
       
@@ -442,6 +442,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../cloud/aws/aws-landingzone/" class="md-nav__link">
+        AWS Landing Zones
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../cloud/aws/default-vpc-cleanup/" class="md-nav__link">
         Default Vpc Cleanup
       </a>
@@ -690,6 +704,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../cloud/gcp/cloud-identity/" class="md-nav__link">
+        Cloud identity
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../cloud/gcp/gcloud/" class="md-nav__link">
         Gcloud Command Overview
       </a>
@@ -829,6 +857,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../terraform/multi-gcp-auth/" class="md-nav__link">
+        GCP Multi Account Authentication
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../terraform/terraform-refactoring/" class="md-nav__link">
         Terraform State Refactoring
       </a>
@@ -878,6 +920,20 @@
     <li class="md-nav__item">
       <a href="../../ansible/intro/" class="md-nav__link">
         Introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ansible/gcp_ansible/" class="md-nav__link">
+        Google Cloud Platform Ansible Collection
       </a>
     </li>
   
@@ -1278,6 +1334,67 @@
 
             
           
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_8" type="checkbox" id="__nav_3_8" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_8">
+          Git
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Git" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_8">
+          <span class="md-nav__icon md-icon"></span>
+          Git
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../git/intro/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../git/multi_ssh_keys/" class="md-nav__link">
+        Managing Multiple Github Accounts
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -1649,62 +1766,62 @@
 </code></pre></div>
 use <code>kubectl create -f &lt;deployment-file.yml&gt;</code> to build deployment.
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># kubectl create -f ./kube-deployment.yml</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>deployment.apps/nginx-deployment created
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>deployment.apps/nginx-deployment<span class="w"> </span>created
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="c1"># kubectl get deployment</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>NAME               READY   UP-TO-DATE   AVAILABLE   AGE
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>nginx-deployment   <span class="m">2</span>/2     <span class="m">2</span>            <span class="m">2</span>           9s
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>NAME<span class="w">               </span>READY<span class="w">   </span>UP-TO-DATE<span class="w">   </span>AVAILABLE<span class="w">   </span>AGE
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>nginx-deployment<span class="w">   </span><span class="m">2</span>/2<span class="w">     </span><span class="m">2</span><span class="w">            </span><span class="m">2</span><span class="w">           </span>9s
 <a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="c1"># kubectl get pods</span>
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>NAME                                READY   STATUS    RESTARTS   AGE
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>nginx-deployment-6fb8795c7d-dq9zp   <span class="m">1</span>/1     Running   <span class="m">0</span>          22s
-<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>nginx-deployment-6fb8795c7d-r8bwk   <span class="m">1</span>/1     Running   <span class="m">0</span>          22s
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>NAME<span class="w">                                </span>READY<span class="w">   </span>STATUS<span class="w">    </span>RESTARTS<span class="w">   </span>AGE
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>nginx-deployment-6fb8795c7d-dq9zp<span class="w">   </span><span class="m">1</span>/1<span class="w">     </span>Running<span class="w">   </span><span class="m">0</span><span class="w">          </span>22s
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>nginx-deployment-6fb8795c7d-r8bwk<span class="w">   </span><span class="m">1</span>/1<span class="w">     </span>Running<span class="w">   </span><span class="m">0</span><span class="w">          </span>22s
 </code></pre></div>
 the <code>kubectl describe deployment &lt;deployment-name&gt;</code> provides detailed information about the deployment. the event section provides any deployment changes such scaling, self-healing, and rolling-updates</p>
 <p><div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># kubectl describe deployment nginx-deployment</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>Name:                   nginx-deployment
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>Namespace:              default
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>CreationTimestamp:      Thu, <span class="m">15</span> Jul <span class="m">2021</span> <span class="m">23</span>:57:20 +0000
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>Labels:                 <span class="nv">app</span><span class="o">=</span>nginx-app
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>Annotations:            deployment.kubernetes.io/revision: <span class="m">1</span>
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>Selector:               <span class="nv">app</span><span class="o">=</span>nginx-app
-<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>Replicas:               <span class="m">2</span> desired <span class="p">|</span> <span class="m">2</span> updated <span class="p">|</span> <span class="m">2</span> total <span class="p">|</span> <span class="m">2</span> available <span class="p">|</span> <span class="m">0</span> unavailable
-<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>StrategyType:           RollingUpdate
-<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>MinReadySeconds:        <span class="m">0</span>
-<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>RollingUpdateStrategy:  <span class="m">25</span>% max unavailable, <span class="m">25</span>% max surge
-<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>Pod Template:
-<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>  Labels:  <span class="nv">app</span><span class="o">=</span>nginx-app
-<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>  Containers:
-<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>   nginx:
-<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>    Image:        nginx:1.20.1
-<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>    Port:         <span class="m">80</span>/TCP
-<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>    Host Port:    <span class="m">0</span>/TCP
-<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>    Environment:  &lt;none&gt;
-<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a>    Mounts:       &lt;none&gt;
-<a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a>  Volumes:        &lt;none&gt;
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>Name:<span class="w">                   </span>nginx-deployment
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>Namespace:<span class="w">              </span>default
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>CreationTimestamp:<span class="w">      </span>Thu,<span class="w"> </span><span class="m">15</span><span class="w"> </span>Jul<span class="w"> </span><span class="m">2021</span><span class="w"> </span><span class="m">23</span>:57:20<span class="w"> </span>+0000
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>Labels:<span class="w">                 </span><span class="nv">app</span><span class="o">=</span>nginx-app
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>Annotations:<span class="w">            </span>deployment.kubernetes.io/revision:<span class="w"> </span><span class="m">1</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>Selector:<span class="w">               </span><span class="nv">app</span><span class="o">=</span>nginx-app
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>Replicas:<span class="w">               </span><span class="m">2</span><span class="w"> </span>desired<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="m">2</span><span class="w"> </span>updated<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="m">2</span><span class="w"> </span>total<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="m">2</span><span class="w"> </span>available<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="m">0</span><span class="w"> </span>unavailable
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>StrategyType:<span class="w">           </span>RollingUpdate
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>MinReadySeconds:<span class="w">        </span><span class="m">0</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>RollingUpdateStrategy:<span class="w">  </span><span class="m">25</span>%<span class="w"> </span>max<span class="w"> </span>unavailable,<span class="w"> </span><span class="m">25</span>%<span class="w"> </span>max<span class="w"> </span>surge
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>Pod<span class="w"> </span>Template:
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">  </span>Labels:<span class="w">  </span><span class="nv">app</span><span class="o">=</span>nginx-app
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="w">  </span>Containers:
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="w">   </span>nginx:
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="w">    </span>Image:<span class="w">        </span>nginx:1.20.1
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="w">    </span>Port:<span class="w">         </span><span class="m">80</span>/TCP
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="w">    </span>Host<span class="w"> </span>Port:<span class="w">    </span><span class="m">0</span>/TCP
+<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="w">    </span>Environment:<span class="w">  </span>&lt;none&gt;
+<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="w">    </span>Mounts:<span class="w">       </span>&lt;none&gt;
+<a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a><span class="w">  </span>Volumes:<span class="w">        </span>&lt;none&gt;
 <a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a>Conditions:
-<a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a>  Type           Status  Reason
-<a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a>  ----           ------  ------
-<a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a>  Available      True    MinimumReplicasAvailable
-<a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a>  Progressing    True    NewReplicaSetAvailable
-<a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a>OldReplicaSets:  &lt;none&gt;
-<a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a>NewReplicaSet:   nginx-deployment-7d569cb5f5 <span class="o">(</span><span class="m">2</span>/2 replicas created<span class="o">)</span>
+<a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a><span class="w">  </span>Type<span class="w">           </span>Status<span class="w">  </span>Reason
+<a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a><span class="w">  </span>----<span class="w">           </span>------<span class="w">  </span>------
+<a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a><span class="w">  </span>Available<span class="w">      </span>True<span class="w">    </span>MinimumReplicasAvailable
+<a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a><span class="w">  </span>Progressing<span class="w">    </span>True<span class="w">    </span>NewReplicaSetAvailable
+<a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a>OldReplicaSets:<span class="w">  </span>&lt;none&gt;
+<a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a>NewReplicaSet:<span class="w">   </span>nginx-deployment-7d569cb5f5<span class="w"> </span><span class="o">(</span><span class="m">2</span>/2<span class="w"> </span>replicas<span class="w"> </span>created<span class="o">)</span>
 <a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a>Events:
-<a id="__codelineno-2-30" name="__codelineno-2-30" href="#__codelineno-2-30"></a>  Type    Reason             Age   From                   Message
-<a id="__codelineno-2-31" name="__codelineno-2-31" href="#__codelineno-2-31"></a>  ----    ------             ----  ----                   -------
-<a id="__codelineno-2-32" name="__codelineno-2-32" href="#__codelineno-2-32"></a>  Normal  ScalingReplicaSet  16s   deployment-controller  Scaled up replica <span class="nb">set</span> nginx-deployment-7d569cb5f5 to <span class="m">2</span>
-<a id="__codelineno-2-33" name="__codelineno-2-33" href="#__codelineno-2-33"></a>  <span class="sb">```</span>
+<a id="__codelineno-2-30" name="__codelineno-2-30" href="#__codelineno-2-30"></a><span class="w">  </span>Type<span class="w">    </span>Reason<span class="w">             </span>Age<span class="w">   </span>From<span class="w">                   </span>Message
+<a id="__codelineno-2-31" name="__codelineno-2-31" href="#__codelineno-2-31"></a><span class="w">  </span>----<span class="w">    </span>------<span class="w">             </span>----<span class="w">  </span>----<span class="w">                   </span>-------
+<a id="__codelineno-2-32" name="__codelineno-2-32" href="#__codelineno-2-32"></a><span class="w">  </span>Normal<span class="w">  </span>ScalingReplicaSet<span class="w">  </span>16s<span class="w">   </span>deployment-controller<span class="w">  </span>Scaled<span class="w"> </span>up<span class="w"> </span>replica<span class="w"> </span><span class="nb">set</span><span class="w"> </span>nginx-deployment-7d569cb5f5<span class="w"> </span>to<span class="w"> </span><span class="m">2</span>
+<a id="__codelineno-2-33" name="__codelineno-2-33" href="#__codelineno-2-33"></a><span class="w">  </span><span class="sb">```</span>
 <a id="__codelineno-2-34" name="__codelineno-2-34" href="#__codelineno-2-34"></a><span class="c1">#### Deployment Scaling</span>
-<a id="__codelineno-2-35" name="__codelineno-2-35" href="#__codelineno-2-35"></a>the deployment will either create or delete pods <span class="k">in</span> order to meet the number of replicas requested. The deployment can dynamically adjust itself without impacting appliaction.
+<a id="__codelineno-2-35" name="__codelineno-2-35" href="#__codelineno-2-35"></a>the<span class="w"> </span>deployment<span class="w"> </span>will<span class="w"> </span>either<span class="w"> </span>create<span class="w"> </span>or<span class="w"> </span>delete<span class="w"> </span>pods<span class="w"> </span><span class="k">in</span><span class="w"> </span>order<span class="w"> </span>to<span class="w"> </span>meet<span class="w"> </span>the<span class="w"> </span>number<span class="w"> </span>of<span class="w"> </span>replicas<span class="w"> </span>requested.<span class="w"> </span>The<span class="w"> </span>deployment<span class="w"> </span>can<span class="w"> </span>dynamically<span class="w"> </span>adjust<span class="w"> </span>itself<span class="w"> </span>without<span class="w"> </span>impacting<span class="w"> </span>appliaction.
 <a id="__codelineno-2-36" name="__codelineno-2-36" href="#__codelineno-2-36"></a><span class="c1">###### Scale up</span>
-<a id="__codelineno-2-37" name="__codelineno-2-37" href="#__codelineno-2-37"></a>* Edit the <span class="sb">```</span>deployment.yml<span class="sb">```</span> file spec: replicas from <span class="sb">```</span><span class="m">2</span><span class="sb">```</span> to <span class="sb">```</span><span class="m">6</span><span class="sb">```</span>. Optionally, we can edit the deployment running-config using <span class="sb">```</span>kubectl edit deployment.v1.apps/nginx-deployment<span class="sb">```</span>
+<a id="__codelineno-2-37" name="__codelineno-2-37" href="#__codelineno-2-37"></a>*<span class="w"> </span>Edit<span class="w"> </span>the<span class="w"> </span><span class="sb">```</span>deployment.yml<span class="sb">```</span><span class="w"> </span>file<span class="w"> </span>spec:<span class="w"> </span>replicas<span class="w"> </span>from<span class="w"> </span><span class="sb">```</span><span class="m">2</span><span class="sb">```</span><span class="w"> </span>to<span class="w"> </span><span class="sb">```</span><span class="m">6</span><span class="sb">```</span>.<span class="w"> </span>Optionally,<span class="w"> </span>we<span class="w"> </span>can<span class="w"> </span>edit<span class="w"> </span>the<span class="w"> </span>deployment<span class="w"> </span>running-config<span class="w"> </span>using<span class="w"> </span><span class="sb">```</span>kubectl<span class="w"> </span>edit<span class="w"> </span>deployment.v1.apps/nginx-deployment<span class="sb">```</span>
 <a id="__codelineno-2-38" name="__codelineno-2-38" href="#__codelineno-2-38"></a><span class="sb">```</span>yml
 <a id="__codelineno-2-39" name="__codelineno-2-39" href="#__codelineno-2-39"></a><span class="c1">##omitted sections</span>
 <a id="__codelineno-2-40" name="__codelineno-2-40" href="#__codelineno-2-40"></a>spec:
-<a id="__codelineno-2-41" name="__codelineno-2-41" href="#__codelineno-2-41"></a>  replicas: <span class="m">6</span>
+<a id="__codelineno-2-41" name="__codelineno-2-41" href="#__codelineno-2-41"></a><span class="w">  </span>replicas:<span class="w"> </span><span class="m">6</span>
 </code></pre></div>
 * apply changes
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># kubectl apply -f kube-deployment.yml</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>Warning: kubectl apply should be used on resource created by either kubectl create --save-config or kubectl apply
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>deployment.apps/nginx-deployment configured
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>Warning:<span class="w"> </span>kubectl<span class="w"> </span>apply<span class="w"> </span>should<span class="w"> </span>be<span class="w"> </span>used<span class="w"> </span>on<span class="w"> </span>resource<span class="w"> </span>created<span class="w"> </span>by<span class="w"> </span>either<span class="w"> </span>kubectl<span class="w"> </span>create<span class="w"> </span>--save-config<span class="w"> </span>or<span class="w"> </span>kubectl<span class="w"> </span>apply
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>deployment.apps/nginx-deployment<span class="w"> </span>configured
 </code></pre></div>
 * Optionally, we can edit the deployment running-config using <code>kubectl edit deployment.v1.apps/nginx-deployment</code> use <code>i</code> to edit and <code>[ESC]</code> followed by <code>:wq!</code> to apply changes</p>
 <blockquote>
@@ -1715,21 +1832,21 @@ the <code>kubectl describe deployment &lt;deployment-name&gt;</code> provides de
 </code></pre></div>
 * Validating
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># kubectl get pods</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>NAME                                READY   STATUS              RESTARTS   AGE
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>nginx-deployment-7d569cb5f5-5kc9r   <span class="m">0</span>/1     ContainerCreating   <span class="m">0</span>          2s
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>nginx-deployment-7d569cb5f5-cqdqg   <span class="m">0</span>/1     ContainerCreating   <span class="m">0</span>          2s
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>nginx-deployment-7d569cb5f5-h7x79   <span class="m">1</span>/1     Running             <span class="m">0</span>          26m
-<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>nginx-deployment-7d569cb5f5-l2pbh   <span class="m">0</span>/1     ContainerCreating   <span class="m">0</span>          2s
-<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>nginx-deployment-7d569cb5f5-r2ln4   <span class="m">1</span>/1     Running             <span class="m">0</span>          26m
-<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>nginx-deployment-7d569cb5f5-wtbsw   <span class="m">0</span>/1     ContainerCreating   <span class="m">0</span>          2s
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>NAME<span class="w">                                </span>READY<span class="w">   </span>STATUS<span class="w">              </span>RESTARTS<span class="w">   </span>AGE
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>nginx-deployment-7d569cb5f5-5kc9r<span class="w">   </span><span class="m">0</span>/1<span class="w">     </span>ContainerCreating<span class="w">   </span><span class="m">0</span><span class="w">          </span>2s
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>nginx-deployment-7d569cb5f5-cqdqg<span class="w">   </span><span class="m">0</span>/1<span class="w">     </span>ContainerCreating<span class="w">   </span><span class="m">0</span><span class="w">          </span>2s
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>nginx-deployment-7d569cb5f5-h7x79<span class="w">   </span><span class="m">1</span>/1<span class="w">     </span>Running<span class="w">             </span><span class="m">0</span><span class="w">          </span>26m
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>nginx-deployment-7d569cb5f5-l2pbh<span class="w">   </span><span class="m">0</span>/1<span class="w">     </span>ContainerCreating<span class="w">   </span><span class="m">0</span><span class="w">          </span>2s
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>nginx-deployment-7d569cb5f5-r2ln4<span class="w">   </span><span class="m">1</span>/1<span class="w">     </span>Running<span class="w">             </span><span class="m">0</span><span class="w">          </span>26m
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>nginx-deployment-7d569cb5f5-wtbsw<span class="w">   </span><span class="m">0</span>/1<span class="w">     </span>ContainerCreating<span class="w">   </span><span class="m">0</span><span class="w">          </span>2s
 <a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="c1"># kubectl get pods</span>
-<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>NAME                                READY   STATUS    RESTARTS   AGE
-<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>nginx-deployment-7d569cb5f5-5kc9r   <span class="m">1</span>/1     Running   <span class="m">0</span>          4s
-<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>nginx-deployment-7d569cb5f5-cqdqg   <span class="m">1</span>/1     Running   <span class="m">0</span>          4s
-<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>nginx-deployment-7d569cb5f5-h7x79   <span class="m">1</span>/1     Running   <span class="m">0</span>          26m
-<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>nginx-deployment-7d569cb5f5-l2pbh   <span class="m">1</span>/1     Running   <span class="m">0</span>          4s
-<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>nginx-deployment-7d569cb5f5-r2ln4   <span class="m">1</span>/1     Running   <span class="m">0</span>          26m
-<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>nginx-deployment-7d569cb5f5-wtbsw   <span class="m">1</span>/1     Running   <span class="m">0</span>          4s
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>NAME<span class="w">                                </span>READY<span class="w">   </span>STATUS<span class="w">    </span>RESTARTS<span class="w">   </span>AGE
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>nginx-deployment-7d569cb5f5-5kc9r<span class="w">   </span><span class="m">1</span>/1<span class="w">     </span>Running<span class="w">   </span><span class="m">0</span><span class="w">          </span>4s
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>nginx-deployment-7d569cb5f5-cqdqg<span class="w">   </span><span class="m">1</span>/1<span class="w">     </span>Running<span class="w">   </span><span class="m">0</span><span class="w">          </span>4s
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>nginx-deployment-7d569cb5f5-h7x79<span class="w">   </span><span class="m">1</span>/1<span class="w">     </span>Running<span class="w">   </span><span class="m">0</span><span class="w">          </span>26m
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>nginx-deployment-7d569cb5f5-l2pbh<span class="w">   </span><span class="m">1</span>/1<span class="w">     </span>Running<span class="w">   </span><span class="m">0</span><span class="w">          </span>4s
+<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>nginx-deployment-7d569cb5f5-r2ln4<span class="w">   </span><span class="m">1</span>/1<span class="w">     </span>Running<span class="w">   </span><span class="m">0</span><span class="w">          </span>26m
+<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>nginx-deployment-7d569cb5f5-wtbsw<span class="w">   </span><span class="m">1</span>/1<span class="w">     </span>Running<span class="w">   </span><span class="m">0</span><span class="w">          </span>4s
 </code></pre></div></p>
 <h6 id="scale-down">Scale Down<a class="headerlink" href="#scale-down" title="Permanent link">&para;</a></h6>
 <p>update <code>kubectl edit deployment.v1.apps/nginx-deployment</code> replicas from <code>6</code> to <code>2</code>
@@ -1752,43 +1869,43 @@ the <code>kubectl describe deployment &lt;deployment-name&gt;</code> provides de
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1"># kubectl describe deployment nginx-deployment</span>
 <a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="c1">### ommitted output ###</span>
 <a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>Events:
-<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>  Type    Reason             Age                  From                   Message
-<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>  ----    ------             ----                 ----                   -------
-<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>  Normal  ScalingReplicaSet  30m                  deployment-controller  Scaled up replica <span class="nb">set</span> nginx-deployment-7d569cb5f5 to <span class="m">2</span>
-<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>  Normal  ScalingReplicaSet  7m12s                deployment-controller  Scaled down replica <span class="nb">set</span> nginx-deployment-7d569cb5f5 to <span class="m">2</span>
-<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>  Normal  ScalingReplicaSet  3m25s <span class="o">(</span>x3 over 16m<span class="o">)</span>  deployment-controller  Scaled up replica <span class="nb">set</span> nginx-deployment-7d569cb5f5 to <span class="m">6</span>
-<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>  Normal  ScalingReplicaSet  72s <span class="o">(</span>x2 over 11m<span class="o">)</span>    deployment-controller  Scaled down replica <span class="nb">set</span> nginx-deployment-7d569cb5f5 to <span class="m">4</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">  </span>Type<span class="w">    </span>Reason<span class="w">             </span>Age<span class="w">                  </span>From<span class="w">                   </span>Message
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">  </span>----<span class="w">    </span>------<span class="w">             </span>----<span class="w">                 </span>----<span class="w">                   </span>-------
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="w">  </span>Normal<span class="w">  </span>ScalingReplicaSet<span class="w">  </span>30m<span class="w">                  </span>deployment-controller<span class="w">  </span>Scaled<span class="w"> </span>up<span class="w"> </span>replica<span class="w"> </span><span class="nb">set</span><span class="w"> </span>nginx-deployment-7d569cb5f5<span class="w"> </span>to<span class="w"> </span><span class="m">2</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="w">  </span>Normal<span class="w">  </span>ScalingReplicaSet<span class="w">  </span>7m12s<span class="w">                </span>deployment-controller<span class="w">  </span>Scaled<span class="w"> </span>down<span class="w"> </span>replica<span class="w"> </span><span class="nb">set</span><span class="w"> </span>nginx-deployment-7d569cb5f5<span class="w"> </span>to<span class="w"> </span><span class="m">2</span>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="w">  </span>Normal<span class="w">  </span>ScalingReplicaSet<span class="w">  </span>3m25s<span class="w"> </span><span class="o">(</span>x3<span class="w"> </span>over<span class="w"> </span>16m<span class="o">)</span><span class="w">  </span>deployment-controller<span class="w">  </span>Scaled<span class="w"> </span>up<span class="w"> </span>replica<span class="w"> </span><span class="nb">set</span><span class="w"> </span>nginx-deployment-7d569cb5f5<span class="w"> </span>to<span class="w"> </span><span class="m">6</span>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="w">  </span>Normal<span class="w">  </span>ScalingReplicaSet<span class="w">  </span>72s<span class="w"> </span><span class="o">(</span>x2<span class="w"> </span>over<span class="w"> </span>11m<span class="o">)</span><span class="w">    </span>deployment-controller<span class="w">  </span>Scaled<span class="w"> </span>down<span class="w"> </span>replica<span class="w"> </span><span class="nb">set</span><span class="w"> </span>nginx-deployment-7d569cb5f5<span class="w"> </span>to<span class="w"> </span><span class="m">4</span>
 </code></pre></div>
 <h4 id="deployment-self-healing">Deployment Self-Healing<a class="headerlink" href="#deployment-self-healing" title="Permanent link">&para;</a></h4>
 <p>if any of pods in the deployment is destroyed, the deployment will create new ones in order to meet desired number of replicas</p>
 <p><div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1"># kubectl get pods</span>
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>NAME                                READY   STATUS    RESTARTS   AGE
-<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>nginx-deployment-7d569cb5f5-cqdqg   <span class="m">1</span>/1     Running   <span class="m">0</span>          8m
-<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>nginx-deployment-7d569cb5f5-l2pbh   <span class="m">1</span>/1     Running   <span class="m">0</span>          8m
-<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>nginx-deployment-7d569cb5f5-nbb4w   <span class="m">1</span>/1     Running   <span class="m">0</span>          4s
-<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>nginx-deployment-7d569cb5f5-r2ln4   <span class="m">1</span>/1     Running   <span class="m">0</span>          34m
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>NAME<span class="w">                                </span>READY<span class="w">   </span>STATUS<span class="w">    </span>RESTARTS<span class="w">   </span>AGE
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>nginx-deployment-7d569cb5f5-cqdqg<span class="w">   </span><span class="m">1</span>/1<span class="w">     </span>Running<span class="w">   </span><span class="m">0</span><span class="w">          </span>8m
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>nginx-deployment-7d569cb5f5-l2pbh<span class="w">   </span><span class="m">1</span>/1<span class="w">     </span>Running<span class="w">   </span><span class="m">0</span><span class="w">          </span>8m
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>nginx-deployment-7d569cb5f5-nbb4w<span class="w">   </span><span class="m">1</span>/1<span class="w">     </span>Running<span class="w">   </span><span class="m">0</span><span class="w">          </span>4s
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>nginx-deployment-7d569cb5f5-r2ln4<span class="w">   </span><span class="m">1</span>/1<span class="w">     </span>Running<span class="w">   </span><span class="m">0</span><span class="w">          </span>34m
 <a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="c1"># kubectl delete pod nginx-deployment-7d569cb5f5-r2ln4</span>
-<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>pod <span class="s2">&quot;nginx-deployment-7d569cb5f5-r2ln4&quot;</span> deleted
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>pod<span class="w"> </span><span class="s2">&quot;nginx-deployment-7d569cb5f5-r2ln4&quot;</span><span class="w"> </span>deleted
 <a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="c1"># kubectl get pods</span>
-<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>NAME                                READY   STATUS    RESTARTS   AGE
-<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>nginx-deployment-7d569cb5f5-cqdqg   <span class="m">1</span>/1     Running   <span class="m">0</span>          8m38s
-<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a>nginx-deployment-7d569cb5f5-l2pbh   <span class="m">1</span>/1     Running   <span class="m">0</span>          8m38s
-<a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a>nginx-deployment-7d569cb5f5-nbb4w   <span class="m">1</span>/1     Running   <span class="m">0</span>          42s
-<a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a>nginx-deployment-7d569cb5f5-tjsnw   <span class="m">1</span>/1     Running   <span class="m">0</span>          3s
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>NAME<span class="w">                                </span>READY<span class="w">   </span>STATUS<span class="w">    </span>RESTARTS<span class="w">   </span>AGE
+<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>nginx-deployment-7d569cb5f5-cqdqg<span class="w">   </span><span class="m">1</span>/1<span class="w">     </span>Running<span class="w">   </span><span class="m">0</span><span class="w">          </span>8m38s
+<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a>nginx-deployment-7d569cb5f5-l2pbh<span class="w">   </span><span class="m">1</span>/1<span class="w">     </span>Running<span class="w">   </span><span class="m">0</span><span class="w">          </span>8m38s
+<a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a>nginx-deployment-7d569cb5f5-nbb4w<span class="w">   </span><span class="m">1</span>/1<span class="w">     </span>Running<span class="w">   </span><span class="m">0</span><span class="w">          </span>42s
+<a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a>nginx-deployment-7d569cb5f5-tjsnw<span class="w">   </span><span class="m">1</span>/1<span class="w">     </span>Running<span class="w">   </span><span class="m">0</span><span class="w">          </span>3s
 </code></pre></div>
 the cluster build a new container right after I requested the deletion immediately. I couldnt catch the cluster creating the new container but we can tell by looking at the AGE value. <code>nginx-deployment-7d569cb5f5-tjsnw</code> was created when I deleted <code>nginx-deployment-7d569cb5f5-r2ln4</code>.</p>
 <h4 id="deployment-rolling-updates">Deployment Rolling Updates<a class="headerlink" href="#deployment-rolling-updates" title="Permanent link">&para;</a></h4>
 <p>the deployment can be adjusted to a new image version. it will gradually spin up new containers with the new vesrion to replace existing containers.
 Upgrading from <code>image: nginx:1.20.1</code> to <code>nginx=nginx:1.21.1</code>. The cluster will create new containers with the new image once those containers are running it will terminate the containers running the old image:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c1"># kubectl get pods</span>
-<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>NAME                                READY   STATUS              RESTARTS   AGE
-<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>nginx-deployment-5cfcccdb74-ck2nj   <span class="m">1</span>/1     Running             <span class="m">0</span>          7s
-<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>nginx-deployment-5cfcccdb74-lvgq2   <span class="m">0</span>/1     ContainerCreating   <span class="m">0</span>          2s
-<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>nginx-deployment-5cfcccdb74-v2k4g   <span class="m">0</span>/1     ContainerCreating   <span class="m">0</span>          1s
-<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>nginx-deployment-5cfcccdb74-zn666   <span class="m">1</span>/1     Running             <span class="m">0</span>          7s
-<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>nginx-deployment-7d569cb5f5-cqdqg   <span class="m">1</span>/1     Terminating         <span class="m">0</span>          17m
-<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>nginx-deployment-7d569cb5f5-l2pbh   <span class="m">1</span>/1     Running             <span class="m">0</span>          17m
-<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>nginx-deployment-7d569cb5f5-nbb4w   <span class="m">0</span>/1     Terminating         <span class="m">0</span>          9m29s
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>NAME<span class="w">                                </span>READY<span class="w">   </span>STATUS<span class="w">              </span>RESTARTS<span class="w">   </span>AGE
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>nginx-deployment-5cfcccdb74-ck2nj<span class="w">   </span><span class="m">1</span>/1<span class="w">     </span>Running<span class="w">             </span><span class="m">0</span><span class="w">          </span>7s
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>nginx-deployment-5cfcccdb74-lvgq2<span class="w">   </span><span class="m">0</span>/1<span class="w">     </span>ContainerCreating<span class="w">   </span><span class="m">0</span><span class="w">          </span>2s
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>nginx-deployment-5cfcccdb74-v2k4g<span class="w">   </span><span class="m">0</span>/1<span class="w">     </span>ContainerCreating<span class="w">   </span><span class="m">0</span><span class="w">          </span>1s
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>nginx-deployment-5cfcccdb74-zn666<span class="w">   </span><span class="m">1</span>/1<span class="w">     </span>Running<span class="w">             </span><span class="m">0</span><span class="w">          </span>7s
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>nginx-deployment-7d569cb5f5-cqdqg<span class="w">   </span><span class="m">1</span>/1<span class="w">     </span>Terminating<span class="w">         </span><span class="m">0</span><span class="w">          </span>17m
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>nginx-deployment-7d569cb5f5-l2pbh<span class="w">   </span><span class="m">1</span>/1<span class="w">     </span>Running<span class="w">             </span><span class="m">0</span><span class="w">          </span>17m
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>nginx-deployment-7d569cb5f5-nbb4w<span class="w">   </span><span class="m">0</span>/1<span class="w">     </span>Terminating<span class="w">         </span><span class="m">0</span><span class="w">          </span>9m29s
 </code></pre></div></p>
 <h4 id="conclusion">Conclusion<a class="headerlink" href="#conclusion" title="Permanent link">&para;</a></h4>
 <p>Edittig the running-config vs editing the actual file and apply the changes works the same way. <script type="text/javascript" src="https://viewer.diagrams.net/js/viewer-static.min.js"></script></p>

@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://gtz4all.github.io/devops/kubernetes/kubernetes_services/">
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.4.0, mkdocs-material-8.5.6">
+      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-8.5.6">
     
     
       
@@ -442,6 +442,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../cloud/aws/aws-landingzone/" class="md-nav__link">
+        AWS Landing Zones
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../cloud/aws/default-vpc-cleanup/" class="md-nav__link">
         Default Vpc Cleanup
       </a>
@@ -690,6 +704,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../cloud/gcp/cloud-identity/" class="md-nav__link">
+        Cloud identity
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../cloud/gcp/gcloud/" class="md-nav__link">
         Gcloud Command Overview
       </a>
@@ -829,6 +857,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../terraform/multi-gcp-auth/" class="md-nav__link">
+        GCP Multi Account Authentication
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../terraform/terraform-refactoring/" class="md-nav__link">
         Terraform State Refactoring
       </a>
@@ -878,6 +920,20 @@
     <li class="md-nav__item">
       <a href="../../ansible/intro/" class="md-nav__link">
         Introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ansible/gcp_ansible/" class="md-nav__link">
+        Google Cloud Platform Ansible Collection
       </a>
     </li>
   
@@ -1258,6 +1314,67 @@
 
             
           
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_8" type="checkbox" id="__nav_3_8" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_8">
+          Git
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Git" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_8">
+          <span class="md-nav__icon md-icon"></span>
+          Git
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../git/intro/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../git/multi_ssh_keys/" class="md-nav__link">
+        Managing Multiple Github Accounts
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -1605,71 +1722,71 @@ end
 <a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>  type: NodePort
 </code></pre></div>
 validate service is running</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nv">$#</span> kubectl create -f kube-service.yml
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>service/nginx-service created
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nv">$#</span><span class="w"> </span>kubectl<span class="w"> </span>create<span class="w"> </span>-f<span class="w"> </span>kube-service.yml
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>service/nginx-service<span class="w"> </span>created
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="nv">$#</span> kubectl get svc
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>NAME            TYPE        CLUSTER-IP     EXTERNAL-IP   PORT<span class="o">(</span>S<span class="o">)</span>        AGE
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>kubernetes      ClusterIP   <span class="m">10</span>.96.0.1      &lt;none&gt;        <span class="m">443</span>/TCP        5d8h
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>nginx-service   NodePort    <span class="m">10</span>.100.81.26   &lt;none&gt;        <span class="m">80</span>:32180/TCP   5s
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="nv">$#</span><span class="w"> </span>kubectl<span class="w"> </span>get<span class="w"> </span>svc
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>NAME<span class="w">            </span>TYPE<span class="w">        </span>CLUSTER-IP<span class="w">     </span>EXTERNAL-IP<span class="w">   </span>PORT<span class="o">(</span>S<span class="o">)</span><span class="w">        </span>AGE
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>kubernetes<span class="w">      </span>ClusterIP<span class="w">   </span><span class="m">10</span>.96.0.1<span class="w">      </span>&lt;none&gt;<span class="w">        </span><span class="m">443</span>/TCP<span class="w">        </span>5d8h
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>nginx-service<span class="w">   </span>NodePort<span class="w">    </span><span class="m">10</span>.100.81.26<span class="w">   </span>&lt;none&gt;<span class="w">        </span><span class="m">80</span>:32180/TCP<span class="w">   </span>5s
 <a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
-<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="nv">$#</span> curl localhost:32180
-<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>&lt;!DOCTYPE html&gt;
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="nv">$#</span><span class="w"> </span>curl<span class="w"> </span>localhost:32180
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>&lt;!DOCTYPE<span class="w"> </span>html&gt;
 <a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>&lt;html&gt;
 <a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>&lt;head&gt;
-<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>&lt;title&gt;Welcome to nginx!&lt;/title&gt;
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>&lt;title&gt;Welcome<span class="w"> </span>to<span class="w"> </span>nginx!&lt;/title&gt;
 <a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>&lt;style&gt;
-<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>    body <span class="o">{</span>
-<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>        width: 35em<span class="p">;</span>
-<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>        margin: <span class="m">0</span> auto<span class="p">;</span>
-<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>        font-family: Tahoma, Verdana, Arial, sans-serif<span class="p">;</span>
-<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>    <span class="o">}</span>
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="w">    </span>body<span class="w"> </span><span class="o">{</span>
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="w">        </span>width:<span class="w"> </span>35em<span class="p">;</span>
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="w">        </span>margin:<span class="w"> </span><span class="m">0</span><span class="w"> </span>auto<span class="p">;</span>
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="w">        </span>font-family:<span class="w"> </span>Tahoma,<span class="w"> </span>Verdana,<span class="w"> </span>Arial,<span class="w"> </span>sans-serif<span class="p">;</span>
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="w">    </span><span class="o">}</span>
 <a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>&lt;/style&gt;
 <a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>&lt;/head&gt;
 <a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>&lt;body&gt;
-<a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>&lt;h1&gt;Welcome to nginx!&lt;/h1&gt;
-<a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a>&lt;p&gt;If you see this page, the nginx web server is successfully installed and
-<a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a>working. Further configuration is required.&lt;/p&gt;
+<a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>&lt;h1&gt;Welcome<span class="w"> </span>to<span class="w"> </span>nginx!&lt;/h1&gt;
+<a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a>&lt;p&gt;If<span class="w"> </span>you<span class="w"> </span>see<span class="w"> </span>this<span class="w"> </span>page,<span class="w"> </span>the<span class="w"> </span>nginx<span class="w"> </span>web<span class="w"> </span>server<span class="w"> </span>is<span class="w"> </span>successfully<span class="w"> </span>installed<span class="w"> </span>and
+<a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a>working.<span class="w"> </span>Further<span class="w"> </span>configuration<span class="w"> </span>is<span class="w"> </span>required.&lt;/p&gt;
 <a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a>
-<a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a>&lt;p&gt;For online documentation and support please refer to
-<a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a>&lt;a <span class="nv">href</span><span class="o">=</span><span class="s2">&quot;http://nginx.org/&quot;</span>&gt;nginx.org&lt;/a&gt;.&lt;br/&gt;
-<a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a>Commercial support is available at
-<a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a>&lt;a <span class="nv">href</span><span class="o">=</span><span class="s2">&quot;http://nginx.com/&quot;</span>&gt;nginx.com&lt;/a&gt;.&lt;/p&gt;
+<a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a>&lt;p&gt;For<span class="w"> </span>online<span class="w"> </span>documentation<span class="w"> </span>and<span class="w"> </span>support<span class="w"> </span>please<span class="w"> </span>refer<span class="w"> </span>to
+<a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a>&lt;a<span class="w"> </span><span class="nv">href</span><span class="o">=</span><span class="s2">&quot;http://nginx.org/&quot;</span>&gt;nginx.org&lt;/a&gt;.&lt;br/&gt;
+<a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a>Commercial<span class="w"> </span>support<span class="w"> </span>is<span class="w"> </span>available<span class="w"> </span>at
+<a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a>&lt;a<span class="w"> </span><span class="nv">href</span><span class="o">=</span><span class="s2">&quot;http://nginx.com/&quot;</span>&gt;nginx.com&lt;/a&gt;.&lt;/p&gt;
 <a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a>
-<a id="__codelineno-1-32" name="__codelineno-1-32" href="#__codelineno-1-32"></a>&lt;p&gt;&lt;em&gt;Thank you <span class="k">for</span> using nginx.&lt;/em&gt;&lt;/p&gt;
+<a id="__codelineno-1-32" name="__codelineno-1-32" href="#__codelineno-1-32"></a>&lt;p&gt;&lt;em&gt;Thank<span class="w"> </span>you<span class="w"> </span><span class="k">for</span><span class="w"> </span>using<span class="w"> </span>nginx.&lt;/em&gt;&lt;/p&gt;
 <a id="__codelineno-1-33" name="__codelineno-1-33" href="#__codelineno-1-33"></a>&lt;/body&gt;
 <a id="__codelineno-1-34" name="__codelineno-1-34" href="#__codelineno-1-34"></a>&lt;/html&gt;
 </code></pre></div>
 <h4 id="validating">Validating<a class="headerlink" href="#validating" title="Permanent link">&para;</a></h4>
 <p><code>kubectl describe svc</code> can provide an Endpoint list of all running pods</p>
 <p><div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># kubectl get svc</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>NAME            TYPE        CLUSTER-IP     EXTERNAL-IP   PORT<span class="o">(</span>S<span class="o">)</span>        AGE
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>kubernetes      ClusterIP   <span class="m">10</span>.96.0.1      &lt;none&gt;        <span class="m">443</span>/TCP        5d8h
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>nginx-service   NodePort    <span class="m">10</span>.100.81.26   &lt;none&gt;        <span class="m">80</span>:32180/TCP   19m
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>root@f8aca9a6c11c:/home/cloud_user# kubectl describe svc nginx-service
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>Name:                     nginx-service
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>Namespace:                default
-<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>Labels:                   &lt;none&gt;
-<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>Annotations:              &lt;none&gt;
-<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>Selector:                 <span class="nv">app</span><span class="o">=</span>nginx-app
-<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>Type:                     NodePort
-<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>IP:                       <span class="m">10</span>.100.81.26
-<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>Port:                     &lt;unset&gt;  <span class="m">80</span>/TCP
-<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>TargetPort:               <span class="m">80</span>/TCP
-<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>NodePort:                 &lt;unset&gt;  <span class="m">32180</span>/TCP
-<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>Endpoints:                <span class="m">10</span>.244.1.20:80,10.244.1.22:80,10.244.2.14:80 + <span class="m">1</span> more..
-<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>Session Affinity:         None
-<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>External Traffic Policy:  Cluster
-<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>Events:                   &lt;none&gt;
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>NAME<span class="w">            </span>TYPE<span class="w">        </span>CLUSTER-IP<span class="w">     </span>EXTERNAL-IP<span class="w">   </span>PORT<span class="o">(</span>S<span class="o">)</span><span class="w">        </span>AGE
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>kubernetes<span class="w">      </span>ClusterIP<span class="w">   </span><span class="m">10</span>.96.0.1<span class="w">      </span>&lt;none&gt;<span class="w">        </span><span class="m">443</span>/TCP<span class="w">        </span>5d8h
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>nginx-service<span class="w">   </span>NodePort<span class="w">    </span><span class="m">10</span>.100.81.26<span class="w">   </span>&lt;none&gt;<span class="w">        </span><span class="m">80</span>:32180/TCP<span class="w">   </span>19m
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>root@f8aca9a6c11c:/home/cloud_user#<span class="w"> </span>kubectl<span class="w"> </span>describe<span class="w"> </span>svc<span class="w"> </span>nginx-service
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>Name:<span class="w">                     </span>nginx-service
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>Namespace:<span class="w">                </span>default
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>Labels:<span class="w">                   </span>&lt;none&gt;
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>Annotations:<span class="w">              </span>&lt;none&gt;
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>Selector:<span class="w">                 </span><span class="nv">app</span><span class="o">=</span>nginx-app
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>Type:<span class="w">                     </span>NodePort
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>IP:<span class="w">                       </span><span class="m">10</span>.100.81.26
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>Port:<span class="w">                     </span>&lt;unset&gt;<span class="w">  </span><span class="m">80</span>/TCP
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>TargetPort:<span class="w">               </span><span class="m">80</span>/TCP
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>NodePort:<span class="w">                 </span>&lt;unset&gt;<span class="w">  </span><span class="m">32180</span>/TCP
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>Endpoints:<span class="w">                </span><span class="m">10</span>.244.1.20:80,10.244.1.22:80,10.244.2.14:80<span class="w"> </span>+<span class="w"> </span><span class="m">1</span><span class="w"> </span>more..
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>Session<span class="w"> </span>Affinity:<span class="w">         </span>None
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>External<span class="w"> </span>Traffic<span class="w"> </span>Policy:<span class="w">  </span>Cluster
+<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>Events:<span class="w">                   </span>&lt;none&gt;
 </code></pre></div>
 In order to validate only running pods are in the Endpoint list, scale down the deployment:
 * current state</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># kubectl get pods</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>NAME                                READY   STATUS    RESTARTS   AGE
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>nginx-deployment-5cfcccdb74-ck2nj   <span class="m">1</span>/1     Running   <span class="m">2</span>          21h
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>nginx-deployment-5cfcccdb74-lvgq2   <span class="m">1</span>/1     Running   <span class="m">2</span>          21h
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>nginx-deployment-5cfcccdb74-v2k4g   <span class="m">1</span>/1     Running   <span class="m">2</span>          21h
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>nginx-deployment-5cfcccdb74-zn666   <span class="m">1</span>/1     Running   <span class="m">2</span>          21h
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>NAME<span class="w">                                </span>READY<span class="w">   </span>STATUS<span class="w">    </span>RESTARTS<span class="w">   </span>AGE
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>nginx-deployment-5cfcccdb74-ck2nj<span class="w">   </span><span class="m">1</span>/1<span class="w">     </span>Running<span class="w">   </span><span class="m">2</span><span class="w">          </span>21h
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>nginx-deployment-5cfcccdb74-lvgq2<span class="w">   </span><span class="m">1</span>/1<span class="w">     </span>Running<span class="w">   </span><span class="m">2</span><span class="w">          </span>21h
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>nginx-deployment-5cfcccdb74-v2k4g<span class="w">   </span><span class="m">1</span>/1<span class="w">     </span>Running<span class="w">   </span><span class="m">2</span><span class="w">          </span>21h
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>nginx-deployment-5cfcccdb74-zn666<span class="w">   </span><span class="m">1</span>/1<span class="w">     </span>Running<span class="w">   </span><span class="m">2</span><span class="w">          </span>21h
 </code></pre></div>
 <ul>
 <li>use <code>kubectl scale deployments/nginx-deployment --replicas=2</code> to scale down from 4 to 2

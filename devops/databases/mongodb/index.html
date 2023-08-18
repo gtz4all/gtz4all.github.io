@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://gtz4all.github.io/devops/databases/mongodb/">
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.4.0, mkdocs-material-8.5.6">
+      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-8.5.6">
     
     
       
@@ -442,6 +442,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../cloud/aws/aws-landingzone/" class="md-nav__link">
+        AWS Landing Zones
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../cloud/aws/default-vpc-cleanup/" class="md-nav__link">
         Default Vpc Cleanup
       </a>
@@ -690,6 +704,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../cloud/gcp/cloud-identity/" class="md-nav__link">
+        Cloud identity
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../cloud/gcp/gcloud/" class="md-nav__link">
         Gcloud Command Overview
       </a>
@@ -829,6 +857,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../terraform/multi-gcp-auth/" class="md-nav__link">
+        GCP Multi Account Authentication
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../terraform/terraform-refactoring/" class="md-nav__link">
         Terraform State Refactoring
       </a>
@@ -878,6 +920,20 @@
     <li class="md-nav__item">
       <a href="../../ansible/intro/" class="md-nav__link">
         Introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ansible/gcp_ansible/" class="md-nav__link">
+        Google Cloud Platform Ansible Collection
       </a>
     </li>
   
@@ -1244,6 +1300,67 @@
 
             
           
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_8" type="checkbox" id="__nav_3_8" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_8">
+          Git
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Git" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_8">
+          <span class="md-nav__icon md-icon"></span>
+          Git
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../git/intro/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../git/multi_ssh_keys/" class="md-nav__link">
+        Managing Multiple Github Accounts
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -1594,154 +1711,154 @@
 <li>Mongo Dockerfile</li>
 </ul>
 <p>This dockerfile creates both a mongodb and mongo-express instance</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;3.1&#39;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;3.1&#39;</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="nt">services</span><span class="p">:</span><span class="w"></span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="nt">mongodb</span><span class="p">:</span><span class="w"></span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mongodb</span><span class="w"></span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mongo</span><span class="w"></span>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">always</span><span class="w"></span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">    </span><span class="nt">environment</span><span class="p">:</span><span class="w"></span>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">      </span><span class="c1">## MongoDB Credentials</span><span class="w"></span>
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">      </span><span class="nt">MONGO_INITDB_ROOT_USERNAME</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${DBUSER}</span><span class="w"></span>
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">      </span><span class="nt">MONGO_INITDB_ROOT_PASSWORD</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${DBPASS}</span><span class="w"></span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="nt">services</span><span class="p">:</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="nt">mongodb</span><span class="p">:</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mongodb</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mongo</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">always</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">    </span><span class="nt">environment</span><span class="p">:</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">      </span><span class="c1">## MongoDB Credentials</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">      </span><span class="nt">MONGO_INITDB_ROOT_USERNAME</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${DBUSER}</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">      </span><span class="nt">MONGO_INITDB_ROOT_PASSWORD</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${DBPASS}</span>
 <a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>
-<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">  </span><span class="nt">mongo-express</span><span class="p">:</span><span class="w"></span>
-<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">    </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mongogui</span><span class="w"></span>
-<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mongo-express</span><span class="w"></span>
-<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">    </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">always</span><span class="w"></span>
-<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">    </span><span class="nt">ports</span><span class="p">:</span><span class="w"></span>
-<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8081:8081</span><span class="w"></span>
-<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">    </span><span class="nt">environment</span><span class="p">:</span><span class="w"></span>
-<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="w">      </span><span class="c1">## MongoDB Container Name</span><span class="w"></span>
-<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="w">      </span><span class="nt">ME_CONFIG_MONGODB_SERVER</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mongodb</span><span class="w"></span>
-<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="w">      </span><span class="c1">## MongoDB Credentials</span><span class="w"></span>
-<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="w">      </span><span class="nt">ME_CONFIG_MONGODB_ADMINUSERNAME</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${DBUSER}</span><span class="w"></span>
-<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="w">      </span><span class="nt">ME_CONFIG_MONGODB_ADMINPASSWORD</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${DBPASS}</span><span class="w"></span>
-<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="w">      </span><span class="c1">## MongoDB Web UI Credentials</span><span class="w"></span>
-<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="w">      </span><span class="nt">ME_CONFIG_BASICAUTH_USERNAME</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${DBUSER}</span><span class="w"></span>
-<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="w">      </span><span class="nt">ME_CONFIG_BASICAUTH_PASSWORD</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${DBPASS}</span><span class="w"></span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">  </span><span class="nt">mongo-express</span><span class="p">:</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">    </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mongogui</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mongo-express</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">    </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">always</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">    </span><span class="nt">ports</span><span class="p">:</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8081:8081</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">    </span><span class="nt">environment</span><span class="p">:</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="w">      </span><span class="c1">## MongoDB Container Name</span>
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="w">      </span><span class="nt">ME_CONFIG_MONGODB_SERVER</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mongodb</span>
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="w">      </span><span class="c1">## MongoDB Credentials</span>
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="w">      </span><span class="nt">ME_CONFIG_MONGODB_ADMINUSERNAME</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${DBUSER}</span>
+<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="w">      </span><span class="nt">ME_CONFIG_MONGODB_ADMINPASSWORD</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${DBPASS}</span>
+<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="w">      </span><span class="c1">## MongoDB Web UI Credentials</span>
+<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="w">      </span><span class="nt">ME_CONFIG_BASICAUTH_USERNAME</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${DBUSER}</span>
+<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="w">      </span><span class="nt">ME_CONFIG_BASICAUTH_PASSWORD</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${DBPASS}</span>
 </code></pre></div>
 <ul>
 <li>Run Containers
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nv">DBUSER</span><span class="o">=</span>admin <span class="nv">DBPASS</span><span class="o">=</span>admin docker-compose up -d
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nv">DBUSER</span><span class="o">=</span>admin<span class="w"> </span><span class="nv">DBPASS</span><span class="o">=</span>admin<span class="w"> </span>docker-compose<span class="w"> </span>up<span class="w"> </span>-d
 </code></pre></div></li>
 </ul>
 <h2 id="mongodb-cli">MongoDB CLI<a class="headerlink" href="#mongodb-cli" title="Permanent link">&para;</a></h2>
 <ul>
 <li>
 <p>Install
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>sudo apt update <span class="o">&amp;&amp;</span> sudo apt install mongodb-clients -y
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>mongodb-clients<span class="w"> </span>-y
 </code></pre></div></p>
 </li>
 <li>
 <p>Export Credentials</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">export</span> <span class="nv">DBUSER</span><span class="o">=</span>admin <span class="nv">DBPASS</span><span class="o">=</span>admin
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nb">echo</span> <span class="nv">$DBUSER</span>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="nb">echo</span> <span class="nv">$DBPASS</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">DBUSER</span><span class="o">=</span>admin<span class="w"> </span><span class="nv">DBPASS</span><span class="o">=</span>admin
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nb">echo</span><span class="w"> </span><span class="nv">$DBUSER</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="nb">echo</span><span class="w"> </span><span class="nv">$DBPASS</span>
 </code></pre></div>
 </li>
 <li>
 <p>Mongo Container IP</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nb">export</span> <span class="nv">MONGODB_IP</span><span class="o">=</span><span class="k">$(</span>docker inspect mongodb --format <span class="s1">&#39;{range.NetworkSettings.Networks }{.IPAddress}{ end }&#39;</span><span class="k">)</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nb">echo</span> <span class="nv">$MONGODB_IP</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">MONGODB_IP</span><span class="o">=</span><span class="k">$(</span>docker<span class="w"> </span>inspect<span class="w"> </span>mongodb<span class="w"> </span>--format<span class="w"> </span><span class="s1">&#39;{range.NetworkSettings.Networks }{.IPAddress}{ end }&#39;</span><span class="k">)</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nb">echo</span><span class="w"> </span><span class="nv">$MONGODB_IP</span>
 </code></pre></div>
 </li>
 <li>
 <p>Connect to MongoDB</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>mongo mongodb://<span class="nv">$MONGODB_IP</span>:27017/ -u <span class="nv">$DBUSER</span> -p <span class="nv">$DBPASS</span> --authenticationDatabase <span class="s2">&quot;admin&quot;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>mongo<span class="w"> </span>mongodb://<span class="nv">$MONGODB_IP</span>:27017/<span class="w"> </span>-u<span class="w"> </span><span class="nv">$DBUSER</span><span class="w"> </span>-p<span class="w"> </span><span class="nv">$DBPASS</span><span class="w"> </span>--authenticationDatabase<span class="w"> </span><span class="s2">&quot;admin&quot;</span>
 </code></pre></div>
 </li>
 <li>
 <p>MongoDB CLI connection output</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>:~$ mongo mongodb://<span class="nv">$MONGODB_IP</span>:27017/ -u <span class="nv">$DBUSER</span> -p <span class="nv">$DBPASS</span> --authenticationDatabase <span class="s2">&quot;admin&quot;</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>MongoDB shell version v3.6.3
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>connecting to: mongodb://172.18.0.2:27017/
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>MongoDB server version: <span class="m">4</span>.4.6
-<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>WARNING: shell and server versions <span class="k">do</span> not match
-<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>Server has startup warnings:
-<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="o">{</span><span class="s2">&quot;t&quot;</span>:<span class="o">{</span><span class="s2">&quot;</span><span class="nv">$date</span><span class="s2">&quot;</span>:<span class="s2">&quot;2021-06-07T18:10:19.421+00:00&quot;</span><span class="o">}</span>,<span class="s2">&quot;s&quot;</span>:<span class="s2">&quot;I&quot;</span>,  <span class="s2">&quot;c&quot;</span>:<span class="s2">&quot;STORAGE&quot;</span>,  <span class="s2">&quot;id&quot;</span>:22297,   <span class="s2">&quot;ctx&quot;</span>:<span class="s2">&quot;initandlisten&quot;</span>,<span class="s2">&quot;msg&quot;</span>:<span class="s2">&quot;Using the XFS filesystem is strongly recommended with the WiredTiger storage engine. See http://dochub.mongodb.org/core/prodnotes-filesystem&quot;</span>,<span class="s2">&quot;tags&quot;</span>:<span class="o">[</span><span class="s2">&quot;startupWarnings&quot;</span><span class="o">]}</span>
-<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="o">{</span><span class="s2">&quot;t&quot;</span>:<span class="o">{</span><span class="s2">&quot;</span><span class="nv">$date</span><span class="s2">&quot;</span>:<span class="s2">&quot;2021-06-07T18:10:20.787+00:00&quot;</span><span class="o">}</span>,<span class="s2">&quot;s&quot;</span>:<span class="s2">&quot;W&quot;</span>,  <span class="s2">&quot;c&quot;</span>:<span class="s2">&quot;CONTROL&quot;</span>,  <span class="s2">&quot;id&quot;</span>:22167,   <span class="s2">&quot;ctx&quot;</span>:<span class="s2">&quot;initandlisten&quot;</span>,<span class="s2">&quot;msg&quot;</span>:<span class="s2">&quot;You are running on a NUMA machine. We suggest launching mongod like this to avoid performance problems: numactl --interleave=all mongod [other options]&quot;</span>,<span class="s2">&quot;tags&quot;</span>:<span class="o">[</span><span class="s2">&quot;startupWarnings&quot;</span><span class="o">]}</span>
-<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>&gt; 
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>:~$<span class="w"> </span>mongo<span class="w"> </span>mongodb://<span class="nv">$MONGODB_IP</span>:27017/<span class="w"> </span>-u<span class="w"> </span><span class="nv">$DBUSER</span><span class="w"> </span>-p<span class="w"> </span><span class="nv">$DBPASS</span><span class="w"> </span>--authenticationDatabase<span class="w"> </span><span class="s2">&quot;admin&quot;</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>MongoDB<span class="w"> </span>shell<span class="w"> </span>version<span class="w"> </span>v3.6.3
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>connecting<span class="w"> </span>to:<span class="w"> </span>mongodb://172.18.0.2:27017/
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>MongoDB<span class="w"> </span>server<span class="w"> </span>version:<span class="w"> </span><span class="m">4</span>.4.6
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>WARNING:<span class="w"> </span>shell<span class="w"> </span>and<span class="w"> </span>server<span class="w"> </span>versions<span class="w"> </span><span class="k">do</span><span class="w"> </span>not<span class="w"> </span>match
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>Server<span class="w"> </span>has<span class="w"> </span>startup<span class="w"> </span>warnings:
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="o">{</span><span class="s2">&quot;t&quot;</span>:<span class="o">{</span><span class="s2">&quot;</span><span class="nv">$date</span><span class="s2">&quot;</span>:<span class="s2">&quot;2021-06-07T18:10:19.421+00:00&quot;</span><span class="o">}</span>,<span class="s2">&quot;s&quot;</span>:<span class="s2">&quot;I&quot;</span>,<span class="w">  </span><span class="s2">&quot;c&quot;</span>:<span class="s2">&quot;STORAGE&quot;</span>,<span class="w">  </span><span class="s2">&quot;id&quot;</span>:22297,<span class="w">   </span><span class="s2">&quot;ctx&quot;</span>:<span class="s2">&quot;initandlisten&quot;</span>,<span class="s2">&quot;msg&quot;</span>:<span class="s2">&quot;Using the XFS filesystem is strongly recommended with the WiredTiger storage engine. See http://dochub.mongodb.org/core/prodnotes-filesystem&quot;</span>,<span class="s2">&quot;tags&quot;</span>:<span class="o">[</span><span class="s2">&quot;startupWarnings&quot;</span><span class="o">]}</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="o">{</span><span class="s2">&quot;t&quot;</span>:<span class="o">{</span><span class="s2">&quot;</span><span class="nv">$date</span><span class="s2">&quot;</span>:<span class="s2">&quot;2021-06-07T18:10:20.787+00:00&quot;</span><span class="o">}</span>,<span class="s2">&quot;s&quot;</span>:<span class="s2">&quot;W&quot;</span>,<span class="w">  </span><span class="s2">&quot;c&quot;</span>:<span class="s2">&quot;CONTROL&quot;</span>,<span class="w">  </span><span class="s2">&quot;id&quot;</span>:22167,<span class="w">   </span><span class="s2">&quot;ctx&quot;</span>:<span class="s2">&quot;initandlisten&quot;</span>,<span class="s2">&quot;msg&quot;</span>:<span class="s2">&quot;You are running on a NUMA machine. We suggest launching mongod like this to avoid performance problems: numactl --interleave=all mongod [other options]&quot;</span>,<span class="s2">&quot;tags&quot;</span>:<span class="o">[</span><span class="s2">&quot;startupWarnings&quot;</span><span class="o">]}</span>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>&gt;<span class="w"> </span>
 </code></pre></div>
 </li>
 <li>
 <p>List all databases</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>&gt; db.adminCommand<span class="o">(</span> <span class="o">{</span> listDatabases: <span class="m">1</span> <span class="o">}</span> <span class="o">)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>&gt;<span class="w"> </span>db.adminCommand<span class="o">(</span><span class="w"> </span><span class="o">{</span><span class="w"> </span>listDatabases:<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="o">}</span><span class="w"> </span><span class="o">)</span>
 <a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="o">{</span>
-<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>        <span class="s2">&quot;databases&quot;</span> : <span class="o">[</span>
-<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>                <span class="o">{</span>
-<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>                        <span class="s2">&quot;name&quot;</span> : <span class="s2">&quot;admin&quot;</span>,
-<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>                        <span class="s2">&quot;sizeOnDisk&quot;</span> : <span class="m">102400</span>,
-<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>                        <span class="s2">&quot;empty&quot;</span> : <span class="nb">false</span>
-<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>                <span class="o">}</span>,
-<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>                <span class="o">{</span>
-<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>                        <span class="s2">&quot;name&quot;</span> : <span class="s2">&quot;config&quot;</span>,
-<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>                        <span class="s2">&quot;sizeOnDisk&quot;</span> : <span class="m">12288</span>,
-<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>                        <span class="s2">&quot;empty&quot;</span> : <span class="nb">false</span>
-<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a>                <span class="o">}</span>,
-<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a>                <span class="o">{</span>
-<a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a>                        <span class="s2">&quot;name&quot;</span> : <span class="s2">&quot;local&quot;</span>,
-<a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a>                        <span class="s2">&quot;sizeOnDisk&quot;</span> : <span class="m">73728</span>,
-<a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a>                        <span class="s2">&quot;empty&quot;</span> : <span class="nb">false</span>
-<a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a>                <span class="o">}</span>
-<a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a>        <span class="o">]</span>,
-<a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a>        <span class="s2">&quot;totalSize&quot;</span> : <span class="m">188416</span>,
-<a id="__codelineno-7-21" name="__codelineno-7-21" href="#__codelineno-7-21"></a>        <span class="s2">&quot;ok&quot;</span> : <span class="m">1</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">        </span><span class="s2">&quot;databases&quot;</span><span class="w"> </span>:<span class="w"> </span><span class="o">[</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">                </span><span class="o">{</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">                        </span><span class="s2">&quot;name&quot;</span><span class="w"> </span>:<span class="w"> </span><span class="s2">&quot;admin&quot;</span>,
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="w">                        </span><span class="s2">&quot;sizeOnDisk&quot;</span><span class="w"> </span>:<span class="w"> </span><span class="m">102400</span>,
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="w">                        </span><span class="s2">&quot;empty&quot;</span><span class="w"> </span>:<span class="w"> </span><span class="nb">false</span>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="w">                </span><span class="o">}</span>,
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="w">                </span><span class="o">{</span>
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="w">                        </span><span class="s2">&quot;name&quot;</span><span class="w"> </span>:<span class="w"> </span><span class="s2">&quot;config&quot;</span>,
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="w">                        </span><span class="s2">&quot;sizeOnDisk&quot;</span><span class="w"> </span>:<span class="w"> </span><span class="m">12288</span>,
+<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a><span class="w">                        </span><span class="s2">&quot;empty&quot;</span><span class="w"> </span>:<span class="w"> </span><span class="nb">false</span>
+<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a><span class="w">                </span><span class="o">}</span>,
+<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a><span class="w">                </span><span class="o">{</span>
+<a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a><span class="w">                        </span><span class="s2">&quot;name&quot;</span><span class="w"> </span>:<span class="w"> </span><span class="s2">&quot;local&quot;</span>,
+<a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a><span class="w">                        </span><span class="s2">&quot;sizeOnDisk&quot;</span><span class="w"> </span>:<span class="w"> </span><span class="m">73728</span>,
+<a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a><span class="w">                        </span><span class="s2">&quot;empty&quot;</span><span class="w"> </span>:<span class="w"> </span><span class="nb">false</span>
+<a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a><span class="w">                </span><span class="o">}</span>
+<a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a><span class="w">        </span><span class="o">]</span>,
+<a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a><span class="w">        </span><span class="s2">&quot;totalSize&quot;</span><span class="w"> </span>:<span class="w"> </span><span class="m">188416</span>,
+<a id="__codelineno-7-21" name="__codelineno-7-21" href="#__codelineno-7-21"></a><span class="w">        </span><span class="s2">&quot;ok&quot;</span><span class="w"> </span>:<span class="w"> </span><span class="m">1</span>
 <a id="__codelineno-7-22" name="__codelineno-7-22" href="#__codelineno-7-22"></a><span class="o">}</span>
 <a id="__codelineno-7-23" name="__codelineno-7-23" href="#__codelineno-7-23"></a>&gt;
 </code></pre></div>
 </li>
 <li>
 <p>Create new database</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>use DataCenterDB
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>use<span class="w"> </span>DataCenterDB
 </code></pre></div>
 </li>
 <li>
 <p>create a collection and insert items </p>
 <p><div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c1">## use - creates database</span>
-<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>use DataCenterDB
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>use<span class="w"> </span>DataCenterDB
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="c1">## db.[collection-name].insert - creates collection if it does not already exist</span>
 <a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>db.DataCenter1.insert<span class="o">([</span>
-<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>  <span class="o">{</span>
-<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>    <span class="s2">&quot;name&quot;</span>: <span class="s2">&quot;COREROUTER1&quot;</span>,
-<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>    <span class="s2">&quot;tag&quot;</span>: <span class="s2">&quot;CORE&quot;</span>,
-<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>    <span class="s2">&quot;asn&quot;</span>: <span class="s2">&quot;64521&quot;</span>,
-<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>    <span class="s2">&quot;lo0&quot;</span>: <span class="s2">&quot;10.168.1.1&quot;</span>
-<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>  <span class="o">}</span>,
-<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>  <span class="o">{</span>
-<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>    <span class="s2">&quot;name&quot;</span>: <span class="s2">&quot;COREROUTER1&quot;</span>,
-<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a>    <span class="s2">&quot;tag&quot;</span>: <span class="s2">&quot;CORE&quot;</span>,
-<a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a>    <span class="s2">&quot;asn&quot;</span>: <span class="s2">&quot;64522&quot;</span>,
-<a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a>    <span class="s2">&quot;lo0&quot;</span>: <span class="s2">&quot;10.168.1.2&quot;</span>
-<a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a>  <span class="o">}</span>,
-<a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a>  <span class="o">{</span>
-<a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a>    <span class="s2">&quot;name&quot;</span>: <span class="s2">&quot;DISTROUTER1&quot;</span>,
-<a id="__codelineno-10-17" name="__codelineno-10-17" href="#__codelineno-10-17"></a>    <span class="s2">&quot;tag&quot;</span>: <span class="s2">&quot;DIST&quot;</span>,
-<a id="__codelineno-10-18" name="__codelineno-10-18" href="#__codelineno-10-18"></a>    <span class="s2">&quot;asn&quot;</span>: <span class="s2">&quot;64523&quot;</span>,
-<a id="__codelineno-10-19" name="__codelineno-10-19" href="#__codelineno-10-19"></a>    <span class="s2">&quot;lo0&quot;</span>: <span class="s2">&quot;10.168.1.3&quot;</span>
-<a id="__codelineno-10-20" name="__codelineno-10-20" href="#__codelineno-10-20"></a>  <span class="o">}</span>,
-<a id="__codelineno-10-21" name="__codelineno-10-21" href="#__codelineno-10-21"></a>  <span class="o">{</span>
-<a id="__codelineno-10-22" name="__codelineno-10-22" href="#__codelineno-10-22"></a>    <span class="s2">&quot;name&quot;</span>: <span class="s2">&quot;DISTROUTER1&quot;</span>,
-<a id="__codelineno-10-23" name="__codelineno-10-23" href="#__codelineno-10-23"></a>    <span class="s2">&quot;tag&quot;</span>: <span class="s2">&quot;DIST&quot;</span>,
-<a id="__codelineno-10-24" name="__codelineno-10-24" href="#__codelineno-10-24"></a>    <span class="s2">&quot;asn&quot;</span>: <span class="s2">&quot;64521&quot;</span>,
-<a id="__codelineno-10-25" name="__codelineno-10-25" href="#__codelineno-10-25"></a>    <span class="s2">&quot;lo0&quot;</span>: <span class="s2">&quot;10.168.1.2&quot;</span>
-<a id="__codelineno-10-26" name="__codelineno-10-26" href="#__codelineno-10-26"></a>  <span class="o">}</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">  </span><span class="o">{</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="w">    </span><span class="s2">&quot;name&quot;</span>:<span class="w"> </span><span class="s2">&quot;COREROUTER1&quot;</span>,
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="w">    </span><span class="s2">&quot;tag&quot;</span>:<span class="w"> </span><span class="s2">&quot;CORE&quot;</span>,
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="w">    </span><span class="s2">&quot;asn&quot;</span>:<span class="w"> </span><span class="s2">&quot;64521&quot;</span>,
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="w">    </span><span class="s2">&quot;lo0&quot;</span>:<span class="w"> </span><span class="s2">&quot;10.168.1.1&quot;</span>
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="w">  </span><span class="o">}</span>,
+<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="w">  </span><span class="o">{</span>
+<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a><span class="w">    </span><span class="s2">&quot;name&quot;</span>:<span class="w"> </span><span class="s2">&quot;COREROUTER1&quot;</span>,
+<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a><span class="w">    </span><span class="s2">&quot;tag&quot;</span>:<span class="w"> </span><span class="s2">&quot;CORE&quot;</span>,
+<a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a><span class="w">    </span><span class="s2">&quot;asn&quot;</span>:<span class="w"> </span><span class="s2">&quot;64522&quot;</span>,
+<a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a><span class="w">    </span><span class="s2">&quot;lo0&quot;</span>:<span class="w"> </span><span class="s2">&quot;10.168.1.2&quot;</span>
+<a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a><span class="w">  </span><span class="o">}</span>,
+<a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a><span class="w">  </span><span class="o">{</span>
+<a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a><span class="w">    </span><span class="s2">&quot;name&quot;</span>:<span class="w"> </span><span class="s2">&quot;DISTROUTER1&quot;</span>,
+<a id="__codelineno-10-17" name="__codelineno-10-17" href="#__codelineno-10-17"></a><span class="w">    </span><span class="s2">&quot;tag&quot;</span>:<span class="w"> </span><span class="s2">&quot;DIST&quot;</span>,
+<a id="__codelineno-10-18" name="__codelineno-10-18" href="#__codelineno-10-18"></a><span class="w">    </span><span class="s2">&quot;asn&quot;</span>:<span class="w"> </span><span class="s2">&quot;64523&quot;</span>,
+<a id="__codelineno-10-19" name="__codelineno-10-19" href="#__codelineno-10-19"></a><span class="w">    </span><span class="s2">&quot;lo0&quot;</span>:<span class="w"> </span><span class="s2">&quot;10.168.1.3&quot;</span>
+<a id="__codelineno-10-20" name="__codelineno-10-20" href="#__codelineno-10-20"></a><span class="w">  </span><span class="o">}</span>,
+<a id="__codelineno-10-21" name="__codelineno-10-21" href="#__codelineno-10-21"></a><span class="w">  </span><span class="o">{</span>
+<a id="__codelineno-10-22" name="__codelineno-10-22" href="#__codelineno-10-22"></a><span class="w">    </span><span class="s2">&quot;name&quot;</span>:<span class="w"> </span><span class="s2">&quot;DISTROUTER1&quot;</span>,
+<a id="__codelineno-10-23" name="__codelineno-10-23" href="#__codelineno-10-23"></a><span class="w">    </span><span class="s2">&quot;tag&quot;</span>:<span class="w"> </span><span class="s2">&quot;DIST&quot;</span>,
+<a id="__codelineno-10-24" name="__codelineno-10-24" href="#__codelineno-10-24"></a><span class="w">    </span><span class="s2">&quot;asn&quot;</span>:<span class="w"> </span><span class="s2">&quot;64521&quot;</span>,
+<a id="__codelineno-10-25" name="__codelineno-10-25" href="#__codelineno-10-25"></a><span class="w">    </span><span class="s2">&quot;lo0&quot;</span>:<span class="w"> </span><span class="s2">&quot;10.168.1.2&quot;</span>
+<a id="__codelineno-10-26" name="__codelineno-10-26" href="#__codelineno-10-26"></a><span class="w">  </span><span class="o">}</span>
 <a id="__codelineno-10-27" name="__codelineno-10-27" href="#__codelineno-10-27"></a><span class="o">])</span>
 </code></pre></div></p>
 </li>
 <li>
 <p>Insert output</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>BulkWriteResult<span class="o">({</span>
-<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>        <span class="s2">&quot;writeErrors&quot;</span> : <span class="o">[</span> <span class="o">]</span>,
-<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>        <span class="s2">&quot;writeConcernErrors&quot;</span> : <span class="o">[</span> <span class="o">]</span>,
-<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>        <span class="s2">&quot;nInserted&quot;</span> : <span class="m">4</span>,
-<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>        <span class="s2">&quot;nUpserted&quot;</span> : <span class="m">0</span>,
-<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>        <span class="s2">&quot;nMatched&quot;</span> : <span class="m">0</span>,
-<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>        <span class="s2">&quot;nModified&quot;</span> : <span class="m">0</span>,
-<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>        <span class="s2">&quot;nRemoved&quot;</span> : <span class="m">0</span>,
-<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>        <span class="s2">&quot;upserted&quot;</span> : <span class="o">[</span> <span class="o">]</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">        </span><span class="s2">&quot;writeErrors&quot;</span><span class="w"> </span>:<span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="o">]</span>,
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">        </span><span class="s2">&quot;writeConcernErrors&quot;</span><span class="w"> </span>:<span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="o">]</span>,
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="w">        </span><span class="s2">&quot;nInserted&quot;</span><span class="w"> </span>:<span class="w"> </span><span class="m">4</span>,
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="w">        </span><span class="s2">&quot;nUpserted&quot;</span><span class="w"> </span>:<span class="w"> </span><span class="m">0</span>,
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="w">        </span><span class="s2">&quot;nMatched&quot;</span><span class="w"> </span>:<span class="w"> </span><span class="m">0</span>,
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="w">        </span><span class="s2">&quot;nModified&quot;</span><span class="w"> </span>:<span class="w"> </span><span class="m">0</span>,
+<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="w">        </span><span class="s2">&quot;nRemoved&quot;</span><span class="w"> </span>:<span class="w"> </span><span class="m">0</span>,
+<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a><span class="w">        </span><span class="s2">&quot;upserted&quot;</span><span class="w"> </span>:<span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="o">]</span>
 <a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a><span class="o">})</span>
 </code></pre></div>
 </li>
@@ -1750,56 +1867,56 @@
 <p><strong>find()</strong>: query data from MongoDB collection.</p>
 <p><strong>pretty()</strong>: display the results in a JSON formatted way.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="c1">## db.[collection-name].find()</span>
-<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>use DataCenterDB
-<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>&gt; db.DataCenter1.find<span class="o">()</span>
-<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="o">{</span> <span class="s2">&quot;_id&quot;</span> : ObjectId<span class="o">(</span><span class="s2">&quot;60be987af6652ebfdef9b958&quot;</span><span class="o">)</span>, <span class="s2">&quot;name&quot;</span> : <span class="s2">&quot;COREROUTER1&quot;</span>, <span class="s2">&quot;tag&quot;</span> : <span class="s2">&quot;CORE&quot;</span>, <span class="s2">&quot;asn&quot;</span> : <span class="s2">&quot;64521&quot;</span>, <span class="s2">&quot;lo0&quot;</span> : <span class="s2">&quot;10.168.1.1&quot;</span> <span class="o">}</span>
-<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="o">{</span> <span class="s2">&quot;_id&quot;</span> : ObjectId<span class="o">(</span><span class="s2">&quot;60be987af6652ebfdef9b959&quot;</span><span class="o">)</span>, <span class="s2">&quot;name&quot;</span> : <span class="s2">&quot;COREROUTER1&quot;</span>, <span class="s2">&quot;tag&quot;</span> : <span class="s2">&quot;CORE&quot;</span>, <span class="s2">&quot;asn&quot;</span> : <span class="s2">&quot;64522&quot;</span>, <span class="s2">&quot;lo0&quot;</span> : <span class="s2">&quot;10.168.1.2&quot;</span> <span class="o">}</span>
-<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="o">{</span> <span class="s2">&quot;_id&quot;</span> : ObjectId<span class="o">(</span><span class="s2">&quot;60be987af6652ebfdef9b95a&quot;</span><span class="o">)</span>, <span class="s2">&quot;name&quot;</span> : <span class="s2">&quot;DISTROUTER1&quot;</span>, <span class="s2">&quot;tag&quot;</span> : <span class="s2">&quot;DIST&quot;</span>, <span class="s2">&quot;asn&quot;</span> : <span class="s2">&quot;64523&quot;</span>, <span class="s2">&quot;lo0&quot;</span> : <span class="s2">&quot;10.168.1.3&quot;</span> <span class="o">}</span>
-<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="o">{</span> <span class="s2">&quot;_id&quot;</span> : ObjectId<span class="o">(</span><span class="s2">&quot;60be987af6652ebfdef9b95b&quot;</span><span class="o">)</span>, <span class="s2">&quot;name&quot;</span> : <span class="s2">&quot;DISTROUTER1&quot;</span>, <span class="s2">&quot;tag&quot;</span> : <span class="s2">&quot;DIST&quot;</span>, <span class="s2">&quot;asn&quot;</span> : <span class="s2">&quot;64521&quot;</span>, <span class="s2">&quot;lo0&quot;</span> : <span class="s2">&quot;10.168.1.2&quot;</span> <span class="o">}</span>
-<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>&gt; db.DataCenter1.find<span class="o">()</span>.pretty<span class="o">()</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>use<span class="w"> </span>DataCenterDB
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>&gt;<span class="w"> </span>db.DataCenter1.find<span class="o">()</span>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="o">{</span><span class="w"> </span><span class="s2">&quot;_id&quot;</span><span class="w"> </span>:<span class="w"> </span>ObjectId<span class="o">(</span><span class="s2">&quot;60be987af6652ebfdef9b958&quot;</span><span class="o">)</span>,<span class="w"> </span><span class="s2">&quot;name&quot;</span><span class="w"> </span>:<span class="w"> </span><span class="s2">&quot;COREROUTER1&quot;</span>,<span class="w"> </span><span class="s2">&quot;tag&quot;</span><span class="w"> </span>:<span class="w"> </span><span class="s2">&quot;CORE&quot;</span>,<span class="w"> </span><span class="s2">&quot;asn&quot;</span><span class="w"> </span>:<span class="w"> </span><span class="s2">&quot;64521&quot;</span>,<span class="w"> </span><span class="s2">&quot;lo0&quot;</span><span class="w"> </span>:<span class="w"> </span><span class="s2">&quot;10.168.1.1&quot;</span><span class="w"> </span><span class="o">}</span>
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="o">{</span><span class="w"> </span><span class="s2">&quot;_id&quot;</span><span class="w"> </span>:<span class="w"> </span>ObjectId<span class="o">(</span><span class="s2">&quot;60be987af6652ebfdef9b959&quot;</span><span class="o">)</span>,<span class="w"> </span><span class="s2">&quot;name&quot;</span><span class="w"> </span>:<span class="w"> </span><span class="s2">&quot;COREROUTER1&quot;</span>,<span class="w"> </span><span class="s2">&quot;tag&quot;</span><span class="w"> </span>:<span class="w"> </span><span class="s2">&quot;CORE&quot;</span>,<span class="w"> </span><span class="s2">&quot;asn&quot;</span><span class="w"> </span>:<span class="w"> </span><span class="s2">&quot;64522&quot;</span>,<span class="w"> </span><span class="s2">&quot;lo0&quot;</span><span class="w"> </span>:<span class="w"> </span><span class="s2">&quot;10.168.1.2&quot;</span><span class="w"> </span><span class="o">}</span>
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="o">{</span><span class="w"> </span><span class="s2">&quot;_id&quot;</span><span class="w"> </span>:<span class="w"> </span>ObjectId<span class="o">(</span><span class="s2">&quot;60be987af6652ebfdef9b95a&quot;</span><span class="o">)</span>,<span class="w"> </span><span class="s2">&quot;name&quot;</span><span class="w"> </span>:<span class="w"> </span><span class="s2">&quot;DISTROUTER1&quot;</span>,<span class="w"> </span><span class="s2">&quot;tag&quot;</span><span class="w"> </span>:<span class="w"> </span><span class="s2">&quot;DIST&quot;</span>,<span class="w"> </span><span class="s2">&quot;asn&quot;</span><span class="w"> </span>:<span class="w"> </span><span class="s2">&quot;64523&quot;</span>,<span class="w"> </span><span class="s2">&quot;lo0&quot;</span><span class="w"> </span>:<span class="w"> </span><span class="s2">&quot;10.168.1.3&quot;</span><span class="w"> </span><span class="o">}</span>
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="o">{</span><span class="w"> </span><span class="s2">&quot;_id&quot;</span><span class="w"> </span>:<span class="w"> </span>ObjectId<span class="o">(</span><span class="s2">&quot;60be987af6652ebfdef9b95b&quot;</span><span class="o">)</span>,<span class="w"> </span><span class="s2">&quot;name&quot;</span><span class="w"> </span>:<span class="w"> </span><span class="s2">&quot;DISTROUTER1&quot;</span>,<span class="w"> </span><span class="s2">&quot;tag&quot;</span><span class="w"> </span>:<span class="w"> </span><span class="s2">&quot;DIST&quot;</span>,<span class="w"> </span><span class="s2">&quot;asn&quot;</span><span class="w"> </span>:<span class="w"> </span><span class="s2">&quot;64521&quot;</span>,<span class="w"> </span><span class="s2">&quot;lo0&quot;</span><span class="w"> </span>:<span class="w"> </span><span class="s2">&quot;10.168.1.2&quot;</span><span class="w"> </span><span class="o">}</span>
+<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>&gt;<span class="w"> </span>db.DataCenter1.find<span class="o">()</span>.pretty<span class="o">()</span>
 <a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a><span class="o">{</span>
-<a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a>        <span class="s2">&quot;_id&quot;</span> : ObjectId<span class="o">(</span><span class="s2">&quot;60be987af6652ebfdef9b958&quot;</span><span class="o">)</span>,
-<a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a>        <span class="s2">&quot;name&quot;</span> : <span class="s2">&quot;COREROUTER1&quot;</span>,
-<a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a>        <span class="s2">&quot;tag&quot;</span> : <span class="s2">&quot;CORE&quot;</span>,
-<a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a>        <span class="s2">&quot;asn&quot;</span> : <span class="s2">&quot;64521&quot;</span>,
-<a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a>        <span class="s2">&quot;lo0&quot;</span> : <span class="s2">&quot;10.168.1.1&quot;</span>
+<a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a><span class="w">        </span><span class="s2">&quot;_id&quot;</span><span class="w"> </span>:<span class="w"> </span>ObjectId<span class="o">(</span><span class="s2">&quot;60be987af6652ebfdef9b958&quot;</span><span class="o">)</span>,
+<a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a><span class="w">        </span><span class="s2">&quot;name&quot;</span><span class="w"> </span>:<span class="w"> </span><span class="s2">&quot;COREROUTER1&quot;</span>,
+<a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a><span class="w">        </span><span class="s2">&quot;tag&quot;</span><span class="w"> </span>:<span class="w"> </span><span class="s2">&quot;CORE&quot;</span>,
+<a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a><span class="w">        </span><span class="s2">&quot;asn&quot;</span><span class="w"> </span>:<span class="w"> </span><span class="s2">&quot;64521&quot;</span>,
+<a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a><span class="w">        </span><span class="s2">&quot;lo0&quot;</span><span class="w"> </span>:<span class="w"> </span><span class="s2">&quot;10.168.1.1&quot;</span>
 <a id="__codelineno-12-15" name="__codelineno-12-15" href="#__codelineno-12-15"></a><span class="o">}</span>
 <a id="__codelineno-12-16" name="__codelineno-12-16" href="#__codelineno-12-16"></a><span class="o">{</span>
-<a id="__codelineno-12-17" name="__codelineno-12-17" href="#__codelineno-12-17"></a>        <span class="s2">&quot;_id&quot;</span> : ObjectId<span class="o">(</span><span class="s2">&quot;60be987af6652ebfdef9b959&quot;</span><span class="o">)</span>,
-<a id="__codelineno-12-18" name="__codelineno-12-18" href="#__codelineno-12-18"></a>        <span class="s2">&quot;name&quot;</span> : <span class="s2">&quot;COREROUTER1&quot;</span>,
-<a id="__codelineno-12-19" name="__codelineno-12-19" href="#__codelineno-12-19"></a>        <span class="s2">&quot;tag&quot;</span> : <span class="s2">&quot;CORE&quot;</span>,
-<a id="__codelineno-12-20" name="__codelineno-12-20" href="#__codelineno-12-20"></a>        <span class="s2">&quot;asn&quot;</span> : <span class="s2">&quot;64522&quot;</span>,
-<a id="__codelineno-12-21" name="__codelineno-12-21" href="#__codelineno-12-21"></a>        <span class="s2">&quot;lo0&quot;</span> : <span class="s2">&quot;10.168.1.2&quot;</span>
+<a id="__codelineno-12-17" name="__codelineno-12-17" href="#__codelineno-12-17"></a><span class="w">        </span><span class="s2">&quot;_id&quot;</span><span class="w"> </span>:<span class="w"> </span>ObjectId<span class="o">(</span><span class="s2">&quot;60be987af6652ebfdef9b959&quot;</span><span class="o">)</span>,
+<a id="__codelineno-12-18" name="__codelineno-12-18" href="#__codelineno-12-18"></a><span class="w">        </span><span class="s2">&quot;name&quot;</span><span class="w"> </span>:<span class="w"> </span><span class="s2">&quot;COREROUTER1&quot;</span>,
+<a id="__codelineno-12-19" name="__codelineno-12-19" href="#__codelineno-12-19"></a><span class="w">        </span><span class="s2">&quot;tag&quot;</span><span class="w"> </span>:<span class="w"> </span><span class="s2">&quot;CORE&quot;</span>,
+<a id="__codelineno-12-20" name="__codelineno-12-20" href="#__codelineno-12-20"></a><span class="w">        </span><span class="s2">&quot;asn&quot;</span><span class="w"> </span>:<span class="w"> </span><span class="s2">&quot;64522&quot;</span>,
+<a id="__codelineno-12-21" name="__codelineno-12-21" href="#__codelineno-12-21"></a><span class="w">        </span><span class="s2">&quot;lo0&quot;</span><span class="w"> </span>:<span class="w"> </span><span class="s2">&quot;10.168.1.2&quot;</span>
 <a id="__codelineno-12-22" name="__codelineno-12-22" href="#__codelineno-12-22"></a><span class="o">}</span>
 <a id="__codelineno-12-23" name="__codelineno-12-23" href="#__codelineno-12-23"></a><span class="o">{</span>
-<a id="__codelineno-12-24" name="__codelineno-12-24" href="#__codelineno-12-24"></a>        <span class="s2">&quot;_id&quot;</span> : ObjectId<span class="o">(</span><span class="s2">&quot;60be987af6652ebfdef9b95a&quot;</span><span class="o">)</span>,
-<a id="__codelineno-12-25" name="__codelineno-12-25" href="#__codelineno-12-25"></a>        <span class="s2">&quot;name&quot;</span> : <span class="s2">&quot;DISTROUTER1&quot;</span>,
-<a id="__codelineno-12-26" name="__codelineno-12-26" href="#__codelineno-12-26"></a>        <span class="s2">&quot;tag&quot;</span> : <span class="s2">&quot;DIST&quot;</span>,
-<a id="__codelineno-12-27" name="__codelineno-12-27" href="#__codelineno-12-27"></a>        <span class="s2">&quot;asn&quot;</span> : <span class="s2">&quot;64523&quot;</span>,
-<a id="__codelineno-12-28" name="__codelineno-12-28" href="#__codelineno-12-28"></a>        <span class="s2">&quot;lo0&quot;</span> : <span class="s2">&quot;10.168.1.3&quot;</span>
+<a id="__codelineno-12-24" name="__codelineno-12-24" href="#__codelineno-12-24"></a><span class="w">        </span><span class="s2">&quot;_id&quot;</span><span class="w"> </span>:<span class="w"> </span>ObjectId<span class="o">(</span><span class="s2">&quot;60be987af6652ebfdef9b95a&quot;</span><span class="o">)</span>,
+<a id="__codelineno-12-25" name="__codelineno-12-25" href="#__codelineno-12-25"></a><span class="w">        </span><span class="s2">&quot;name&quot;</span><span class="w"> </span>:<span class="w"> </span><span class="s2">&quot;DISTROUTER1&quot;</span>,
+<a id="__codelineno-12-26" name="__codelineno-12-26" href="#__codelineno-12-26"></a><span class="w">        </span><span class="s2">&quot;tag&quot;</span><span class="w"> </span>:<span class="w"> </span><span class="s2">&quot;DIST&quot;</span>,
+<a id="__codelineno-12-27" name="__codelineno-12-27" href="#__codelineno-12-27"></a><span class="w">        </span><span class="s2">&quot;asn&quot;</span><span class="w"> </span>:<span class="w"> </span><span class="s2">&quot;64523&quot;</span>,
+<a id="__codelineno-12-28" name="__codelineno-12-28" href="#__codelineno-12-28"></a><span class="w">        </span><span class="s2">&quot;lo0&quot;</span><span class="w"> </span>:<span class="w"> </span><span class="s2">&quot;10.168.1.3&quot;</span>
 <a id="__codelineno-12-29" name="__codelineno-12-29" href="#__codelineno-12-29"></a><span class="o">}</span>
 <a id="__codelineno-12-30" name="__codelineno-12-30" href="#__codelineno-12-30"></a><span class="o">{</span>
-<a id="__codelineno-12-31" name="__codelineno-12-31" href="#__codelineno-12-31"></a>        <span class="s2">&quot;_id&quot;</span> : ObjectId<span class="o">(</span><span class="s2">&quot;60be987af6652ebfdef9b95b&quot;</span><span class="o">)</span>,
-<a id="__codelineno-12-32" name="__codelineno-12-32" href="#__codelineno-12-32"></a>        <span class="s2">&quot;name&quot;</span> : <span class="s2">&quot;DISTROUTER1&quot;</span>,
-<a id="__codelineno-12-33" name="__codelineno-12-33" href="#__codelineno-12-33"></a>        <span class="s2">&quot;tag&quot;</span> : <span class="s2">&quot;DIST&quot;</span>,
-<a id="__codelineno-12-34" name="__codelineno-12-34" href="#__codelineno-12-34"></a>        <span class="s2">&quot;asn&quot;</span> : <span class="s2">&quot;64521&quot;</span>,
-<a id="__codelineno-12-35" name="__codelineno-12-35" href="#__codelineno-12-35"></a>        <span class="s2">&quot;lo0&quot;</span> : <span class="s2">&quot;10.168.1.2&quot;</span>
+<a id="__codelineno-12-31" name="__codelineno-12-31" href="#__codelineno-12-31"></a><span class="w">        </span><span class="s2">&quot;_id&quot;</span><span class="w"> </span>:<span class="w"> </span>ObjectId<span class="o">(</span><span class="s2">&quot;60be987af6652ebfdef9b95b&quot;</span><span class="o">)</span>,
+<a id="__codelineno-12-32" name="__codelineno-12-32" href="#__codelineno-12-32"></a><span class="w">        </span><span class="s2">&quot;name&quot;</span><span class="w"> </span>:<span class="w"> </span><span class="s2">&quot;DISTROUTER1&quot;</span>,
+<a id="__codelineno-12-33" name="__codelineno-12-33" href="#__codelineno-12-33"></a><span class="w">        </span><span class="s2">&quot;tag&quot;</span><span class="w"> </span>:<span class="w"> </span><span class="s2">&quot;DIST&quot;</span>,
+<a id="__codelineno-12-34" name="__codelineno-12-34" href="#__codelineno-12-34"></a><span class="w">        </span><span class="s2">&quot;asn&quot;</span><span class="w"> </span>:<span class="w"> </span><span class="s2">&quot;64521&quot;</span>,
+<a id="__codelineno-12-35" name="__codelineno-12-35" href="#__codelineno-12-35"></a><span class="w">        </span><span class="s2">&quot;lo0&quot;</span><span class="w"> </span>:<span class="w"> </span><span class="s2">&quot;10.168.1.2&quot;</span>
 <a id="__codelineno-12-36" name="__codelineno-12-36" href="#__codelineno-12-36"></a><span class="o">}</span>
 <a id="__codelineno-12-37" name="__codelineno-12-37" href="#__codelineno-12-37"></a><span class="c1">## Find an specific item</span>
-<a id="__codelineno-12-38" name="__codelineno-12-38" href="#__codelineno-12-38"></a>&gt; db.DataCenter1.find<span class="o">({</span><span class="s2">&quot;tag&quot;</span>: <span class="s2">&quot;DIST&quot;</span><span class="o">})</span>.pretty<span class="o">()</span>
+<a id="__codelineno-12-38" name="__codelineno-12-38" href="#__codelineno-12-38"></a>&gt;<span class="w"> </span>db.DataCenter1.find<span class="o">({</span><span class="s2">&quot;tag&quot;</span>:<span class="w"> </span><span class="s2">&quot;DIST&quot;</span><span class="o">})</span>.pretty<span class="o">()</span>
 <a id="__codelineno-12-39" name="__codelineno-12-39" href="#__codelineno-12-39"></a><span class="o">{</span>
-<a id="__codelineno-12-40" name="__codelineno-12-40" href="#__codelineno-12-40"></a>        <span class="s2">&quot;_id&quot;</span> : ObjectId<span class="o">(</span><span class="s2">&quot;60be987af6652ebfdef9b95a&quot;</span><span class="o">)</span>,
-<a id="__codelineno-12-41" name="__codelineno-12-41" href="#__codelineno-12-41"></a>        <span class="s2">&quot;name&quot;</span> : <span class="s2">&quot;DISTROUTER1&quot;</span>,
-<a id="__codelineno-12-42" name="__codelineno-12-42" href="#__codelineno-12-42"></a>        <span class="s2">&quot;tag&quot;</span> : <span class="s2">&quot;DIST&quot;</span>,
-<a id="__codelineno-12-43" name="__codelineno-12-43" href="#__codelineno-12-43"></a>        <span class="s2">&quot;asn&quot;</span> : <span class="s2">&quot;64523&quot;</span>,
-<a id="__codelineno-12-44" name="__codelineno-12-44" href="#__codelineno-12-44"></a>        <span class="s2">&quot;lo0&quot;</span> : <span class="s2">&quot;10.168.1.3&quot;</span>
+<a id="__codelineno-12-40" name="__codelineno-12-40" href="#__codelineno-12-40"></a><span class="w">        </span><span class="s2">&quot;_id&quot;</span><span class="w"> </span>:<span class="w"> </span>ObjectId<span class="o">(</span><span class="s2">&quot;60be987af6652ebfdef9b95a&quot;</span><span class="o">)</span>,
+<a id="__codelineno-12-41" name="__codelineno-12-41" href="#__codelineno-12-41"></a><span class="w">        </span><span class="s2">&quot;name&quot;</span><span class="w"> </span>:<span class="w"> </span><span class="s2">&quot;DISTROUTER1&quot;</span>,
+<a id="__codelineno-12-42" name="__codelineno-12-42" href="#__codelineno-12-42"></a><span class="w">        </span><span class="s2">&quot;tag&quot;</span><span class="w"> </span>:<span class="w"> </span><span class="s2">&quot;DIST&quot;</span>,
+<a id="__codelineno-12-43" name="__codelineno-12-43" href="#__codelineno-12-43"></a><span class="w">        </span><span class="s2">&quot;asn&quot;</span><span class="w"> </span>:<span class="w"> </span><span class="s2">&quot;64523&quot;</span>,
+<a id="__codelineno-12-44" name="__codelineno-12-44" href="#__codelineno-12-44"></a><span class="w">        </span><span class="s2">&quot;lo0&quot;</span><span class="w"> </span>:<span class="w"> </span><span class="s2">&quot;10.168.1.3&quot;</span>
 <a id="__codelineno-12-45" name="__codelineno-12-45" href="#__codelineno-12-45"></a><span class="o">}</span>
 <a id="__codelineno-12-46" name="__codelineno-12-46" href="#__codelineno-12-46"></a><span class="o">{</span>
-<a id="__codelineno-12-47" name="__codelineno-12-47" href="#__codelineno-12-47"></a>        <span class="s2">&quot;_id&quot;</span> : ObjectId<span class="o">(</span><span class="s2">&quot;60be987af6652ebfdef9b95b&quot;</span><span class="o">)</span>,
-<a id="__codelineno-12-48" name="__codelineno-12-48" href="#__codelineno-12-48"></a>        <span class="s2">&quot;name&quot;</span> : <span class="s2">&quot;DISTROUTER1&quot;</span>,
-<a id="__codelineno-12-49" name="__codelineno-12-49" href="#__codelineno-12-49"></a>        <span class="s2">&quot;tag&quot;</span> : <span class="s2">&quot;DIST&quot;</span>,
-<a id="__codelineno-12-50" name="__codelineno-12-50" href="#__codelineno-12-50"></a>        <span class="s2">&quot;asn&quot;</span> : <span class="s2">&quot;64521&quot;</span>,
-<a id="__codelineno-12-51" name="__codelineno-12-51" href="#__codelineno-12-51"></a>        <span class="s2">&quot;lo0&quot;</span> : <span class="s2">&quot;10.168.1.2&quot;</span>
+<a id="__codelineno-12-47" name="__codelineno-12-47" href="#__codelineno-12-47"></a><span class="w">        </span><span class="s2">&quot;_id&quot;</span><span class="w"> </span>:<span class="w"> </span>ObjectId<span class="o">(</span><span class="s2">&quot;60be987af6652ebfdef9b95b&quot;</span><span class="o">)</span>,
+<a id="__codelineno-12-48" name="__codelineno-12-48" href="#__codelineno-12-48"></a><span class="w">        </span><span class="s2">&quot;name&quot;</span><span class="w"> </span>:<span class="w"> </span><span class="s2">&quot;DISTROUTER1&quot;</span>,
+<a id="__codelineno-12-49" name="__codelineno-12-49" href="#__codelineno-12-49"></a><span class="w">        </span><span class="s2">&quot;tag&quot;</span><span class="w"> </span>:<span class="w"> </span><span class="s2">&quot;DIST&quot;</span>,
+<a id="__codelineno-12-50" name="__codelineno-12-50" href="#__codelineno-12-50"></a><span class="w">        </span><span class="s2">&quot;asn&quot;</span><span class="w"> </span>:<span class="w"> </span><span class="s2">&quot;64521&quot;</span>,
+<a id="__codelineno-12-51" name="__codelineno-12-51" href="#__codelineno-12-51"></a><span class="w">        </span><span class="s2">&quot;lo0&quot;</span><span class="w"> </span>:<span class="w"> </span><span class="s2">&quot;10.168.1.2&quot;</span>
 <a id="__codelineno-12-52" name="__codelineno-12-52" href="#__codelineno-12-52"></a><span class="o">}</span>
 <a id="__codelineno-12-53" name="__codelineno-12-53" href="#__codelineno-12-53"></a>&gt;
 </code></pre></div>
@@ -1809,7 +1926,7 @@
 <ul>
 <li>
 <p>Install</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>pip3 install pymongo
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>pip3<span class="w"> </span>install<span class="w"> </span>pymongo
 </code></pre></div>
 <ul>
 <li>Interactive Mode 

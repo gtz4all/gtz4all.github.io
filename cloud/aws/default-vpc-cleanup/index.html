@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://gtz4all.github.io/cloud/aws/default-vpc-cleanup/">
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.4.0, mkdocs-material-8.5.6">
+      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-8.5.6">
     
     
       
@@ -444,6 +444,20 @@
               
   
   
+  
+    <li class="md-nav__item">
+      <a href="../aws-landingzone/" class="md-nav__link">
+        AWS Landing Zones
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
     
   
   
@@ -812,6 +826,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../gcp/cloud-identity/" class="md-nav__link">
+        Cloud identity
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../gcp/gcloud/" class="md-nav__link">
         Gcloud Command Overview
       </a>
@@ -949,6 +977,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../devops/terraform/multi-gcp-auth/" class="md-nav__link">
+        GCP Multi Account Authentication
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../devops/terraform/terraform-refactoring/" class="md-nav__link">
         Terraform State Refactoring
       </a>
@@ -998,6 +1040,20 @@
     <li class="md-nav__item">
       <a href="../../../devops/ansible/intro/" class="md-nav__link">
         Introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../devops/ansible/gcp_ansible/" class="md-nav__link">
+        Google Cloud Platform Ansible Collection
       </a>
     </li>
   
@@ -1298,6 +1354,67 @@
     <li class="md-nav__item">
       <a href="../../../devops/webservices/http-server-with-dynamic-content/" class="md-nav__link">
         HTTP Server with Dynamic Content
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_8" type="checkbox" id="__nav_3_8" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_8">
+          Git
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Git" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_8">
+          <span class="md-nav__icon md-icon"></span>
+          Git
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../devops/git/intro/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../devops/git/multi_ssh_keys/" class="md-nav__link">
+        Managing Multiple Github Accounts
       </a>
     </li>
   
@@ -1685,9 +1802,9 @@
   <h1>Default Vpc Cleanup</h1>
 
 <h2 id="delete-defaultvpc-lambda">Delete DefaultVPC Lambda<a class="headerlink" href="#delete-defaultvpc-lambda" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><code><span class="n">This</span><span class="w"> </span><span class="n">lambda</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">used</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">delete</span><span class="w"> </span><span class="n">all</span><span class="w"> </span><span class="n">DefaultVPCs</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n">their</span><span class="w"> </span><span class="n">resources</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">every</span><span class="w"> </span><span class="n">region</span><span class="w"></span>
-<span class="o">*</span><span class="w"> </span><span class="n">Log</span><span class="w"> </span><span class="n">all</span><span class="w"> </span><span class="n">work</span><span class="w"></span>
-<span class="o">*</span><span class="w"> </span><span class="n">push</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">BD</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">historical</span><span class="w"> </span><span class="n">reference</span><span class="w"></span>
+<div class="codehilite"><pre><span></span><code><span class="n">This</span><span class="w"> </span><span class="n">lambda</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">used</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">delete</span><span class="w"> </span><span class="n">all</span><span class="w"> </span><span class="n">DefaultVPCs</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n">their</span><span class="w"> </span><span class="n">resources</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">every</span><span class="w"> </span><span class="n">region</span>
+<span class="o">*</span><span class="w"> </span><span class="n">Log</span><span class="w"> </span><span class="n">all</span><span class="w"> </span><span class="n">work</span>
+<span class="o">*</span><span class="w"> </span><span class="n">push</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">BD</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">historical</span><span class="w"> </span><span class="n">reference</span>
 </code></pre></div>
 
 <h3 id="iam-roles">IAM Roles<a class="headerlink" href="#iam-roles" title="Permanent link">&para;</a></h3>
@@ -1864,7 +1981,7 @@
 <a id="__codelineno-2-114" name="__codelineno-2-114" href="#__codelineno-2-114"></a>      <span class="c1">#return(response)</span>
 <a id="__codelineno-2-115" name="__codelineno-2-115" href="#__codelineno-2-115"></a>
 <a id="__codelineno-2-116" name="__codelineno-2-116" href="#__codelineno-2-116"></a><span class="k">def</span> <span class="nf">switch_role</span><span class="p">(</span><span class="n">acct</span><span class="p">,</span> <span class="n">role</span><span class="p">,</span> <span class="n">region</span><span class="p">,</span> <span class="nb">type</span><span class="p">):</span>
-<a id="__codelineno-2-117" name="__codelineno-2-117" href="#__codelineno-2-117"></a>  <span class="sd">&#39;&#39;&#39;</span>
+<a id="__codelineno-2-117" name="__codelineno-2-117" href="#__codelineno-2-117"></a><span class="w">  </span><span class="sd">&#39;&#39;&#39;</span>
 <a id="__codelineno-2-118" name="__codelineno-2-118" href="#__codelineno-2-118"></a><span class="sd">  acct = aws_account#</span>
 <a id="__codelineno-2-119" name="__codelineno-2-119" href="#__codelineno-2-119"></a><span class="sd">  role = assume_role_name</span>
 <a id="__codelineno-2-120" name="__codelineno-2-120" href="#__codelineno-2-120"></a><span class="sd">  region = assume_role_region</span>
@@ -1920,7 +2037,7 @@
 <a id="__codelineno-2-170" name="__codelineno-2-170" href="#__codelineno-2-170"></a>  <span class="k">return</span><span class="p">(</span><span class="n">resource_creds</span><span class="p">,</span> <span class="n">client_creds</span><span class="p">)</span>
 <a id="__codelineno-2-171" name="__codelineno-2-171" href="#__codelineno-2-171"></a>
 <a id="__codelineno-2-172" name="__codelineno-2-172" href="#__codelineno-2-172"></a><span class="k">def</span> <span class="nf">get_regions</span><span class="p">(</span><span class="n">client</span><span class="p">):</span>
-<a id="__codelineno-2-173" name="__codelineno-2-173" href="#__codelineno-2-173"></a>  <span class="sd">&quot;&quot;&quot; Build a region list &quot;&quot;&quot;</span>
+<a id="__codelineno-2-173" name="__codelineno-2-173" href="#__codelineno-2-173"></a><span class="w">  </span><span class="sd">&quot;&quot;&quot; Build a region list &quot;&quot;&quot;</span>
 <a id="__codelineno-2-174" name="__codelineno-2-174" href="#__codelineno-2-174"></a>  <span class="n">reg_list</span> <span class="o">=</span> <span class="p">[]</span>
 <a id="__codelineno-2-175" name="__codelineno-2-175" href="#__codelineno-2-175"></a>
 <a id="__codelineno-2-176" name="__codelineno-2-176" href="#__codelineno-2-176"></a>  <span class="n">regions</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">describe_regions</span><span class="p">()</span>
@@ -1958,7 +2075,7 @@
 <a id="__codelineno-2-208" name="__codelineno-2-208" href="#__codelineno-2-208"></a>  <span class="k">return</span> <span class="n">vpc_list</span>
 <a id="__codelineno-2-209" name="__codelineno-2-209" href="#__codelineno-2-209"></a>
 <a id="__codelineno-2-210" name="__codelineno-2-210" href="#__codelineno-2-210"></a><span class="k">def</span> <span class="nf">del_igw</span><span class="p">(</span><span class="n">ec2</span><span class="p">,</span> <span class="n">vpcid</span><span class="p">):</span>
-<a id="__codelineno-2-211" name="__codelineno-2-211" href="#__codelineno-2-211"></a>  <span class="sd">&quot;&quot;&quot; Detach and delete the internet-gateway &quot;&quot;&quot;</span>
+<a id="__codelineno-2-211" name="__codelineno-2-211" href="#__codelineno-2-211"></a><span class="w">  </span><span class="sd">&quot;&quot;&quot; Detach and delete the internet-gateway &quot;&quot;&quot;</span>
 <a id="__codelineno-2-212" name="__codelineno-2-212" href="#__codelineno-2-212"></a>  <span class="n">vpc_resource</span> <span class="o">=</span> <span class="n">ec2</span><span class="o">.</span><span class="n">Vpc</span><span class="p">(</span><span class="n">vpcid</span><span class="p">)</span>
 <a id="__codelineno-2-213" name="__codelineno-2-213" href="#__codelineno-2-213"></a>  <span class="n">igws</span> <span class="o">=</span> <span class="n">vpc_resource</span><span class="o">.</span><span class="n">internet_gateways</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
 <a id="__codelineno-2-214" name="__codelineno-2-214" href="#__codelineno-2-214"></a>  <span class="k">if</span> <span class="n">igws</span><span class="p">:</span>
@@ -1978,7 +2095,7 @@
 <a id="__codelineno-2-228" name="__codelineno-2-228" href="#__codelineno-2-228"></a>  <span class="c1">#  return(vpcid + &quot;: no IGW attached&quot;)</span>
 <a id="__codelineno-2-229" name="__codelineno-2-229" href="#__codelineno-2-229"></a>
 <a id="__codelineno-2-230" name="__codelineno-2-230" href="#__codelineno-2-230"></a><span class="k">def</span> <span class="nf">del_sub</span><span class="p">(</span><span class="n">ec2</span><span class="p">,</span> <span class="n">vpcid</span><span class="p">):</span>
-<a id="__codelineno-2-231" name="__codelineno-2-231" href="#__codelineno-2-231"></a>  <span class="sd">&quot;&quot;&quot; Delete the subnets &quot;&quot;&quot;</span>
+<a id="__codelineno-2-231" name="__codelineno-2-231" href="#__codelineno-2-231"></a><span class="w">  </span><span class="sd">&quot;&quot;&quot; Delete the subnets &quot;&quot;&quot;</span>
 <a id="__codelineno-2-232" name="__codelineno-2-232" href="#__codelineno-2-232"></a>  <span class="n">vpc_resource</span> <span class="o">=</span> <span class="n">ec2</span><span class="o">.</span><span class="n">Vpc</span><span class="p">(</span><span class="n">vpcid</span><span class="p">)</span>
 <a id="__codelineno-2-233" name="__codelineno-2-233" href="#__codelineno-2-233"></a>  <span class="n">subnets</span> <span class="o">=</span> <span class="n">vpc_resource</span><span class="o">.</span><span class="n">subnets</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
 <a id="__codelineno-2-234" name="__codelineno-2-234" href="#__codelineno-2-234"></a>  <span class="n">vpc_subnets</span> <span class="o">=</span> <span class="p">[</span><span class="n">ec2</span><span class="o">.</span><span class="n">Subnet</span><span class="p">(</span><span class="n">subnet</span><span class="o">.</span><span class="n">id</span><span class="p">)</span> <span class="k">for</span> <span class="n">subnet</span> <span class="ow">in</span> <span class="n">subnets</span> <span class="p">]</span>  
@@ -1997,7 +2114,7 @@
 <a id="__codelineno-2-247" name="__codelineno-2-247" href="#__codelineno-2-247"></a>    <span class="k">return</span><span class="p">(</span><span class="n">subnets</span><span class="p">)</span>
 <a id="__codelineno-2-248" name="__codelineno-2-248" href="#__codelineno-2-248"></a>
 <a id="__codelineno-2-249" name="__codelineno-2-249" href="#__codelineno-2-249"></a><span class="k">def</span> <span class="nf">del_rtb</span><span class="p">(</span><span class="n">ec2</span><span class="p">,</span> <span class="n">vpcid</span><span class="p">):</span>
-<a id="__codelineno-2-250" name="__codelineno-2-250" href="#__codelineno-2-250"></a>  <span class="sd">&quot;&quot;&quot; Delete the route-tables &quot;&quot;&quot;</span>
+<a id="__codelineno-2-250" name="__codelineno-2-250" href="#__codelineno-2-250"></a><span class="w">  </span><span class="sd">&quot;&quot;&quot; Delete the route-tables &quot;&quot;&quot;</span>
 <a id="__codelineno-2-251" name="__codelineno-2-251" href="#__codelineno-2-251"></a>  <span class="n">vpc_resource</span> <span class="o">=</span> <span class="n">ec2</span><span class="o">.</span><span class="n">Vpc</span><span class="p">(</span><span class="n">vpcid</span><span class="p">)</span>
 <a id="__codelineno-2-252" name="__codelineno-2-252" href="#__codelineno-2-252"></a>  <span class="n">rtbs</span> <span class="o">=</span> <span class="n">vpc_resource</span><span class="o">.</span><span class="n">route_tables</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
 <a id="__codelineno-2-253" name="__codelineno-2-253" href="#__codelineno-2-253"></a>  <span class="k">if</span> <span class="n">rtbs</span><span class="p">:</span>
@@ -2022,7 +2139,7 @@
 <a id="__codelineno-2-272" name="__codelineno-2-272" href="#__codelineno-2-272"></a>    <span class="k">return</span><span class="p">(</span><span class="n">rtables</span><span class="p">)</span>
 <a id="__codelineno-2-273" name="__codelineno-2-273" href="#__codelineno-2-273"></a>
 <a id="__codelineno-2-274" name="__codelineno-2-274" href="#__codelineno-2-274"></a><span class="k">def</span> <span class="nf">del_acl</span><span class="p">(</span><span class="n">ec2</span><span class="p">,</span> <span class="n">vpcid</span><span class="p">):</span>
-<a id="__codelineno-2-275" name="__codelineno-2-275" href="#__codelineno-2-275"></a>  <span class="sd">&quot;&quot;&quot; Delete the network-access-lists &quot;&quot;&quot;</span>
+<a id="__codelineno-2-275" name="__codelineno-2-275" href="#__codelineno-2-275"></a><span class="w">  </span><span class="sd">&quot;&quot;&quot; Delete the network-access-lists &quot;&quot;&quot;</span>
 <a id="__codelineno-2-276" name="__codelineno-2-276" href="#__codelineno-2-276"></a>  <span class="n">vpc_resource</span> <span class="o">=</span> <span class="n">ec2</span><span class="o">.</span><span class="n">Vpc</span><span class="p">(</span><span class="n">vpcid</span><span class="p">)</span>      
 <a id="__codelineno-2-277" name="__codelineno-2-277" href="#__codelineno-2-277"></a>  <span class="n">acls</span> <span class="o">=</span> <span class="n">vpc_resource</span><span class="o">.</span><span class="n">network_acls</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
 <a id="__codelineno-2-278" name="__codelineno-2-278" href="#__codelineno-2-278"></a>  <span class="k">if</span> <span class="n">acls</span><span class="p">:</span>
@@ -2046,7 +2163,7 @@
 <a id="__codelineno-2-296" name="__codelineno-2-296" href="#__codelineno-2-296"></a>
 <a id="__codelineno-2-297" name="__codelineno-2-297" href="#__codelineno-2-297"></a>
 <a id="__codelineno-2-298" name="__codelineno-2-298" href="#__codelineno-2-298"></a><span class="k">def</span> <span class="nf">del_sgp</span><span class="p">(</span><span class="n">ec2</span><span class="p">,</span> <span class="n">vpcid</span><span class="p">):</span>
-<a id="__codelineno-2-299" name="__codelineno-2-299" href="#__codelineno-2-299"></a>  <span class="sd">&quot;&quot;&quot; Delete any security-groups &quot;&quot;&quot;</span>
+<a id="__codelineno-2-299" name="__codelineno-2-299" href="#__codelineno-2-299"></a><span class="w">  </span><span class="sd">&quot;&quot;&quot; Delete any security-groups &quot;&quot;&quot;</span>
 <a id="__codelineno-2-300" name="__codelineno-2-300" href="#__codelineno-2-300"></a>  <span class="n">vpc_resource</span> <span class="o">=</span> <span class="n">ec2</span><span class="o">.</span><span class="n">Vpc</span><span class="p">(</span><span class="n">vpcid</span><span class="p">)</span>
 <a id="__codelineno-2-301" name="__codelineno-2-301" href="#__codelineno-2-301"></a>  <span class="n">sgps</span> <span class="o">=</span> <span class="n">vpc_resource</span><span class="o">.</span><span class="n">security_groups</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
 <a id="__codelineno-2-302" name="__codelineno-2-302" href="#__codelineno-2-302"></a>  <span class="k">if</span> <span class="n">sgps</span><span class="p">:</span>
@@ -2069,7 +2186,7 @@
 <a id="__codelineno-2-319" name="__codelineno-2-319" href="#__codelineno-2-319"></a>    <span class="k">return</span><span class="p">(</span><span class="n">sgps_list</span><span class="p">)</span>
 <a id="__codelineno-2-320" name="__codelineno-2-320" href="#__codelineno-2-320"></a>
 <a id="__codelineno-2-321" name="__codelineno-2-321" href="#__codelineno-2-321"></a><span class="k">def</span> <span class="nf">del_vpc</span><span class="p">(</span><span class="n">ec2</span><span class="p">,</span> <span class="n">vpcid</span><span class="p">):</span>
-<a id="__codelineno-2-322" name="__codelineno-2-322" href="#__codelineno-2-322"></a>  <span class="sd">&quot;&quot;&quot; Delete the VPC &quot;&quot;&quot;</span>
+<a id="__codelineno-2-322" name="__codelineno-2-322" href="#__codelineno-2-322"></a><span class="w">  </span><span class="sd">&quot;&quot;&quot; Delete the VPC &quot;&quot;&quot;</span>
 <a id="__codelineno-2-323" name="__codelineno-2-323" href="#__codelineno-2-323"></a>  <span class="n">vpc_resource</span> <span class="o">=</span> <span class="n">ec2</span><span class="o">.</span><span class="n">Vpc</span><span class="p">(</span><span class="n">vpcid</span><span class="p">)</span>
 <a id="__codelineno-2-324" name="__codelineno-2-324" href="#__codelineno-2-324"></a>  <span class="k">try</span><span class="p">:</span>
 <a id="__codelineno-2-325" name="__codelineno-2-325" href="#__codelineno-2-325"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Removing vpc-id: &quot;</span><span class="p">,</span> <span class="n">vpc_resource</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
@@ -2119,77 +2236,77 @@
 <a id="__codelineno-3-33" name="__codelineno-3-33" href="#__codelineno-3-33"></a>
 <a id="__codelineno-3-34" name="__codelineno-3-34" href="#__codelineno-3-34"></a><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 <a id="__codelineno-3-35" name="__codelineno-3-35" href="#__codelineno-3-35"></a><span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span><span class="p">&gt;</span><span class="w"> </span>
-<a id="__codelineno-3-36" name="__codelineno-3-36" href="#__codelineno-3-36"></a><span class="c1">//Get Information from confluence</span><span class="w"></span>
-<a id="__codelineno-3-37" name="__codelineno-3-37" href="#__codelineno-3-37"></a><span class="kd">var</span><span class="w"> </span><span class="nx">UserName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">AJS</span><span class="p">.</span><span class="nx">params</span><span class="p">.</span><span class="nx">userDisplayName</span><span class="p">;</span><span class="w"></span>
-<a id="__codelineno-3-38" name="__codelineno-3-38" href="#__codelineno-3-38"></a><span class="kd">var</span><span class="w"> </span><span class="nx">UserId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">AJS</span><span class="p">.</span><span class="nx">params</span><span class="p">.</span><span class="nx">remoteUser</span><span class="p">.</span><span class="nx">toUpperCase</span><span class="p">();</span><span class="w"></span>
-<a id="__codelineno-3-39" name="__codelineno-3-39" href="#__codelineno-3-39"></a><span class="c1">//alert(AJS.Meta.get(&quot;user-display-name&quot;));</span><span class="w"></span>
-<a id="__codelineno-3-40" name="__codelineno-3-40" href="#__codelineno-3-40"></a><span class="c1">//alert(AJS.Meta.get(&quot;remote-user&quot;));</span><span class="w"></span>
+<a id="__codelineno-3-36" name="__codelineno-3-36" href="#__codelineno-3-36"></a><span class="c1">//Get Information from confluence</span>
+<a id="__codelineno-3-37" name="__codelineno-3-37" href="#__codelineno-3-37"></a><span class="kd">var</span><span class="w"> </span><span class="nx">UserName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">AJS</span><span class="p">.</span><span class="nx">params</span><span class="p">.</span><span class="nx">userDisplayName</span><span class="p">;</span>
+<a id="__codelineno-3-38" name="__codelineno-3-38" href="#__codelineno-3-38"></a><span class="kd">var</span><span class="w"> </span><span class="nx">UserId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">AJS</span><span class="p">.</span><span class="nx">params</span><span class="p">.</span><span class="nx">remoteUser</span><span class="p">.</span><span class="nx">toUpperCase</span><span class="p">();</span>
+<a id="__codelineno-3-39" name="__codelineno-3-39" href="#__codelineno-3-39"></a><span class="c1">//alert(AJS.Meta.get(&quot;user-display-name&quot;));</span>
+<a id="__codelineno-3-40" name="__codelineno-3-40" href="#__codelineno-3-40"></a><span class="c1">//alert(AJS.Meta.get(&quot;remote-user&quot;));</span>
 <a id="__codelineno-3-41" name="__codelineno-3-41" href="#__codelineno-3-41"></a>
-<a id="__codelineno-3-42" name="__codelineno-3-42" href="#__codelineno-3-42"></a><span class="kd">function</span><span class="w"> </span><span class="nx">checkRequired</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<a id="__codelineno-3-43" name="__codelineno-3-43" href="#__codelineno-3-43"></a><span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">i</span><span class="p">,</span><span class="w"> </span><span class="nx">GetInputs</span><span class="p">,</span><span class="w"> </span><span class="nx">allowSubmit</span><span class="p">;</span><span class="w"></span>
-<a id="__codelineno-3-44" name="__codelineno-3-44" href="#__codelineno-3-44"></a><span class="w">    </span><span class="nx">allowSubmit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span><span class="w"></span>
-<a id="__codelineno-3-45" name="__codelineno-3-45" href="#__codelineno-3-45"></a><span class="w">    </span><span class="nx">GetInputs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s1">&#39;input&#39;</span><span class="p">);</span><span class="w"></span>
-<a id="__codelineno-3-46" name="__codelineno-3-46" href="#__codelineno-3-46"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="nx">i</span><span class="o">=</span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">&lt;</span><span class="nx">GetInputs</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">+=</span><span class="mf">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<a id="__codelineno-3-47" name="__codelineno-3-47" href="#__codelineno-3-47"></a><span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="nx">GetInputs</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">hasAttribute</span><span class="p">(</span><span class="s1">&#39;required&#39;</span><span class="p">)){</span><span class="w"></span>
-<a id="__codelineno-3-48" name="__codelineno-3-48" href="#__codelineno-3-48"></a><span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">((</span><span class="nx">GetInputs</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">value</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="o">||</span><span class="p">(</span><span class="nx">GetInputs</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">value</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<a id="__codelineno-3-49" name="__codelineno-3-49" href="#__codelineno-3-49"></a><span class="w">                </span><span class="nx">GetInputs</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">style</span><span class="p">.</span><span class="nx">backgroundColor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;#e6f2ff&quot;</span><span class="p">;</span><span class="w"></span>
-<a id="__codelineno-3-50" name="__codelineno-3-50" href="#__codelineno-3-50"></a><span class="w">                </span><span class="nx">allowSubmit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span><span class="w"></span>
-<a id="__codelineno-3-51" name="__codelineno-3-51" href="#__codelineno-3-51"></a><span class="w">                </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;checkRequired():&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot;Name:&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">GetInputs</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">name</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot; Missing: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">GetInputs</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">placeholder</span><span class="p">)</span><span class="w"></span>
-<a id="__codelineno-3-52" name="__codelineno-3-52" href="#__codelineno-3-52"></a><span class="w">            </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="nx">GetInputs</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">style</span><span class="p">.</span><span class="nx">backgroundColor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;#ffffff&quot;</span><span class="p">;</span><span class="w"></span>
-<a id="__codelineno-3-53" name="__codelineno-3-53" href="#__codelineno-3-53"></a><span class="w">                </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;checkRequired():&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot;Name:&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">GetInputs</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">name</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot; Type: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">GetInputs</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">type</span><span class="p">.</span><span class="nx">toLowerCase</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot; Value: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">GetInputs</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">value</span><span class="p">)</span><span class="w"></span>
-<a id="__codelineno-3-54" name="__codelineno-3-54" href="#__codelineno-3-54"></a><span class="w">                </span><span class="p">}</span><span class="w"></span>
-<a id="__codelineno-3-55" name="__codelineno-3-55" href="#__codelineno-3-55"></a><span class="w">            </span><span class="p">}</span><span class="w"></span>
-<a id="__codelineno-3-56" name="__codelineno-3-56" href="#__codelineno-3-56"></a><span class="w">    </span><span class="p">}</span><span class="w"></span>
-<a id="__codelineno-3-57" name="__codelineno-3-57" href="#__codelineno-3-57"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">allowSubmit</span><span class="p">;</span><span class="w"></span>
-<a id="__codelineno-3-58" name="__codelineno-3-58" href="#__codelineno-3-58"></a><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-3-42" name="__codelineno-3-42" href="#__codelineno-3-42"></a><span class="kd">function</span><span class="w"> </span><span class="nx">checkRequired</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-43" name="__codelineno-3-43" href="#__codelineno-3-43"></a><span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">i</span><span class="p">,</span><span class="w"> </span><span class="nx">GetInputs</span><span class="p">,</span><span class="w"> </span><span class="nx">allowSubmit</span><span class="p">;</span>
+<a id="__codelineno-3-44" name="__codelineno-3-44" href="#__codelineno-3-44"></a><span class="w">    </span><span class="nx">allowSubmit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+<a id="__codelineno-3-45" name="__codelineno-3-45" href="#__codelineno-3-45"></a><span class="w">    </span><span class="nx">GetInputs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s1">&#39;input&#39;</span><span class="p">);</span>
+<a id="__codelineno-3-46" name="__codelineno-3-46" href="#__codelineno-3-46"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="nx">i</span><span class="o">=</span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">&lt;</span><span class="nx">GetInputs</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">+=</span><span class="mf">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-47" name="__codelineno-3-47" href="#__codelineno-3-47"></a><span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="nx">GetInputs</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">hasAttribute</span><span class="p">(</span><span class="s1">&#39;required&#39;</span><span class="p">)){</span>
+<a id="__codelineno-3-48" name="__codelineno-3-48" href="#__codelineno-3-48"></a><span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">((</span><span class="nx">GetInputs</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">value</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="o">||</span><span class="p">(</span><span class="nx">GetInputs</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">value</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-49" name="__codelineno-3-49" href="#__codelineno-3-49"></a><span class="w">                </span><span class="nx">GetInputs</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">style</span><span class="p">.</span><span class="nx">backgroundColor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;#e6f2ff&quot;</span><span class="p">;</span>
+<a id="__codelineno-3-50" name="__codelineno-3-50" href="#__codelineno-3-50"></a><span class="w">                </span><span class="nx">allowSubmit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
+<a id="__codelineno-3-51" name="__codelineno-3-51" href="#__codelineno-3-51"></a><span class="w">                </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;checkRequired():&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot;Name:&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">GetInputs</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">name</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot; Missing: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">GetInputs</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">placeholder</span><span class="p">)</span>
+<a id="__codelineno-3-52" name="__codelineno-3-52" href="#__codelineno-3-52"></a><span class="w">            </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="nx">GetInputs</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">style</span><span class="p">.</span><span class="nx">backgroundColor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;#ffffff&quot;</span><span class="p">;</span>
+<a id="__codelineno-3-53" name="__codelineno-3-53" href="#__codelineno-3-53"></a><span class="w">                </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;checkRequired():&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot;Name:&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">GetInputs</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">name</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot; Type: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">GetInputs</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">type</span><span class="p">.</span><span class="nx">toLowerCase</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot; Value: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">GetInputs</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">value</span><span class="p">)</span>
+<a id="__codelineno-3-54" name="__codelineno-3-54" href="#__codelineno-3-54"></a><span class="w">                </span><span class="p">}</span>
+<a id="__codelineno-3-55" name="__codelineno-3-55" href="#__codelineno-3-55"></a><span class="w">            </span><span class="p">}</span>
+<a id="__codelineno-3-56" name="__codelineno-3-56" href="#__codelineno-3-56"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-3-57" name="__codelineno-3-57" href="#__codelineno-3-57"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">allowSubmit</span><span class="p">;</span>
+<a id="__codelineno-3-58" name="__codelineno-3-58" href="#__codelineno-3-58"></a><span class="p">}</span>
 <a id="__codelineno-3-59" name="__codelineno-3-59" href="#__codelineno-3-59"></a>
-<a id="__codelineno-3-60" name="__codelineno-3-60" href="#__codelineno-3-60"></a><span class="kd">function</span><span class="w"> </span><span class="nx">buildParms</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<a id="__codelineno-3-61" name="__codelineno-3-61" href="#__codelineno-3-61"></a><span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">GetInputs</span><span class="p">;</span><span class="w"></span>
-<a id="__codelineno-3-62" name="__codelineno-3-62" href="#__codelineno-3-62"></a><span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">i</span><span class="p">;</span><span class="w"></span>
-<a id="__codelineno-3-63" name="__codelineno-3-63" href="#__codelineno-3-63"></a><span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">parms</span><span class="p">,</span><span class="w"> </span><span class="nx">tok</span><span class="p">,</span><span class="w"></span>
-<a id="__codelineno-3-64" name="__codelineno-3-64" href="#__codelineno-3-64"></a><span class="w">    </span><span class="nx">parms</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">;</span><span class="w"></span>
-<a id="__codelineno-3-65" name="__codelineno-3-65" href="#__codelineno-3-65"></a><span class="w">    </span><span class="nx">GetInputs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s1">&#39;input&#39;</span><span class="p">);</span><span class="w"></span>
-<a id="__codelineno-3-66" name="__codelineno-3-66" href="#__codelineno-3-66"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="nx">i</span><span class="o">=</span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">&lt;</span><span class="nx">GetInputs</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">+=</span><span class="mf">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<a id="__codelineno-3-67" name="__codelineno-3-67" href="#__codelineno-3-67"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">parms</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="nx">tok</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;?&quot;</span><span class="p">;}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="nx">tok</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&amp;&quot;</span><span class="p">;}</span><span class="w"></span>
-<a id="__codelineno-3-68" name="__codelineno-3-68" href="#__codelineno-3-68"></a><span class="w">            </span><span class="nx">parms</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">parms</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">tok</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">GetInputs</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">name</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot;=&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nb">encodeURIComponent</span><span class="p">(</span><span class="nx">GetInputs</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">value</span><span class="p">);</span><span class="w"></span>
-<a id="__codelineno-3-69" name="__codelineno-3-69" href="#__codelineno-3-69"></a><span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">GetInputs</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">name</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot;=&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nb">encodeURIComponent</span><span class="p">(</span><span class="nx">GetInputs</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">value</span><span class="p">));</span><span class="w"></span>
-<a id="__codelineno-3-70" name="__codelineno-3-70" href="#__codelineno-3-70"></a><span class="w">        </span><span class="p">}</span><span class="w"></span>
-<a id="__codelineno-3-71" name="__codelineno-3-71" href="#__codelineno-3-71"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">parms</span><span class="p">);</span><span class="w"></span>
-<a id="__codelineno-3-72" name="__codelineno-3-72" href="#__codelineno-3-72"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">parms</span><span class="p">;</span><span class="w"></span>
-<a id="__codelineno-3-73" name="__codelineno-3-73" href="#__codelineno-3-73"></a><span class="p">}</span><span class="w"></span>
-<a id="__codelineno-3-74" name="__codelineno-3-74" href="#__codelineno-3-74"></a><span class="kd">function</span><span class="w"> </span><span class="nx">runAPIGetRequest</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<a id="__codelineno-3-75" name="__codelineno-3-75" href="#__codelineno-3-75"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">checkRequired</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<a id="__codelineno-3-76" name="__codelineno-3-76" href="#__codelineno-3-76"></a><span class="w">    </span><span class="c1">// Public API DNS Names</span><span class="w"></span>
-<a id="__codelineno-3-77" name="__codelineno-3-77" href="#__codelineno-3-77"></a><span class="w">    </span><span class="c1">//myAPI = &quot;https://609k7k2nn4.execute-api.us-east-1.amazonaws.com/core/getjson&quot;</span><span class="w"></span>
-<a id="__codelineno-3-78" name="__codelineno-3-78" href="#__codelineno-3-78"></a><span class="w">    </span><span class="c1">//myAPI = &quot;https://609k7k2nn4.execute-api.us-east-1.amazonaws.com/core/defaultvpcremoval&quot;</span><span class="w"></span>
-<a id="__codelineno-3-79" name="__codelineno-3-79" href="#__codelineno-3-79"></a><span class="w">    </span><span class="c1">// Private API DNS Names</span><span class="w"></span>
-<a id="__codelineno-3-80" name="__codelineno-3-80" href="#__codelineno-3-80"></a><span class="w">    </span><span class="c1">//myAPI = &quot;https://609k7k2nn4-vpce-0897455697c88d3cd.execute-api.us-east-1.amazonaws.com/core/getjson&quot;</span><span class="w"></span>
-<a id="__codelineno-3-81" name="__codelineno-3-81" href="#__codelineno-3-81"></a><span class="w">    </span><span class="nx">myAPI</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;https://609k7k2nn4-vpce-0897455697c88d3cd.execute-api.us-east-1.amazonaws.com/core/defaultvpcremoval&quot;</span><span class="w"></span>
-<a id="__codelineno-3-82" name="__codelineno-3-82" href="#__codelineno-3-82"></a><span class="w">    </span><span class="nx">formParms</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">;</span><span class="w"></span>
-<a id="__codelineno-3-83" name="__codelineno-3-83" href="#__codelineno-3-83"></a><span class="w">    </span><span class="nx">formParms</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">buildParms</span><span class="p">();</span><span class="w"></span>
-<a id="__codelineno-3-84" name="__codelineno-3-84" href="#__codelineno-3-84"></a><span class="w">    </span><span class="c1">// adding Confluence Information</span><span class="w"></span>
-<a id="__codelineno-3-85" name="__codelineno-3-85" href="#__codelineno-3-85"></a><span class="w">    </span><span class="nx">formParms</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">formParms</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot;&amp;&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot;UserName&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot;=&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">UserName</span><span class="w"> </span><span class="o">+</span><span class="w">  </span><span class="s2">&quot;&amp;&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot;UserId&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot;=&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">UserId</span><span class="p">)</span><span class="w"></span>
-<a id="__codelineno-3-86" name="__codelineno-3-86" href="#__codelineno-3-86"></a><span class="w">    </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;RequestForm&quot;</span><span class="p">).</span><span class="nx">style</span><span class="p">.</span><span class="nx">display</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;none&quot;</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="c1">// hide buttons</span><span class="w"></span>
+<a id="__codelineno-3-60" name="__codelineno-3-60" href="#__codelineno-3-60"></a><span class="kd">function</span><span class="w"> </span><span class="nx">buildParms</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-61" name="__codelineno-3-61" href="#__codelineno-3-61"></a><span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">GetInputs</span><span class="p">;</span>
+<a id="__codelineno-3-62" name="__codelineno-3-62" href="#__codelineno-3-62"></a><span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">i</span><span class="p">;</span>
+<a id="__codelineno-3-63" name="__codelineno-3-63" href="#__codelineno-3-63"></a><span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">parms</span><span class="p">,</span><span class="w"> </span><span class="nx">tok</span><span class="p">,</span>
+<a id="__codelineno-3-64" name="__codelineno-3-64" href="#__codelineno-3-64"></a><span class="w">    </span><span class="nx">parms</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">;</span>
+<a id="__codelineno-3-65" name="__codelineno-3-65" href="#__codelineno-3-65"></a><span class="w">    </span><span class="nx">GetInputs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s1">&#39;input&#39;</span><span class="p">);</span>
+<a id="__codelineno-3-66" name="__codelineno-3-66" href="#__codelineno-3-66"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="nx">i</span><span class="o">=</span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">&lt;</span><span class="nx">GetInputs</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">+=</span><span class="mf">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-67" name="__codelineno-3-67" href="#__codelineno-3-67"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">parms</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="nx">tok</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;?&quot;</span><span class="p">;}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="nx">tok</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&amp;&quot;</span><span class="p">;}</span>
+<a id="__codelineno-3-68" name="__codelineno-3-68" href="#__codelineno-3-68"></a><span class="w">            </span><span class="nx">parms</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">parms</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">tok</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">GetInputs</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">name</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot;=&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nb">encodeURIComponent</span><span class="p">(</span><span class="nx">GetInputs</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">value</span><span class="p">);</span>
+<a id="__codelineno-3-69" name="__codelineno-3-69" href="#__codelineno-3-69"></a><span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">GetInputs</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">name</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot;=&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nb">encodeURIComponent</span><span class="p">(</span><span class="nx">GetInputs</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">value</span><span class="p">));</span>
+<a id="__codelineno-3-70" name="__codelineno-3-70" href="#__codelineno-3-70"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-3-71" name="__codelineno-3-71" href="#__codelineno-3-71"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">parms</span><span class="p">);</span>
+<a id="__codelineno-3-72" name="__codelineno-3-72" href="#__codelineno-3-72"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">parms</span><span class="p">;</span>
+<a id="__codelineno-3-73" name="__codelineno-3-73" href="#__codelineno-3-73"></a><span class="p">}</span>
+<a id="__codelineno-3-74" name="__codelineno-3-74" href="#__codelineno-3-74"></a><span class="kd">function</span><span class="w"> </span><span class="nx">runAPIGetRequest</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-75" name="__codelineno-3-75" href="#__codelineno-3-75"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">checkRequired</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-76" name="__codelineno-3-76" href="#__codelineno-3-76"></a><span class="w">    </span><span class="c1">// Public API DNS Names</span>
+<a id="__codelineno-3-77" name="__codelineno-3-77" href="#__codelineno-3-77"></a><span class="w">    </span><span class="c1">//myAPI = &quot;https://609k7k2nn4.execute-api.us-east-1.amazonaws.com/core/getjson&quot;</span>
+<a id="__codelineno-3-78" name="__codelineno-3-78" href="#__codelineno-3-78"></a><span class="w">    </span><span class="c1">//myAPI = &quot;https://609k7k2nn4.execute-api.us-east-1.amazonaws.com/core/defaultvpcremoval&quot;</span>
+<a id="__codelineno-3-79" name="__codelineno-3-79" href="#__codelineno-3-79"></a><span class="w">    </span><span class="c1">// Private API DNS Names</span>
+<a id="__codelineno-3-80" name="__codelineno-3-80" href="#__codelineno-3-80"></a><span class="w">    </span><span class="c1">//myAPI = &quot;https://609k7k2nn4-vpce-0897455697c88d3cd.execute-api.us-east-1.amazonaws.com/core/getjson&quot;</span>
+<a id="__codelineno-3-81" name="__codelineno-3-81" href="#__codelineno-3-81"></a><span class="w">    </span><span class="nx">myAPI</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;https://609k7k2nn4-vpce-0897455697c88d3cd.execute-api.us-east-1.amazonaws.com/core/defaultvpcremoval&quot;</span>
+<a id="__codelineno-3-82" name="__codelineno-3-82" href="#__codelineno-3-82"></a><span class="w">    </span><span class="nx">formParms</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">;</span>
+<a id="__codelineno-3-83" name="__codelineno-3-83" href="#__codelineno-3-83"></a><span class="w">    </span><span class="nx">formParms</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">buildParms</span><span class="p">();</span>
+<a id="__codelineno-3-84" name="__codelineno-3-84" href="#__codelineno-3-84"></a><span class="w">    </span><span class="c1">// adding Confluence Information</span>
+<a id="__codelineno-3-85" name="__codelineno-3-85" href="#__codelineno-3-85"></a><span class="w">    </span><span class="nx">formParms</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">formParms</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot;&amp;&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot;UserName&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot;=&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">UserName</span><span class="w"> </span><span class="o">+</span><span class="w">  </span><span class="s2">&quot;&amp;&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot;UserId&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot;=&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">UserId</span><span class="p">)</span>
+<a id="__codelineno-3-86" name="__codelineno-3-86" href="#__codelineno-3-86"></a><span class="w">    </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;RequestForm&quot;</span><span class="p">).</span><span class="nx">style</span><span class="p">.</span><span class="nx">display</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;none&quot;</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="c1">// hide buttons</span>
 <a id="__codelineno-3-87" name="__codelineno-3-87" href="#__codelineno-3-87"></a>
-<a id="__codelineno-3-88" name="__codelineno-3-88" href="#__codelineno-3-88"></a><span class="w">    </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;spinner&quot;</span><span class="p">).</span><span class="nx">style</span><span class="p">.</span><span class="nx">display</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;block&quot;</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="c1">// submitted animation</span><span class="w"></span>
-<a id="__codelineno-3-89" name="__codelineno-3-89" href="#__codelineno-3-89"></a><span class="w">    </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;ClonfluenceUserName&quot;</span><span class="p">).</span><span class="nx">innerHTML</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">UserName</span><span class="w"></span>
-<a id="__codelineno-3-90" name="__codelineno-3-90" href="#__codelineno-3-90"></a><span class="w">    </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;ClonfluenceUserId&quot;</span><span class="p">).</span><span class="nx">innerHTML</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">UserId</span><span class="w"></span>
+<a id="__codelineno-3-88" name="__codelineno-3-88" href="#__codelineno-3-88"></a><span class="w">    </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;spinner&quot;</span><span class="p">).</span><span class="nx">style</span><span class="p">.</span><span class="nx">display</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;block&quot;</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="c1">// submitted animation</span>
+<a id="__codelineno-3-89" name="__codelineno-3-89" href="#__codelineno-3-89"></a><span class="w">    </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;ClonfluenceUserName&quot;</span><span class="p">).</span><span class="nx">innerHTML</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">UserName</span>
+<a id="__codelineno-3-90" name="__codelineno-3-90" href="#__codelineno-3-90"></a><span class="w">    </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;ClonfluenceUserId&quot;</span><span class="p">).</span><span class="nx">innerHTML</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">UserId</span>
 <a id="__codelineno-3-91" name="__codelineno-3-91" href="#__codelineno-3-91"></a>
-<a id="__codelineno-3-92" name="__codelineno-3-92" href="#__codelineno-3-92"></a><span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">urlWithParms</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">myAPI</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">formParms</span><span class="p">;</span><span class="w"></span>
-<a id="__codelineno-3-93" name="__codelineno-3-93" href="#__codelineno-3-93"></a><span class="w">    </span><span class="nx">xmlhttp</span><span class="o">=</span><span class="ow">new</span><span class="w"> </span><span class="nx">XMLHttpRequest</span><span class="p">();</span><span class="w"></span>
-<a id="__codelineno-3-94" name="__codelineno-3-94" href="#__codelineno-3-94"></a><span class="w">    </span><span class="nx">xmlhttp</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="s2">&quot;GET&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">urlWithParms</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">);</span><span class="w"></span>
-<a id="__codelineno-3-95" name="__codelineno-3-95" href="#__codelineno-3-95"></a><span class="w">    </span><span class="nx">xmlhttp</span><span class="p">.</span><span class="nx">send</span><span class="p">();</span><span class="w"></span>
-<a id="__codelineno-3-96" name="__codelineno-3-96" href="#__codelineno-3-96"></a><span class="w">    </span><span class="nx">xmlhttp</span><span class="p">.</span><span class="nx">onreadystatechange</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<a id="__codelineno-3-97" name="__codelineno-3-97" href="#__codelineno-3-97"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">xmlhttp</span><span class="p">.</span><span class="nx">readyState</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mf">4</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nx">xmlhttp</span><span class="p">.</span><span class="nx">status</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mf">200</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<a id="__codelineno-3-98" name="__codelineno-3-98" href="#__codelineno-3-98"></a><span class="w">            </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;submittedMsg&quot;</span><span class="p">).</span><span class="nx">innerHTML</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">xmlhttp</span><span class="p">.</span><span class="nx">responseText</span><span class="p">;</span><span class="w"></span>
-<a id="__codelineno-3-99" name="__codelineno-3-99" href="#__codelineno-3-99"></a><span class="w">            </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;spinner&quot;</span><span class="p">).</span><span class="nx">style</span><span class="p">.</span><span class="nx">display</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;none&quot;</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="c1">// submitted animation</span><span class="w"></span>
+<a id="__codelineno-3-92" name="__codelineno-3-92" href="#__codelineno-3-92"></a><span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">urlWithParms</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">myAPI</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">formParms</span><span class="p">;</span>
+<a id="__codelineno-3-93" name="__codelineno-3-93" href="#__codelineno-3-93"></a><span class="w">    </span><span class="nx">xmlhttp</span><span class="o">=</span><span class="ow">new</span><span class="w"> </span><span class="nx">XMLHttpRequest</span><span class="p">();</span>
+<a id="__codelineno-3-94" name="__codelineno-3-94" href="#__codelineno-3-94"></a><span class="w">    </span><span class="nx">xmlhttp</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="s2">&quot;GET&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">urlWithParms</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">);</span>
+<a id="__codelineno-3-95" name="__codelineno-3-95" href="#__codelineno-3-95"></a><span class="w">    </span><span class="nx">xmlhttp</span><span class="p">.</span><span class="nx">send</span><span class="p">();</span>
+<a id="__codelineno-3-96" name="__codelineno-3-96" href="#__codelineno-3-96"></a><span class="w">    </span><span class="nx">xmlhttp</span><span class="p">.</span><span class="nx">onreadystatechange</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-97" name="__codelineno-3-97" href="#__codelineno-3-97"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">xmlhttp</span><span class="p">.</span><span class="nx">readyState</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mf">4</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nx">xmlhttp</span><span class="p">.</span><span class="nx">status</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mf">200</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-98" name="__codelineno-3-98" href="#__codelineno-3-98"></a><span class="w">            </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;submittedMsg&quot;</span><span class="p">).</span><span class="nx">innerHTML</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">xmlhttp</span><span class="p">.</span><span class="nx">responseText</span><span class="p">;</span>
+<a id="__codelineno-3-99" name="__codelineno-3-99" href="#__codelineno-3-99"></a><span class="w">            </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;spinner&quot;</span><span class="p">).</span><span class="nx">style</span><span class="p">.</span><span class="nx">display</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;none&quot;</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="c1">// submitted animation</span>
 <a id="__codelineno-3-100" name="__codelineno-3-100" href="#__codelineno-3-100"></a><span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">xmlhttp</span><span class="p">.</span><span class="nx">status</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mf">200</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>
-<a id="__codelineno-3-101" name="__codelineno-3-101" href="#__codelineno-3-101"></a><span class="w">            </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;submittedMsg&quot;</span><span class="p">).</span><span class="nx">innerHTML</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;&lt;h6 style=&quot;color: #e63900; font-weight: bold;&quot; &gt; There was an issue with your request. Please reach out to BCH Cloud Team&lt;/h6&gt;&#39;</span><span class="p">;</span><span class="w"></span>
-<a id="__codelineno-3-102" name="__codelineno-3-102" href="#__codelineno-3-102"></a><span class="w">            </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;spinner&quot;</span><span class="p">).</span><span class="nx">style</span><span class="p">.</span><span class="nx">display</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;none&quot;</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="c1">// submitted animation</span><span class="w"></span>
-<a id="__codelineno-3-103" name="__codelineno-3-103" href="#__codelineno-3-103"></a><span class="w">        </span><span class="p">}</span><span class="w"></span>
-<a id="__codelineno-3-104" name="__codelineno-3-104" href="#__codelineno-3-104"></a><span class="w">    </span><span class="p">};</span><span class="w"></span>
-<a id="__codelineno-3-105" name="__codelineno-3-105" href="#__codelineno-3-105"></a><span class="w">    </span><span class="p">}</span><span class="w"></span>
-<a id="__codelineno-3-106" name="__codelineno-3-106" href="#__codelineno-3-106"></a><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-3-101" name="__codelineno-3-101" href="#__codelineno-3-101"></a><span class="w">            </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;submittedMsg&quot;</span><span class="p">).</span><span class="nx">innerHTML</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;&lt;h6 style=&quot;color: #e63900; font-weight: bold;&quot; &gt; There was an issue with your request. Please reach out to BCH Cloud Team&lt;/h6&gt;&#39;</span><span class="p">;</span>
+<a id="__codelineno-3-102" name="__codelineno-3-102" href="#__codelineno-3-102"></a><span class="w">            </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;spinner&quot;</span><span class="p">).</span><span class="nx">style</span><span class="p">.</span><span class="nx">display</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;none&quot;</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="c1">// submitted animation</span>
+<a id="__codelineno-3-103" name="__codelineno-3-103" href="#__codelineno-3-103"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-3-104" name="__codelineno-3-104" href="#__codelineno-3-104"></a><span class="w">    </span><span class="p">};</span>
+<a id="__codelineno-3-105" name="__codelineno-3-105" href="#__codelineno-3-105"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-3-106" name="__codelineno-3-106" href="#__codelineno-3-106"></a><span class="p">}</span>
 <a id="__codelineno-3-107" name="__codelineno-3-107" href="#__codelineno-3-107"></a>
 <a id="__codelineno-3-108" name="__codelineno-3-108" href="#__codelineno-3-108"></a>
 <a id="__codelineno-3-109" name="__codelineno-3-109" href="#__codelineno-3-109"></a><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
@@ -2255,7 +2372,7 @@ box-shadow:5px 5px 5px 5px rgba(0,0,0,0.3);
     <nav class="md-footer__inner md-grid" aria-label="Footer" >
       
         
-        <a href="../aws-ddns-ref/" class="md-footer__link md-footer__link--prev" aria-label="Previous: AWS Tag Based Dynamic DNS" rel="prev">
+        <a href="../aws-landingzone/" class="md-footer__link md-footer__link--prev" aria-label="Previous: AWS Landing Zones" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -2264,7 +2381,7 @@ box-shadow:5px 5px 5px 5px rgba(0,0,0,0.3);
               <span class="md-footer__direction">
                 Previous
               </span>
-              AWS Tag Based Dynamic DNS
+              AWS Landing Zones
             </div>
           </div>
         </a>

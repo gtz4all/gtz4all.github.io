@@ -12,14 +12,14 @@
         <meta name="author" content="Kervin Gtz">
       
       
-        <link rel="canonical" href="https://gtz4all.github.io/cloud/azure/intro/">
+        <link rel="canonical" href="https://gtz4all.github.io/devops/terraform/multi-gcp-auth/">
       
       <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-8.5.6">
     
     
       
-        <title>Introduction - Gtz4All</title>
+        <title>GCP Multi Account Authentication - Gtz4All</title>
       
     
     
@@ -57,9 +57,9 @@
     
   
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Gtz4All - Introduction" />
+  <meta property="og:title" content="Gtz4All - GCP Multi Account Authentication" />
   <meta property="og:description" content="Providing easy to deploy, reusable and automated solution for defining, provisioning and managing secure and scalable public and private cloud infrastructure environment. " />
-  <meta property="og:url" content="https://gtz4all.github.io/cloud/azure/intro/" />
+  <meta property="og:url" content="https://gtz4all.github.io/devops/terraform/multi-gcp-auth/" />
   <meta property="og:image" content="<url>" />
   <meta property="og:image:type" content="image/png" />
   <meta property="og:image:width" content="1200" />
@@ -87,7 +87,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#comming-soon" class="md-skip">
+        <a href="#gcloud-cli-configurations" class="md-skip">
           Skip to content
         </a>
       
@@ -120,7 +120,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Introduction
+              GCP Multi Account Authentication
             
           </span>
         </div>
@@ -214,15 +214,13 @@
         
   
   
-    
-  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../../intro/" class="md-tabs__link md-tabs__link--active">
+      <a href="../../../cloud/intro/" class="md-tabs__link">
         Cloud
       </a>
     </li>
@@ -232,13 +230,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../../../devops/intro/" class="md-tabs__link">
+      <a href="../../intro/" class="md-tabs__link md-tabs__link--active">
         DevOps
       </a>
     </li>
@@ -346,14 +346,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
       
       
       
@@ -376,7 +374,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../intro/" class="md-nav__link">
+      <a href="../../../cloud/intro/" class="md-nav__link">
         Introduction
       </a>
     </li>
@@ -416,7 +414,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../aws/intro/" class="md-nav__link">
+      <a href="../../../cloud/aws/intro/" class="md-nav__link">
         Introduction
       </a>
     </li>
@@ -430,7 +428,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../aws/aws-ddns-ref/" class="md-nav__link">
+      <a href="../../../cloud/aws/aws-ddns-ref/" class="md-nav__link">
         AWS Tag Based Dynamic DNS
       </a>
     </li>
@@ -444,7 +442,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../aws/aws-landingzone/" class="md-nav__link">
+      <a href="../../../cloud/aws/aws-landingzone/" class="md-nav__link">
         AWS Landing Zones
       </a>
     </li>
@@ -458,7 +456,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../aws/default-vpc-cleanup/" class="md-nav__link">
+      <a href="../../../cloud/aws/default-vpc-cleanup/" class="md-nav__link">
         Default Vpc Cleanup
       </a>
     </li>
@@ -472,7 +470,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../aws/ec2-dynamic-dns/" class="md-nav__link">
+      <a href="../../../cloud/aws/ec2-dynamic-dns/" class="md-nav__link">
         EC2 Cross-Account Dynamic DNS Design
       </a>
     </li>
@@ -486,7 +484,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../aws/lambda-functions/" class="md-nav__link">
+      <a href="../../../cloud/aws/lambda-functions/" class="md-nav__link">
         Lambda Functions
       </a>
     </li>
@@ -500,7 +498,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../aws/three-tier-vpc/" class="md-nav__link">
+      <a href="../../../cloud/aws/three-tier-vpc/" class="md-nav__link">
         Three tier vpc
       </a>
     </li>
@@ -519,14 +517,12 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" >
       
       
       
@@ -547,48 +543,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Introduction
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../cloud/azure/intro/" class="md-nav__link">
         Introduction
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#comming-soon" class="md-nav__link">
-    Comming Soon
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -600,7 +559,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../azure-cli/" class="md-nav__link">
+      <a href="../../../cloud/azure/azure-cli/" class="md-nav__link">
         Azure CLI Useful Commands
       </a>
     </li>
@@ -614,7 +573,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../azure-ngfw/" class="md-nav__link">
+      <a href="../../../cloud/azure/azure-ngfw/" class="md-nav__link">
         Azure Firewall Notes
       </a>
     </li>
@@ -628,7 +587,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../azure-wan/" class="md-nav__link">
+      <a href="../../../cloud/azure/azure-wan/" class="md-nav__link">
         Azure Virtual WAN Components
       </a>
     </li>
@@ -642,7 +601,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../landing-zones/" class="md-nav__link">
+      <a href="../../../cloud/azure/landing-zones/" class="md-nav__link">
         Landing Zones
       </a>
     </li>
@@ -656,7 +615,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../mgmt-groups/" class="md-nav__link">
+      <a href="../../../cloud/azure/mgmt-groups/" class="md-nav__link">
         Azure Management Groups
       </a>
     </li>
@@ -670,7 +629,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../networking/" class="md-nav__link">
+      <a href="../../../cloud/azure/networking/" class="md-nav__link">
         Azure Networking
       </a>
     </li>
@@ -684,7 +643,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tshoo/" class="md-nav__link">
+      <a href="../../../cloud/azure/tshoo/" class="md-nav__link">
         Azure Troubleshooting Notes
       </a>
     </li>
@@ -731,7 +690,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../gcp/intro/" class="md-nav__link">
+      <a href="../../../cloud/gcp/intro/" class="md-nav__link">
         Introduction
       </a>
     </li>
@@ -745,7 +704,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../gcp/cloud-identity/" class="md-nav__link">
+      <a href="../../../cloud/gcp/cloud-identity/" class="md-nav__link">
         Cloud identity
       </a>
     </li>
@@ -759,7 +718,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../gcp/gcloud/" class="md-nav__link">
+      <a href="../../../cloud/gcp/gcloud/" class="md-nav__link">
         Gcloud Command Overview
       </a>
     </li>
@@ -786,12 +745,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
       
       
       
@@ -814,7 +775,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../devops/intro/" class="md-nav__link">
+      <a href="../../intro/" class="md-nav__link">
         Introduction
       </a>
     </li>
@@ -826,12 +787,14 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2" type="checkbox" id="__nav_3_2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2" type="checkbox" id="__nav_3_2" checked>
       
       
       
@@ -854,7 +817,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../devops/terraform/intro/" class="md-nav__link">
+      <a href="../intro/" class="md-nav__link">
         Introduction
       </a>
     </li>
@@ -868,7 +831,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../devops/terraform/azure-auth/" class="md-nav__link">
+      <a href="../azure-auth/" class="md-nav__link">
         Terraform Azure Authentication
       </a>
     </li>
@@ -882,7 +845,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../devops/terraform/google-secret-manager/" class="md-nav__link">
+      <a href="../google-secret-manager/" class="md-nav__link">
          Google Secret Manager
       </a>
     </li>
@@ -894,11 +857,89 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../../devops/terraform/multi-gcp-auth/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          GCP Multi Account Authentication
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         GCP Multi Account Authentication
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#gcloud-cli-configurations" class="md-nav__link">
+    GCLOUD CLI Configurations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gcp-configurations" class="md-nav__link">
+    GCP Configurations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gcp-authentication-types" class="md-nav__link">
+    GCP Authentication Types
+  </a>
+  
+    <nav class="md-nav" aria-label="GCP Authentication Types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gcloud-cli-authentication" class="md-nav__link">
+    GCLOUD CLI Authentication
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gcp-sdk-authentication" class="md-nav__link">
+    GCP SDK Authentication
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#switching-between-gcp-configurations" class="md-nav__link">
+    Switching Between GCP Configurations
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -910,7 +951,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../devops/terraform/terraform-refactoring/" class="md-nav__link">
+      <a href="../terraform-refactoring/" class="md-nav__link">
         Terraform State Refactoring
       </a>
     </li>
@@ -957,7 +998,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../devops/ansible/intro/" class="md-nav__link">
+      <a href="../../ansible/intro/" class="md-nav__link">
         Introduction
       </a>
     </li>
@@ -971,7 +1012,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../devops/ansible/gcp_ansible/" class="md-nav__link">
+      <a href="../../ansible/gcp_ansible/" class="md-nav__link">
         Google Cloud Platform Ansible Collection
       </a>
     </li>
@@ -1018,7 +1059,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../devops/docker/intro/" class="md-nav__link">
+      <a href="../../docker/intro/" class="md-nav__link">
         Introduction
       </a>
     </li>
@@ -1032,7 +1073,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../devops/docker/hugo.docker.container/" class="md-nav__link">
+      <a href="../../docker/hugo.docker.container/" class="md-nav__link">
         Building a Hugo Docker Containers
       </a>
     </li>
@@ -1046,7 +1087,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../devops/docker/hugo.docker.troubleshooting/" class="md-nav__link">
+      <a href="../../docker/hugo.docker.troubleshooting/" class="md-nav__link">
         Working with Hugo Container
       </a>
     </li>
@@ -1093,7 +1134,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../devops/kubernetes/intro/" class="md-nav__link">
+      <a href="../../kubernetes/intro/" class="md-nav__link">
         Introduction
       </a>
     </li>
@@ -1107,7 +1148,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../devops/kubernetes/kubernetes-cluster/" class="md-nav__link">
+      <a href="../../kubernetes/kubernetes-cluster/" class="md-nav__link">
         Kubernetes Cluster
       </a>
     </li>
@@ -1121,7 +1162,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../devops/kubernetes/kubernetes-deployments/" class="md-nav__link">
+      <a href="../../kubernetes/kubernetes-deployments/" class="md-nav__link">
         Kubernetes Deployments
       </a>
     </li>
@@ -1135,7 +1176,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../devops/kubernetes/kubernetes_services/" class="md-nav__link">
+      <a href="../../kubernetes/kubernetes_services/" class="md-nav__link">
         Kubernetes Services
       </a>
     </li>
@@ -1182,7 +1223,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../devops/databases/intro/" class="md-nav__link">
+      <a href="../../databases/intro/" class="md-nav__link">
         Introduction
       </a>
     </li>
@@ -1196,7 +1237,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../devops/databases/mongodb/" class="md-nav__link">
+      <a href="../../databases/mongodb/" class="md-nav__link">
         MongoDB
       </a>
     </li>
@@ -1243,7 +1284,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../devops/webservices/intro/" class="md-nav__link">
+      <a href="../../webservices/intro/" class="md-nav__link">
         Introduction
       </a>
     </li>
@@ -1257,7 +1298,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../devops/webservices/environmentvars/" class="md-nav__link">
+      <a href="../../webservices/environmentvars/" class="md-nav__link">
         Apache Environment Variables
       </a>
     </li>
@@ -1271,7 +1312,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../devops/webservices/http-server-with-dynamic-content/" class="md-nav__link">
+      <a href="../../webservices/http-server-with-dynamic-content/" class="md-nav__link">
         HTTP Server with Dynamic Content
       </a>
     </li>
@@ -1318,7 +1359,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../devops/git/intro/" class="md-nav__link">
+      <a href="../../git/intro/" class="md-nav__link">
         Introduction
       </a>
     </li>
@@ -1332,7 +1373,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../devops/git/multi_ssh_keys/" class="md-nav__link">
+      <a href="../../git/multi_ssh_keys/" class="md-nav__link">
         Managing Multiple Github Accounts
       </a>
     </li>
@@ -1616,8 +1657,49 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#comming-soon" class="md-nav__link">
-    Comming Soon
+  <a href="#gcloud-cli-configurations" class="md-nav__link">
+    GCLOUD CLI Configurations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gcp-configurations" class="md-nav__link">
+    GCP Configurations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gcp-authentication-types" class="md-nav__link">
+    GCP Authentication Types
+  </a>
+  
+    <nav class="md-nav" aria-label="GCP Authentication Types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gcloud-cli-authentication" class="md-nav__link">
+    GCLOUD CLI Authentication
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gcp-sdk-authentication" class="md-nav__link">
+    GCP SDK Authentication
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#switching-between-gcp-configurations" class="md-nav__link">
+    Switching Between GCP Configurations
   </a>
   
 </li>
@@ -1637,10 +1719,129 @@
                   
 
 
-  <h1>Introduction</h1>
+  <h1>GCP Multi Account Authentication</h1>
 
-<p><img alt="azure" src="../../../assets/images/azure.png" style="width:100px" title="azure" /></p>
-<h4 id="comming-soon">Comming Soon<script type="text/javascript" src="https://viewer.diagrams.net/js/viewer-static.min.js"></script><a class="headerlink" href="#comming-soon" title="Permanent link">&para;</a></h4>
+<h4 id="gcloud-cli-configurations">GCLOUD CLI Configurations<a class="headerlink" href="#gcloud-cli-configurations" title="Permanent link">&para;</a></h4>
+<p><a href="https://cloud.google.com/sdk/docs/configurations">Gcloud CLI Configurations</a> can be used to store and separate multiple account properties including Project ID, active user or service account. </p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>gcloud config configurations --help
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Available commands for gcloud config configurations:
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>      activate                Activates an existing named configuration.
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>      create                  Creates a new named configuration.
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>      delete                  Deletes a named configuration.
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>      describe                Describes a named configuration by listing its
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>                              properties.
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>      list                    Lists existing named configurations.
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>      rename                  Renames a named configuration.
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>For detailed information on this command and its flags, run:
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>  gcloud config configurations --help
+</code></pre></div></p>
+<h4 id="gcp-configurations">GCP Configurations<a class="headerlink" href="#gcp-configurations" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p>Initially, gcloud CLI starts with a single configuration named <code>default</code>. </p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>$ gcloud config list
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>[core]
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>account = kg48037@mykronos.com
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>disable_usage_reporting = True
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>project = rdy-dev-cld-usa-dev01
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>Your active configuration is: [default]
+</code></pre></div>
+</li>
+<li>
+<p>Additional configurations can be created to switch between accounts.</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>$ gcloud config configurations create acloudsbox
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>Created [acloudsbox].
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>Activated [acloudsbox].
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>$ gcloud config configurations list
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>NAME        IS_ACTIVE  ACCOUNT                 PROJECT                   COMPUTE_DEFAULT_ZONE
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>default     False      kg48037@mykronos.com    rdy-dev-cld-usa-dev01
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>acloudsbox  True
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>$ gcloud config list
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>[core]
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>disable_usage_reporting = True
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>Your active configuration is: [acloudsbox]
+</code></pre></div></p>
+<h4 id="gcp-authentication-types">GCP Authentication Types<a class="headerlink" href="#gcp-authentication-types" title="Permanent link">&para;</a></h4>
+<p>There are two ways to authenticate in GCP depending on the use case. The following CLI Commands will store credentials in the current configuration. 
+If no configuration exists, it will create a configuration named default.</p>
+</li>
+</ul>
+<h6 id="gcloud-cli-authentication"><a href="https://cloud.google.com/sdk/gcloud/reference/auth/login">GCLOUD CLI Authentication</a><a class="headerlink" href="#gcloud-cli-authentication" title="Permanent link">&para;</a></h6>
+<p><code>gcloud auth login --no-launch-browser --update-adc</code> This command can be used to authenticate both GCloud CLI commands and SDK 
+- access credentials for the user account and store them in ~/.config/gcloud/ via a web-based authorization flow.
+- <code>--no-launch-browser</code> flag will print a URL that can be copied to any browser.
+- <code>--update-adc</code> writes the obtained credentials to the well-known location for Application Default Credentials (ADC)</p>
+<h6 id="gcp-sdk-authentication"><a href="https://cloud.google.com/sdk/gcloud/reference/auth/application-default/login">GCP SDK Authentication</a><a class="headerlink" href="#gcp-sdk-authentication" title="Permanent link">&para;</a></h6>
+<p><code>gcloud auth application-default login --no-launch-browser</code> This command is not required when using flag <code>--update-adc</code> with <code>gcloud auth login</code>.
+- access credentials via a web-based authorization flow for the user account and store them in the <code>well-known location for Application Default Credentials</code> file named application_default_credentials.json in <code>~/.config/gcloud/</code> 
+- <code>--no-launch-browser</code> flag will print a URL that can be copied to any browser.</p>
+<h4 id="switching-between-gcp-configurations">Switching Between GCP Configurations<a class="headerlink" href="#switching-between-gcp-configurations" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p>Review current configuration
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>$ gcloud config list
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>[core]
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>account = admin@gtz4all.com
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>disable_usage_reporting = True
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>project = rdy-dev-cld-usa-dev01
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>Your active configuration is: [default]
+</code></pre></div>
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>$ gcloud config configurations list
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>NAME     IS_ACTIVE  ACCOUNT               PROJECT                COMPUTE_DEFAULT_ZONE  COMPUTE_DEFAULT_REGION
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>default  True       admin@gtz4all.com  gtz4all-dev-cld01
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>sbox     False
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>$ gcloud config configurations activate sbox
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>Activated [sbox].
+</code></pre></div>
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>$ gcloud config list
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>[core]
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>disable_usage_reporting = True
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>Your active configuration is: [sbox]
+</code></pre></div></p>
+</li>
+<li>
+<p>Provide user credentials to new gcloud configuration - sbox
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>$ gcloud auth login --no-launch-browser --update-adc
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>Go to the following link in your browser:
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>    https://accounts.google.com/o/oauth2/auth?response_type=code
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>Enter authorization code: 4/0AbUR2VNmI2-EonA-P57ik6-Y6B842zi9l0piWRm7KNlqFgQtM1G6f-HToDYBHbJwuEeTTw
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>Application default credentials (ADC) were updated.
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>You are now logged in as [cloud_user_p_4591b375@linuxacademygclabs.com].
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>Your current project is [None].  You can change this setting by running:
+<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>  $ gcloud config set project PROJECT_ID
+<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>
+<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a>$ gcloud config set project playground-s-11-899e0a9b
+<a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a>Updated property [core/project].
+</code></pre></div></p>
+</li>
+<li>
+<p>validate gcloud configuration credentials
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>$ gcloud compute networks list
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>NAME     SUBNET_MODE  BGP_ROUTING_MODE  IPV4_RANGE  GATEWAY_IPV4
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>default  AUTO         REGIONAL
+</code></pre></div></p>
+</li>
+<li>switch back to the default gcloud configuration and validate credentials
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>$ gcloud config configurations activate default
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>Activated [default].
+</code></pre></div>
+    <code>$ gcloud compute networks list
+    NAME                    SUBNET_MODE  BGP_ROUTING_MODE  IPV4_RANGE  GATEWAY_IPV4
+    dev01-vpc01       CUSTOM       GLOBAL</code><script type="text/javascript" src="https://viewer.diagrams.net/js/viewer-static.min.js"></script></li>
+</ul>
 
 
 
@@ -1661,7 +1862,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer" >
       
         
-        <a href="../../aws/three-tier-vpc/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Three tier vpc" rel="prev">
+        <a href="../google-secret-manager/" class="md-footer__link md-footer__link--prev" aria-label="Previous:  Google Secret Manager" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -1670,20 +1871,20 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              Three tier vpc
+               Google Secret Manager
             </div>
           </div>
         </a>
       
       
         
-        <a href="../azure-cli/" class="md-footer__link md-footer__link--next" aria-label="Next: Azure CLI Useful Commands" rel="next">
+        <a href="../terraform-refactoring/" class="md-footer__link md-footer__link--next" aria-label="Next: Terraform State Refactoring" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Azure CLI Useful Commands
+              Terraform State Refactoring
             </div>
           </div>
           <div class="md-footer__button md-icon">

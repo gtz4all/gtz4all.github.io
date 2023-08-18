@@ -6,20 +6,20 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Providing easy to deploy, reusable and automated solution for defining, provisioning and managing secure and scalable public and private cloud infrastructure environment. ">
+        <meta name="description" content="AWS Cloudformation">
       
       
         <meta name="author" content="Kervin Gtz">
       
       
-        <link rel="canonical" href="https://gtz4all.github.io/cloud/azure/intro/">
+        <link rel="canonical" href="https://gtz4all.github.io/cloud/aws/aws-landingzone/">
       
       <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-8.5.6">
     
     
       
-        <title>Introduction - Gtz4All</title>
+        <title>AWS Landing Zones - Gtz4All</title>
       
     
     
@@ -57,9 +57,9 @@
     
   
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Gtz4All - Introduction" />
+  <meta property="og:title" content="Gtz4All - AWS Landing Zones" />
   <meta property="og:description" content="Providing easy to deploy, reusable and automated solution for defining, provisioning and managing secure and scalable public and private cloud infrastructure environment. " />
-  <meta property="og:url" content="https://gtz4all.github.io/cloud/azure/intro/" />
+  <meta property="og:url" content="https://gtz4all.github.io/cloud/aws/aws-landingzone/" />
   <meta property="og:image" content="<url>" />
   <meta property="og:image:type" content="image/png" />
   <meta property="og:image:width" content="1200" />
@@ -87,7 +87,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#comming-soon" class="md-skip">
+        <a href="#build-landing-zone" class="md-skip">
           Skip to content
         </a>
       
@@ -120,7 +120,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Introduction
+              AWS Landing Zones
             
           </span>
         </div>
@@ -388,12 +388,14 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" checked>
       
       
       
@@ -416,7 +418,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../aws/intro/" class="md-nav__link">
+      <a href="../intro/" class="md-nav__link">
         Introduction
       </a>
     </li>
@@ -430,7 +432,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../aws/aws-ddns-ref/" class="md-nav__link">
+      <a href="../aws-ddns-ref/" class="md-nav__link">
         AWS Tag Based Dynamic DNS
       </a>
     </li>
@@ -442,11 +444,96 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../aws/aws-landingzone/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          AWS Landing Zones
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         AWS Landing Zones
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#build-landing-zone" class="md-nav__link">
+    Build Landing Zone
+  </a>
+  
+    <nav class="md-nav" aria-label="Build Landing Zone">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#account-inventory" class="md-nav__link">
+    Account Inventory
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#roles" class="md-nav__link">
+    Roles
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#service-catalog-account-vending-machine" class="md-nav__link">
+    Service Catalog - Account Vending Machine
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aws-landing-zone-account-vending-machine" class="md-nav__link">
+    AWS-Landing-Zone-Account-Vending-Machine
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aws-single-sign-on" class="md-nav__link">
+    AWS Single-Sign-On
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    References
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -458,7 +545,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../aws/default-vpc-cleanup/" class="md-nav__link">
+      <a href="../default-vpc-cleanup/" class="md-nav__link">
         Default Vpc Cleanup
       </a>
     </li>
@@ -472,7 +559,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../aws/ec2-dynamic-dns/" class="md-nav__link">
+      <a href="../ec2-dynamic-dns/" class="md-nav__link">
         EC2 Cross-Account Dynamic DNS Design
       </a>
     </li>
@@ -486,7 +573,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../aws/lambda-functions/" class="md-nav__link">
+      <a href="../lambda-functions/" class="md-nav__link">
         Lambda Functions
       </a>
     </li>
@@ -500,7 +587,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../aws/three-tier-vpc/" class="md-nav__link">
+      <a href="../three-tier-vpc/" class="md-nav__link">
         Three tier vpc
       </a>
     </li>
@@ -519,14 +606,12 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" >
       
       
       
@@ -547,48 +632,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Introduction
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../azure/intro/" class="md-nav__link">
         Introduction
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#comming-soon" class="md-nav__link">
-    Comming Soon
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -600,7 +648,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../azure-cli/" class="md-nav__link">
+      <a href="../../azure/azure-cli/" class="md-nav__link">
         Azure CLI Useful Commands
       </a>
     </li>
@@ -614,7 +662,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../azure-ngfw/" class="md-nav__link">
+      <a href="../../azure/azure-ngfw/" class="md-nav__link">
         Azure Firewall Notes
       </a>
     </li>
@@ -628,7 +676,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../azure-wan/" class="md-nav__link">
+      <a href="../../azure/azure-wan/" class="md-nav__link">
         Azure Virtual WAN Components
       </a>
     </li>
@@ -642,7 +690,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../landing-zones/" class="md-nav__link">
+      <a href="../../azure/landing-zones/" class="md-nav__link">
         Landing Zones
       </a>
     </li>
@@ -656,7 +704,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../mgmt-groups/" class="md-nav__link">
+      <a href="../../azure/mgmt-groups/" class="md-nav__link">
         Azure Management Groups
       </a>
     </li>
@@ -670,7 +718,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../networking/" class="md-nav__link">
+      <a href="../../azure/networking/" class="md-nav__link">
         Azure Networking
       </a>
     </li>
@@ -684,7 +732,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tshoo/" class="md-nav__link">
+      <a href="../../azure/tshoo/" class="md-nav__link">
         Azure Troubleshooting Notes
       </a>
     </li>
@@ -1616,9 +1664,57 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#comming-soon" class="md-nav__link">
-    Comming Soon
+  <a href="#build-landing-zone" class="md-nav__link">
+    Build Landing Zone
   </a>
+  
+    <nav class="md-nav" aria-label="Build Landing Zone">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#account-inventory" class="md-nav__link">
+    Account Inventory
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#roles" class="md-nav__link">
+    Roles
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#service-catalog-account-vending-machine" class="md-nav__link">
+    Service Catalog - Account Vending Machine
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aws-landing-zone-account-vending-machine" class="md-nav__link">
+    AWS-Landing-Zone-Account-Vending-Machine
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aws-single-sign-on" class="md-nav__link">
+    AWS Single-Sign-On
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    References
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1637,10 +1733,193 @@
                   
 
 
-  <h1>Introduction</h1>
+  <h1>AWS Landing Zones</h1>
 
-<p><img alt="azure" src="../../../assets/images/azure.png" style="width:100px" title="azure" /></p>
-<h4 id="comming-soon">Comming Soon<script type="text/javascript" src="https://viewer.diagrams.net/js/viewer-static.min.js"></script><a class="headerlink" href="#comming-soon" title="Permanent link">&para;</a></h4>
+<h2 id="build-landing-zone">Build Landing Zone<a class="headerlink" href="#build-landing-zone" title="Permanent link">&para;</a></h2>
+<p>Custom Settings After Landing Zone Deployment</p>
+<ul>
+<li>Change Pipeline Source</li>
+<li>Current: S3 bucket<ul>
+<li>requires KMS policy adjustments to allow zip download</li>
+<li>Add root ARN</li>
+</ul>
+</li>
+<li>
+<p>CodePipeline - Github source requires ‘SourceApp’ matching current S3 settings</p>
+<ul>
+<li>Remove S3 as source</li>
+</ul>
+</li>
+<li>
+<p>Service Catalog</p>
+</li>
+<li>Administrator Portfolio requires Policy Changes to allow Root ARN to see Products and be able to launch account vending machine( not Administrator Products)</li>
+<li>Created ‘Network’ After adding ARN to Product Policy</li>
+</ul>
+<h4 id="account-inventory">Account Inventory<a class="headerlink" href="#account-inventory" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Account name</th>
+<th>Email</th>
+<th>Account ID</th>
+<th>Assume Role</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>gtzroot</td>
+<td><a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#107;&#101;&#114;&#118;&#105;&#110;&#103;&#116;&#122;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;">&#107;&#101;&#114;&#118;&#105;&#110;&#103;&#116;&#122;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;</a></td>
+<td>571219239203.00</td>
+<td>User: gtzroot</td>
+</tr>
+<tr>
+<td>shared-services</td>
+<td><a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#107;&#101;&#114;&#118;&#105;&#110;&#103;&#116;&#122;&#43;&#97;&#119;&#115;&#45;&#115;&#104;&#97;&#114;&#101;&#100;&#115;&#118;&#99;&#115;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;">&#107;&#101;&#114;&#118;&#105;&#110;&#103;&#116;&#122;&#43;&#97;&#119;&#115;&#45;&#115;&#104;&#97;&#114;&#101;&#100;&#115;&#118;&#99;&#115;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;</a></td>
+<td>176041802277.00</td>
+<td>AWSCloudFormationStackSetExecutionRole</td>
+</tr>
+<tr>
+<td>security</td>
+<td><a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#107;&#101;&#114;&#118;&#105;&#110;&#103;&#116;&#122;&#43;&#97;&#119;&#115;&#45;&#115;&#101;&#99;&#117;&#114;&#105;&#116;&#121;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;">&#107;&#101;&#114;&#118;&#105;&#110;&#103;&#116;&#122;&#43;&#97;&#119;&#115;&#45;&#115;&#101;&#99;&#117;&#114;&#105;&#116;&#121;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;</a></td>
+<td>588179906098.00</td>
+<td>AWSCloudFormationStackSetExecutionRole</td>
+</tr>
+<tr>
+<td>network</td>
+<td><a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#107;&#101;&#114;&#118;&#105;&#110;&#103;&#116;&#122;&#43;&#97;&#119;&#115;&#45;&#110;&#101;&#116;&#119;&#111;&#114;&#107;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;">&#107;&#101;&#114;&#118;&#105;&#110;&#103;&#116;&#122;&#43;&#97;&#119;&#115;&#45;&#110;&#101;&#116;&#119;&#111;&#114;&#107;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;</a></td>
+<td>507533005210.00</td>
+<td></td>
+</tr>
+<tr>
+<td>log-archive</td>
+<td><a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#107;&#101;&#114;&#118;&#105;&#110;&#103;&#116;&#122;&#43;&#97;&#119;&#115;&#45;&#108;&#111;&#103;&#115;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;">&#107;&#101;&#114;&#118;&#105;&#110;&#103;&#116;&#122;&#43;&#97;&#119;&#115;&#45;&#108;&#111;&#103;&#115;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;</a></td>
+<td>346432656342.00</td>
+<td>AWSCloudFormationStackSetExecutionRole</td>
+</tr>
+</tbody>
+</table>
+<h4 id="roles">Roles<a class="headerlink" href="#roles" title="Permanent link">&para;</a></h4>
+<p>During initial LZ Deployment, log-archive, security, and shared-services accounts get created with role - AWSCloudFormationStackSetExecutionRole - User in Root Account can assume role into these 3 accounts.</p>
+<ul>
+<li>Role: AWSCloudFormationStackSetExecutionRole</li>
+</ul>
+<p><code>Permission Policy</code>
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">{</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="nt">&quot;Version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2012-10-17&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="nt">&quot;Statement&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">        </span><span class="p">{</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">            </span><span class="nt">&quot;Effect&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Allow&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">            </span><span class="nt">&quot;Action&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;*&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">            </span><span class="nt">&quot;Resource&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;*&quot;</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="p">]</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="p">}</span>
+</code></pre></div></p>
+<p><code>Trust Relationship</code>
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">{</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nt">&quot;Version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2012-10-17&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="nt">&quot;Statement&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="p">{</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">      </span><span class="nt">&quot;Effect&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Allow&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">      </span><span class="nt">&quot;Principal&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">        </span><span class="nt">&quot;AWS&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;arn:aws:iam::571219239203:root&quot;</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">      </span><span class="p">},</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">      </span><span class="nt">&quot;Action&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;sts:AssumeRole&quot;</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">  </span><span class="p">]</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="p">}</span>
+</code></pre></div></p>
+<h4 id="service-catalog-account-vending-machine">Service Catalog - Account Vending Machine<a class="headerlink" href="#service-catalog-account-vending-machine" title="Permanent link">&para;</a></h4>
+<p>Service Catalog → Portfolios → AWS Landing Zone - Baseline → Add Groups, roles and users = Add Root User ARN - arn:aws:iam::571219239203:user/gtzroot</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>ARN</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>gtzroot</td>
+<td>IAM</td>
+<td>arn:aws:iam::571219239203:user/gtzroot</td>
+</tr>
+<tr>
+<td>StateMachineLambdaRole</td>
+<td>IAM</td>
+<td>arn:aws:iam::571219239203:role/StateMachineLambdaRole</td>
+</tr>
+</tbody>
+</table>
+<h4 id="aws-landing-zone-account-vending-machine">AWS-Landing-Zone-Account-Vending-Machine<a class="headerlink" href="#aws-landing-zone-account-vending-machine" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Product List - (SO0045) - AWS Landing Zone - Account Vending Machine Template → Launch Product → Network</li>
+<li>
+<p>Note: No Default VPCs are created.</p>
+</li>
+<li>
+<p>Using the Vending Machine - Role AWSCloudFormationStackSetExecutionRole only allows other roles from root account to assume this role. No changes required.</p>
+</li>
+<li>Role: AWSCloudFormationStackSetExecutionRole
+  <code>Permission Policy</code>
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">{</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="nt">&quot;Version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2012-10-17&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="nt">&quot;Statement&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">        </span><span class="p">{</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">            </span><span class="nt">&quot;Effect&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Allow&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">            </span><span class="nt">&quot;Action&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;*&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">            </span><span class="nt">&quot;Resource&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;*&quot;</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">    </span><span class="p">]</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="p">}</span>
+</code></pre></div>
+  <code>Trust Relationship</code>
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p">{</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="nt">&quot;Version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2012-10-17&quot;</span><span class="p">,</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">  </span><span class="nt">&quot;Statement&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="p">{</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">      </span><span class="nt">&quot;Effect&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Allow&quot;</span><span class="p">,</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">      </span><span class="nt">&quot;Principal&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">        </span><span class="nt">&quot;AWS&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">          </span><span class="s2">&quot;arn:aws:iam::571219239203:role/LandingZoneLambdaRole&quot;</span><span class="p">,</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">          </span><span class="s2">&quot;arn:aws:iam::571219239203:role/StateMachineLambdaRole&quot;</span><span class="p">,</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">          </span><span class="s2">&quot;arn:aws:iam::571219239203:role/StateMachineTriggerLambdaRole&quot;</span><span class="p">,</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">          </span><span class="s2">&quot;arn:aws:iam::571219239203:role/AWSCloudFormationStackSetAdministrationRole&quot;</span><span class="p">,</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">          </span><span class="s2">&quot;arn:aws:iam::571219239203:role/LandingZoneHandshakeSMLambdaRole&quot;</span>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="w">        </span><span class="p">]</span>
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="w">      </span><span class="p">},</span>
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="w">      </span><span class="nt">&quot;Action&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;sts:AssumeRole&quot;</span>
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="w">  </span><span class="p">]</span>
+<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="p">}</span>
+</code></pre></div></li>
+</ul>
+<h4 id="aws-single-sign-on">AWS Single-Sign-On<a class="headerlink" href="#aws-single-sign-on" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Created user in AWS SSO</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Sign-in URL</th>
+<th>Username</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://gtz.awsapps.com/start">https://gtz.awsapps.com/start</a></td>
+<td>gtzssoadmin</td>
+</tr>
+</tbody>
+</table>
+<h4 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h4>
+<ul>
+<li><a href="https://medium.com/@superluminar/tested-for-you-multi-account-setups-with-aws-landing-zone-b934154cfc78">https://medium.com/@superluminar/tested-for-you-multi-account-setups-with-aws-landing-zone-b934154cfc78</a></li>
+<li><a href="https://medium.com/@superluminar/extending-aws-landing-zone-a-real-world-example-63b8d46115dc">https://medium.com/@superluminar/extending-aws-landing-zone-a-real-world-example-63b8d46115dc</a></li>
+<li><a href="https://virtualbonzo.com/2019/11/08/aws-multi-account-architecture-part-2-aws-landing-zone/">https://virtualbonzo.com/2019/11/08/aws-multi-account-architecture-part-2-aws-landing-zone/</a><script type="text/javascript" src="https://viewer.diagrams.net/js/viewer-static.min.js"></script></li>
+</ul>
 
 
 
@@ -1661,7 +1940,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer" >
       
         
-        <a href="../../aws/three-tier-vpc/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Three tier vpc" rel="prev">
+        <a href="../aws-ddns-ref/" class="md-footer__link md-footer__link--prev" aria-label="Previous: AWS Tag Based Dynamic DNS" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -1670,20 +1949,20 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              Three tier vpc
+              AWS Tag Based Dynamic DNS
             </div>
           </div>
         </a>
       
       
         
-        <a href="../azure-cli/" class="md-footer__link md-footer__link--next" aria-label="Next: Azure CLI Useful Commands" rel="next">
+        <a href="../default-vpc-cleanup/" class="md-footer__link md-footer__link--next" aria-label="Next: Default Vpc Cleanup" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Azure CLI Useful Commands
+              Default Vpc Cleanup
             </div>
           </div>
           <div class="md-footer__button md-icon">

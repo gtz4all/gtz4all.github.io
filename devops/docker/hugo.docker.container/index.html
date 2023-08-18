@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://gtz4all.github.io/devops/docker/hugo.docker.container/">
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.4.0, mkdocs-material-8.5.6">
+      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-8.5.6">
     
     
       
@@ -442,6 +442,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../cloud/aws/aws-landingzone/" class="md-nav__link">
+        AWS Landing Zones
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../cloud/aws/default-vpc-cleanup/" class="md-nav__link">
         Default Vpc Cleanup
       </a>
@@ -690,6 +704,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../cloud/gcp/cloud-identity/" class="md-nav__link">
+        Cloud identity
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../cloud/gcp/gcloud/" class="md-nav__link">
         Gcloud Command Overview
       </a>
@@ -829,6 +857,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../terraform/multi-gcp-auth/" class="md-nav__link">
+        GCP Multi Account Authentication
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../terraform/terraform-refactoring/" class="md-nav__link">
         Terraform State Refactoring
       </a>
@@ -878,6 +920,20 @@
     <li class="md-nav__item">
       <a href="../../ansible/intro/" class="md-nav__link">
         Introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ansible/gcp_ansible/" class="md-nav__link">
+        Google Cloud Platform Ansible Collection
       </a>
     </li>
   
@@ -1276,6 +1332,67 @@
 
             
           
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_8" type="checkbox" id="__nav_3_8" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_8">
+          Git
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Git" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_8">
+          <span class="md-nav__icon md-icon"></span>
+          Git
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../git/intro/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../git/multi_ssh_keys/" class="md-nav__link">
+        Managing Multiple Github Accounts
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -1622,47 +1739,47 @@
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="c1">############################################</span>
 <a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
 <a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="c1">## Stage 1 - name &#39;build&#39;</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>FROM nginx:alpine as build
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>FROM<span class="w"> </span>nginx:alpine<span class="w"> </span>as<span class="w"> </span>build
 <a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
 <a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="c1">## Setting Arguments</span>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>ARG <span class="nv">HUGO_VERSION</span><span class="o">=</span><span class="s2">&quot;0.72.0&quot;</span>
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>ARG <span class="nv">STATIC_PAGE</span><span class="o">=</span><span class="s2">&quot;&quot;</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>ARG<span class="w"> </span><span class="nv">HUGO_VERSION</span><span class="o">=</span><span class="s2">&quot;0.72.0&quot;</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>ARG<span class="w"> </span><span class="nv">STATIC_PAGE</span><span class="o">=</span><span class="s2">&quot;&quot;</span>
 <a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>
 <a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="c1">## Running commands inside container during build</span>
-<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>RUN apk add --update wget
-<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>RUN wget --quiet <span class="s2">&quot;https://github.com/gohugoio/hugo/releases/download/v</span><span class="si">${</span><span class="nv">HUGO_VERSION</span><span class="si">}</span><span class="s2">/hugo_</span><span class="si">${</span><span class="nv">HUGO_VERSION</span><span class="si">}</span><span class="s2">_Linux-64bit.tar.gz&quot;</span> <span class="o">&amp;&amp;</span> <span class="se">\</span>
-<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>    tar xzf hugo_<span class="si">${</span><span class="nv">HUGO_VERSION</span><span class="si">}</span>_Linux-64bit.tar.gz <span class="o">&amp;&amp;</span> <span class="se">\</span>
-<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>    rm -r hugo_<span class="si">${</span><span class="nv">HUGO_VERSION</span><span class="si">}</span>_Linux-64bit.tar.gz <span class="o">&amp;&amp;</span> <span class="se">\</span>
-<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>    mv hugo /usr/bin
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>RUN<span class="w"> </span>apk<span class="w"> </span>add<span class="w"> </span>--update<span class="w"> </span>wget
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>RUN<span class="w"> </span>wget<span class="w"> </span>--quiet<span class="w"> </span><span class="s2">&quot;https://github.com/gohugoio/hugo/releases/download/v</span><span class="si">${</span><span class="nv">HUGO_VERSION</span><span class="si">}</span><span class="s2">/hugo_</span><span class="si">${</span><span class="nv">HUGO_VERSION</span><span class="si">}</span><span class="s2">_Linux-64bit.tar.gz&quot;</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">    </span>tar<span class="w"> </span>xzf<span class="w"> </span>hugo_<span class="si">${</span><span class="nv">HUGO_VERSION</span><span class="si">}</span>_Linux-64bit.tar.gz<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">    </span>rm<span class="w"> </span>-r<span class="w"> </span>hugo_<span class="si">${</span><span class="nv">HUGO_VERSION</span><span class="si">}</span>_Linux-64bit.tar.gz<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">    </span>mv<span class="w"> </span>hugo<span class="w"> </span>/usr/bin
 <a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>
 <a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="c1">## Copying local Hugo Static Site Directory to Container directory</span>
-<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>COPY ./<span class="si">${</span><span class="nv">STATIC_PAGE</span><span class="si">}</span> /site
-<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>WORKDIR /site
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>COPY<span class="w"> </span>./<span class="si">${</span><span class="nv">STATIC_PAGE</span><span class="si">}</span><span class="w"> </span>/site
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>WORKDIR<span class="w"> </span>/site
 <a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>
 <a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="c1">## Building Site</span>
-<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>RUN hugo
+<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>RUN<span class="w"> </span>hugo
 <a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>
 <a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="c1">## Stage 2. </span>
-<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>FROM nginx:alpine
+<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>FROM<span class="w"> </span>nginx:alpine
 <a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a><span class="c1">## copy /site/public folder created by the &#39;hugo&#39; RUN command in Stage 1 to the nginx working directory.</span>
-<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>COPY --from<span class="o">=</span>build /site/public /usr/share/nginx/html
+<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>COPY<span class="w"> </span>--from<span class="o">=</span>build<span class="w"> </span>/site/public<span class="w"> </span>/usr/share/nginx/html
 <a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a>
-<a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a>WORKDIR /usr/share/nginx/html
+<a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a>WORKDIR<span class="w"> </span>/usr/share/nginx/html
 </code></pre></div>
 * Changin config.toml baseURL value</p>
-<div class="codehilite"><pre><span></span><code><span class="n">Local</span><span class="w"> </span><span class="n">Testing</span><span class="p">:</span><span class="w"> </span><span class="k">export</span><span class="w"> </span><span class="n">BASE_URL</span><span class="o">=/</span><span class="w"></span>
-<span class="n">Gitlab</span><span class="w"> </span><span class="n">Pages</span><span class="p">:</span><span class="w"> </span><span class="k">export</span><span class="w"> </span><span class="n">BASE_URL</span><span class="o">=</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">netgtz</span><span class="o">.</span><span class="n">gitlab</span><span class="o">.</span><span class="n">io</span><span class="o">/</span><span class="w"></span>
-<span class="n">Since</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">BASE_URL</span><span class="w"> </span><span class="n">variable</span><span class="w"> </span><span class="n">includes</span><span class="w"> </span><span class="s2">&quot;/&quot;</span><span class="w"> </span><span class="n">using</span><span class="w"> </span><span class="s2">&quot;|&quot;</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">delimiter</span><span class="w"> </span><span class="n">instead</span><span class="w"></span>
-<span class="n">shell</span><span class="w"> </span><span class="n">command</span><span class="p">:</span><span class="w"> </span><span class="n">sed</span><span class="w"> </span><span class="o">-</span><span class="n">i</span><span class="w"> </span><span class="s2">&quot;s|BASE_URL|$BASE_URL|g&quot;</span><span class="w"> </span><span class="n">config</span><span class="o">.</span><span class="n">toml</span><span class="w"></span>
+<div class="codehilite"><pre><span></span><code><span class="n">Local</span><span class="w"> </span><span class="n">Testing</span><span class="p">:</span><span class="w"> </span><span class="k">export</span><span class="w"> </span><span class="n">BASE_URL</span><span class="o">=/</span>
+<span class="n">Gitlab</span><span class="w"> </span><span class="n">Pages</span><span class="p">:</span><span class="w"> </span><span class="k">export</span><span class="w"> </span><span class="n">BASE_URL</span><span class="o">=</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">netgtz</span><span class="o">.</span><span class="n">gitlab</span><span class="o">.</span><span class="n">io</span><span class="o">/</span>
+<span class="n">Since</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">BASE_URL</span><span class="w"> </span><span class="n">variable</span><span class="w"> </span><span class="n">includes</span><span class="w"> </span><span class="s2">&quot;/&quot;</span><span class="w"> </span><span class="n">using</span><span class="w"> </span><span class="s2">&quot;|&quot;</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">delimiter</span><span class="w"> </span><span class="n">instead</span>
+<span class="n">shell</span><span class="w"> </span><span class="n">command</span><span class="p">:</span><span class="w"> </span><span class="n">sed</span><span class="w"> </span><span class="o">-</span><span class="n">i</span><span class="w"> </span><span class="s2">&quot;s|BASE_URL|$BASE_URL|g&quot;</span><span class="w"> </span><span class="n">config</span><span class="o">.</span><span class="n">toml</span>
 </code></pre></div>
 
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>sed -i <span class="s2">&quot;s|BASE_URL|</span><span class="nv">$BASE_URL</span><span class="s2">|g&quot;</span> netgtz.gitlab.io/config.toml
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>sed<span class="w"> </span>-i<span class="w"> </span><span class="s2">&quot;s|BASE_URL|</span><span class="nv">$BASE_URL</span><span class="s2">|g&quot;</span><span class="w"> </span>netgtz.gitlab.io/config.toml
 </code></pre></div>
 * Building a Docker Image based on Dockerfile</p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>docker build --build-arg <span class="nv">STATIC_PAGE</span><span class="o">=</span>netgtz.gitlab.io -t hugo .
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>docker<span class="w"> </span>build<span class="w"> </span>--build-arg<span class="w"> </span><span class="nv">STATIC_PAGE</span><span class="o">=</span>netgtz.gitlab.io<span class="w"> </span>-t<span class="w"> </span>hugo<span class="w"> </span>.
 </code></pre></div>
 * Running a container using the recently built image exposing container port 80 on local host port 80
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>docker run --rm -p <span class="m">80</span>:80 -d --name hugoapp hugo
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>docker<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span>-p<span class="w"> </span><span class="m">80</span>:80<span class="w"> </span>-d<span class="w"> </span>--name<span class="w"> </span>hugoapp<span class="w"> </span>hugo
 </code></pre></div></p>
 <h2 id="running-a-docker-image">Running a Docker Image<a class="headerlink" href="#running-a-docker-image" title="Permanent link">&para;</a></h2>
 <ul>
@@ -1672,27 +1789,27 @@
 docker run [--rm -p 80:80 -dit --name hugoapp] hugo [/bin/ash]</p>
 </li>
 </ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>docker run --rm -p <span class="m">80</span>:80 -dit --name hugoapp hugo /bin/ash
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a> <span class="sb">```</span>
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a> <span class="c1">###### OPTIONS</span>
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a> Name<span class="p">|</span>shorthand<span class="p">|</span>Description
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a> --<span class="p">|</span>--<span class="p">|</span>--
-<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>--detach<span class="p">|</span>-d<span class="p">|</span>Run container <span class="k">in</span> background and print container ID
-<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>--interactive<span class="p">|</span>-i<span class="p">|</span>Keep STDIN open even <span class="k">if</span> not attached
-<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>--publish<span class="p">|</span>-p<span class="p">|</span>Publish <span class="nb">local</span> port to container port - -p <span class="m">8080</span>:80 - <span class="nv">8080</span><span class="o">=</span>local_port, <span class="nv">80</span><span class="o">=</span>container_port
-<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>--rm<span class="p">|</span>--rm<span class="p">|</span>Automatically remove the container when it exits
-<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>--tty<span class="p">|</span>-t<span class="p">|</span>Allocate a pseudo-TTY
-<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>--name<span class="p">|</span>--name<span class="p">|</span>Assign a name to the container
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>docker<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span>-p<span class="w"> </span><span class="m">80</span>:80<span class="w"> </span>-dit<span class="w"> </span>--name<span class="w"> </span>hugoapp<span class="w"> </span>hugo<span class="w"> </span>/bin/ash
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w"> </span><span class="sb">```</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w"> </span><span class="c1">###### OPTIONS</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w"> </span>Name<span class="p">|</span>shorthand<span class="p">|</span>Description
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w"> </span>--<span class="p">|</span>--<span class="p">|</span>--
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>--detach<span class="p">|</span>-d<span class="p">|</span>Run<span class="w"> </span>container<span class="w"> </span><span class="k">in</span><span class="w"> </span>background<span class="w"> </span>and<span class="w"> </span>print<span class="w"> </span>container<span class="w"> </span>ID
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>--interactive<span class="p">|</span>-i<span class="p">|</span>Keep<span class="w"> </span>STDIN<span class="w"> </span>open<span class="w"> </span>even<span class="w"> </span><span class="k">if</span><span class="w"> </span>not<span class="w"> </span>attached
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>--publish<span class="p">|</span>-p<span class="p">|</span>Publish<span class="w"> </span><span class="nb">local</span><span class="w"> </span>port<span class="w"> </span>to<span class="w"> </span>container<span class="w"> </span>port<span class="w"> </span>-<span class="w"> </span>-p<span class="w"> </span><span class="m">8080</span>:80<span class="w"> </span>-<span class="w"> </span><span class="nv">8080</span><span class="o">=</span>local_port,<span class="w"> </span><span class="nv">80</span><span class="o">=</span>container_port
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>--rm<span class="p">|</span>--rm<span class="p">|</span>Automatically<span class="w"> </span>remove<span class="w"> </span>the<span class="w"> </span>container<span class="w"> </span>when<span class="w"> </span>it<span class="w"> </span>exits
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>--tty<span class="p">|</span>-t<span class="p">|</span>Allocate<span class="w"> </span>a<span class="w"> </span>pseudo-TTY
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>--name<span class="p">|</span>--name<span class="p">|</span>Assign<span class="w"> </span>a<span class="w"> </span>name<span class="w"> </span>to<span class="w"> </span>the<span class="w"> </span>container
 <a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>
-<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>* To attach to an already running container:
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>*<span class="w"> </span>To<span class="w"> </span>attach<span class="w"> </span>to<span class="w"> </span>an<span class="w"> </span>already<span class="w"> </span>running<span class="w"> </span>container:
 <a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="sb">```</span>sh
 <a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="c1">## ubuntu - /bin/bash, Alpine - /bin/ash</span>
-<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>docker <span class="nb">exec</span> -it hugoapp /bin/ash
+<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>hugoapp<span class="w"> </span>/bin/ash
 </code></pre></div>
 <h4 id="run-the-container-in-deattached-d-interactive-i-terminal-t-node">Run the container in deattached (-d), interactive (-i) , terminal(-t) node<a class="headerlink" href="#run-the-container-in-deattached-d-interactive-i-terminal-t-node" title="Permanent link">&para;</a></h4>
 <ul>
 <li>this will allow the ducker to continue running /bin/bash
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>docker run -it -d IMAGE_NAME bin/bash
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>docker<span class="w"> </span>run<span class="w"> </span>-it<span class="w"> </span>-d<span class="w"> </span>IMAGE_NAME<span class="w"> </span>bin/bash
 </code></pre></div></li>
 </ul>
 <h6 id="create-multiple-directories-p">Create Multiple Directories ( -p)<a class="headerlink" href="#create-multiple-directories-p" title="Permanent link">&para;</a></h6>

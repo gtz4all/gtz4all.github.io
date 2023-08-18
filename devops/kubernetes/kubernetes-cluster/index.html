@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://gtz4all.github.io/devops/kubernetes/kubernetes-cluster/">
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.4.0, mkdocs-material-8.5.6">
+      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-8.5.6">
     
     
       
@@ -442,6 +442,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../cloud/aws/aws-landingzone/" class="md-nav__link">
+        AWS Landing Zones
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../cloud/aws/default-vpc-cleanup/" class="md-nav__link">
         Default Vpc Cleanup
       </a>
@@ -690,6 +704,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../cloud/gcp/cloud-identity/" class="md-nav__link">
+        Cloud identity
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../cloud/gcp/gcloud/" class="md-nav__link">
         Gcloud Command Overview
       </a>
@@ -829,6 +857,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../terraform/multi-gcp-auth/" class="md-nav__link">
+        GCP Multi Account Authentication
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../terraform/terraform-refactoring/" class="md-nav__link">
         Terraform State Refactoring
       </a>
@@ -878,6 +920,20 @@
     <li class="md-nav__item">
       <a href="../../ansible/intro/" class="md-nav__link">
         Introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ansible/gcp_ansible/" class="md-nav__link">
+        Google Cloud Platform Ansible Collection
       </a>
     </li>
   
@@ -1272,6 +1328,67 @@
 
             
           
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_8" type="checkbox" id="__nav_3_8" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_8">
+          Git
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Git" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_8">
+          <span class="md-nav__icon md-icon"></span>
+          Git
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../git/intro/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../git/multi_ssh_keys/" class="md-nav__link">
+        Managing Multiple Github Accounts
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -1632,53 +1749,53 @@ graph TD
 <li></li>
 <li>
 <p>Install Docker on all nodes including master node:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>curl -fsSL https://download.docker.com/linux/ubuntu/gpg <span class="p">|</span> sudo apt-key add -
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>sudo add-apt-repository <span class="se">\</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>   <span class="s2">&quot;deb [arch=amd64] https://download.docker.com/linux/ubuntu \</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="s2">   </span><span class="k">$(</span>lsb_release -cs<span class="k">)</span><span class="s2"> \</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>curl<span class="w"> </span>-fsSL<span class="w"> </span>https://download.docker.com/linux/ubuntu/gpg<span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>apt-key<span class="w"> </span>add<span class="w"> </span>-
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>sudo<span class="w"> </span>add-apt-repository<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">   </span><span class="s2">&quot;deb [arch=amd64] https://download.docker.com/linux/ubuntu \</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="s2">   </span><span class="k">$(</span>lsb_release<span class="w"> </span>-cs<span class="k">)</span><span class="s2"> \</span>
 <a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="s2">   stable&quot;</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>sudo apt-get update
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>sudo apt-get install -y docker-ce<span class="o">=</span><span class="m">18</span>.06.1~ce~3-0~ubuntu
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>sudo apt-mark hold docker-ce
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>sudo<span class="w"> </span>apt-get<span class="w"> </span>update
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>docker-ce<span class="o">=</span><span class="m">18</span>.06.1~ce~3-0~ubuntu
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>sudo<span class="w"> </span>apt-mark<span class="w"> </span>hold<span class="w"> </span>docker-ce
 </code></pre></div></p>
 </li>
 <li>
 <p>if running any other linux flavor use the convenience script provided by docker.
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a> ~$ curl -fsSL https://get.docker.com -o get-docker.sh
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a> ~$ sudo sh get-docker.sh
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a> <span class="sb">```</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="w"> </span>~$<span class="w"> </span>curl<span class="w"> </span>-fsSL<span class="w"> </span>https://get.docker.com<span class="w"> </span>-o<span class="w"> </span>get-docker.sh
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w"> </span>~$<span class="w"> </span>sudo<span class="w"> </span>sh<span class="w"> </span>get-docker.sh
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w"> </span><span class="sb">```</span>
 <a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="m">3</span>. Verify that Docker is up and running with:
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="m">3</span>.<span class="w"> </span>Verify<span class="w"> </span>that<span class="w"> </span>Docker<span class="w"> </span>is<span class="w"> </span>up<span class="w"> </span>and<span class="w"> </span>running<span class="w"> </span>with:
 <a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="sb">```</span>bash
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>~$ sudo systemctl status docker
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>● docker.service - Docker Application Container Engine
-<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>   Loaded: loaded <span class="o">(</span>/lib/systemd/system/docker.service<span class="p">;</span> enabled<span class="p">;</span> vendor preset: enabled<span class="o">)</span>
-<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>   Active: active <span class="o">(</span>running<span class="o">)</span> since Fri <span class="m">2021</span>-07-16 <span class="m">19</span>:47:37 UTC<span class="p">;</span> 3h 49min ago
-<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>     Docs: https://docs.docker.com
-<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a> Main PID: <span class="m">909</span> <span class="o">(</span>dockerd<span class="o">)</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>~$<span class="w"> </span>sudo<span class="w"> </span>systemctl<span class="w"> </span>status<span class="w"> </span>docker
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>●<span class="w"> </span>docker.service<span class="w"> </span>-<span class="w"> </span>Docker<span class="w"> </span>Application<span class="w"> </span>Container<span class="w"> </span>Engine
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">   </span>Loaded:<span class="w"> </span>loaded<span class="w"> </span><span class="o">(</span>/lib/systemd/system/docker.service<span class="p">;</span><span class="w"> </span>enabled<span class="p">;</span><span class="w"> </span>vendor<span class="w"> </span>preset:<span class="w"> </span>enabled<span class="o">)</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">   </span>Active:<span class="w"> </span>active<span class="w"> </span><span class="o">(</span>running<span class="o">)</span><span class="w"> </span>since<span class="w"> </span>Fri<span class="w"> </span><span class="m">2021</span>-07-16<span class="w"> </span><span class="m">19</span>:47:37<span class="w"> </span>UTC<span class="p">;</span><span class="w"> </span>3h<span class="w"> </span>49min<span class="w"> </span>ago
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">     </span>Docs:<span class="w"> </span>https://docs.docker.com
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w"> </span>Main<span class="w"> </span>PID:<span class="w"> </span><span class="m">909</span><span class="w"> </span><span class="o">(</span>dockerd<span class="o">)</span>
 </code></pre></div>
 Make sure the Docker service status is <code>active (running)</code>!</p>
 </li>
 </ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>~$ sudo docker version
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>~$<span class="w"> </span>sudo<span class="w"> </span>docker<span class="w"> </span>version
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>Client:
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a> Version:           <span class="m">18</span>.06.1-ce
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a> API version:       <span class="m">1</span>.38
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a> Go version:        go1.10.3
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a> Git commit:        e68fc7a
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a> Built:             Tue Aug <span class="m">21</span> <span class="m">17</span>:24:51 <span class="m">2018</span>
-<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a> OS/Arch:           linux/amd64
-<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a> Experimental:      <span class="nb">false</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w"> </span>Version:<span class="w">           </span><span class="m">18</span>.06.1-ce
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w"> </span>API<span class="w"> </span>version:<span class="w">       </span><span class="m">1</span>.38
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w"> </span>Go<span class="w"> </span>version:<span class="w">        </span>go1.10.3
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w"> </span>Git<span class="w"> </span>commit:<span class="w">        </span>e68fc7a
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w"> </span>Built:<span class="w">             </span>Tue<span class="w"> </span>Aug<span class="w"> </span><span class="m">21</span><span class="w"> </span><span class="m">17</span>:24:51<span class="w"> </span><span class="m">2018</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w"> </span>OS/Arch:<span class="w">           </span>linux/amd64
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w"> </span>Experimental:<span class="w">      </span><span class="nb">false</span>
 <a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>
 <a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>Server:
-<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a> Engine:
-<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>  Version:          <span class="m">18</span>.06.1-ce
-<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>  API version:      <span class="m">1</span>.38 <span class="o">(</span>minimum version <span class="m">1</span>.12<span class="o">)</span>
-<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>  Go version:       go1.10.3
-<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>  Git commit:       e68fc7a
-<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>  Built:            Tue Aug <span class="m">21</span> <span class="m">17</span>:23:15 <span class="m">2018</span>
-<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>  OS/Arch:          linux/amd64
-<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>  Experimental:     <span class="nb">false</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w"> </span>Engine:
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">  </span>Version:<span class="w">          </span><span class="m">18</span>.06.1-ce
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="w">  </span>API<span class="w"> </span>version:<span class="w">      </span><span class="m">1</span>.38<span class="w"> </span><span class="o">(</span>minimum<span class="w"> </span>version<span class="w"> </span><span class="m">1</span>.12<span class="o">)</span>
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="w">  </span>Go<span class="w"> </span>version:<span class="w">       </span>go1.10.3
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="w">  </span>Git<span class="w"> </span>commit:<span class="w">       </span>e68fc7a
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="w">  </span>Built:<span class="w">            </span>Tue<span class="w"> </span>Aug<span class="w"> </span><span class="m">21</span><span class="w"> </span><span class="m">17</span>:23:15<span class="w"> </span><span class="m">2018</span>
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="w">  </span>OS/Arch:<span class="w">          </span>linux/amd64
+<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="w">  </span>Experimental:<span class="w">     </span><span class="nb">false</span>
 </code></pre></div>
 <h4 id="install-kubeadm-kubelet-and-kubectl-on-all-nodes">Install Kubeadm, Kubelet, and Kubectl on all nodes.<a class="headerlink" href="#install-kubeadm-kubelet-and-kubectl-on-all-nodes" title="Permanent link">&para;</a></h4>
 <ul>
@@ -1689,14 +1806,14 @@ Make sure the Docker service status is <code>active (running)</code>!</p>
 </li>
 <li>
 <p>Install the Kubernetes components by running this on all nodes:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg <span class="p">|</span> sudo apt-key add -
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>cat <span class="s">&lt;&lt; EOF | sudo tee /etc/apt/sources.list.d/kubernetes.list</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>curl<span class="w"> </span>-s<span class="w"> </span>https://packages.cloud.google.com/apt/doc/apt-key.gpg<span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>apt-key<span class="w"> </span>add<span class="w"> </span>-
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>cat<span class="w"> </span><span class="s">&lt;&lt; EOF | sudo tee /etc/apt/sources.list.d/kubernetes.list</span>
 <a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="s">deb https://apt.kubernetes.io/ kubernetes-xenial main</span>
 <a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="s">EOF</span>
 <a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>sudo apt-get update
-<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>sudo apt-get install -y <span class="nv">kubelet</span><span class="o">=</span><span class="m">1</span>.14.5-00 <span class="nv">kubeadm</span><span class="o">=</span><span class="m">1</span>.14.5-00 <span class="nv">kubectl</span><span class="o">=</span><span class="m">1</span>.14.5-00
-<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>sudo apt-mark hold kubelet kubeadm kubectl
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>sudo<span class="w"> </span>apt-get<span class="w"> </span>update
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span><span class="nv">kubelet</span><span class="o">=</span><span class="m">1</span>.14.5-00<span class="w"> </span><span class="nv">kubeadm</span><span class="o">=</span><span class="m">1</span>.14.5-00<span class="w"> </span><span class="nv">kubectl</span><span class="o">=</span><span class="m">1</span>.14.5-00
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>sudo<span class="w"> </span>apt-mark<span class="w"> </span>hold<span class="w"> </span>kubelet<span class="w"> </span>kubeadm<span class="w"> </span>kubectl
 </code></pre></div></p>
 </li>
 </ul>
@@ -1704,73 +1821,73 @@ Make sure the Docker service status is <code>active (running)</code>!</p>
 <ol>
 <li>
 <p>On the Kube master node, do this:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>sudo kubeadm init --pod-network-cidr<span class="o">=</span><span class="m">10</span>.10.0.0/16
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>sudo<span class="w"> </span>kubeadm<span class="w"> </span>init<span class="w"> </span>--pod-network-cidr<span class="o">=</span><span class="m">10</span>.10.0.0/16
 </code></pre></div>
 That command may take a few minutes to complete. 
 <strong><em>output</em></strong>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>Your Kubernetes control-plane has initialized successfully!
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>Your<span class="w"> </span>Kubernetes<span class="w"> </span>control-plane<span class="w"> </span>has<span class="w"> </span>initialized<span class="w"> </span>successfully!
 <a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>To start using your cluster, you need to run the following as a regular user:
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>To<span class="w"> </span>start<span class="w"> </span>using<span class="w"> </span>your<span class="w"> </span>cluster,<span class="w"> </span>you<span class="w"> </span>need<span class="w"> </span>to<span class="w"> </span>run<span class="w"> </span>the<span class="w"> </span>following<span class="w"> </span>as<span class="w"> </span>a<span class="w"> </span>regular<span class="w"> </span>user:
 <a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>  mkdir -p <span class="nv">$HOME</span>/.kube
-<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>  sudo cp -i /etc/kubernetes/admin.conf <span class="nv">$HOME</span>/.kube/config
-<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>  sudo chown <span class="k">$(</span>id -u<span class="k">)</span>:<span class="k">$(</span>id -g<span class="k">)</span> <span class="nv">$HOME</span>/.kube/config
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">  </span>mkdir<span class="w"> </span>-p<span class="w"> </span><span class="nv">$HOME</span>/.kube
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">  </span>sudo<span class="w"> </span>cp<span class="w"> </span>-i<span class="w"> </span>/etc/kubernetes/admin.conf<span class="w"> </span><span class="nv">$HOME</span>/.kube/config
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">  </span>sudo<span class="w"> </span>chown<span class="w"> </span><span class="k">$(</span>id<span class="w"> </span>-u<span class="k">)</span>:<span class="k">$(</span>id<span class="w"> </span>-g<span class="k">)</span><span class="w"> </span><span class="nv">$HOME</span>/.kube/config
 <a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>
-<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>You should now deploy a pod network to the cluster.
-<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>Run <span class="s2">&quot;kubectl apply -f [podnetwork].yaml&quot;</span> with one of the options listed at:
-<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>  https://kubernetes.io/docs/concepts/cluster-administration/addons/
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>You<span class="w"> </span>should<span class="w"> </span>now<span class="w"> </span>deploy<span class="w"> </span>a<span class="w"> </span>pod<span class="w"> </span>network<span class="w"> </span>to<span class="w"> </span>the<span class="w"> </span>cluster.
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>Run<span class="w"> </span><span class="s2">&quot;kubectl apply -f [podnetwork].yaml&quot;</span><span class="w"> </span>with<span class="w"> </span>one<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>options<span class="w"> </span>listed<span class="w"> </span>at:
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="w">  </span>https://kubernetes.io/docs/concepts/cluster-administration/addons/
 <a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>
-<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>Then you can join any number of worker nodes by running the following on each as root:
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>Then<span class="w"> </span>you<span class="w"> </span>can<span class="w"> </span>join<span class="w"> </span>any<span class="w"> </span>number<span class="w"> </span>of<span class="w"> </span>worker<span class="w"> </span>nodes<span class="w"> </span>by<span class="w"> </span>running<span class="w"> </span>the<span class="w"> </span>following<span class="w"> </span>on<span class="w"> </span>each<span class="w"> </span>as<span class="w"> </span>root:
 <a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>
-<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>kubeadm join <span class="m">172</span>.31.109.72:6443 --token ku77lq.2aupucmcqy3mmjuz <span class="se">\</span>
-<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>    --discovery-token-ca-cert-hash sha256:533e64c88c12b7f40b8bf2283ac15dc1b080003ad92c8f53e1742c86e94d6f4c
+<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>kubeadm<span class="w"> </span>join<span class="w"> </span><span class="m">172</span>.31.109.72:6443<span class="w"> </span>--token<span class="w"> </span>ku77lq.2aupucmcqy3mmjuz<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a><span class="w">    </span>--discovery-token-ca-cert-hash<span class="w"> </span>sha256:533e64c88c12b7f40b8bf2283ac15dc1b080003ad92c8f53e1742c86e94d6f4c
 </code></pre></div></p>
 </li>
 <li>
 <p>running kubectl as non-root user:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>mkdir -p <span class="nv">$HOME</span>/.kube
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>sudo cp -i /etc/kubernetes/admin.conf <span class="nv">$HOME</span>/.kube/config
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>sudo chown <span class="k">$(</span>id -u<span class="k">)</span>:<span class="k">$(</span>id -g<span class="k">)</span> <span class="nv">$HOME</span>/.kube/config
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>mkdir<span class="w"> </span>-p<span class="w"> </span><span class="nv">$HOME</span>/.kube
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>sudo<span class="w"> </span>cp<span class="w"> </span>-i<span class="w"> </span>/etc/kubernetes/admin.conf<span class="w"> </span><span class="nv">$HOME</span>/.kube/config
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>sudo<span class="w"> </span>chown<span class="w"> </span><span class="k">$(</span>id<span class="w"> </span>-u<span class="k">)</span>:<span class="k">$(</span>id<span class="w"> </span>-g<span class="k">)</span><span class="w"> </span><span class="nv">$HOME</span>/.kube/config
 </code></pre></div></p>
 </li>
 <li>optionally
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nb">export</span> <span class="nv">KUBECONFIG</span><span class="o">=</span>/etc/kubernetes/admin.conf
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">KUBECONFIG</span><span class="o">=</span>/etc/kubernetes/admin.conf
 </code></pre></div></li>
 </ol>
 <p>Take note that the <code>kubeadm init</code> command printed a long <code>kubeadm join</code> command to the screen. You will need that <code>kubeadm join</code> command in the next step!</p>
 <ol>
 <li>Run the following commmand on the Kube master node to verify it is up and running:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>kubectl version
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>kubectl<span class="w"> </span>version
 </code></pre></div>
 This command should return both a <code>Client Version</code> and a <code>Server Version</code>.</li>
 </ol>
 <h4 id="join-the-two-kube-worker-nodes-to-the-cluster">Join the two Kube worker nodes to the cluster.<a class="headerlink" href="#join-the-two-kube-worker-nodes-to-the-cluster" title="Permanent link">&para;</a></h4>
 <ol>
 <li>Copy the <code>kubeadm join</code> command that was printed by the <code>kubeadm init</code> command earlier, with the token and hash. Run this command on both worker nodes, but make sure you add <code>sudo</code> in front of it:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>sudo kubeadm join <span class="nv">$some_ip</span>:6443 --token <span class="nv">$some_token</span> --discovery-token-ca-cert-hash <span class="nv">$some_hash</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>sudo<span class="w"> </span>kubeadm<span class="w"> </span>join<span class="w"> </span><span class="nv">$some_ip</span>:6443<span class="w"> </span>--token<span class="w"> </span><span class="nv">$some_token</span><span class="w"> </span>--discovery-token-ca-cert-hash<span class="w"> </span><span class="nv">$some_hash</span>
 </code></pre></div></li>
 <li>Now, on the Kube master node, make sure your nodes joined the cluster successfully:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>kubectl get nodes
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>kubectl<span class="w"> </span>get<span class="w"> </span>nodes
 </code></pre></div>
 Verify that all of your nodes are listed. It will look something like this:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>NAME            STATUS     ROLES    AGE   VERSION
-<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>ip-10-0-1-101   NotReady   master   30s   v1.12.2
-<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>ip-10-0-1-102   NotReady   <span class="p">&amp;</span>lt<span class="p">;</span>none&gt;   8s    v1.12.2
-<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>ip-10-0-1-103   NotReady   <span class="p">&amp;</span>lt<span class="p">;</span>none&gt;   5s    v1.12.2
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>NAME<span class="w">            </span>STATUS<span class="w">     </span>ROLES<span class="w">    </span>AGE<span class="w">   </span>VERSION
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>ip-10-0-1-101<span class="w">   </span>NotReady<span class="w">   </span>master<span class="w">   </span>30s<span class="w">   </span>v1.12.2
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>ip-10-0-1-102<span class="w">   </span>NotReady<span class="w">   </span><span class="p">&amp;</span>lt<span class="p">;</span>none&gt;<span class="w">   </span>8s<span class="w">    </span>v1.12.2
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>ip-10-0-1-103<span class="w">   </span>NotReady<span class="w">   </span><span class="p">&amp;</span>lt<span class="p">;</span>none&gt;<span class="w">   </span>5s<span class="w">    </span>v1.12.2
 </code></pre></div>
 Note that the nodes are expected to be in the NotReady state for now.</li>
 </ol>
 <h4 id="set-up-cluster-networking-with-flannel">Set up cluster networking with flannel.<a class="headerlink" href="#set-up-cluster-networking-with-flannel" title="Permanent link">&para;</a></h4>
 <ol>
 <li>Turn on iptables bridge calls on all nodes:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="nb">echo</span> <span class="s2">&quot;net.bridge.bridge-nf-call-iptables=1&quot;</span> <span class="p">|</span> sudo tee -a /etc/sysctl.conf
-<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>sudo sysctl -p
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;net.bridge.bridge-nf-call-iptables=1&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>tee<span class="w"> </span>-a<span class="w"> </span>/etc/sysctl.conf
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>sudo<span class="w"> </span>sysctl<span class="w"> </span>-p
 </code></pre></div></li>
 <li>Next, run this only on the Kube master node:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/bc79dd1505b0c8681ece4de4c0d86c5cd2643275/Documentation/kube-flannel.yml
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>https://raw.githubusercontent.com/coreos/flannel/bc79dd1505b0c8681ece4de4c0d86c5cd2643275/Documentation/kube-flannel.yml
 </code></pre></div>
 Now flannel is installed! Make sure it is working by checking the node status again:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>kubectl get nodes
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>kubectl<span class="w"> </span>get<span class="w"> </span>nodes
 </code></pre></div>
 After a short time, all nodes should be in the <code>Ready</code> state. If they are not all <code>Ready</code> the first time you run <code>kubectl get nodes</code>, wait a few moments and try again. It should look something like this:
 <code>bash
