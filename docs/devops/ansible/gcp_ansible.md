@@ -24,29 +24,29 @@ Create a list of all Compute Resources that contain IPv4 IP address and related 
  
 - Get a list of all firewall rules and save them to a file
   ```yml
-  ---
-  - name: Data Collection
-    hosts: localhost
-    connection: local
-    gather_facts: no
-    vars:
-      project: playground-project
-    tasks:
-      - name: get gcp firewall rules
-        gcp_compute_firewall_info:
-          project: '{{ project }}'
-          auth_kind: application
-        register: gcp_fw
-
-      - name: save gcp fw rules to file
-        copy:
-          content: '{{ gcp_fw.resources | to_yaml }}'
-          dest: '{{ project }}-gcp_fw_rules.yml'
+    ---
+    - name: Data Collection
+      hosts: localhost
+      connection: local
+      gather_facts: no
+      vars:
+        project: playground-project
+      tasks:
+        - name: get gcp firewall rules
+          gcp_compute_firewall_info:
+            project: '{{ project }}'
+            auth_kind: application
+          register: gcp_fw
+  
+        - name: save gcp fw rules to file
+          copy:
+            content: '{{ gcp_fw.resources | to_yaml }}'
+            dest: '{{ project }}-gcp_fw_rules.yml'
   ```
   
   - the above register output can be used to remove or modify firewall rules
 
-  ```yaml
+  ```yml
       - name: delete firewall
         google.cloud.gcp_compute_firewall:
           name: "{{ item.name }}"
@@ -61,7 +61,7 @@ Getting a list of all created subnets becomes a challenge when using this ansibl
 
 - gcloud command is used to get a region list.
 
-  ```yaml
+  ```yml
       - name: Network Subnet List
         command: |
           gcloud compute regions list --format="json"
@@ -76,7 +76,7 @@ Getting a list of all created subnets becomes a challenge when using this ansibl
         with_items: "{{ gcp_regions.stdout | from_json  }}"
   ```
 - instead of using a gcloud command to assist the ansible module, it can be used to just get all subnets without the need to for a region.
-  ```yaml
+  ```yml
       - name: Network Subnet List
         command: |
           gcloud compute networks subnets list --project "{{ project }}" --format="json"
