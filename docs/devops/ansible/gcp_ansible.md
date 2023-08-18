@@ -40,7 +40,7 @@ Create a list of all Compute Resources that contain IPv4 IP address and related 
   
         - name: save gcp fw rules to file
           copy:
-            content: '{{ gcp_fw.resources | to_yaml }}'
+            
             dest: '{{ project }}-gcp_fw_rules.yml'
   ```
   
