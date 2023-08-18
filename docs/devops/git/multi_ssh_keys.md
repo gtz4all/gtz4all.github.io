@@ -9,7 +9,7 @@ SSH Keys must be unique across Github.com Accounts/Organizations. The below meth
 
 1. Create One SSH Key for each Organization.
 
-    | :exclamation:  SSH with an SSH key and passphrase are highly recommended.  |
+    | :exclamation:  SSH keys with passphrases are highly recommended.  |
     |-----------------------------------------|
     
     
@@ -106,13 +106,28 @@ SSH Keys must be unique across Github.com Accounts/Organizations. The below meth
 #### Cloning Repos from multiple Github Accounts
 When cloning a repo, you can copy the SSH command provided by the repository.
 
-  - The below command will use the default SSH key.
+1. Create One SSH Key for each Organization.
+
+    | :exclamation:  SSH keys with passphrases are highly recommended.  |
+    |-----------------------------------------|
+    
+    
+    account| command
+    -------|--------
+    netgtz | `ssh-keygen -t rsa -b 4096 -f ~/.ssh/id_rsa_netgtz -C "netgtz@gmail.com"`
+    gtz4all |` ssh-keygen -t rsa -b 4096 -f ~/.ssh/id_rsa_gtz4all -C "gtz4all@gmail.com"`
+
+   
+
+- The below command will use the default SSH key.
+
     Default | Command	| SSH Key
     -------|----------|---------
     default | `git clone git@github.com:netgtz/terraform-gcp-vm.git` | `~/.ssh/id_rsa`
-    
+
   
   - The below command will use the default SSH key.
+
     SSH Config host | Command	| SSH Key
     -------|----------|---------
     github.com-netgtz | `git clone git@github.com-netgtz:netgtz/terraform-gcp-vm.git` | `~/.ssh/id_rsa_netgtz`
@@ -125,6 +140,7 @@ When cloning a repo, you can copy the SSH command provided by the repository.
     ```
 
 - To update the `[remote "origin"]` url of already existing repositories, use  `git remote set-url origin`.
+- 
     SSH Config host | Command	
     -------|----------
     github.com-netgtz | `git remote set-url origin git@github.com-netgtz:netgtz/terraform-gcp-vm.git`
