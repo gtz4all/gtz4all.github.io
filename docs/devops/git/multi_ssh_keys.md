@@ -139,8 +139,8 @@ When cloning a repo, you can copy the SSH command provided by the repository.
     ~/terraform-gcp-vm$ cat .git/config
     ```
 
-- To update the `[remote "origin"]` url of already existing repositories, use  `git remote set-url origin`.
-- 
+  - To update the `[remote "origin"]` url of already existing repositories, use  `git remote set-url origin`.
+
     SSH Config host | Command	
     -------|----------
     github.com-netgtz | `git remote set-url origin git@github.com-netgtz:netgtz/terraform-gcp-vm.git`
