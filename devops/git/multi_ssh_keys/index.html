@@ -1338,6 +1338,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#-to-update-the-remote-origin-url-of-already-existing-repositories-use-git-remote-set-url-origin" class="md-nav__link">
+    - To update the [remote "origin"] url of already existing repositories, use  git remote set-url origin.
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1636,6 +1643,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#-to-update-the-remote-origin-url-of-already-existing-repositories-use-git-remote-set-url-origin" class="md-nav__link">
+    - To update the [remote "origin"] url of already existing repositories, use  git remote set-url origin.
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1661,7 +1675,7 @@
 <table>
 <thead>
 <tr>
-<th><img alt="❗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/2757.svg" title=":exclamation:" />  SSH with an SSH key and passphrase are highly recommended.</th>
+<th><img alt="❗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/2757.svg" title=":exclamation:" />  SSH keys with passphrases are highly recommended.</th>
 </tr>
 </thead>
 <tbody>
@@ -1785,33 +1799,95 @@
 </ol>
 <h4 id="cloning-repos-from-multiple-github-accounts">Cloning Repos from multiple Github Accounts<a class="headerlink" href="#cloning-repos-from-multiple-github-accounts" title="Permanent link">&para;</a></h4>
 <p>When cloning a repo, you can copy the SSH command provided by the repository.</p>
-<ul>
+<ol>
 <li>
-<p>The below command will use the default SSH key.
-    Default | Command   | SSH Key
-    -------|----------|---------
-    default | <code>git clone git@github.com:netgtz/terraform-gcp-vm.git</code> | <code>~/.ssh/id_rsa</code></p>
+<p>Create One SSH Key for each Organization.</p>
+<table>
+<thead>
+<tr>
+<th><img alt="❗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/2757.svg" title=":exclamation:" />  SSH keys with passphrases are highly recommended.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>account</th>
+<th>command</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>netgtz</td>
+<td><code>ssh-keygen -t rsa -b 4096 -f ~/.ssh/id_rsa_netgtz -C "netgtz@gmail.com"</code></td>
+</tr>
+<tr>
+<td>gtz4all</td>
+<td><code>ssh-keygen -t rsa -b 4096 -f ~/.ssh/id_rsa_gtz4all -C "gtz4all@gmail.com"</code></td>
+</tr>
+</tbody>
+</table>
 </li>
 <li>
-<p>The below command will use the default SSH key.
-    SSH Config host | Command   | SSH Key
-    -------|----------|---------
-    github.com-netgtz | <code>git clone git@github.com-netgtz:netgtz/terraform-gcp-vm.git</code> | <code>~/.ssh/id_rsa_netgtz</code>
-    github.com-gtz4all | <code>git clone git@github.com-gtz4all:gtz4all/terraform-gcp-vpc.git</code> | <code>~/.ssh/id_rsa_gtz4all</code></p>
+<p>The below command will use the default SSH key.</p>
+<table>
+<thead>
+<tr>
+<th>Default</th>
+<th>Command</th>
+<th>SSH Key</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>default</td>
+<td><code>git clone git@github.com:netgtz/terraform-gcp-vm.git</code></td>
+<td><code>~/.ssh/id_rsa</code></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>The below command will use the default SSH key.</p>
+<table>
+<thead>
+<tr>
+<th>SSH Config host</th>
+<th>Command</th>
+<th>SSH Key</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>github.com-netgtz</td>
+<td><code>git clone git@github.com-netgtz:netgtz/terraform-gcp-vm.git</code></td>
+<td><code>~/.ssh/id_rsa_netgtz</code></td>
+</tr>
+<tr>
+<td>github.com-gtz4all</td>
+<td><code>git clone git@github.com-gtz4all:gtz4all/terraform-gcp-vpc.git</code></td>
+<td><code>~/.ssh/id_rsa_gtz4all</code></td>
+</tr>
+</tbody>
+</table>
 </li>
 <li>
 <p>Validate cloned repository is using ssh config hosts. See <code>[remote "origin"]</code> url.
     <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>~/terraform-gcp-vm$ cat .git/config
 </code></pre></div></p>
 </li>
-<li>
-<p>To update the <code>[remote "origin"]</code> url of already existing repositories, use  <code>git remote set-url origin</code>.
-    SSH Config host | Command <br />
-    -------|----------
-    github.com-netgtz | <code>git remote set-url origin git@github.com-netgtz:netgtz/terraform-gcp-vm.git</code>
-    github.com-gtz4all | <code>git remote set-url origin git@github.com-gtz4all:gtz4all/terraform-gcp-vpc.git</code><script type="text/javascript" src="https://viewer.diagrams.net/js/viewer-static.min.js"></script></p>
-</li>
-</ul>
+</ol>
+<h2 id="-to-update-the-remote-origin-url-of-already-existing-repositories-use-git-remote-set-url-origin">- To update the <code>[remote "origin"]</code> url of already existing repositories, use  <code>git remote set-url origin</code>.<a class="headerlink" href="#-to-update-the-remote-origin-url-of-already-existing-repositories-use-git-remote-set-url-origin" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><code>SSH<span class="w"> </span>Config<span class="w"> </span>host<span class="w"> </span>|<span class="w"> </span>Command<span class="w">   </span>
+-------|----------
+github.com-netgtz<span class="w"> </span>|<span class="w"> </span>`git<span class="w"> </span>remote<span class="w"> </span>set-url<span class="w"> </span>origin<span class="w"> </span>git@github.com-netgtz:netgtz/terraform-gcp-vm.git`
+github.com-gtz4all<span class="w"> </span>|<span class="w"> </span>`git<span class="w"> </span>remote<span class="w"> </span>set-url<span class="w"> </span>origin<span class="w"> </span>git@github.com-gtz4all:gtz4all/terraform-gcp-vpc.git`<span class="nt">&lt;script</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span><span class="w"> </span><span class="na">src=</span><span class="s">&quot;https://viewer.diagrams.net/js/viewer-static.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+</code></pre></div>
 
 
 
