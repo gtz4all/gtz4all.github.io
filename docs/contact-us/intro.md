@@ -1,5 +1,5 @@
 ---
-title: "About Me"
+title: "GTZ4ALL Inc."
 ---
 
 ![gtz4all-tf](../../assets/images/logo.png#right "Gtz4All"){: style="width:130px"}
@@ -30,9 +30,6 @@ Key Features of Our Enterprise Cloud Services:
 Transform the way you do business with our enterprise cloud services. Whether you're looking to migrate existing workloads, develop new applications, or enhance your IT capabilities, GTZ4ALL has a tailored solution for you. Join the ranks of leading enterprises that have already harnessed the potential of the cloud to drive innovation, streamline operations, and achieve new heights of success.
 
 Elevate your enterprise with GTZ4ALL - Your Future, Powered by the Cloud.
-
-Ready to Take Your Next Step? Contact Us Today!
+Contact us today to learn more and embark on your journey to the cloud transformation.
 
 **Email** [gtz4all@gmail.com](mailto:gtz4all@gmail.com)
-
-Contact us today to learn more and embark on your journey to the cloud transformation.
