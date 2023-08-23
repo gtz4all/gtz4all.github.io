@@ -6,8 +6,8 @@ site_url: https://gtz4all.github.io/
 site_description: Gtz4All Reference Documentation
 site_author: Kervin Gtz
 site_description: >-
-  Providing easy to deploy, reusable and automated solution for defining, provisioning and managing secure and scalable public and private cloud infrastructure environment. 
-copyright: "Copyright 2022 <a href='https://gtz4all.github.io'>Gtz4All</a>. All Rights Reserved." 
+  Offering a user-friendly, readily deployable, and automated solution for defining, provisioning, and effectively managing secure and scalable public and private cloud infrastructure environments.
+copyright: "Copyright 2023 <a href='https://gtz4all.github.io'>Gtz4All</a>. All Rights Reserved." 
 
 # using awesome-pages nav structure
 nav:
@@ -65,7 +65,7 @@ extra:
     - icon: material/github
       link: 'https://github.com/gtz4all'
     - icon: material/email
-      link: 'gtz4all@gmail.com'
+      link: 'mailto:gtz4all@gmail.com'
 
 extra_css:
   - assets/stylesheets/extra.css
